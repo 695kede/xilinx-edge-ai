@@ -15,7 +15,7 @@
  <td>Train, quantize, and prune custom CNNs with the CIFAR10 dataset using Caffe and the Xilinx® DNNDK tools.</td>
  </tr> <tr>
  <td align="center"><a href="docs/CATSvsDOGs/README.md">Cats vs Dogs Tutorial (UG1336)</a></td>
- <td>Train, quantize, and prune a modified AlexNet CNN with the Kaggle Cats vs Dogs dataset using the Xilinx DNNDK tools.</td>
+ <td>Train, quantize, and prune a modified AlexNet CNN with the Kaggle Cats vs Dogs dataset using Caffe and the Xilinx DNNDK tools.</td>
  </tr>
  </table>
 
