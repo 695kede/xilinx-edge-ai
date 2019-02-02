@@ -1,0 +1,1229 @@
+logfile_top5_miniGoogleNet.txt  has  6027  lines
+LINE:  bird_00006.jpg
+
+PREDICTED:  [ 4.] deer
+EXPECTED :  [ 2.] bird
+[Top]0 prob = 0.588761  name = deer
+[Top]1 prob = 0.404649  name = bird
+[Top]2 prob = 0.003090  name = cat
+[Top]3 prob = 0.002406  name = airplane
+[Top]4 prob = 0.000537  name = automobile
+
+
+LINE:  airplane_00024.jpg
+
+PREDICTED:  [ 9.] truck
+EXPECTED :  [ 0.] airplane
+[Top]0 prob = 0.658243  name = truck
+[Top]1 prob = 0.274396  name = horse
+[Top]2 prob = 0.042080  name = airplane
+[Top]3 prob = 0.013661  name = ship
+[Top]4 prob = 0.004435  name = automobile
+
+
+LINE:  dog_00009.jpg
+
+PREDICTED:  [ 7.] horse
+EXPECTED :  [ 5.] dog
+[Top]0 prob = 0.986440  name = horse
+[Top]1 prob = 0.012417  name = dog
+[Top]2 prob = 0.000701  name = cat
+[Top]3 prob = 0.000375  name = deer
+[Top]4 prob = 0.000024  name = bird
+
+
+LINE:  ship_00003.jpg
+
+PREDICTED:  [ 6.] frog
+EXPECTED :  [ 8.] ship
+[Top]0 prob = 0.850068  name = frog
+[Top]1 prob = 0.147720  name = ship
+[Top]2 prob = 0.002107  name = automobile
+[Top]3 prob = 0.000039  name = airplane
+[Top]4 prob = 0.000034  name = cat
+
+
+LINE:  cat_00041.jpg
+
+PREDICTED:  [ 6.] frog
+EXPECTED :  [ 3.] cat
+[Top]0 prob = 0.733256  name = frog
+[Top]1 prob = 0.127421  name = dog
+[Top]2 prob = 0.112448  name = cat
+[Top]3 prob = 0.013430  name = bird
+[Top]4 prob = 0.011852  name = deer
+
+
+LINE:  frog_00024.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 6.] frog
+[Top]0 prob = 0.816150  name = cat
+[Top]1 prob = 0.125161  name = frog
+[Top]2 prob = 0.035859  name = automobile
+[Top]3 prob = 0.010274  name = dog
+[Top]4 prob = 0.008001  name = bird
+
+
+LINE:  ship_00021.jpg
+
+PREDICTED:  [ 0.] airplane
+EXPECTED :  [ 8.] ship
+[Top]0 prob = 0.887143  name = airplane
+[Top]1 prob = 0.064264  name = ship
+[Top]2 prob = 0.030356  name = bird
+[Top]3 prob = 0.012654  name = deer
+[Top]4 prob = 0.002199  name = truck
+
+
+LINE:  dog_00007.jpg
+
+PREDICTED:  [ 7.] horse
+EXPECTED :  [ 5.] dog
+[Top]0 prob = 0.499959  name = horse
+[Top]1 prob = 0.499959  name = dog
+[Top]2 prob = 0.000048  name = cat
+[Top]3 prob = 0.000014  name = truck
+[Top]4 prob = 0.000009  name = automobile
+
+
+LINE:  bird_00095.jpg
+
+PREDICTED:  [ 7.] horse
+EXPECTED :  [ 2.] bird
+[Top]0 prob = 0.931285  name = horse
+[Top]1 prob = 0.067462  name = bird
+[Top]2 prob = 0.000584  name = dog
+[Top]3 prob = 0.000455  name = frog
+[Top]4 prob = 0.000090  name = automobile
+
+
+LINE:  airplane_00037.jpg
+
+PREDICTED:  [ 5.] dog
+EXPECTED :  [ 0.] airplane
+[Top]0 prob = 0.919768  name = dog
+[Top]1 prob = 0.051890  name = bird
+[Top]2 prob = 0.019089  name = airplane
+[Top]3 prob = 0.003759  name = cat
+[Top]4 prob = 0.002280  name = ship
+
+
+LINE:  cat_00016.jpg
+
+PREDICTED:  [ 5.] dog
+EXPECTED :  [ 3.] cat
+[Top]0 prob = 0.890901  name = dog
+[Top]1 prob = 0.093900  name = cat
+[Top]2 prob = 0.014400  name = horse
+[Top]3 prob = 0.000435  name = deer
+[Top]4 prob = 0.000264  name = frog
+
+
+LINE:  airplane_00072.jpg
+
+PREDICTED:  [ 8.] ship
+EXPECTED :  [ 0.] airplane
+[Top]0 prob = 0.707952  name = ship
+[Top]1 prob = 0.178998  name = airplane
+[Top]2 prob = 0.084553  name = automobile
+[Top]3 prob = 0.021378  name = truck
+[Top]4 prob = 0.006125  name = horse
+
+
+LINE:  airplane_00006.jpg
+
+PREDICTED:  [ 5.] dog
+EXPECTED :  [ 0.] airplane
+[Top]0 prob = 0.501941  name = dog
+[Top]1 prob = 0.442961  name = horse
+[Top]2 prob = 0.046688  name = airplane
+[Top]3 prob = 0.002634  name = truck
+[Top]4 prob = 0.002051  name = bird
+
+
+LINE:  cat_00074.jpg
+
+PREDICTED:  [ 5.] dog
+EXPECTED :  [ 3.] cat
+[Top]0 prob = 0.740862  name = dog
+[Top]1 prob = 0.212261  name = cat
+[Top]2 prob = 0.028726  name = deer
+[Top]3 prob = 0.017423  name = horse
+[Top]4 prob = 0.000362  name = airplane
+
+
+LINE:  airplane_00034.jpg
+
+PREDICTED:  [ 8.] ship
+EXPECTED :  [ 0.] airplane
+[Top]0 prob = 0.999969  name = ship
+[Top]1 prob = 0.000028  name = airplane
+[Top]2 prob = 0.000003  name = deer
+[Top]3 prob = 0.000000  name = automobile
+[Top]4 prob = 0.000000  name = truck
+
+
+LINE:  airplane_00016.jpg
+
+PREDICTED:  [ 8.] ship
+EXPECTED :  [ 0.] airplane
+[Top]0 prob = 0.729839  name = ship
+[Top]1 prob = 0.268493  name = airplane
+[Top]2 prob = 0.000855  name = truck
+[Top]3 prob = 0.000356  name = automobile
+[Top]4 prob = 0.000216  name = bird
+
+
+LINE:  cat_00093.jpg
+
+PREDICTED:  [ 7.] horse
+EXPECTED :  [ 3.] cat
+[Top]0 prob = 0.975626  name = horse
+[Top]1 prob = 0.022945  name = cat
+[Top]2 prob = 0.000890  name = truck
+[Top]3 prob = 0.000420  name = dog
+[Top]4 prob = 0.000064  name = frog
+
+
+LINE:  automobile_00089.jpg
+
+PREDICTED:  [ 9.] truck
+EXPECTED :  [ 1.] automobile
+[Top]0 prob = 0.973925  name = truck
+[Top]1 prob = 0.025954  name = automobile
+[Top]2 prob = 0.000120  name = ship
+[Top]3 prob = 0.000000  name = frog
+[Top]4 prob = 0.000000  name = cat
+
+
+LINE:  bird_00037.jpg
+
+PREDICTED:  [ 5.] dog
+EXPECTED :  [ 2.] bird
+[Top]0 prob = 0.997199  name = dog
+[Top]1 prob = 0.002801  name = bird
+[Top]2 prob = 0.000000  name = frog
+[Top]3 prob = 0.000000  name = automobile
+[Top]4 prob = 0.000000  name = horse
+
+
+LINE:  cat_00036.jpg
+
+PREDICTED:  [ 8.] ship
+EXPECTED :  [ 3.] cat
+[Top]0 prob = 0.458515  name = ship
+[Top]1 prob = 0.245426  name = cat
+[Top]2 prob = 0.191138  name = bird
+[Top]3 prob = 0.048327  name = dog
+[Top]4 prob = 0.029312  name = frog
+
+
+LINE:  deer_00070.jpg
+
+PREDICTED:  [ 7.] horse
+EXPECTED :  [ 4.] deer
+[Top]0 prob = 0.911369  name = horse
+[Top]1 prob = 0.084771  name = dog
+[Top]2 prob = 0.003725  name = deer
+[Top]3 prob = 0.000077  name = automobile
+[Top]4 prob = 0.000028  name = cat
+
+
+LINE:  airplane_00062.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 0.] airplane
+[Top]0 prob = 0.968388  name = cat
+[Top]1 prob = 0.020098  name = truck
+[Top]2 prob = 0.009494  name = ship
+[Top]3 prob = 0.000473  name = airplane
+[Top]4 prob = 0.000417  name = dog
+
+
+LINE:  cat_00046.jpg
+
+PREDICTED:  [ 4.] deer
+EXPECTED :  [ 3.] cat
+[Top]0 prob = 0.951322  name = deer
+[Top]1 prob = 0.047364  name = cat
+[Top]2 prob = 0.000596  name = horse
+[Top]3 prob = 0.000410  name = frog
+[Top]4 prob = 0.000151  name = bird
+
+
+LINE:  frog_00038.jpg
+
+PREDICTED:  [ 4.] deer
+EXPECTED :  [ 6.] frog
+[Top]0 prob = 0.811229  name = deer
+[Top]1 prob = 0.159740  name = frog
+[Top]2 prob = 0.027759  name = cat
+[Top]3 prob = 0.000576  name = bird
+[Top]4 prob = 0.000308  name = ship
+
+
+LINE:  bird_00054.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 2.] bird
+[Top]0 prob = 0.436289  name = cat
+[Top]1 prob = 0.299857  name = deer
+[Top]2 prob = 0.181872  name = frog
+[Top]3 prob = 0.075816  name = bird
+[Top]4 prob = 0.002289  name = ship
+
+
+LINE:  bird_00071.jpg
+
+PREDICTED:  [ 0.] airplane
+EXPECTED :  [ 2.] bird
+[Top]0 prob = 0.999894  name = airplane
+[Top]1 prob = 0.000096  name = bird
+[Top]2 prob = 0.000005  name = truck
+[Top]3 prob = 0.000002  name = ship
+[Top]4 prob = 0.000002  name = automobile
+
+
+LINE:  cat_00040.jpg
+
+PREDICTED:  [ 5.] dog
+EXPECTED :  [ 3.] cat
+[Top]0 prob = 0.999948  name = dog
+[Top]1 prob = 0.000040  name = cat
+[Top]2 prob = 0.000008  name = bird
+[Top]3 prob = 0.000002  name = frog
+[Top]4 prob = 0.000002  name = horse
+
+
+LINE:  airplane_00042.jpg
+
+PREDICTED:  [ 2.] bird
+EXPECTED :  [ 0.] airplane
+[Top]0 prob = 0.848323  name = bird
+[Top]1 prob = 0.130094  name = truck
+[Top]2 prob = 0.015538  name = airplane
+[Top]3 prob = 0.003467  name = ship
+[Top]4 prob = 0.001638  name = horse
+
+
+LINE:  cat_00021.jpg
+
+PREDICTED:  [ 4.] deer
+EXPECTED :  [ 3.] cat
+[Top]0 prob = 0.981966  name = deer
+[Top]1 prob = 0.015872  name = dog
+[Top]2 prob = 0.002148  name = cat
+[Top]3 prob = 0.000006  name = bird
+[Top]4 prob = 0.000004  name = frog
+
+
+LINE:  frog_00028.jpg
+
+PREDICTED:  [ 5.] dog
+EXPECTED :  [ 6.] frog
+[Top]0 prob = 0.259509  name = dog
+[Top]1 prob = 0.178358  name = automobile
+[Top]2 prob = 0.178358  name = airplane
+[Top]3 prob = 0.122583  name = horse
+[Top]4 prob = 0.095468  name = truck
+
+
+LINE:  cat_00027.jpg
+
+PREDICTED:  [ 2.] bird
+EXPECTED :  [ 3.] cat
+[Top]0 prob = 0.777885  name = bird
+[Top]1 prob = 0.153175  name = cat
+[Top]2 prob = 0.049729  name = dog
+[Top]3 prob = 0.008642  name = horse
+[Top]4 prob = 0.004082  name = frog
+
+
+LINE:  airplane_00083.jpg
+
+PREDICTED:  [ 8.] ship
+EXPECTED :  [ 0.] airplane
+[Top]0 prob = 0.530268  name = ship
+[Top]1 prob = 0.467960  name = airplane
+[Top]2 prob = 0.001688  name = truck
+[Top]3 prob = 0.000074  name = automobile
+[Top]4 prob = 0.000004  name = horse
+
+
+LINE:  dog_00046.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 5.] dog
+[Top]0 prob = 0.866050  name = cat
+[Top]1 prob = 0.132813  name = dog
+[Top]2 prob = 0.001014  name = horse
+[Top]3 prob = 0.000065  name = automobile
+[Top]4 prob = 0.000024  name = bird
+
+
+LINE:  bird_00063.jpg
+
+PREDICTED:  [ 0.] airplane
+EXPECTED :  [ 2.] bird
+[Top]0 prob = 0.966222  name = airplane
+[Top]1 prob = 0.033062  name = bird
+[Top]2 prob = 0.000534  name = ship
+[Top]3 prob = 0.000064  name = cat
+[Top]4 prob = 0.000039  name = deer
+
+
+LINE:  frog_00082.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 6.] frog
+[Top]0 prob = 0.843913  name = cat
+[Top]1 prob = 0.088948  name = bird
+[Top]2 prob = 0.061133  name = frog
+[Top]3 prob = 0.003044  name = dog
+[Top]4 prob = 0.000988  name = deer
+
+
+LINE:  horse_00024.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 7.] horse
+[Top]0 prob = 0.961859  name = cat
+[Top]1 prob = 0.019963  name = horse
+[Top]2 prob = 0.017617  name = dog
+[Top]3 prob = 0.000323  name = deer
+[Top]4 prob = 0.000092  name = frog
+
+
+LINE:  cat_00095.jpg
+
+PREDICTED:  [ 4.] deer
+EXPECTED :  [ 3.] cat
+[Top]0 prob = 0.999360  name = deer
+[Top]1 prob = 0.000488  name = cat
+[Top]2 prob = 0.000123  name = dog
+[Top]3 prob = 0.000008  name = truck
+[Top]4 prob = 0.000006  name = ship
+
+
+LINE:  bird_00081.jpg
+
+PREDICTED:  [ 6.] frog
+EXPECTED :  [ 2.] bird
+[Top]0 prob = 0.404388  name = frog
+[Top]1 prob = 0.314938  name = cat
+[Top]2 prob = 0.277932  name = deer
+[Top]3 prob = 0.002122  name = dog
+[Top]4 prob = 0.000369  name = bird
+
+
+LINE:  airplane_00092.jpg
+
+PREDICTED:  [ 8.] ship
+EXPECTED :  [ 0.] airplane
+[Top]0 prob = 0.860971  name = ship
+[Top]1 prob = 0.132034  name = airplane
+[Top]2 prob = 0.006574  name = automobile
+[Top]3 prob = 0.000175  name = bird
+[Top]4 prob = 0.000106  name = truck
+
+
+LINE:  deer_00098.jpg
+
+PREDICTED:  [ 7.] horse
+EXPECTED :  [ 4.] deer
+[Top]0 prob = 0.999980  name = horse
+[Top]1 prob = 0.000017  name = deer
+[Top]2 prob = 0.000003  name = dog
+[Top]3 prob = 0.000000  name = truck
+[Top]4 prob = 0.000000  name = automobile
+
+
+LINE:  cat_00049.jpg
+
+PREDICTED:  [ 5.] dog
+EXPECTED :  [ 3.] cat
+[Top]0 prob = 0.647670  name = dog
+[Top]1 prob = 0.210268  name = cat
+[Top]2 prob = 0.112548  name = deer
+[Top]3 prob = 0.025113  name = bird
+[Top]4 prob = 0.003399  name = frog
+
+
+LINE:  deer_00012.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 4.] deer
+[Top]0 prob = 0.955339  name = cat
+[Top]1 prob = 0.025459  name = dog
+[Top]2 prob = 0.015442  name = frog
+[Top]3 prob = 0.001844  name = truck
+[Top]4 prob = 0.001268  name = deer
+
+
+LINE:  horse_00020.jpg
+
+PREDICTED:  [ 4.] deer
+EXPECTED :  [ 7.] horse
+[Top]0 prob = 0.686279  name = deer
+[Top]1 prob = 0.286084  name = horse
+[Top]2 prob = 0.026610  name = dog
+[Top]3 prob = 0.000430  name = truck
+[Top]4 prob = 0.000430  name = airplane
+
+
+LINE:  cat_00079.jpg
+
+PREDICTED:  [ 5.] dog
+EXPECTED :  [ 3.] cat
+[Top]0 prob = 0.999978  name = dog
+[Top]1 prob = 0.000019  name = bird
+[Top]2 prob = 0.000003  name = cat
+[Top]3 prob = 0.000000  name = deer
+[Top]4 prob = 0.000000  name = horse
+
+
+LINE:  frog_00041.jpg
+
+PREDICTED:  [ 2.] bird
+EXPECTED :  [ 6.] frog
+[Top]0 prob = 0.825881  name = bird
+[Top]1 prob = 0.087047  name = cat
+[Top]2 prob = 0.076819  name = deer
+[Top]3 prob = 0.009175  name = frog
+[Top]4 prob = 0.000518  name = dog
+
+
+LINE:  bird_00010.jpg
+
+PREDICTED:  [ 6.] frog
+EXPECTED :  [ 2.] bird
+[Top]0 prob = 0.999997  name = frog
+[Top]1 prob = 0.000002  name = bird
+[Top]2 prob = 0.000000  name = horse
+[Top]3 prob = 0.000000  name = automobile
+[Top]4 prob = 0.000000  name = truck
+
+
+LINE:  bird_00098.jpg
+
+PREDICTED:  [ 6.] frog
+EXPECTED :  [ 2.] bird
+[Top]0 prob = 0.999837  name = frog
+[Top]1 prob = 0.000096  name = cat
+[Top]2 prob = 0.000066  name = bird
+[Top]3 prob = 0.000001  name = automobile
+[Top]4 prob = 0.000000  name = dog
+
+
+LINE:  cat_00005.jpg
+
+PREDICTED:  [ 5.] dog
+EXPECTED :  [ 3.] cat
+[Top]0 prob = 0.995929  name = dog
+[Top]1 prob = 0.004070  name = cat
+[Top]2 prob = 0.000001  name = frog
+[Top]3 prob = 0.000000  name = bird
+[Top]4 prob = 0.000000  name = truck
+
+
+LINE:  airplane_00030.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 0.] airplane
+[Top]0 prob = 0.999251  name = cat
+[Top]1 prob = 0.000380  name = dog
+[Top]2 prob = 0.000335  name = airplane
+[Top]3 prob = 0.000019  name = frog
+[Top]4 prob = 0.000006  name = deer
+
+
+LINE:  frog_00100.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 6.] frog
+[Top]0 prob = 0.999991  name = cat
+[Top]1 prob = 0.000005  name = dog
+[Top]2 prob = 0.000004  name = horse
+[Top]3 prob = 0.000000  name = frog
+[Top]4 prob = 0.000000  name = bird
+
+
+LINE:  frog_00027.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 6.] frog
+[Top]0 prob = 0.848449  name = cat
+[Top]1 prob = 0.147438  name = dog
+[Top]2 prob = 0.002103  name = bird
+[Top]3 prob = 0.001276  name = frog
+[Top]4 prob = 0.000414  name = deer
+
+
+LINE:  automobile_00066.jpg
+
+PREDICTED:  [ 2.] bird
+EXPECTED :  [ 1.] automobile
+[Top]0 prob = 0.357555  name = bird
+[Top]1 prob = 0.278464  name = automobile
+[Top]2 prob = 0.216868  name = truck
+[Top]3 prob = 0.070407  name = frog
+[Top]4 prob = 0.062134  name = deer
+
+
+LINE:  dog_00062.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 5.] dog
+[Top]0 prob = 0.981778  name = cat
+[Top]1 prob = 0.014004  name = bird
+[Top]2 prob = 0.001895  name = horse
+[Top]3 prob = 0.001476  name = dog
+[Top]4 prob = 0.000697  name = deer
+
+
+LINE:  cat_00060.jpg
+
+PREDICTED:  [ 6.] frog
+EXPECTED :  [ 3.] cat
+[Top]0 prob = 0.675901  name = frog
+[Top]1 prob = 0.319273  name = cat
+[Top]2 prob = 0.003547  name = dog
+[Top]3 prob = 0.001016  name = bird
+[Top]4 prob = 0.000074  name = automobile
+
+
+LINE:  frog_00086.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 6.] frog
+[Top]0 prob = 0.999716  name = cat
+[Top]1 prob = 0.000203  name = dog
+[Top]2 prob = 0.000075  name = frog
+[Top]3 prob = 0.000005  name = horse
+[Top]4 prob = 0.000000  name = deer
+
+
+LINE:  deer_00093.jpg
+
+PREDICTED:  [ 1.] automobile
+EXPECTED :  [ 4.] deer
+[Top]0 prob = 0.730664  name = automobile
+[Top]1 prob = 0.268796  name = deer
+[Top]2 prob = 0.000216  name = cat
+[Top]3 prob = 0.000149  name = dog
+[Top]4 prob = 0.000062  name = horse
+
+
+LINE:  frog_00020.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 6.] frog
+[Top]0 prob = 0.777263  name = cat
+[Top]1 prob = 0.222690  name = frog
+[Top]2 prob = 0.000024  name = automobile
+[Top]3 prob = 0.000013  name = dog
+[Top]4 prob = 0.000008  name = truck
+
+
+LINE:  dog_00084.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 5.] dog
+[Top]0 prob = 0.999613  name = cat
+[Top]1 prob = 0.000380  name = dog
+[Top]2 prob = 0.000007  name = deer
+[Top]3 prob = 0.000000  name = automobile
+[Top]4 prob = 0.000000  name = horse
+
+
+LINE:  bird_00080.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 2.] bird
+[Top]0 prob = 0.999184  name = cat
+[Top]1 prob = 0.000804  name = dog
+[Top]2 prob = 0.000007  name = automobile
+[Top]3 prob = 0.000003  name = horse
+[Top]4 prob = 0.000001  name = truck
+
+
+LINE:  truck_00098.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 9.] truck
+[Top]0 prob = 0.507593  name = cat
+[Top]1 prob = 0.271695  name = truck
+[Top]2 prob = 0.186733  name = airplane
+[Top]3 prob = 0.032449  name = ship
+[Top]4 prob = 0.001110  name = horse
+
+
+LINE:  airplane_00069.jpg
+
+PREDICTED:  [ 8.] ship
+EXPECTED :  [ 0.] airplane
+[Top]0 prob = 0.800614  name = ship
+[Top]1 prob = 0.178641  name = airplane
+[Top]2 prob = 0.018829  name = bird
+[Top]3 prob = 0.000937  name = truck
+[Top]4 prob = 0.000569  name = automobile
+
+
+LINE:  ship_00071.jpg
+
+PREDICTED:  [ 0.] airplane
+EXPECTED :  [ 8.] ship
+[Top]0 prob = 0.999983  name = airplane
+[Top]1 prob = 0.000013  name = truck
+[Top]2 prob = 0.000003  name = ship
+[Top]3 prob = 0.000000  name = automobile
+[Top]4 prob = 0.000000  name = horse
+
+
+LINE:  cat_00002.jpg
+
+PREDICTED:  [ 5.] dog
+EXPECTED :  [ 3.] cat
+[Top]0 prob = 0.592609  name = dog
+[Top]1 prob = 0.407294  name = cat
+[Top]2 prob = 0.000083  name = deer
+[Top]3 prob = 0.000009  name = horse
+[Top]4 prob = 0.000002  name = truck
+
+
+LINE:  cat_00030.jpg
+
+PREDICTED:  [ 5.] dog
+EXPECTED :  [ 3.] cat
+[Top]0 prob = 0.999717  name = dog
+[Top]1 prob = 0.000261  name = cat
+[Top]2 prob = 0.000009  name = deer
+[Top]3 prob = 0.000009  name = bird
+[Top]4 prob = 0.000001  name = truck
+
+
+LINE:  truck_00048.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 9.] truck
+[Top]0 prob = 0.945965  name = cat
+[Top]1 prob = 0.022247  name = deer
+[Top]2 prob = 0.022247  name = airplane
+[Top]3 prob = 0.008184  name = ship
+[Top]4 prob = 0.000863  name = bird
+
+
+LINE:  bird_00045.jpg
+
+PREDICTED:  [ 4.] deer
+EXPECTED :  [ 2.] bird
+[Top]0 prob = 0.494615  name = deer
+[Top]1 prob = 0.494615  name = cat
+[Top]2 prob = 0.010265  name = bird
+[Top]3 prob = 0.000213  name = dog
+[Top]4 prob = 0.000146  name = airplane
+
+
+LINE:  horse_00013.jpg
+
+PREDICTED:  [ 5.] dog
+EXPECTED :  [ 7.] horse
+[Top]0 prob = 0.992222  name = dog
+[Top]1 prob = 0.007576  name = horse
+[Top]2 prob = 0.000178  name = bird
+[Top]3 prob = 0.000008  name = cat
+[Top]4 prob = 0.000008  name = automobile
+
+
+LINE:  truck_00087.jpg
+
+PREDICTED:  [ 1.] automobile
+EXPECTED :  [ 9.] truck
+[Top]0 prob = 0.904291  name = automobile
+[Top]1 prob = 0.095312  name = truck
+[Top]2 prob = 0.000390  name = ship
+[Top]3 prob = 0.000006  name = cat
+[Top]4 prob = 0.000000  name = airplane
+
+
+LINE:  ship_00038.jpg
+
+PREDICTED:  [ 9.] truck
+EXPECTED :  [ 8.] ship
+[Top]0 prob = 0.950175  name = truck
+[Top]1 prob = 0.047306  name = ship
+[Top]2 prob = 0.002355  name = automobile
+[Top]3 prob = 0.000133  name = cat
+[Top]4 prob = 0.000018  name = airplane
+
+
+LINE:  airplane_00050.jpg
+
+PREDICTED:  [ 6.] frog
+EXPECTED :  [ 0.] airplane
+[Top]0 prob = 0.801529  name = frog
+[Top]1 prob = 0.095729  name = truck
+[Top]2 prob = 0.095729  name = airplane
+[Top]3 prob = 0.003276  name = ship
+[Top]4 prob = 0.001987  name = horse
+
+
+LINE:  bird_00074.jpg
+
+PREDICTED:  [ 0.] airplane
+EXPECTED :  [ 2.] bird
+[Top]0 prob = 0.999964  name = airplane
+[Top]1 prob = 0.000031  name = bird
+[Top]2 prob = 0.000004  name = ship
+[Top]3 prob = 0.000000  name = automobile
+[Top]4 prob = 0.000000  name = horse
+
+
+LINE:  frog_00091.jpg
+
+PREDICTED:  [ 5.] dog
+EXPECTED :  [ 6.] frog
+[Top]0 prob = 0.817710  name = dog
+[Top]1 prob = 0.110665  name = airplane
+[Top]2 prob = 0.027980  name = cat
+[Top]3 prob = 0.024693  name = horse
+[Top]4 prob = 0.011664  name = frog
+
+
+LINE:  dog_00083.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 5.] dog
+[Top]0 prob = 0.675448  name = cat
+[Top]1 prob = 0.319059  name = dog
+[Top]2 prob = 0.002760  name = horse
+[Top]3 prob = 0.001897  name = airplane
+[Top]4 prob = 0.000698  name = automobile
+
+
+LINE:  airplane_00049.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 0.] airplane
+[Top]0 prob = 0.518813  name = cat
+[Top]1 prob = 0.457851  name = airplane
+[Top]2 prob = 0.010768  name = dog
+[Top]3 prob = 0.005086  name = automobile
+[Top]4 prob = 0.003496  name = deer
+
+
+LINE:  frog_00017.jpg
+
+PREDICTED:  [ 4.] deer
+EXPECTED :  [ 6.] frog
+[Top]0 prob = 0.462932  name = deer
+[Top]1 prob = 0.360532  name = bird
+[Top]2 prob = 0.170303  name = cat
+[Top]3 prob = 0.004005  name = dog
+[Top]4 prob = 0.001013  name = frog
+
+
+LINE:  bird_00060.jpg
+
+PREDICTED:  [ 4.] deer
+EXPECTED :  [ 2.] bird
+[Top]0 prob = 0.328181  name = deer
+[Top]1 prob = 0.255588  name = truck
+[Top]2 prob = 0.225555  name = bird
+[Top]3 prob = 0.082977  name = automobile
+[Top]4 prob = 0.034590  name = cat
+
+
+LINE:  dog_00066.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 5.] dog
+[Top]0 prob = 0.442470  name = cat
+[Top]1 prob = 0.209008  name = horse
+[Top]2 prob = 0.209008  name = deer
+[Top]3 prob = 0.111874  name = dog
+[Top]4 prob = 0.008104  name = airplane
+
+
+LINE:  bird_00070.jpg
+
+PREDICTED:  [ 0.] airplane
+EXPECTED :  [ 2.] bird
+[Top]0 prob = 0.938402  name = airplane
+[Top]1 prob = 0.028337  name = bird
+[Top]2 prob = 0.017187  name = automobile
+[Top]3 prob = 0.009200  name = ship
+[Top]4 prob = 0.005580  name = truck
+
+
+LINE:  bird_00019.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 2.] bird
+[Top]0 prob = 0.858212  name = cat
+[Top]1 prob = 0.131611  name = deer
+[Top]2 prob = 0.002731  name = dog
+[Top]3 prob = 0.002411  name = ship
+[Top]4 prob = 0.002411  name = frog
+
+
+LINE:  bird_00048.jpg
+
+PREDICTED:  [ 0.] airplane
+EXPECTED :  [ 2.] bird
+[Top]0 prob = 0.985924  name = airplane
+[Top]1 prob = 0.014063  name = bird
+[Top]2 prob = 0.000011  name = deer
+[Top]3 prob = 0.000001  name = dog
+[Top]4 prob = 0.000000  name = ship
+
+
+LINE:  cat_00100.jpg
+
+PREDICTED:  [ 5.] dog
+EXPECTED :  [ 3.] cat
+[Top]0 prob = 0.790425  name = dog
+[Top]1 prob = 0.199851  name = cat
+[Top]2 prob = 0.008781  name = frog
+[Top]3 prob = 0.000925  name = automobile
+[Top]4 prob = 0.000007  name = ship
+
+
+LINE:  deer_00094.jpg
+
+PREDICTED:  [ 2.] bird
+EXPECTED :  [ 4.] deer
+[Top]0 prob = 0.976825  name = bird
+[Top]1 prob = 0.017891  name = cat
+[Top]2 prob = 0.003109  name = frog
+[Top]3 prob = 0.001886  name = horse
+[Top]4 prob = 0.000121  name = truck
+
+
+LINE:  airplane_00007.jpg
+
+PREDICTED:  [ 9.] truck
+EXPECTED :  [ 0.] airplane
+[Top]0 prob = 0.650955  name = truck
+[Top]1 prob = 0.348431  name = airplane
+[Top]2 prob = 0.000462  name = ship
+[Top]3 prob = 0.000103  name = automobile
+[Top]4 prob = 0.000018  name = horse
+
+
+LINE:  deer_00004.jpg
+
+PREDICTED:  [ 7.] horse
+EXPECTED :  [ 4.] deer
+[Top]0 prob = 0.744136  name = horse
+[Top]1 prob = 0.241586  name = deer
+[Top]2 prob = 0.013629  name = dog
+[Top]3 prob = 0.000283  name = frog
+[Top]4 prob = 0.000151  name = truck
+
+
+LINE:  dog_00091.jpg
+
+PREDICTED:  [ 2.] bird
+EXPECTED :  [ 5.] dog
+[Top]0 prob = 0.978591  name = bird
+[Top]1 prob = 0.013959  name = airplane
+[Top]2 prob = 0.004532  name = cat
+[Top]3 prob = 0.001667  name = dog
+[Top]4 prob = 0.000613  name = ship
+
+
+LINE:  ship_00040.jpg
+
+PREDICTED:  [ 0.] airplane
+EXPECTED :  [ 8.] ship
+[Top]0 prob = 0.754742  name = airplane
+[Top]1 prob = 0.245029  name = ship
+[Top]2 prob = 0.000082  name = truck
+[Top]3 prob = 0.000082  name = deer
+[Top]4 prob = 0.000034  name = automobile
+
+
+LINE:  bird_00002.jpg
+
+PREDICTED:  [ 1.] automobile
+EXPECTED :  [ 2.] bird
+[Top]0 prob = 0.551848  name = automobile
+[Top]1 prob = 0.260675  name = ship
+[Top]2 prob = 0.095897  name = dog
+[Top]3 prob = 0.051330  name = bird
+[Top]4 prob = 0.035278  name = truck
+
+
+LINE:  dog_00014.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 5.] dog
+[Top]0 prob = 0.999980  name = cat
+[Top]1 prob = 0.000011  name = dog
+[Top]2 prob = 0.000006  name = horse
+[Top]3 prob = 0.000002  name = frog
+[Top]4 prob = 0.000000  name = automobile
+
+
+LINE:  automobile_00003.jpg
+
+PREDICTED:  [ 9.] truck
+EXPECTED :  [ 1.] automobile
+[Top]0 prob = 0.996823  name = truck
+[Top]1 prob = 0.003173  name = automobile
+[Top]2 prob = 0.000004  name = ship
+[Top]3 prob = 0.000000  name = airplane
+[Top]4 prob = 0.000000  name = horse
+
+
+LINE:  cat_00091.jpg
+
+PREDICTED:  [ 0.] airplane
+EXPECTED :  [ 3.] cat
+[Top]0 prob = 0.800245  name = airplane
+[Top]1 prob = 0.095576  name = frog
+[Top]2 prob = 0.045147  name = bird
+[Top]3 prob = 0.021326  name = deer
+[Top]4 prob = 0.012935  name = cat
+
+
+LINE:  truck_00100.jpg
+
+PREDICTED:  [ 4.] deer
+EXPECTED :  [ 9.] truck
+[Top]0 prob = 0.681764  name = deer
+[Top]1 prob = 0.250807  name = truck
+[Top]2 prob = 0.033943  name = automobile
+[Top]3 prob = 0.016034  name = dog
+[Top]4 prob = 0.009725  name = horse
+
+
+LINE:  cat_00073.jpg
+
+PREDICTED:  [ 0.] airplane
+EXPECTED :  [ 3.] cat
+[Top]0 prob = 0.535118  name = airplane
+[Top]1 prob = 0.324566  name = deer
+[Top]2 prob = 0.043925  name = cat
+[Top]3 prob = 0.030189  name = bird
+[Top]4 prob = 0.023511  name = horse
+
+
+LINE:  airplane_00073.jpg
+
+PREDICTED:  [ 6.] frog
+EXPECTED :  [ 0.] airplane
+[Top]0 prob = 0.854884  name = frog
+[Top]1 prob = 0.131101  name = airplane
+[Top]2 prob = 0.006527  name = cat
+[Top]3 prob = 0.002401  name = bird
+[Top]4 prob = 0.001650  name = automobile
+
+
+LINE:  deer_00006.jpg
+
+PREDICTED:  [ 7.] horse
+EXPECTED :  [ 4.] deer
+[Top]0 prob = 0.466610  name = horse
+[Top]1 prob = 0.466610  name = dog
+[Top]2 prob = 0.063149  name = deer
+[Top]3 prob = 0.002775  name = cat
+[Top]4 prob = 0.000619  name = bird
+
+
+LINE:  dog_00076.jpg
+
+PREDICTED:  [ 2.] bird
+EXPECTED :  [ 5.] dog
+[Top]0 prob = 0.996765  name = bird
+[Top]1 prob = 0.002800  name = cat
+[Top]2 prob = 0.000334  name = airplane
+[Top]3 prob = 0.000045  name = dog
+[Top]4 prob = 0.000040  name = horse
+
+
+LINE:  airplane_00048.jpg
+
+PREDICTED:  [ 8.] ship
+EXPECTED :  [ 0.] airplane
+[Top]0 prob = 0.991420  name = ship
+[Top]1 prob = 0.008577  name = airplane
+[Top]2 prob = 0.000002  name = automobile
+[Top]3 prob = 0.000000  name = truck
+[Top]4 prob = 0.000000  name = frog
+
+
+LINE:  deer_00090.jpg
+
+PREDICTED:  [ 7.] horse
+EXPECTED :  [ 4.] deer
+[Top]0 prob = 0.604357  name = horse
+[Top]1 prob = 0.366561  name = cat
+[Top]2 prob = 0.016106  name = dog
+[Top]3 prob = 0.012543  name = deer
+[Top]4 prob = 0.000260  name = bird
+
+
+LINE:  deer_00015.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 4.] deer
+[Top]0 prob = 0.993766  name = cat
+[Top]1 prob = 0.004602  name = dog
+[Top]2 prob = 0.000706  name = deer
+[Top]3 prob = 0.000623  name = horse
+[Top]4 prob = 0.000294  name = bird
+
+
+LINE:  bird_00015.jpg
+
+PREDICTED:  [ 5.] dog
+EXPECTED :  [ 2.] bird
+[Top]0 prob = 0.621710  name = dog
+[Top]1 prob = 0.377086  name = frog
+[Top]2 prob = 0.000500  name = cat
+[Top]3 prob = 0.000236  name = automobile
+[Top]4 prob = 0.000143  name = deer
+
+
+LINE:  bird_00032.jpg
+
+PREDICTED:  [ 0.] airplane
+EXPECTED :  [ 2.] bird
+[Top]0 prob = 0.592658  name = airplane
+[Top]1 prob = 0.407328  name = bird
+[Top]2 prob = 0.000011  name = horse
+[Top]3 prob = 0.000001  name = ship
+[Top]4 prob = 0.000001  name = dog
+
+
+LINE:  truck_00004.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 9.] truck
+[Top]0 prob = 0.909746  name = cat
+[Top]1 prob = 0.027472  name = truck
+[Top]2 prob = 0.024244  name = airplane
+[Top]3 prob = 0.021395  name = automobile
+[Top]4 prob = 0.011452  name = ship
+
+
+LINE:  frog_00010.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 6.] frog
+[Top]0 prob = 0.860026  name = cat
+[Top]1 prob = 0.090646  name = dog
+[Top]2 prob = 0.048519  name = frog
+[Top]3 prob = 0.000784  name = automobile
+[Top]4 prob = 0.000009  name = truck
+
+
+LINE:  airplane_00043.jpg
+
+PREDICTED:  [ 8.] ship
+EXPECTED :  [ 0.] airplane
+[Top]0 prob = 0.999320  name = ship
+[Top]1 prob = 0.000626  name = bird
+[Top]2 prob = 0.000031  name = frog
+[Top]3 prob = 0.000015  name = automobile
+[Top]4 prob = 0.000003  name = truck
+
+
+LINE:  frog_00057.jpg
+
+PREDICTED:  [ 2.] bird
+EXPECTED :  [ 6.] frog
+[Top]0 prob = 0.745211  name = bird
+[Top]1 prob = 0.241935  name = frog
+[Top]2 prob = 0.008279  name = cat
+[Top]3 prob = 0.003911  name = deer
+[Top]4 prob = 0.000529  name = dog
+
+
+LINE:  ship_00070.jpg
+
+PREDICTED:  [ 0.] airplane
+EXPECTED :  [ 8.] ship
+[Top]0 prob = 0.999703  name = airplane
+[Top]1 prob = 0.000296  name = ship
+[Top]2 prob = 0.000001  name = automobile
+[Top]3 prob = 0.000000  name = bird
+[Top]4 prob = 0.000000  name = deer
+
+
+LINE:  automobile_00026.jpg
+
+PREDICTED:  [ 9.] truck
+EXPECTED :  [ 1.] automobile
+[Top]0 prob = 0.835483  name = truck
+[Top]1 prob = 0.164516  name = automobile
+[Top]2 prob = 0.000001  name = airplane
+[Top]3 prob = 0.000000  name = frog
+[Top]4 prob = 0.000000  name = ship
+
+
+LINE:  truck_00035.jpg
+
+PREDICTED:  [ 1.] automobile
+EXPECTED :  [ 9.] truck
+[Top]0 prob = 0.592116  name = automobile
+[Top]1 prob = 0.406955  name = truck
+[Top]2 prob = 0.000693  name = ship
+[Top]3 prob = 0.000120  name = airplane
+[Top]4 prob = 0.000050  name = dog
+
+
+LINE:  dog_00055.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 5.] dog
+[Top]0 prob = 0.970191  name = cat
+[Top]1 prob = 0.029297  name = dog
+[Top]2 prob = 0.000369  name = airplane
+[Top]3 prob = 0.000082  name = automobile
+[Top]4 prob = 0.000057  name = horse
+
+
+LINE:  airplane_00093.jpg
+
+PREDICTED:  [ 3.] cat
+EXPECTED :  [ 0.] airplane
+[Top]0 prob = 0.628279  name = cat
+[Top]1 prob = 0.231131  name = airplane
+[Top]2 prob = 0.066220  name = bird
+[Top]3 prob = 0.031280  name = automobile
+[Top]4 prob = 0.027605  name = ship
+
+
+LINE:  truck_00028.jpg
+
+PREDICTED:  [ 8.] ship
+EXPECTED :  [ 9.] truck
+[Top]0 prob = 0.993287  name = ship
+[Top]1 prob = 0.006693  name = truck
+[Top]2 prob = 0.000011  name = automobile
+[Top]3 prob = 0.000006  name = airplane
+[Top]4 prob = 0.000002  name = frog
+
+
+LINE:  horse_00058.jpg
+
+PREDICTED:  [ 5.] dog
+EXPECTED :  [ 7.] horse
+[Top]0 prob = 0.481831  name = dog
+[Top]1 prob = 0.375250  name = horse
+[Top]2 prob = 0.083730  name = deer
+[Top]3 prob = 0.027183  name = cat
+[Top]4 prob = 0.012840  name = truck
+
+
+number of total images predicted  999
+number of top1 false predictions  111
+number of top1 right predictions  888
+number of top5 false predictions  7
+number of top5 right predictions  992
+top1 accuracy = 0.89
+top5 accuracy = 0.99

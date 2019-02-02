@@ -1,0 +1,26 @@
+Compiling network: miniVggNet
+[0;33m[DNNC][Warning] Layer [loss] is not supported in DPU, deploy it in CPU instead.
+[m
+DNNC Kernel Information
+
+1. Overview
+kernel numbers  : 2
+kernel topology : 0 -> 1
+
+2. Kernel Description in Detail
+kernel id       : 0
+kernel name     : miniVggNet_0
+type            : DPUKernel (Supported, Running on DPU)
+nodes           : NA
+input node(s)   : conv1 
+output node(s)  : fc2 
+
+kernel id       : 1
+kernel name     : miniVggNet_1
+type            : CPUKernel (Not-Supported, Running on CPU)
+nodes           : loss 
+input node(s)   : loss 
+output node(s)  : loss 
+
+ copying dpu elf file into ../../zcu102/pruned/model/arm64_4096 
+ copying the test images to be used by the ZCU102

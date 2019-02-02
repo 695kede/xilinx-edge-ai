@@ -1,0 +1,13 @@
+I0122 16:22:12.726075 44208 deephi_compress.cpp:203] Starting analysis of cifar10/deephi/miniVggNet/pruning/float.caffemodel
+I0122 16:22:12.726235 44208 sens_analyser.cpp:145] Analysis completed 0%
+I0122 16:22:18.001878 44208 sens_analyser.cpp:212] Analysing layer [conv1] done
+I0122 16:22:18.001894 44208 sens_analyser.cpp:213] Analysis completed 25%
+I0122 16:22:22.069654 44208 sens_analyser.cpp:212] Analysing layer [conv2] done
+I0122 16:22:22.069674 44208 sens_analyser.cpp:213] Analysis completed 50%
+I0122 16:22:26.156232 44208 sens_analyser.cpp:212] Analysing layer [conv3] done
+I0122 16:22:26.156256 44208 sens_analyser.cpp:213] Analysis completed 75%
+I0122 16:22:30.232147 44208 sens_analyser.cpp:212] Analysing layer [conv4] done
+I0122 16:22:30.232172 44208 sens_analyser.cpp:213] Analysis completed 100%
+I0122 16:22:30.232836 44208 deephi_compress.cpp:205] Analysis done.
+Now you can compress the model with the following command:
+deephi_compress compress -config cifar10/deephi/miniVggNet/pruning/config0.prototxt

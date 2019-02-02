@@ -1,0 +1,43 @@
+I0122 16:51:44.391129 58582 deephi_compress.cpp:203] Starting analysis of cifar10/deephi/miniGoogleNet/pruning/float.caffemodel
+I0122 16:51:44.391299 58582 sens_analyser.cpp:145] Analysis completed 0%
+I0122 16:52:10.886132 58582 sens_analyser.cpp:212] Analysing layer [conv1/3x3_s1] done
+I0122 16:52:10.886147 58582 sens_analyser.cpp:213] Analysis completed 5%
+I0122 16:52:33.306921 58582 sens_analyser.cpp:212] Analysing layer [inception_2a/1x1] done
+I0122 16:52:33.306957 58582 sens_analyser.cpp:213] Analysis completed 10%
+I0122 16:52:56.399132 58582 sens_analyser.cpp:212] Analysing layer [inception_2a/3x3] done
+I0122 16:52:56.399148 58582 sens_analyser.cpp:213] Analysis completed 15%
+I0122 16:53:19.400136 58582 sens_analyser.cpp:212] Analysing layer [inception_3a/1x1] done
+I0122 16:53:19.400168 58582 sens_analyser.cpp:213] Analysis completed 21%
+I0122 16:53:42.210876 58582 sens_analyser.cpp:212] Analysing layer [inception_3a/3x3] done
+I0122 16:53:42.210893 58582 sens_analyser.cpp:213] Analysis completed 26%
+I0122 16:54:05.165217 58582 sens_analyser.cpp:212] Analysing layer [downsample_4/3x3_s2] done
+I0122 16:54:05.165251 58582 sens_analyser.cpp:213] Analysis completed 31%
+I0122 16:54:27.857753 58582 sens_analyser.cpp:212] Analysing layer [inception_5a/1x1] done
+I0122 16:54:27.857769 58582 sens_analyser.cpp:213] Analysis completed 36%
+I0122 16:54:50.721323 58582 sens_analyser.cpp:212] Analysing layer [inception_5a/3x3] done
+I0122 16:54:50.721365 58582 sens_analyser.cpp:213] Analysis completed 42%
+I0122 16:55:13.657909 58582 sens_analyser.cpp:212] Analysing layer [inception_6a/1x1] done
+I0122 16:55:13.657927 58582 sens_analyser.cpp:213] Analysis completed 47%
+I0122 16:55:36.620350 58582 sens_analyser.cpp:212] Analysing layer [inception_6a/3x3] done
+I0122 16:55:36.620383 58582 sens_analyser.cpp:213] Analysis completed 52%
+I0122 16:55:59.267009 58582 sens_analyser.cpp:212] Analysing layer [inception_7a/1x1] done
+I0122 16:55:59.267024 58582 sens_analyser.cpp:213] Analysis completed 57%
+I0122 16:56:22.720840 58582 sens_analyser.cpp:212] Analysing layer [inception_7a/3x3] done
+I0122 16:56:22.720872 58582 sens_analyser.cpp:213] Analysis completed 63%
+I0122 16:56:45.941893 58582 sens_analyser.cpp:212] Analysing layer [inception_8a/1x1] done
+I0122 16:56:45.941915 58582 sens_analyser.cpp:213] Analysis completed 68%
+I0122 16:57:09.440927 58582 sens_analyser.cpp:212] Analysing layer [inception_8a/3x3] done
+I0122 16:57:09.440958 58582 sens_analyser.cpp:213] Analysis completed 73%
+I0122 16:57:32.555454 58582 sens_analyser.cpp:212] Analysing layer [downsample_9/3x3_s2] done
+I0122 16:57:32.555474 58582 sens_analyser.cpp:213] Analysis completed 78%
+I0122 16:57:56.337994 58582 sens_analyser.cpp:212] Analysing layer [inception_10a/1x1] done
+I0122 16:57:56.338030 58582 sens_analyser.cpp:213] Analysis completed 84%
+I0122 16:58:20.081768 58582 sens_analyser.cpp:212] Analysing layer [inception_10a/3x3] done
+I0122 16:58:20.081794 58582 sens_analyser.cpp:213] Analysis completed 89%
+I0122 16:58:43.605628 58582 sens_analyser.cpp:212] Analysing layer [inception_11a/1x1] done
+I0122 16:58:43.605659 58582 sens_analyser.cpp:213] Analysis completed 94%
+I0122 16:59:06.772861 58582 sens_analyser.cpp:212] Analysing layer [inception_11a/3x3] done
+I0122 16:59:06.772881 58582 sens_analyser.cpp:213] Analysis completed 100%
+I0122 16:59:06.773077 58582 deephi_compress.cpp:205] Analysis done.
+Now you can compress the model with the following command:
+deephi_compress compress -config cifar10/deephi/miniGoogleNet/pruning/config0.prototxt

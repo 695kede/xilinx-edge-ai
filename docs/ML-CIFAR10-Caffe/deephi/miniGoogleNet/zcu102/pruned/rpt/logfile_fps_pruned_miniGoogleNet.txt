@@ -1,0 +1,75 @@
+#/bin/sh
+
+ln -s ../test_images ./images
+
+cp ./src/fps_main.cc ./src/main.cc
+make clean
+make: Warning: File 'Makefile' has modification time 15438596 s in the future
+rm -f -rf /root/cifar10/deephi/miniGoogleNet/zcu102/pruned/build
+rm -f miniGoogleNet 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make
+make: Warning: File 'Makefile' has modification time 15438596 s in the future
+mkdir -p /root/cifar10/deephi/miniGoogleNet/zcu102/pruned/build 
+g++ -c -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/cifar10/deephi/miniGoogleNet/zcu102/pruned/src/main.cc -o /root/cifar10/deephi/miniGoogleNet/zcu102/pruned/build/main.o
+/root/cifar10/deephi/miniGoogleNet/zcu102/pruned/src/main.cc: In function ‘void TopK(const float*, int, int, std::vector<std::__cxx11::basic_string<char> >&)’:
+/root/cifar10/deephi/miniGoogleNet/zcu102/pruned/src/main.cc:182:24: warning: variable ‘ki’ set but not used [-Wunused-but-set-variable]
+       pair<float, int> ki = q.top();
+                        ^~
+g++ -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/cifar10/deephi/miniGoogleNet/zcu102/pruned/build/main.o /root/cifar10/deephi/miniGoogleNet/zcu102/pruned/model/arm64_4096/dpu_miniGoogleNet_0.elf /root/cifar10/deephi/miniGoogleNet/zcu102/pruned/model/arm64_4096/dpu_miniGoogleNet_2.elf -o miniGoogleNet -L/usr/local/lib -lopencv_highgui -lopencv_shape -lopencv_video -lopencv_videoio -lopencv_imgcodecs -lopencv_imgproc -lopencv_core -lhineon -ln2cube -ldputils -lpthread
+g++ -c -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/cifar10/deephi/miniGoogleNet/zcu102/pruned/src/main.conv.cc -o /root/cifar10/deephi/miniGoogleNet/zcu102/pruned/build/main.conv.o
+/root/cifar10/deephi/miniGoogleNet/zcu102/pruned/src/main.conv.cc: In function ‘void TopK(const float*, int, int, std::vector<std::__cxx11::basic_string<char> >&)’:
+/root/cifar10/deephi/miniGoogleNet/zcu102/pruned/src/main.conv.cc:182:26: warning: variable ‘ki’ set but not used [-Wunused-but-set-variable]
+         pair<float, int> ki = q.top();
+                          ^~
+g++ -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/cifar10/deephi/miniGoogleNet/zcu102/pruned/build/main.conv.o /root/cifar10/deephi/miniGoogleNet/zcu102/pruned/model/arm64_4096/dpu_miniGoogleNet_0.elf /root/cifar10/deephi/miniGoogleNet/zcu102/pruned/model/arm64_4096/dpu_miniGoogleNet_2.elf -o miniGoogleNet_conv -L/usr/local/lib -lopencv_highgui -lopencv_shape -lopencv_video -lopencv_videoio -lopencv_imgcodecs -lopencv_imgproc -lopencv_core -lhineon -ln2cube -ldputils -lpthread
+make: warning:  Clock skew detected.  Your build may be incomplete.
+mv miniGoogleNet fps_miniGoogleNet
+
+echo "./miniGoogle 1"
+./miniGoogle 1
+./fps_miniGoogleNet 1
+total image : 1000
+[Time]1183772us
+[FPS]844.757
+
+echo "./miniGoogle 2"
+./miniGoogle 2
+./fps_miniGoogleNet 2
+total image : 1000
+[Time]607129us
+[FPS]1647.1
+
+echo "./miniGoogle 3"
+./miniGoogle 3
+./fps_miniGoogleNet 3
+total image : 1000
+[Time]424864us
+[FPS]2353.69
+
+echo "./miniGoogle 4"
+./miniGoogle 4
+./fps_miniGoogleNet 4
+total image : 1000
+[Time]395589us
+[FPS]2527.88
+
+echo "./miniGoogle 5"
+./miniGoogle 5
+./fps_miniGoogleNet 5
+total image : 1000
+[Time]413000us
+[FPS]2421.31
+
+echo "./miniGoogle 6"
+./miniGoogle 6
+./fps_miniGoogleNet 6
+total image : 1000
+[Time]412609us
+[FPS]2423.6
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+net: "cats-vs-dogs/caffe/models/alexnetBNnoLRN/m2/train_val_2_alexnetBNnoLRN.prototxt"
+
+test_iter: 80 # test_iter = validation dataset size / validation batch size
+
+test_interval: 1000
+
+base_lr: 0.001
+
+lr_policy: "step"
+gamma: 0.1
+stepsize: 2500
+
+display: 50
+
+max_iter: 12000
+momentum: 0.9
+weight_decay: 0.0005
+
+snapshot: 5000
+
+snapshot_prefix: "cats-vs-dogs/caffe/models/alexnetBNnoLRN/m2/snapshot_2_alexnetBNnoLRN_"
+
+solver_mode: GPU
+
+#type: "SGD"
+type: "Adam"
+
+random_seed: 1201
+

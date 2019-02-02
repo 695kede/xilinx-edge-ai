@@ -1,0 +1,41 @@
+#!/usr/bin/sh
+
+DNNDK_ROOT=$HOME/ML/DNNDK/tools
+
+net=miniGoogleNet
+
+
+#working directory
+work_dir=$HOME/ML/cifar10/deephi/${net}/quantiz #$(pwd)
+#path of float model
+model_dir=${work_dir}
+#output directory
+output_dir=${work_dir}/decent_output
+
+#soft link to the calibration data
+ln -s $HOME/ML/cifar10/input/cifar10_jpg/calib  $HOME/ML/cifar10/deephi/${net}/quantiz/data/calib
+ln: failed to create symbolic link '/home/danieleb/ML/cifar10/deephi/miniGoogleNet/quantiz/data/calib': File exists
+
+# copy input files from ${net} Caffe project via soft links 
+ln -s $HOME/ML/cifar10/caffe/models/${net}/m3/deephi_train_val_3_${net}.prototxt $HOME/ML/cifar10/deephi/${net}/quantiz/float.prototxt
+
+ln -s $HOME/ML/cifar10/caffe/models/${net}/m3/snapshot_3_${net}__iter_40000.caffemodel $HOME/ML/cifar10/deephi/${net}/quantiz/float.caffemodel
+
+
+# run DECENT
+$DNNDK_ROOT/decent     quantize                                    \
+           -model ${model_dir}/float.prototxt     \
+           -weights ${model_dir}/float.caffemodel \
+           -output_dir ${output_dir} \
+	   -method 1 \
+	   -auto_test -test_iter 50
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I0122 16:51:40.263612 58536 gpu_memory.cpp:99] GPUMemory::Manager initialized with Caching (CUB) GPU Allocator
+I0122 16:51:40.264441 58536 gpu_memory.cpp:101] Total memory: 25620447232, Free: 22918987776, dev_info[0]: total=25620447232 free=22918987776
+I0122 16:51:40.264480 58536 decent.cpp:256] Using GPUs 0
+I0122 16:51:40.264837 58536 decent.cpp:261] GPU 0: Quadro P6000
+I0122 16:51:41.058377 58536 convert_proto.cpp:206] Opening file cifar10/deephi/miniGoogleNet/quantiz/data/calib/calibration.txt
+F0122 16:51:41.058421 58536 convert_proto.cpp:210] Check failed: infile.is_open()  Could not open file: cifar10/deephi/miniGoogleNet/quantiz/data/calib/calibration.txt, please check the root_folder and source in ImageDataLayer.
+*** Check failure stack trace: ***
+Aborted (core dumped)
+

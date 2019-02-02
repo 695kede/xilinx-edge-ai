@@ -1,0 +1,161 @@
+ubuntu@ip-172-31-4-119:~$
+Using username "ubuntu".
+Authenticating with public key "imported-openssh-key"
+=============================================================================
+       __|  __|_  )
+       _|  (     /   Deep Learning AMI (Ubuntu) Version 15.0
+      ___|\___|___|
+=============================================================================
+
+Welcome to Ubuntu 16.04.5 LTS (GNU/Linux 4.4.0-1070-aws x86_64v)
+
+Please use one of the following commands to start the required environment with the framework of your choice:
+for MXNet(+Keras2) with Python3 (CUDA 9.0 and Intel MKL-DNN) _______________________________ source activate mxnet_p36
+for MXNet(+Keras2) with Python2 (CUDA 9.0 and Intel MKL-DNN) _______________________________ source activate mxnet_p27
+for TensorFlow(+Keras2) with Python3 (CUDA 9.0 and Intel MKL-DNN) _____________________ source activate tensorflow_p36
+for TensorFlow(+Keras2) with Python2 (CUDA 9.0 and Intel MKL-DNN) _____________________ source activate tensorflow_p27
+for Theano(+Keras2) with Python3 (CUDA 9.0) _______________________________________________ source activate theano_p36
+for Theano(+Keras2) with Python2 (CUDA 9.0) _______________________________________________ source activate theano_p27
+for PyTorch with Python3 (CUDA 9.2 and Intel MKL) ________________________________________ source activate pytorch_p36
+for PyTorch with Python2 (CUDA 9.2 and Intel MKL) ________________________________________ source activate pytorch_p27
+for CNTK(+Keras2) with Python3 (CUDA 9.0 and Intel MKL-DNN) _________________________________ source activate cntk_p36
+for CNTK(+Keras2) with Python2 (CUDA 9.0 and Intel MKL-DNN) _________________________________ source activate cntk_p27
+for Caffe2 with Python2 (CUDA 9.0) ________________________________________________________ source activate caffe2_p27
+for Caffe with Python2 (CUDA 8.0) __________________________________________________________ source activate caffe_p27
+for Caffe with Python3 (CUDA 8.0) __________________________________________________________ source activate caffe_p35
+for Chainer with Python2 (CUDA 9.0 and Intel iDeep) ______________________________________ source activate chainer_p27
+for Chainer with Python3 (CUDA 9.0 and Intel iDeep) ______________________________________ source activate chainer_p36
+for base Python2 (CUDA 9.0) __________________________________________________________________ source activate python2
+for base Python3 (CUDA 9.0) __________________________________________________________________ source activate python3
+
+Official Conda User Guide: https://conda.io/docs/user-guide/index.html
+AWS Deep Learning AMI Homepage: https://aws.amazon.com/machine-learning/amis/
+Developer Guide and Release Notes: https://docs.aws.amazon.com/dlami/latest/devguide/what-is-dlami.html
+Support: https://forums.aws.amazon.com/forum.jspa?forumID=263
+=============================================================================
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+50 packages can be updated.
+21 updates are security updates.
+
+New release '18.04.1 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+ubuntu@ip-172-31-4-119:~$ ls -l
+total 239300
+drwxrwxr-x 23 ubuntu ubuntu      4096 Sep 22 19:43 anaconda2
+drwxrwxr-x 25 ubuntu ubuntu      4096 Jan 14 10:21 anaconda3
+drwxrwxr-x  3 ubuntu ubuntu      4096 Jan 19 15:30 caffe_tools
+drwxrwxr-x  3 ubuntu ubuntu      4096 Jan 29 14:58 Edge-AI-Platform-Tutorials
+-rw-rw-r--  1 ubuntu ubuntu 223118551 Jan 29 14:40 Edge-AI-Platform-Tutorials.zip
+drwxrwxr-x  8 ubuntu ubuntu      4096 Sep 22 19:39 examples
+drwxrwxr-x  4 ubuntu ubuntu      4096 Jan 29 14:59 ML
+-rw-rw-r--  1 ubuntu ubuntu   2839191 Sep 18 01:47 Nvidia_Cloud_EULA.pdf
+drwxrwxr-x  4 ubuntu ubuntu      4096 Jan 23 14:41 old
+-rw-rw-r--  1 ubuntu ubuntu      2851 Sep 22 19:40 README
+drwxrwxr-x 10 ubuntu ubuntu      4096 Sep 22 22:51 src
+drwxrwxr-x  5 ubuntu ubuntu      4096 Sep 22 19:39 tutorials
+-rw-rw-r--  1 ubuntu ubuntu  19030588 Jan 19 15:14 xlnx_host_208tools_cuda9.tar.gz
+
+ubuntu@ip-172-31-4-119:~$ source ~/ML/cifar10/aws_scripts/set_aws_ML_env_cuda9.sh
+
+unlink: cannot unlink '/home/ubuntu/src/caffe_python_2/distribute/bin/caffe.bin': No such file or directory
+unlink: cannot unlink '/home/ubuntu/src/caffe_python_2/distribute': No such file or directory
+mkdir: cannot create directory ‘/home/ubuntu/caffe_tools’: File exists
+mkdir: cannot create directory ‘/home/ubuntu/caffe_tools/BVLC1v0-Caffe’: File exists
+ln: failed to create symbolic link '/home/ubuntu/caffe_tools/BVLC1v0-Caffe/caffe_python_2': File exists
+ln: failed to create symbolic link '/home/ubuntu/caffe_tools/BVLC1v0-Caffe/distribute/install': File exists
+ln: failed to create symbolic link '/home/ubuntu/caffe_tools/BVLC1v0-Caffe/distribute/bin/caffe.bin': File exists
+./cuda9_tools/
+./cuda9_tools/decent
+./cuda9_tools/dnnc-dpu1.3.0
+./cuda9_tools/dnnc-dpu1.3.7
+Solving environment: done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.5.12
+  latest version: 4.6.1
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+## Package Plan ##
+
+  environment location: /home/ubuntu/anaconda3/envs/tensorflow_p27
+
+  added / updated specs:
+    - keras
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    ca-certificates-2018.12.5  |                0         123 KB
+
+The following packages will be UPDATED:
+
+    ca-certificates: 2018.03.07-0 --> 2018.12.5-0
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+ca-certificates-2018 | 123 KB    | ############################################################################### | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+Solving environment: done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.5.12
+  latest version: 4.6.1
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+## Package Plan ##
+
+  environment location: /home/ubuntu/anaconda3/envs/caffe_p27
+
+  added / updated specs:
+    - pydot
+    - python-lmdb
+    - scikit-learn
+
+
+The following packages will be UPDATED:
+
+    ca-certificates: 2018.03.07-0 --> 2018.12.5-0
+
+Proceed ([y]/n)? y
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+
+decent version 1.2.4
+Build Label Dec  7 2018 02:52:50
+(c) Copyright 2016 – 2018 Xilinx, Inc. All rights reserved.
+
+dnnc version v2.03
+DPU Target : v1.3.0
+Build Label: Dec 11 2018 11:52:13
+Copyright @2018 Xilinx Inc. All Rights Reserved.
+
+ubuntu@ip-172-31-4-119://home/ubuntu/ML/DNNDK$

@@ -1,0 +1,40 @@
+model/arm64_4096/dpu_alexnetBNnoLRN_0.elf.gz:	 72.9% -- replaced with model/arm64_4096/dpu_alexnetBNnoLRN_0.elf
+make: Warning: File 'Makefile' has modification time 14770345 s in the future
+rm -f -rf /root/alexnet_zcu102/baseline/build
+rm -f alexnetBNnoLRN 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Warning: File 'Makefile' has modification time 14770345 s in the future
+mkdir -p /root/alexnet_zcu102/baseline/build 
+g++ -c -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/alexnet_zcu102/baseline/src/main.cc -o /root/alexnet_zcu102/baseline/build/main.o
+g++ -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/alexnet_zcu102/baseline/build/main.o /root/alexnet_zcu102/baseline/model/arm64_4096/dpu_alexnetBNnoLRN_0.elf  -o alexnetBNnoLRN -L/usr/local/lib -lopencv_highgui -lopencv_shape -lopencv_video -lopencv_videoio -lopencv_imgcodecs -lopencv_imgproc -lopencv_core -lhineon -ln2cube -ldputils -lpthread
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+./alexnetBNnoLRN 1
+total image : 1000
+[Time]12636408us
+[FPS]79.1364
+
+./alexnetBNnoLRN 2
+total image : 1000
+[Time]7735114us
+[FPS]129.281
+
+./alexnetBNnoLRN 3
+total image : 1000
+[Time]6603556us
+[FPS]151.434
+
+./alexnetBNnoLRN 4
+total image : 1000
+[Time]7435885us
+[FPS]134.483
+
+./alexnetBNnoLRN 5
+total image : 1000
+[Time]5725865us
+[FPS]174.646
+
+./alexnetBNnoLRN 6
+total image : 1000
+[Time]5827921us
+[FPS]171.588

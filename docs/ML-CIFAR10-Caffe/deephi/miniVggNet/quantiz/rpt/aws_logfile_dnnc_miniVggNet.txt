@@ -1,0 +1,27 @@
+Compiling network: miniVggNet
+[0;33m[DNNC][Warning] layer [loss] is not supported in DPU, deploy it in CPU instead.
+[mFormat: "jpg" not recognized. Use one of: canon cmap cmapx cmapx_np dot dot_json eps fig gv imap imap_np ismap json json0 mp pdf pic plain plain-ext png pov ps ps2 svg svgz tk vml vmlz xdot xdot1.2 xdot1.4 xdot_json
+
+DNNC Kernel Information
+
+1. Overview
+kernel numbers  : 2
+kernel topology : miniVggNet_kernel_graph.jpg
+
+2. Kernel Description in Detail
+kernel id       : 0
+kernel name     : miniVggNet_0
+type            : DPUKernel
+nodes           : NA
+input node(s)   : conv1(0) 
+output node(s)  : fc2(0) 
+
+kernel id       : 1
+kernel name     : miniVggNet_1
+type            : CPUKernel
+nodes           : NA
+input node(s)   : loss 
+output node(s)  : loss 
+
+ copying dpu elf file into /../zcu102/baseline/model/arm64_4096 
+ copying the test images to be used by the ZCU102

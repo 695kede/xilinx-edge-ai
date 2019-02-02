@@ -1,0 +1,4677 @@
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W0130 15:37:41.913255 99291 _caffe.cpp:139] DEPRECATION WARNING - deprecated use of Python interface
+W0130 15:37:41.913280 99291 _caffe.cpp:140] Use this instead (with the named "weights" parameter):
+W0130 15:37:41.913280 99291 _caffe.cpp:142] Net('cats-vs-dogs/caffe/models/alexnetBNnoLRN/m2/deploy_2_alexnetBNnoLRN.prototxt', 1, weights='cats-vs-dogs/caffe/models/alexnetBNnoLRN/m2/snapshot_2_alexnetBNnoLRN__iter_12000.caffemodel')
+I0130 15:37:41.914412 99291 upgrade_proto.cpp:79] Attempting to upgrade batch norm layers using deprecated params: cats-vs-dogs/caffe/models/alexnetBNnoLRN/m2/deploy_2_alexnetBNnoLRN.prototxt
+I0130 15:37:41.914422 99291 upgrade_proto.cpp:82] Successfully upgraded batch norm layers using deprecated params.
+I0130 15:37:41.914583 99291 net.cpp:51] Initializing net from parameters: 
+name: "AlexNet_BNnoLRN m2 deploy"
+state {
+  phase: TEST
+  level: 0
+}
+layer {
+  name: "data"
+  type: "Input"
+  top: "data"
+  input_param {
+    shape {
+      dim: 1
+      dim: 3
+      dim: 227
+      dim: 227
+    }
+  }
+}
+layer {
+  name: "conv1"
+  type: "Convolution"
+  bottom: "data"
+  top: "conv1"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 96
+    pad: 1
+    kernel_size: 11
+    stride: 4
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+layer {
+  name: "bn1"
+  type: "BatchNorm"
+  bottom: "conv1"
+  top: "bn1"
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  batch_norm_param {
+    use_global_stats: true
+  }
+}
+layer {
+  name: "scale1"
+  type: "Scale"
+  bottom: "bn1"
+  top: "scale1"
+  scale_param {
+    bias_term: true
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "scale1"
+  top: "relu1"
+}
+layer {
+  name: "pool1"
+  type: "Pooling"
+  bottom: "relu1"
+  top: "pool1"
+  pooling_param {
+    pool: MAX
+    kernel_size: 3
+    stride: 2
+  }
+}
+layer {
+  name: "conv2"
+  type: "Convolution"
+  bottom: "pool1"
+  top: "conv2"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 256
+    pad: 2
+    kernel_size: 5
+    group: 1
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+      value: 1
+    }
+  }
+}
+layer {
+  name: "bn2"
+  type: "BatchNorm"
+  bottom: "conv2"
+  top: "bn2"
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  batch_norm_param {
+    use_global_stats: true
+  }
+}
+layer {
+  name: "scale2"
+  type: "Scale"
+  bottom: "bn2"
+  top: "scale2"
+  scale_param {
+    bias_term: true
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "scale2"
+  top: "relu2"
+}
+layer {
+  name: "pool2"
+  type: "Pooling"
+  bottom: "relu2"
+  top: "pool2"
+  pooling_param {
+    pool: MAX
+    kernel_size: 3
+    stride: 2
+  }
+}
+layer {
+  name: "conv3"
+  type: "Convolution"
+  bottom: "pool2"
+  top: "conv3"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 384
+    pad: 1
+    kernel_size: 3
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "conv3"
+  top: "relu3"
+}
+layer {
+  name: "conv4"
+  type: "Convolution"
+  bottom: "relu3"
+  top: "conv4"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 384
+    pad: 1
+    kernel_size: 3
+    group: 1
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+      value: 1
+    }
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "conv4"
+  top: "relu4"
+}
+layer {
+  name: "conv5"
+  type: "Convolution"
+  bottom: "relu4"
+  top: "conv5"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 256
+    pad: 1
+    kernel_size: 3
+    group: 1
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+      value: 1
+    }
+  }
+}
+layer {
+  name: "relu5"
+  type: "ReLU"
+  bottom: "conv5"
+  top: "relu5"
+}
+layer {
+  name: "pool5"
+  type: "Pooling"
+  bottom: "relu5"
+  top: "pool5"
+  pooling_param {
+    pool: MAX
+    kernel_size: 3
+    stride: 2
+  }
+}
+layer {
+  name: "fc6"
+  type: "InnerProduct"
+  bottom: "pool5"
+  top: "fc6"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  inner_product_param {
+    num_output: 4096
+    weight_filler {
+      type: "gaussian"
+      std: 0.005
+    }
+    bias_filler {
+      type: "constant"
+      value: 1
+    }
+  }
+}
+layer {
+  name: "relu6"
+  type: "ReLU"
+  bottom: "fc6"
+  top: "relu6"
+}
+layer {
+  name: "drop6"
+  type: "Dropout"
+  bottom: "relu6"
+  top: "drop6"
+  dropout_param {
+    dropout_ratio: 0.5
+  }
+}
+layer {
+  name: "fc7"
+  type: "InnerProduct"
+  bottom: "drop6"
+  top: "fc7"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  inner_product_param {
+    num_output: 4096
+    weight_filler {
+      type: "gaussian"
+      std: 0.005
+    }
+    bias_filler {
+      type: "constant"
+      value: 1
+    }
+  }
+}
+layer {
+  name: "bn7"
+  type: "BatchNorm"
+  bottom: "fc7"
+  top: "bn7"
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  batch_norm_param {
+    use_global_stats: true
+  }
+}
+layer {
+  name: "scale7"
+  type: "Scale"
+  bottom: "bn7"
+  top: "scale7"
+  scale_param {
+    bias_term: true
+  }
+}
+layer {
+  name: "relu7"
+  type: "ReLU"
+  bottom: "scale7"
+  top: "relu7"
+}
+layer {
+  name: "drop7"
+  type: "Dropout"
+  bottom: "relu7"
+  top: "drop7"
+  dropout_param {
+    dropout_ratio: 0.5
+  }
+}
+layer {
+  name: "fc8"
+  type: "InnerProduct"
+  bottom: "drop7"
+  top: "fc8"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  inner_product_param {
+    num_output: 2
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+layer {
+  name: "prob"
+  type: "Softmax"
+  bottom: "fc8"
+  top: "prob"
+}
+I0130 15:37:41.914636 99291 layer_factory.hpp:77] Creating layer data
+I0130 15:37:41.914644 99291 net.cpp:84] Creating Layer data
+I0130 15:37:41.914649 99291 net.cpp:380] data -> data
+I0130 15:37:41.923926 99291 net.cpp:122] Setting up data
+I0130 15:37:41.923941 99291 net.cpp:129] Top shape: 1 3 227 227 (154587)
+I0130 15:37:41.923943 99291 net.cpp:137] Memory required for data: 618348
+I0130 15:37:41.923947 99291 layer_factory.hpp:77] Creating layer conv1
+I0130 15:37:41.923959 99291 net.cpp:84] Creating Layer conv1
+I0130 15:37:41.923964 99291 net.cpp:406] conv1 <- data
+I0130 15:37:41.923969 99291 net.cpp:380] conv1 -> conv1
+I0130 15:37:42.384678 99291 net.cpp:122] Setting up conv1
+I0130 15:37:42.384699 99291 net.cpp:129] Top shape: 1 96 55 55 (290400)
+I0130 15:37:42.384701 99291 net.cpp:137] Memory required for data: 1779948
+I0130 15:37:42.384730 99291 layer_factory.hpp:77] Creating layer bn1
+I0130 15:37:42.384742 99291 net.cpp:84] Creating Layer bn1
+I0130 15:37:42.384745 99291 net.cpp:406] bn1 <- conv1
+I0130 15:37:42.384749 99291 net.cpp:380] bn1 -> bn1
+I0130 15:37:42.384920 99291 net.cpp:122] Setting up bn1
+I0130 15:37:42.384925 99291 net.cpp:129] Top shape: 1 96 55 55 (290400)
+I0130 15:37:42.384927 99291 net.cpp:137] Memory required for data: 2941548
+I0130 15:37:42.384934 99291 layer_factory.hpp:77] Creating layer scale1
+I0130 15:37:42.384938 99291 net.cpp:84] Creating Layer scale1
+I0130 15:37:42.384940 99291 net.cpp:406] scale1 <- bn1
+I0130 15:37:42.384944 99291 net.cpp:380] scale1 -> scale1
+I0130 15:37:42.384970 99291 layer_factory.hpp:77] Creating layer scale1
+I0130 15:37:42.385047 99291 net.cpp:122] Setting up scale1
+I0130 15:37:42.385052 99291 net.cpp:129] Top shape: 1 96 55 55 (290400)
+I0130 15:37:42.385053 99291 net.cpp:137] Memory required for data: 4103148
+I0130 15:37:42.385057 99291 layer_factory.hpp:77] Creating layer relu1
+I0130 15:37:42.385061 99291 net.cpp:84] Creating Layer relu1
+I0130 15:37:42.385062 99291 net.cpp:406] relu1 <- scale1
+I0130 15:37:42.385066 99291 net.cpp:380] relu1 -> relu1
+I0130 15:37:42.385232 99291 net.cpp:122] Setting up relu1
+I0130 15:37:42.385237 99291 net.cpp:129] Top shape: 1 96 55 55 (290400)
+I0130 15:37:42.385239 99291 net.cpp:137] Memory required for data: 5264748
+I0130 15:37:42.385241 99291 layer_factory.hpp:77] Creating layer pool1
+I0130 15:37:42.385246 99291 net.cpp:84] Creating Layer pool1
+I0130 15:37:42.385247 99291 net.cpp:406] pool1 <- relu1
+I0130 15:37:42.385251 99291 net.cpp:380] pool1 -> pool1
+I0130 15:37:42.385272 99291 net.cpp:122] Setting up pool1
+I0130 15:37:42.385277 99291 net.cpp:129] Top shape: 1 96 27 27 (69984)
+I0130 15:37:42.385278 99291 net.cpp:137] Memory required for data: 5544684
+I0130 15:37:42.385280 99291 layer_factory.hpp:77] Creating layer conv2
+I0130 15:37:42.385288 99291 net.cpp:84] Creating Layer conv2
+I0130 15:37:42.385289 99291 net.cpp:406] conv2 <- pool1
+I0130 15:37:42.385293 99291 net.cpp:380] conv2 -> conv2
+I0130 15:37:42.391119 99291 net.cpp:122] Setting up conv2
+I0130 15:37:42.391134 99291 net.cpp:129] Top shape: 1 256 27 27 (186624)
+I0130 15:37:42.391136 99291 net.cpp:137] Memory required for data: 6291180
+I0130 15:37:42.391144 99291 layer_factory.hpp:77] Creating layer bn2
+I0130 15:37:42.391151 99291 net.cpp:84] Creating Layer bn2
+I0130 15:37:42.391153 99291 net.cpp:406] bn2 <- conv2
+I0130 15:37:42.391158 99291 net.cpp:380] bn2 -> bn2
+I0130 15:37:42.391300 99291 net.cpp:122] Setting up bn2
+I0130 15:37:42.391304 99291 net.cpp:129] Top shape: 1 256 27 27 (186624)
+I0130 15:37:42.391306 99291 net.cpp:137] Memory required for data: 7037676
+I0130 15:37:42.391310 99291 layer_factory.hpp:77] Creating layer scale2
+I0130 15:37:42.391315 99291 net.cpp:84] Creating Layer scale2
+I0130 15:37:42.391317 99291 net.cpp:406] scale2 <- bn2
+I0130 15:37:42.391321 99291 net.cpp:380] scale2 -> scale2
+I0130 15:37:42.391345 99291 layer_factory.hpp:77] Creating layer scale2
+I0130 15:37:42.391413 99291 net.cpp:122] Setting up scale2
+I0130 15:37:42.391417 99291 net.cpp:129] Top shape: 1 256 27 27 (186624)
+I0130 15:37:42.391419 99291 net.cpp:137] Memory required for data: 7784172
+I0130 15:37:42.391423 99291 layer_factory.hpp:77] Creating layer relu2
+I0130 15:37:42.391425 99291 net.cpp:84] Creating Layer relu2
+I0130 15:37:42.391427 99291 net.cpp:406] relu2 <- scale2
+I0130 15:37:42.391430 99291 net.cpp:380] relu2 -> relu2
+I0130 15:37:42.391594 99291 net.cpp:122] Setting up relu2
+I0130 15:37:42.391599 99291 net.cpp:129] Top shape: 1 256 27 27 (186624)
+I0130 15:37:42.391602 99291 net.cpp:137] Memory required for data: 8530668
+I0130 15:37:42.391603 99291 layer_factory.hpp:77] Creating layer pool2
+I0130 15:37:42.391607 99291 net.cpp:84] Creating Layer pool2
+I0130 15:37:42.391608 99291 net.cpp:406] pool2 <- relu2
+I0130 15:37:42.391611 99291 net.cpp:380] pool2 -> pool2
+I0130 15:37:42.391634 99291 net.cpp:122] Setting up pool2
+I0130 15:37:42.391638 99291 net.cpp:129] Top shape: 1 256 13 13 (43264)
+I0130 15:37:42.391639 99291 net.cpp:137] Memory required for data: 8703724
+I0130 15:37:42.391641 99291 layer_factory.hpp:77] Creating layer conv3
+I0130 15:37:42.391647 99291 net.cpp:84] Creating Layer conv3
+I0130 15:37:42.391649 99291 net.cpp:406] conv3 <- pool2
+I0130 15:37:42.391652 99291 net.cpp:380] conv3 -> conv3
+I0130 15:37:42.398893 99291 net.cpp:122] Setting up conv3
+I0130 15:37:42.398905 99291 net.cpp:129] Top shape: 1 384 13 13 (64896)
+I0130 15:37:42.398907 99291 net.cpp:137] Memory required for data: 8963308
+I0130 15:37:42.398913 99291 layer_factory.hpp:77] Creating layer relu3
+I0130 15:37:42.398918 99291 net.cpp:84] Creating Layer relu3
+I0130 15:37:42.398921 99291 net.cpp:406] relu3 <- conv3
+I0130 15:37:42.398924 99291 net.cpp:380] relu3 -> relu3
+I0130 15:37:42.399230 99291 net.cpp:122] Setting up relu3
+I0130 15:37:42.399237 99291 net.cpp:129] Top shape: 1 384 13 13 (64896)
+I0130 15:37:42.399240 99291 net.cpp:137] Memory required for data: 9222892
+I0130 15:37:42.399242 99291 layer_factory.hpp:77] Creating layer conv4
+I0130 15:37:42.399250 99291 net.cpp:84] Creating Layer conv4
+I0130 15:37:42.399251 99291 net.cpp:406] conv4 <- relu3
+I0130 15:37:42.399255 99291 net.cpp:380] conv4 -> conv4
+I0130 15:37:42.409750 99291 net.cpp:122] Setting up conv4
+I0130 15:37:42.409763 99291 net.cpp:129] Top shape: 1 384 13 13 (64896)
+I0130 15:37:42.409765 99291 net.cpp:137] Memory required for data: 9482476
+I0130 15:37:42.409775 99291 layer_factory.hpp:77] Creating layer relu4
+I0130 15:37:42.409780 99291 net.cpp:84] Creating Layer relu4
+I0130 15:37:42.409781 99291 net.cpp:406] relu4 <- conv4
+I0130 15:37:42.409785 99291 net.cpp:380] relu4 -> relu4
+I0130 15:37:42.409966 99291 net.cpp:122] Setting up relu4
+I0130 15:37:42.409971 99291 net.cpp:129] Top shape: 1 384 13 13 (64896)
+I0130 15:37:42.409973 99291 net.cpp:137] Memory required for data: 9742060
+I0130 15:37:42.409976 99291 layer_factory.hpp:77] Creating layer conv5
+I0130 15:37:42.409982 99291 net.cpp:84] Creating Layer conv5
+I0130 15:37:42.409984 99291 net.cpp:406] conv5 <- relu4
+I0130 15:37:42.409987 99291 net.cpp:380] conv5 -> conv5
+I0130 15:37:42.417441 99291 net.cpp:122] Setting up conv5
+I0130 15:37:42.417454 99291 net.cpp:129] Top shape: 1 256 13 13 (43264)
+I0130 15:37:42.417455 99291 net.cpp:137] Memory required for data: 9915116
+I0130 15:37:42.417460 99291 layer_factory.hpp:77] Creating layer relu5
+I0130 15:37:42.417467 99291 net.cpp:84] Creating Layer relu5
+I0130 15:37:42.417470 99291 net.cpp:406] relu5 <- conv5
+I0130 15:37:42.417474 99291 net.cpp:380] relu5 -> relu5
+I0130 15:37:42.417659 99291 net.cpp:122] Setting up relu5
+I0130 15:37:42.417665 99291 net.cpp:129] Top shape: 1 256 13 13 (43264)
+I0130 15:37:42.417666 99291 net.cpp:137] Memory required for data: 10088172
+I0130 15:37:42.417668 99291 layer_factory.hpp:77] Creating layer pool5
+I0130 15:37:42.417673 99291 net.cpp:84] Creating Layer pool5
+I0130 15:37:42.417675 99291 net.cpp:406] pool5 <- relu5
+I0130 15:37:42.417680 99291 net.cpp:380] pool5 -> pool5
+I0130 15:37:42.417707 99291 net.cpp:122] Setting up pool5
+I0130 15:37:42.417711 99291 net.cpp:129] Top shape: 1 256 6 6 (9216)
+I0130 15:37:42.417713 99291 net.cpp:137] Memory required for data: 10125036
+I0130 15:37:42.417716 99291 layer_factory.hpp:77] Creating layer fc6
+I0130 15:37:42.417721 99291 net.cpp:84] Creating Layer fc6
+I0130 15:37:42.417722 99291 net.cpp:406] fc6 <- pool5
+I0130 15:37:42.417726 99291 net.cpp:380] fc6 -> fc6
+I0130 15:37:42.670292 99291 net.cpp:122] Setting up fc6
+I0130 15:37:42.670311 99291 net.cpp:129] Top shape: 1 4096 (4096)
+I0130 15:37:42.670315 99291 net.cpp:137] Memory required for data: 10141420
+I0130 15:37:42.670338 99291 layer_factory.hpp:77] Creating layer relu6
+I0130 15:37:42.670346 99291 net.cpp:84] Creating Layer relu6
+I0130 15:37:42.670348 99291 net.cpp:406] relu6 <- fc6
+I0130 15:37:42.670353 99291 net.cpp:380] relu6 -> relu6
+I0130 15:37:42.670837 99291 net.cpp:122] Setting up relu6
+I0130 15:37:42.670845 99291 net.cpp:129] Top shape: 1 4096 (4096)
+I0130 15:37:42.670848 99291 net.cpp:137] Memory required for data: 10157804
+I0130 15:37:42.670851 99291 layer_factory.hpp:77] Creating layer drop6
+I0130 15:37:42.670856 99291 net.cpp:84] Creating Layer drop6
+I0130 15:37:42.670859 99291 net.cpp:406] drop6 <- relu6
+I0130 15:37:42.670864 99291 net.cpp:380] drop6 -> drop6
+I0130 15:37:42.670892 99291 net.cpp:122] Setting up drop6
+I0130 15:37:42.670897 99291 net.cpp:129] Top shape: 1 4096 (4096)
+I0130 15:37:42.670898 99291 net.cpp:137] Memory required for data: 10174188
+I0130 15:37:42.670900 99291 layer_factory.hpp:77] Creating layer fc7
+I0130 15:37:42.670905 99291 net.cpp:84] Creating Layer fc7
+I0130 15:37:42.670907 99291 net.cpp:406] fc7 <- drop6
+I0130 15:37:42.670912 99291 net.cpp:380] fc7 -> fc7
+I0130 15:37:42.784735 99291 net.cpp:122] Setting up fc7
+I0130 15:37:42.784754 99291 net.cpp:129] Top shape: 1 4096 (4096)
+I0130 15:37:42.784755 99291 net.cpp:137] Memory required for data: 10190572
+I0130 15:37:42.784763 99291 layer_factory.hpp:77] Creating layer bn7
+I0130 15:37:42.784772 99291 net.cpp:84] Creating Layer bn7
+I0130 15:37:42.784775 99291 net.cpp:406] bn7 <- fc7
+I0130 15:37:42.784780 99291 net.cpp:380] bn7 -> bn7
+I0130 15:37:42.784941 99291 net.cpp:122] Setting up bn7
+I0130 15:37:42.784945 99291 net.cpp:129] Top shape: 1 4096 (4096)
+I0130 15:37:42.784947 99291 net.cpp:137] Memory required for data: 10206956
+I0130 15:37:42.784952 99291 layer_factory.hpp:77] Creating layer scale7
+I0130 15:37:42.784957 99291 net.cpp:84] Creating Layer scale7
+I0130 15:37:42.784960 99291 net.cpp:406] scale7 <- bn7
+I0130 15:37:42.784963 99291 net.cpp:380] scale7 -> scale7
+I0130 15:37:42.784988 99291 layer_factory.hpp:77] Creating layer scale7
+I0130 15:37:42.785075 99291 net.cpp:122] Setting up scale7
+I0130 15:37:42.785079 99291 net.cpp:129] Top shape: 1 4096 (4096)
+I0130 15:37:42.785081 99291 net.cpp:137] Memory required for data: 10223340
+I0130 15:37:42.785085 99291 layer_factory.hpp:77] Creating layer relu7
+I0130 15:37:42.785089 99291 net.cpp:84] Creating Layer relu7
+I0130 15:37:42.785090 99291 net.cpp:406] relu7 <- scale7
+I0130 15:37:42.785094 99291 net.cpp:380] relu7 -> relu7
+I0130 15:37:42.785332 99291 net.cpp:122] Setting up relu7
+I0130 15:37:42.785338 99291 net.cpp:129] Top shape: 1 4096 (4096)
+I0130 15:37:42.785339 99291 net.cpp:137] Memory required for data: 10239724
+I0130 15:37:42.785341 99291 layer_factory.hpp:77] Creating layer drop7
+I0130 15:37:42.785347 99291 net.cpp:84] Creating Layer drop7
+I0130 15:37:42.785351 99291 net.cpp:406] drop7 <- relu7
+I0130 15:37:42.785353 99291 net.cpp:380] drop7 -> drop7
+I0130 15:37:42.785379 99291 net.cpp:122] Setting up drop7
+I0130 15:37:42.785383 99291 net.cpp:129] Top shape: 1 4096 (4096)
+I0130 15:37:42.785385 99291 net.cpp:137] Memory required for data: 10256108
+I0130 15:37:42.785387 99291 layer_factory.hpp:77] Creating layer fc8
+I0130 15:37:42.785392 99291 net.cpp:84] Creating Layer fc8
+I0130 15:37:42.785394 99291 net.cpp:406] fc8 <- drop7
+I0130 15:37:42.785398 99291 net.cpp:380] fc8 -> fc8
+I0130 15:37:42.786146 99291 net.cpp:122] Setting up fc8
+I0130 15:37:42.786154 99291 net.cpp:129] Top shape: 1 2 (2)
+I0130 15:37:42.786157 99291 net.cpp:137] Memory required for data: 10256116
+I0130 15:37:42.786162 99291 layer_factory.hpp:77] Creating layer prob
+I0130 15:37:42.786168 99291 net.cpp:84] Creating Layer prob
+I0130 15:37:42.786171 99291 net.cpp:406] prob <- fc8
+I0130 15:37:42.786175 99291 net.cpp:380] prob -> prob
+I0130 15:37:42.786420 99291 net.cpp:122] Setting up prob
+I0130 15:37:42.786425 99291 net.cpp:129] Top shape: 1 2 (2)
+I0130 15:37:42.786427 99291 net.cpp:137] Memory required for data: 10256124
+I0130 15:37:42.786429 99291 net.cpp:200] prob does not need backward computation.
+I0130 15:37:42.786432 99291 net.cpp:200] fc8 does not need backward computation.
+I0130 15:37:42.786434 99291 net.cpp:200] drop7 does not need backward computation.
+I0130 15:37:42.786437 99291 net.cpp:200] relu7 does not need backward computation.
+I0130 15:37:42.786438 99291 net.cpp:200] scale7 does not need backward computation.
+I0130 15:37:42.786440 99291 net.cpp:200] bn7 does not need backward computation.
+I0130 15:37:42.786442 99291 net.cpp:200] fc7 does not need backward computation.
+I0130 15:37:42.786444 99291 net.cpp:200] drop6 does not need backward computation.
+I0130 15:37:42.786448 99291 net.cpp:200] relu6 does not need backward computation.
+I0130 15:37:42.786449 99291 net.cpp:200] fc6 does not need backward computation.
+I0130 15:37:42.786451 99291 net.cpp:200] pool5 does not need backward computation.
+I0130 15:37:42.786455 99291 net.cpp:200] relu5 does not need backward computation.
+I0130 15:37:42.786458 99291 net.cpp:200] conv5 does not need backward computation.
+I0130 15:37:42.786459 99291 net.cpp:200] relu4 does not need backward computation.
+I0130 15:37:42.786461 99291 net.cpp:200] conv4 does not need backward computation.
+I0130 15:37:42.786464 99291 net.cpp:200] relu3 does not need backward computation.
+I0130 15:37:42.786466 99291 net.cpp:200] conv3 does not need backward computation.
+I0130 15:37:42.786469 99291 net.cpp:200] pool2 does not need backward computation.
+I0130 15:37:42.786471 99291 net.cpp:200] relu2 does not need backward computation.
+I0130 15:37:42.786473 99291 net.cpp:200] scale2 does not need backward computation.
+I0130 15:37:42.786475 99291 net.cpp:200] bn2 does not need backward computation.
+I0130 15:37:42.786478 99291 net.cpp:200] conv2 does not need backward computation.
+I0130 15:37:42.786480 99291 net.cpp:200] pool1 does not need backward computation.
+I0130 15:37:42.786482 99291 net.cpp:200] relu1 does not need backward computation.
+I0130 15:37:42.786484 99291 net.cpp:200] scale1 does not need backward computation.
+I0130 15:37:42.786486 99291 net.cpp:200] bn1 does not need backward computation.
+I0130 15:37:42.786489 99291 net.cpp:200] conv1 does not need backward computation.
+I0130 15:37:42.786491 99291 net.cpp:200] data does not need backward computation.
+I0130 15:37:42.786492 99291 net.cpp:242] This network produces output prob
+I0130 15:37:42.786506 99291 net.cpp:255] Network initialization done.
+I0130 15:37:42.927352 99291 upgrade_proto.cpp:79] Attempting to upgrade batch norm layers using deprecated params: cats-vs-dogs/caffe/models/alexnetBNnoLRN/m2/snapshot_2_alexnetBNnoLRN__iter_12000.caffemodel
+I0130 15:37:42.927371 99291 upgrade_proto.cpp:82] Successfully upgraded batch norm layers using deprecated params.
+I0130 15:37:42.961374 99291 net.cpp:744] Ignoring source layer loss
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.597.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6298.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7217.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6136.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4240.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6380.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.630.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7523.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2604.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12089.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9398.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2746.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1841.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3523.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12423.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12379.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7385.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5782.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2449.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4602.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1458.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4950.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10022.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5906.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8581.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10839.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12371.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.778.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10669.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1803.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12385.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12094.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1888.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7778.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4182.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8149.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1945.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9303.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.810.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4360.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6307.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5756.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9526.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.582.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12048.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4999.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9507.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5159.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1001.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8925.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3262.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2870.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2236.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8933.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1698.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3563.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11344.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2574.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2052.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6140.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10126.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8038.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4750.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2896.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11942.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11137.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8388.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6812.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1928.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1217.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2873.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7382.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10450.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2843.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7108.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3741.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10574.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9037.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10749.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1898.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3038.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10865.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3696.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1451.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.653.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12178.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8964.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4276.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9599.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3394.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9758.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8923.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10408.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.518.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8696.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8518.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11870.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10469.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7706.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5034.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.167.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10970.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2935.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2115.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6371.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10532.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6246.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2545.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6514.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6379.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11337.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10597.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.603.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.820.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1701.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6709.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5805.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10567.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4489.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12469.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1085.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5886.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7203.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9048.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10119.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8954.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2522.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7496.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4803.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12293.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10235.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6179.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10368.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6620.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8872.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3185.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4024.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.52.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8573.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8771.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5241.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9081.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3679.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10626.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7595.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.284.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3723.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9484.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4573.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1129.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11835.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10346.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4664.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9817.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6619.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2636.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6518.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9148.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3525.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10422.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4641.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5788.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2640.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2685.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8911.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6671.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6372.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5181.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11426.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2327.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5324.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9061.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8949.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.677.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9207.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7713.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5939.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5680.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4170.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7768.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5178.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10031.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9369.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2583.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2652.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5694.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6713.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6168.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.750.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7842.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6595.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11043.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3264.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2200.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9971.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3571.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8754.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4120.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11923.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2815.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10291.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1246.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6592.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6286.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3917.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7660.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9570.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9678.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2057.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1968.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.498.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.44.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11879.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9645.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8231.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10345.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2378.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6603.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3463.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5367.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.371.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.786.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7921.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4953.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10887.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6748.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5628.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.647.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4936.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1632.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1969.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10565.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5703.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7600.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12231.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5110.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.205.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11311.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1730.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8210.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4163.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1234.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7257.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12242.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.459.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12037.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5648.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6816.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7082.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10028.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4994.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6466.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5309.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8209.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4644.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11057.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8130.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1583.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.473.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10950.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.516.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5180.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1569.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.807.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6192.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3881.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.147.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9859.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7578.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2370.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5249.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10895.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7539.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4868.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10794.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.161.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2435.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.86.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1441.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5182.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3795.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5491.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11658.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10558.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4185.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2468.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3634.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2812.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8986.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3865.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6503.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1757.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11978.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6187.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6550.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5642.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5575.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8826.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10432.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8314.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1533.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1940.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1117.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.156.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9657.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1282.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9269.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5380.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8119.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11993.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9402.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9585.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12233.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6360.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8817.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10028.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6467.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.17.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4946.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6467.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.462.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3263.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2213.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6422.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.655.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2560.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8091.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12150.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7891.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3538.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9236.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1811.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11685.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.994.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2917.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4666.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10264.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7223.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1219.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6065.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5398.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11325.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2820.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5347.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.389.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2644.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6453.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7974.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9816.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1178.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10963.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12211.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11905.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7356.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3888.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.814.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10197.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10567.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5760.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9002.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6711.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7337.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5539.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11741.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2782.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.294.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4382.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7510.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8273.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9291.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8904.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1080.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7308.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8608.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6402.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.763.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10835.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11366.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4016.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.508.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6714.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10891.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6659.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6739.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7895.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3636.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3232.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5819.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3165.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3934.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7603.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7967.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9311.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7151.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4690.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8212.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6528.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.286.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1486.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10997.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8169.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1920.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2420.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1750.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1563.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11064.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3753.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2561.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8341.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6323.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7436.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7333.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10093.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7102.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6687.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12247.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7829.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7556.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7856.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4070.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10182.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3127.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6383.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8106.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6123.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8165.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8880.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3957.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6036.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5363.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.659.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6018.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5365.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8381.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9170.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12170.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.454.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4248.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1897.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10431.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11598.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.741.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9635.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10742.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7077.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6933.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.919.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4479.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6847.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5200.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9781.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5287.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4826.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2972.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5373.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.878.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.576.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10224.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9669.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4296.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4066.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4291.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11867.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5829.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8026.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12046.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7045.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1137.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4170.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8011.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12452.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9553.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11230.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7736.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3682.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2311.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10320.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6448.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11391.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11910.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4299.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9580.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10959.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6743.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10766.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6296.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4020.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4368.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8212.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10711.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.866.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8546.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9952.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1309.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.298.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11703.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9319.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.903.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3527.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9954.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8585.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4214.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7306.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12012.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6650.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.103.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8614.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3965.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4447.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6478.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7018.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4811.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6523.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10797.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8304.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6506.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3585.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12184.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10792.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3106.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2724.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5809.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10806.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9827.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8694.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8019.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4792.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8221.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1468.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6389.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9134.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1653.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5172.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8216.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7986.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.153.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3148.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4140.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.476.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8672.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1233.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7808.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11365.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6828.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1528.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7518.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11786.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1823.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3974.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9738.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9756.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.245.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8423.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.393.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3061.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7534.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7159.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12334.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9195.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10617.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10715.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1887.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6424.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1384.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9711.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10138.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.289.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11387.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4181.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2161.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5389.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1717.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4939.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6124.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2046.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3821.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11345.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1335.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1812.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8159.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.96.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6366.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11451.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6619.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2913.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2908.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12288.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8626.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8085.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11186.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4097.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1194.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3157.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5033.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10531.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9179.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5320.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1833.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5140.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12179.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.776.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6450.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2585.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12038.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4358.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2647.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1170.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2259.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8870.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3257.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6051.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9301.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4469.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1524.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3050.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.605.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4065.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9843.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12351.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2881.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12254.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1311.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10237.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11641.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2669.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8697.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5359.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9167.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12172.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2802.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9534.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12034.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2471.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8673.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11329.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.608.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1695.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8934.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8747.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.787.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4847.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3134.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.599.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7291.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9170.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2817.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1951.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1482.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7835.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1334.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4411.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6961.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12028.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9480.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11539.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6685.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.474.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12304.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8658.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10716.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8977.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.808.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7381.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.141.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2030.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1100.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11278.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6369.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6236.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6457.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.968.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4558.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10498.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6810.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8903.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1425.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1473.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3376.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6505.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.160.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2895.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11954.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1166.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7197.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7227.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5070.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1150.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10622.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10847.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4317.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5560.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10964.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2018.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11504.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10952.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1480.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10847.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9088.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.102.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.711.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8649.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7299.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7093.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11907.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12493.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8750.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5842.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9540.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7332.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11302.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10611.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3432.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8515.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.960.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11726.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10980.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6333.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5725.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3950.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6670.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4137.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10446.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12006.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2192.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9823.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4022.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11793.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6848.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.98.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1599.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9598.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2484.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.789.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10673.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2147.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6041.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9664.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3978.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7278.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11705.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5245.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1596.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9289.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3459.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11568.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10323.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7878.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11219.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10546.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6605.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4239.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4545.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7044.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3041.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4473.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4040.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6776.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10236.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10620.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1053.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11848.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11931.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2733.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9570.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7363.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4805.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3592.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10402.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10134.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7462.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5336.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8082.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.882.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11753.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10784.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8793.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2432.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.6157.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10157.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3139.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8367.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.1655.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11855.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3012.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10858.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11042.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11252.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7667.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2478.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8479.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5793.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.980.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.2078.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10913.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.62.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.11849.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.9673.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3637.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3665.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3460.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12113.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1905.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8653.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6016.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7390.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.3196.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8343.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8812.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6988.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10041.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12050.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11101.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4277.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10700.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8222.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7017.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10249.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10444.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9908.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.4619.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.12036.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.8167.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.215.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4583.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.10848.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.858.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.7833.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12134.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/dog.5271.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11904.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8734.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10313.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6152.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11658.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7225.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6567.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3080.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10740.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5384.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4320.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7509.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2419.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11577.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2163.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2276.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1025.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.348.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12363.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12229.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12196.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2559.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7542.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8795.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1126.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7407.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6621.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4273.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11425.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6689.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5460.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11693.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1663.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9162.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5139.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6573.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1965.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7128.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3270.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11402.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9183.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4217.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8843.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11266.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5403.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2146.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6658.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10914.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1174.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2236.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4329.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2767.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9101.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3769.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.791.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9014.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3499.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2558.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2029.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11497.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.291.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1984.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4476.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6522.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5506.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.401.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2337.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.747.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9199.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5089.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3575.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4594.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4380.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1837.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4721.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5324.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5418.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8243.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11423.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11470.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11070.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10258.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.4332.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12101.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12337.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6513.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11073.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6071.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2239.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11128.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1807.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.295.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10734.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9516.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.87.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12372.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2940.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3633.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8591.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12449.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3766.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7130.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10516.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9390.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1307.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11765.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.446.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1268.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.582.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.460.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10040.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11258.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.158.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.596.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12063.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11308.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7425.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12073.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1722.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.699.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6440.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8768.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12142.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7050.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2627.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9561.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5393.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1443.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7840.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9903.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1987.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2849.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1254.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2534.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2324.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1822.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3112.jpg
+PREDICTED: 1
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6998.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1460.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9070.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7671.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5325.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8225.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.6678.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5750.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11990.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.112.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.468.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3942.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1849.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.3182.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10027.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8932.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5496.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7271.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.365.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8463.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.1536.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5728.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2655.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.9066.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.909.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.12302.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.10052.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.11317.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7552.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.8632.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.2818.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.7475.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/danieleb/ML/cats-vs-dogs/input/jpg/test/cat.5184.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+             precision    recall  f1-score   support
+
+        cat       0.96      0.95      0.96       500
+        dog       0.95      0.96      0.96       500
+
+avg / total       0.96      0.96      0.96      1000
+
+SKLEARN Accuracy = 0.96
+
+
+TOTAL NUMBER OF TRUE  PREDICTIONS =  957
+TOTAL NUMBER OF FALSE PREDICTIONS =  43
+TOTAL NUMBER OF true  dog PREDICTIONS =  481
+TOTAL NUMBER OF true  cat PREDICTIONS =  476
+TOTAL NUMBER OF cat predicted as dog  =  24
+TOTAL NUMBER OF dog predicted as cat  =  19
+MANUALLY COMPUTED RECALL = 0.96
+

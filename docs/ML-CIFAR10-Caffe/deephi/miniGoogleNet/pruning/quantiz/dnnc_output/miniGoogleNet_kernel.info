@@ -1,0 +1,36 @@
+
+DNNC Kernel Information
+
+1. Overview
+kernel numbers  : 4
+kernel topology : miniGoogleNet_kernel_graph.jpg
+
+2. Kernel Description in Detail
+kernel id       : 0
+kernel name     : miniGoogleNet_0
+type            : DPUKernel
+nodes           : NA
+input node(s)   : conv1_3x3_s1(0) 
+output node(s)  : inception_11a_output(0) 
+
+kernel id       : 1
+kernel name     : miniGoogleNet_1
+type            : CPUKernel
+nodes           : NA
+input node(s)   : avg_pool_12_8x8_s1 
+output node(s)  : avg_pool_12_8x8_s1 
+
+kernel id       : 2
+kernel name     : miniGoogleNet_2
+type            : DPUKernel
+nodes           : NA
+input node(s)   : loss_classifier(0) 
+output node(s)  : loss_classifier(0) 
+
+kernel id       : 3
+kernel name     : miniGoogleNet_3
+type            : CPUKernel
+nodes           : NA
+input node(s)   : loss 
+output node(s)  : loss 
+

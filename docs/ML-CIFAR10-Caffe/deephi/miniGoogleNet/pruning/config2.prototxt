@@ -1,0 +1,28 @@
+# directory where saving the output files
+workspace: "cifar10/deephi/miniGoogleNet/pruning"
+
+gpu: "0"
+
+# the number of iterations to run in test phase.
+# Max num =validation set / batch_size = 9000 / 50
+test_iter: 180
+
+# the accuracy name of the model output you care about
+#acc_name: "top-5"
+acc_name: "top-1"
+
+model: "cifar10/deephi/miniGoogleNet/pruning/train_val.prototxt"
+
+#second run
+weights: "cifar10/deephi/miniGoogleNet/pruning/regular_rate_0.1/snapshots/_iter_40000.caffemodel"
+
+
+# solver used for fine tuning
+solver:  "cifar10/deephi/miniGoogleNet/pruning/solver.prototxt"
+
+# expected compression ratio: 0.1 means 10%
+rate: 0.2 
+
+
+#compression method used (only REGULAR is available)
+pruner { method: REGULAR }

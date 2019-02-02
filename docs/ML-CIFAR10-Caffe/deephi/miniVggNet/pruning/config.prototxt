@@ -1,0 +1,44 @@
+# directory where saving the output files
+workspace: "/home/danieleb/ML/cifar10/deephi/miniVggNet/pruning"
+
+gpu: "0"
+
+# the number of iterations to run in test phase: Max num =validation set / batch_size = 9000 / 50
+test_iter: 180
+
+# the accuracy name of the model output you care about
+acc_name: "top-1"
+
+# model for the training
+model:   "/home/danieleb/ML/cifar10/deephi/miniVggNet/pruning/train_val.prototxt"
+
+## first run
+weights: "/home/danieleb/ML/cifar10/deephi/miniVggNet/pruning/float.caffemodel"
+
+## second run
+#weights: "/home/danieleb/ML/cifar10/deephi/miniVggNet/pruning/regular_rate_0.1/snapshots/_iter_20000.caffemodel"
+## third run
+#weights: "/home/danieleb/ML/cifar10/deephi/miniVggNet/pruning/regular_rate_0.2/snapshots/_iter_20000.caffemodel"
+## 4-th run
+#weights: "/home/danieleb/ML/cifar10/deephi/miniVggNet/pruning/regular_rate_0.3/snapshots/_iter_20000.caffemodel"
+## 5-th run
+#weights: "/home/danieleb/ML/cifar10/deephi/miniVggNet/pruning/regular_rate_0.4/snapshots/_iter_20000.caffemodel"
+## 6-th run
+#weights: "/home/danieleb/ML/cifar10/deephi/miniVggNet/pruning/regular_rate_0.5/snapshots/_iter_20000.caffemodel"
+## 7-th run
+#weights: "/home/danieleb/ML/cifar10/deephi/miniVggNet/pruning/regular_rate_0.6/snapshots/_iter_20000.caffemodel"
+
+# solver used for fine tuning
+solver:  "/home/danieleb/ML/cifar10/deephi/miniVggNet/pruning/solver.prototxt"
+
+# expected compression ratio: 0.1 means 10%
+rate: 0.1  #first run
+#rate: 0.2 #second run
+#rate: 0.3 #third run
+#rate: 0.4 # 4-th run
+#rate: 0.5 # 5-th run
+#rate: 0.6 # 6-th run
+#rate: 0.7 # 7-th run
+
+#compression method used (only REGULAR is available)
+pruner { method: REGULAR }

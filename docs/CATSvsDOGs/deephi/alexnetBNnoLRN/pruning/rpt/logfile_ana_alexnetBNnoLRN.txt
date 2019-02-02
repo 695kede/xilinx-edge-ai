@@ -1,0 +1,15 @@
+I0130 15:46:53.331774 99750 deephi_compress.cpp:203] Starting analysis of cats-vs-dogs/deephi/alexnetBNnoLRN/pruning/float.caffemodel
+I0130 15:46:53.331950 99750 sens_analyser.cpp:145] Analysis completed 0%
+I0130 15:47:38.041903 99750 sens_analyser.cpp:212] Analysing layer [conv1] done
+I0130 15:47:38.041935 99750 sens_analyser.cpp:213] Analysis completed 20%
+I0130 15:48:18.985512 99750 sens_analyser.cpp:212] Analysing layer [conv2] done
+I0130 15:48:18.985543 99750 sens_analyser.cpp:213] Analysis completed 40%
+I0130 15:49:00.304545 99750 sens_analyser.cpp:212] Analysing layer [conv3] done
+I0130 15:49:00.304577 99750 sens_analyser.cpp:213] Analysis completed 60%
+I0130 15:49:40.932471 99750 sens_analyser.cpp:212] Analysing layer [conv4] done
+I0130 15:49:40.932502 99750 sens_analyser.cpp:213] Analysis completed 80%
+I0130 15:50:21.821130 99750 sens_analyser.cpp:212] Analysing layer [conv5] done
+I0130 15:50:21.821161 99750 sens_analyser.cpp:213] Analysis completed 100%
+I0130 15:50:21.825997 99750 deephi_compress.cpp:205] Analysis done.
+Now you can compress the model with the following command:
+deephi_compress compress -config /home/danieleb/ML/cats-vs-dogs/deephi/alexnetBNnoLRN/pruning/config0.prototxt

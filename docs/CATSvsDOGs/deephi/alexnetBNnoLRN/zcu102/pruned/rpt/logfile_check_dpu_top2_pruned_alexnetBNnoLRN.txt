@@ -1,0 +1,349 @@
+./rpt/logfile_top2_pruned_alexnetBNnoLRN.txt  has  3015  lines
+LINE:  test_images/dog.5829.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.982014  name = cat
+[Top]1 prob = 0.017986  name = dog
+
+
+LINE:  test_images/cat.5648.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.679179  name = dog
+[Top]1 prob = 0.320821  name = cat
+
+
+LINE:  test_images/dog.5367.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.993307  name = cat
+[Top]1 prob = 0.006693  name = dog
+
+
+LINE:  test_images/dog.5906.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.998073  name = cat
+[Top]1 prob = 0.001927  name = dog
+
+
+LINE:  test_images/cat.10432.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.999089  name = dog
+[Top]1 prob = 0.000911  name = cat
+
+
+LINE:  test_images/dog.8870.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.777300  name = cat
+[Top]1 prob = 0.222700  name = dog
+
+
+LINE:  test_images/cat.12254.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.500000  name = dog
+[Top]1 prob = 0.500000  name = cat
+
+
+LINE:  test_images/cat.10258.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.731059  name = dog
+[Top]1 prob = 0.268941  name = cat
+
+
+LINE:  test_images/cat.7671.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.500000  name = dog
+[Top]1 prob = 0.500000  name = cat
+
+
+LINE:  test_images/dog.2652.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.731059  name = cat
+[Top]1 prob = 0.268941  name = dog
+
+
+LINE:  test_images/cat.599.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.998499  name = dog
+[Top]1 prob = 0.001501  name = cat
+
+
+LINE:  test_images/dog.2327.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.994780  name = cat
+[Top]1 prob = 0.005220  name = dog
+
+
+LINE:  test_images/cat.5393.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.817575  name = dog
+[Top]1 prob = 0.182426  name = cat
+
+
+LINE:  test_images/dog.6450.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.998830  name = cat
+[Top]1 prob = 0.001170  name = dog
+
+
+LINE:  test_images/cat.5324.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.939913  name = dog
+[Top]1 prob = 0.060087  name = cat
+
+
+LINE:  test_images/cat.3270.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.996827  name = dog
+[Top]1 prob = 0.003173  name = cat
+
+
+LINE:  test_images/dog.7595.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.998073  name = cat
+[Top]1 prob = 0.001927  name = dog
+
+
+LINE:  test_images/dog.7706.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.939913  name = cat
+[Top]1 prob = 0.060087  name = dog
+
+
+LINE:  test_images/dog.10546.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.622459  name = cat
+[Top]1 prob = 0.377541  name = dog
+
+
+LINE:  test_images/cat.12493.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.995930  name = dog
+[Top]1 prob = 0.004070  name = cat
+
+
+LINE:  test_images/dog.1473.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.999089  name = cat
+[Top]1 prob = 0.000911  name = dog
+
+
+LINE:  test_images/cat.4214.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.924142  name = dog
+[Top]1 prob = 0.075858  name = cat
+
+
+LINE:  test_images/dog.9269.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.622459  name = cat
+[Top]1 prob = 0.377541  name = dog
+
+
+LINE:  test_images/dog.2636.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.999665  name = cat
+[Top]1 prob = 0.000335  name = dog
+
+
+LINE:  test_images/dog.8911.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.985936  name = cat
+[Top]1 prob = 0.014064  name = dog
+
+
+LINE:  test_images/cat.11726.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.939913  name = dog
+[Top]1 prob = 0.060087  name = cat
+
+
+LINE:  test_images/cat.12229.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.562177  name = dog
+[Top]1 prob = 0.437824  name = cat
+
+
+LINE:  test_images/cat.5496.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.999569  name = dog
+[Top]1 prob = 0.000431  name = cat
+
+
+LINE:  test_images/cat.1080.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.989013  name = dog
+[Top]1 prob = 0.010987  name = cat
+
+
+LINE:  test_images/dog.2018.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.999089  name = cat
+[Top]1 prob = 0.000911  name = dog
+
+
+LINE:  test_images/cat.2311.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.995930  name = dog
+[Top]1 prob = 0.004070  name = cat
+
+
+LINE:  test_images/dog.5034.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.998499  name = cat
+[Top]1 prob = 0.001501  name = dog
+
+
+LINE:  test_images/cat.3766.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.952574  name = dog
+[Top]1 prob = 0.047426  name = cat
+
+
+LINE:  test_images/cat.1524.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.991423  name = dog
+[Top]1 prob = 0.008577  name = cat
+
+
+LINE:  test_images/cat.44.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.939913  name = dog
+[Top]1 prob = 0.060087  name = cat
+
+
+LINE:  test_images/cat.2432.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.962673  name = dog
+[Top]1 prob = 0.037327  name = cat
+
+
+LINE:  test_images/cat.5760.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.970688  name = dog
+[Top]1 prob = 0.029312  name = cat
+
+
+LINE:  test_images/dog.5694.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.962673  name = cat
+[Top]1 prob = 0.037327  name = dog
+
+
+LINE:  test_images/dog.10970.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.817575  name = cat
+[Top]1 prob = 0.182426  name = dog
+
+
+LINE:  test_images/cat.655.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.999089  name = dog
+[Top]1 prob = 0.000911  name = cat
+
+
+LINE:  test_images/dog.6380.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.996827  name = cat
+[Top]1 prob = 0.003173  name = dog
+
+
+LINE:  test_images/dog.98.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.962673  name = cat
+[Top]1 prob = 0.037327  name = dog
+
+
+LINE:  test_images/cat.2817.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.999797  name = dog
+[Top]1 prob = 0.000203  name = cat
+
+
+LINE:  test_images/dog.10749.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.998073  name = cat
+[Top]1 prob = 0.001927  name = dog
+
+
+LINE:  test_images/cat.10716.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.999797  name = dog
+[Top]1 prob = 0.000203  name = cat
+
+
+LINE:  test_images/dog.11879.jpg
+PREDICTED:  [ 0.] cat
+EXPECTED :  [ 1.] dog
+[Top]0 prob = 0.999089  name = cat
+[Top]1 prob = 0.000911  name = dog
+
+
+LINE:  test_images/cat.10740.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.999972  name = dog
+[Top]1 prob = 0.000028  name = cat
+
+
+LINE:  test_images/cat.5347.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.952574  name = dog
+[Top]1 prob = 0.047426  name = cat
+
+
+LINE:  test_images/cat.4868.jpg
+PREDICTED:  [ 1.] dog
+EXPECTED :  [ 0.] cat
+[Top]0 prob = 0.994780  name = dog
+[Top]1 prob = 0.005220  name = cat
+
+
+number of total images predicted  999
+number of top1 false predictions  49
+number of top1 right predictions  950
+top1 accuracy = 0.95
+

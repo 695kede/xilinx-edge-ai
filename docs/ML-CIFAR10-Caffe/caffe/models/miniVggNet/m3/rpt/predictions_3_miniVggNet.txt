@@ -1,0 +1,4676 @@
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W0121 15:45:23.436578  6240 _caffe.cpp:139] DEPRECATION WARNING - deprecated use of Python interface
+W0121 15:45:23.436615  6240 _caffe.cpp:140] Use this instead (with the named "weights" parameter):
+W0121 15:45:23.436619  6240 _caffe.cpp:142] Net('cifar10/caffe/models/miniVggNet/m3/deploy_3_miniVggNet.prototxt', 1, weights='cifar10/caffe/models/miniVggNet/m3/snapshot_3_miniVggNet__iter_40000.caffemodel')
+I0121 15:45:23.439738  6240 upgrade_proto.cpp:77] Attempting to upgrade batch norm layers using deprecated params: cifar10/caffe/models/miniVggNet/m3/deploy_3_miniVggNet.prototxt
+I0121 15:45:23.439759  6240 upgrade_proto.cpp:80] Successfully upgraded batch norm layers using deprecated params.
+I0121 15:45:23.440953  6240 net.cpp:51] Initializing net from parameters: 
+state {
+  phase: TEST
+  level: 0
+}
+layer {
+  name: "data"
+  type: "Input"
+  top: "data"
+  input_param {
+    shape {
+      dim: 1
+      dim: 3
+      dim: 32
+      dim: 32
+    }
+  }
+}
+layer {
+  name: "conv1"
+  type: "Convolution"
+  bottom: "data"
+  top: "conv1"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 32
+    pad: 1
+    kernel_size: 3
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+layer {
+  name: "bn1"
+  type: "BatchNorm"
+  bottom: "conv1"
+  top: "bn1"
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  batch_norm_param {
+    use_global_stats: true
+  }
+}
+layer {
+  name: "scale1"
+  type: "Scale"
+  bottom: "bn1"
+  top: "scale1"
+  scale_param {
+    bias_term: true
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "scale1"
+  top: "relu1"
+}
+layer {
+  name: "conv2"
+  type: "Convolution"
+  bottom: "relu1"
+  top: "conv2"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 32
+    pad: 1
+    kernel_size: 3
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+layer {
+  name: "bn2"
+  type: "BatchNorm"
+  bottom: "conv2"
+  top: "bn2"
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  batch_norm_param {
+    use_global_stats: true
+  }
+}
+layer {
+  name: "scale2"
+  type: "Scale"
+  bottom: "bn2"
+  top: "scale2"
+  scale_param {
+    bias_term: true
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "scale2"
+  top: "relu2"
+}
+layer {
+  name: "pool1"
+  type: "Pooling"
+  bottom: "relu2"
+  top: "pool1"
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 2
+  }
+}
+layer {
+  name: "drop1"
+  type: "Dropout"
+  bottom: "pool1"
+  top: "drop1"
+  dropout_param {
+    dropout_ratio: 0.25
+  }
+}
+layer {
+  name: "conv3"
+  type: "Convolution"
+  bottom: "drop1"
+  top: "conv3"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 64
+    pad: 1
+    kernel_size: 3
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+layer {
+  name: "bn3"
+  type: "BatchNorm"
+  bottom: "conv3"
+  top: "bn3"
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  batch_norm_param {
+    use_global_stats: true
+  }
+}
+layer {
+  name: "scale3"
+  type: "Scale"
+  bottom: "bn3"
+  top: "scale3"
+  scale_param {
+    bias_term: true
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "scale3"
+  top: "relu3"
+}
+layer {
+  name: "conv4"
+  type: "Convolution"
+  bottom: "relu3"
+  top: "conv4"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 64
+    pad: 1
+    kernel_size: 3
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+layer {
+  name: "bn4"
+  type: "BatchNorm"
+  bottom: "conv4"
+  top: "bn4"
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  batch_norm_param {
+    use_global_stats: true
+  }
+}
+layer {
+  name: "scale4"
+  type: "Scale"
+  bottom: "bn4"
+  top: "scale4"
+  scale_param {
+    bias_term: true
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "scale4"
+  top: "relu4"
+}
+layer {
+  name: "pool2"
+  type: "Pooling"
+  bottom: "relu4"
+  top: "pool2"
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 2
+  }
+}
+layer {
+  name: "drop2"
+  type: "Dropout"
+  bottom: "pool2"
+  top: "drop2"
+  dropout_param {
+    dropout_ratio: 0.25
+  }
+}
+layer {
+  name: "fc1"
+  type: "InnerProduct"
+  bottom: "drop2"
+  top: "fc1"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  inner_product_param {
+    num_output: 512
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 1
+    }
+  }
+}
+layer {
+  name: "bn5"
+  type: "BatchNorm"
+  bottom: "fc1"
+  top: "bn5"
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  batch_norm_param {
+    use_global_stats: true
+  }
+}
+layer {
+  name: "scale5"
+  type: "Scale"
+  bottom: "bn5"
+  top: "scale5"
+  scale_param {
+    bias_term: true
+  }
+}
+layer {
+  name: "relu5"
+  type: "ReLU"
+  bottom: "scale5"
+  top: "relu5"
+}
+layer {
+  name: "drop3"
+  type: "Dropout"
+  bottom: "relu5"
+  top: "drop3"
+  dropout_param {
+    dropout_ratio: 0.5
+  }
+}
+layer {
+  name: "fc2"
+  type: "InnerProduct"
+  bottom: "drop3"
+  top: "fc2"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  inner_product_param {
+    num_output: 10
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 1
+    }
+  }
+}
+layer {
+  name: "prob"
+  type: "Softmax"
+  bottom: "fc2"
+  top: "prob"
+}
+I0121 15:45:23.441962  6240 layer_factory.hpp:77] Creating layer data
+I0121 15:45:23.441988  6240 net.cpp:84] Creating Layer data
+I0121 15:45:23.441994  6240 net.cpp:380] data -> data
+I0121 15:45:23.475244  6240 net.cpp:122] Setting up data
+I0121 15:45:23.475272  6240 net.cpp:129] Top shape: 1 3 32 32 (3072)
+I0121 15:45:23.475277  6240 net.cpp:137] Memory required for data: 12288
+I0121 15:45:23.475282  6240 layer_factory.hpp:77] Creating layer conv1
+I0121 15:45:23.475306  6240 net.cpp:84] Creating Layer conv1
+I0121 15:45:23.475322  6240 net.cpp:406] conv1 <- data
+I0121 15:45:23.475337  6240 net.cpp:380] conv1 -> conv1
+I0121 15:45:23.870986  6240 net.cpp:122] Setting up conv1
+I0121 15:45:23.871033  6240 net.cpp:129] Top shape: 1 32 32 32 (32768)
+I0121 15:45:23.871038  6240 net.cpp:137] Memory required for data: 143360
+I0121 15:45:23.871055  6240 layer_factory.hpp:77] Creating layer bn1
+I0121 15:45:23.871073  6240 net.cpp:84] Creating Layer bn1
+I0121 15:45:23.871081  6240 net.cpp:406] bn1 <- conv1
+I0121 15:45:23.871089  6240 net.cpp:380] bn1 -> bn1
+I0121 15:45:23.871372  6240 net.cpp:122] Setting up bn1
+I0121 15:45:23.871402  6240 net.cpp:129] Top shape: 1 32 32 32 (32768)
+I0121 15:45:23.871408  6240 net.cpp:137] Memory required for data: 274432
+I0121 15:45:23.871423  6240 layer_factory.hpp:77] Creating layer scale1
+I0121 15:45:23.872730  6240 net.cpp:84] Creating Layer scale1
+I0121 15:45:23.872745  6240 net.cpp:406] scale1 <- bn1
+I0121 15:45:23.872751  6240 net.cpp:380] scale1 -> scale1
+I0121 15:45:23.872817  6240 layer_factory.hpp:77] Creating layer scale1
+I0121 15:45:23.874006  6240 net.cpp:122] Setting up scale1
+I0121 15:45:23.874024  6240 net.cpp:129] Top shape: 1 32 32 32 (32768)
+I0121 15:45:23.874029  6240 net.cpp:137] Memory required for data: 405504
+I0121 15:45:23.874037  6240 layer_factory.hpp:77] Creating layer relu1
+I0121 15:45:23.874045  6240 net.cpp:84] Creating Layer relu1
+I0121 15:45:23.874052  6240 net.cpp:406] relu1 <- scale1
+I0121 15:45:23.874060  6240 net.cpp:380] relu1 -> relu1
+I0121 15:45:23.875274  6240 net.cpp:122] Setting up relu1
+I0121 15:45:23.875296  6240 net.cpp:129] Top shape: 1 32 32 32 (32768)
+I0121 15:45:23.875300  6240 net.cpp:137] Memory required for data: 536576
+I0121 15:45:23.875305  6240 layer_factory.hpp:77] Creating layer conv2
+I0121 15:45:23.875316  6240 net.cpp:84] Creating Layer conv2
+I0121 15:45:23.875329  6240 net.cpp:406] conv2 <- relu1
+I0121 15:45:23.875342  6240 net.cpp:380] conv2 -> conv2
+I0121 15:45:23.876925  6240 net.cpp:122] Setting up conv2
+I0121 15:45:23.876950  6240 net.cpp:129] Top shape: 1 32 32 32 (32768)
+I0121 15:45:23.876955  6240 net.cpp:137] Memory required for data: 667648
+I0121 15:45:23.876965  6240 layer_factory.hpp:77] Creating layer bn2
+I0121 15:45:23.876986  6240 net.cpp:84] Creating Layer bn2
+I0121 15:45:23.876993  6240 net.cpp:406] bn2 <- conv2
+I0121 15:45:23.877014  6240 net.cpp:380] bn2 -> bn2
+I0121 15:45:23.877231  6240 net.cpp:122] Setting up bn2
+I0121 15:45:23.877249  6240 net.cpp:129] Top shape: 1 32 32 32 (32768)
+I0121 15:45:23.877254  6240 net.cpp:137] Memory required for data: 798720
+I0121 15:45:23.877262  6240 layer_factory.hpp:77] Creating layer scale2
+I0121 15:45:23.877279  6240 net.cpp:84] Creating Layer scale2
+I0121 15:45:23.877287  6240 net.cpp:406] scale2 <- bn2
+I0121 15:45:23.877305  6240 net.cpp:380] scale2 -> scale2
+I0121 15:45:23.877368  6240 layer_factory.hpp:77] Creating layer scale2
+I0121 15:45:23.877501  6240 net.cpp:122] Setting up scale2
+I0121 15:45:23.877518  6240 net.cpp:129] Top shape: 1 32 32 32 (32768)
+I0121 15:45:23.877522  6240 net.cpp:137] Memory required for data: 929792
+I0121 15:45:23.877529  6240 layer_factory.hpp:77] Creating layer relu2
+I0121 15:45:23.877542  6240 net.cpp:84] Creating Layer relu2
+I0121 15:45:23.877553  6240 net.cpp:406] relu2 <- scale2
+I0121 15:45:23.877563  6240 net.cpp:380] relu2 -> relu2
+I0121 15:45:23.877857  6240 net.cpp:122] Setting up relu2
+I0121 15:45:23.877880  6240 net.cpp:129] Top shape: 1 32 32 32 (32768)
+I0121 15:45:23.877885  6240 net.cpp:137] Memory required for data: 1060864
+I0121 15:45:23.877890  6240 layer_factory.hpp:77] Creating layer pool1
+I0121 15:45:23.877900  6240 net.cpp:84] Creating Layer pool1
+I0121 15:45:23.877913  6240 net.cpp:406] pool1 <- relu2
+I0121 15:45:23.877924  6240 net.cpp:380] pool1 -> pool1
+I0121 15:45:23.877992  6240 net.cpp:122] Setting up pool1
+I0121 15:45:23.878010  6240 net.cpp:129] Top shape: 1 32 16 16 (8192)
+I0121 15:45:23.878013  6240 net.cpp:137] Memory required for data: 1093632
+I0121 15:45:23.878017  6240 layer_factory.hpp:77] Creating layer drop1
+I0121 15:45:23.878024  6240 net.cpp:84] Creating Layer drop1
+I0121 15:45:23.878029  6240 net.cpp:406] drop1 <- pool1
+I0121 15:45:23.878037  6240 net.cpp:380] drop1 -> drop1
+I0121 15:45:23.878094  6240 net.cpp:122] Setting up drop1
+I0121 15:45:23.878113  6240 net.cpp:129] Top shape: 1 32 16 16 (8192)
+I0121 15:45:23.878119  6240 net.cpp:137] Memory required for data: 1126400
+I0121 15:45:23.878124  6240 layer_factory.hpp:77] Creating layer conv3
+I0121 15:45:23.878144  6240 net.cpp:84] Creating Layer conv3
+I0121 15:45:23.878157  6240 net.cpp:406] conv3 <- drop1
+I0121 15:45:23.878170  6240 net.cpp:380] conv3 -> conv3
+I0121 15:45:23.879760  6240 net.cpp:122] Setting up conv3
+I0121 15:45:23.879788  6240 net.cpp:129] Top shape: 1 64 16 16 (16384)
+I0121 15:45:23.879796  6240 net.cpp:137] Memory required for data: 1191936
+I0121 15:45:23.879808  6240 layer_factory.hpp:77] Creating layer bn3
+I0121 15:45:23.879823  6240 net.cpp:84] Creating Layer bn3
+I0121 15:45:23.879838  6240 net.cpp:406] bn3 <- conv3
+I0121 15:45:23.879853  6240 net.cpp:380] bn3 -> bn3
+I0121 15:45:23.880080  6240 net.cpp:122] Setting up bn3
+I0121 15:45:23.880098  6240 net.cpp:129] Top shape: 1 64 16 16 (16384)
+I0121 15:45:23.880103  6240 net.cpp:137] Memory required for data: 1257472
+I0121 15:45:23.880118  6240 layer_factory.hpp:77] Creating layer scale3
+I0121 15:45:23.880137  6240 net.cpp:84] Creating Layer scale3
+I0121 15:45:23.880144  6240 net.cpp:406] scale3 <- bn3
+I0121 15:45:23.880156  6240 net.cpp:380] scale3 -> scale3
+I0121 15:45:23.880246  6240 layer_factory.hpp:77] Creating layer scale3
+I0121 15:45:23.880388  6240 net.cpp:122] Setting up scale3
+I0121 15:45:23.880404  6240 net.cpp:129] Top shape: 1 64 16 16 (16384)
+I0121 15:45:23.880409  6240 net.cpp:137] Memory required for data: 1323008
+I0121 15:45:23.880416  6240 layer_factory.hpp:77] Creating layer relu3
+I0121 15:45:23.880422  6240 net.cpp:84] Creating Layer relu3
+I0121 15:45:23.880429  6240 net.cpp:406] relu3 <- scale3
+I0121 15:45:23.880434  6240 net.cpp:380] relu3 -> relu3
+I0121 15:45:23.880599  6240 net.cpp:122] Setting up relu3
+I0121 15:45:23.880620  6240 net.cpp:129] Top shape: 1 64 16 16 (16384)
+I0121 15:45:23.880625  6240 net.cpp:137] Memory required for data: 1388544
+I0121 15:45:23.880630  6240 layer_factory.hpp:77] Creating layer conv4
+I0121 15:45:23.880640  6240 net.cpp:84] Creating Layer conv4
+I0121 15:45:23.880651  6240 net.cpp:406] conv4 <- relu3
+I0121 15:45:23.880663  6240 net.cpp:380] conv4 -> conv4
+I0121 15:45:23.881745  6240 net.cpp:122] Setting up conv4
+I0121 15:45:23.881772  6240 net.cpp:129] Top shape: 1 64 16 16 (16384)
+I0121 15:45:23.881777  6240 net.cpp:137] Memory required for data: 1454080
+I0121 15:45:23.881784  6240 layer_factory.hpp:77] Creating layer bn4
+I0121 15:45:23.881796  6240 net.cpp:84] Creating Layer bn4
+I0121 15:45:23.881811  6240 net.cpp:406] bn4 <- conv4
+I0121 15:45:23.881822  6240 net.cpp:380] bn4 -> bn4
+I0121 15:45:23.882042  6240 net.cpp:122] Setting up bn4
+I0121 15:45:23.882062  6240 net.cpp:129] Top shape: 1 64 16 16 (16384)
+I0121 15:45:23.882067  6240 net.cpp:137] Memory required for data: 1519616
+I0121 15:45:23.882076  6240 layer_factory.hpp:77] Creating layer scale4
+I0121 15:45:23.882083  6240 net.cpp:84] Creating Layer scale4
+I0121 15:45:23.882089  6240 net.cpp:406] scale4 <- bn4
+I0121 15:45:23.882097  6240 net.cpp:380] scale4 -> scale4
+I0121 15:45:23.882156  6240 layer_factory.hpp:77] Creating layer scale4
+I0121 15:45:23.882297  6240 net.cpp:122] Setting up scale4
+I0121 15:45:23.882314  6240 net.cpp:129] Top shape: 1 64 16 16 (16384)
+I0121 15:45:23.882318  6240 net.cpp:137] Memory required for data: 1585152
+I0121 15:45:23.882325  6240 layer_factory.hpp:77] Creating layer relu4
+I0121 15:45:23.882331  6240 net.cpp:84] Creating Layer relu4
+I0121 15:45:23.882336  6240 net.cpp:406] relu4 <- scale4
+I0121 15:45:23.882344  6240 net.cpp:380] relu4 -> relu4
+I0121 15:45:23.882620  6240 net.cpp:122] Setting up relu4
+I0121 15:45:23.882644  6240 net.cpp:129] Top shape: 1 64 16 16 (16384)
+I0121 15:45:23.882650  6240 net.cpp:137] Memory required for data: 1650688
+I0121 15:45:23.882654  6240 layer_factory.hpp:77] Creating layer pool2
+I0121 15:45:23.882661  6240 net.cpp:84] Creating Layer pool2
+I0121 15:45:23.882668  6240 net.cpp:406] pool2 <- relu4
+I0121 15:45:23.882674  6240 net.cpp:380] pool2 -> pool2
+I0121 15:45:23.882735  6240 net.cpp:122] Setting up pool2
+I0121 15:45:23.882750  6240 net.cpp:129] Top shape: 1 64 8 8 (4096)
+I0121 15:45:23.882755  6240 net.cpp:137] Memory required for data: 1667072
+I0121 15:45:23.882760  6240 layer_factory.hpp:77] Creating layer drop2
+I0121 15:45:23.882766  6240 net.cpp:84] Creating Layer drop2
+I0121 15:45:23.882803  6240 net.cpp:406] drop2 <- pool2
+I0121 15:45:23.882814  6240 net.cpp:380] drop2 -> drop2
+I0121 15:45:23.882874  6240 net.cpp:122] Setting up drop2
+I0121 15:45:23.882892  6240 net.cpp:129] Top shape: 1 64 8 8 (4096)
+I0121 15:45:23.882897  6240 net.cpp:137] Memory required for data: 1683456
+I0121 15:45:23.882901  6240 layer_factory.hpp:77] Creating layer fc1
+I0121 15:45:23.882910  6240 net.cpp:84] Creating Layer fc1
+I0121 15:45:23.882921  6240 net.cpp:406] fc1 <- drop2
+I0121 15:45:23.882935  6240 net.cpp:380] fc1 -> fc1
+I0121 15:45:23.897557  6240 net.cpp:122] Setting up fc1
+I0121 15:45:23.897588  6240 net.cpp:129] Top shape: 1 512 (512)
+I0121 15:45:23.897595  6240 net.cpp:137] Memory required for data: 1685504
+I0121 15:45:23.897608  6240 layer_factory.hpp:77] Creating layer bn5
+I0121 15:45:23.897621  6240 net.cpp:84] Creating Layer bn5
+I0121 15:45:23.897635  6240 net.cpp:406] bn5 <- fc1
+I0121 15:45:23.897647  6240 net.cpp:380] bn5 -> bn5
+I0121 15:45:23.897857  6240 net.cpp:122] Setting up bn5
+I0121 15:45:23.897876  6240 net.cpp:129] Top shape: 1 512 (512)
+I0121 15:45:23.897884  6240 net.cpp:137] Memory required for data: 1687552
+I0121 15:45:23.897909  6240 layer_factory.hpp:77] Creating layer scale5
+I0121 15:45:23.897927  6240 net.cpp:84] Creating Layer scale5
+I0121 15:45:23.897934  6240 net.cpp:406] scale5 <- bn5
+I0121 15:45:23.897943  6240 net.cpp:380] scale5 -> scale5
+I0121 15:45:23.897996  6240 layer_factory.hpp:77] Creating layer scale5
+I0121 15:45:23.898157  6240 net.cpp:122] Setting up scale5
+I0121 15:45:23.898175  6240 net.cpp:129] Top shape: 1 512 (512)
+I0121 15:45:23.898180  6240 net.cpp:137] Memory required for data: 1689600
+I0121 15:45:23.898187  6240 layer_factory.hpp:77] Creating layer relu5
+I0121 15:45:23.898195  6240 net.cpp:84] Creating Layer relu5
+I0121 15:45:23.898202  6240 net.cpp:406] relu5 <- scale5
+I0121 15:45:23.898208  6240 net.cpp:380] relu5 -> relu5
+I0121 15:45:23.898389  6240 net.cpp:122] Setting up relu5
+I0121 15:45:23.898408  6240 net.cpp:129] Top shape: 1 512 (512)
+I0121 15:45:23.898413  6240 net.cpp:137] Memory required for data: 1691648
+I0121 15:45:23.898418  6240 layer_factory.hpp:77] Creating layer drop3
+I0121 15:45:23.898424  6240 net.cpp:84] Creating Layer drop3
+I0121 15:45:23.898429  6240 net.cpp:406] drop3 <- relu5
+I0121 15:45:23.898440  6240 net.cpp:380] drop3 -> drop3
+I0121 15:45:23.898490  6240 net.cpp:122] Setting up drop3
+I0121 15:45:23.898504  6240 net.cpp:129] Top shape: 1 512 (512)
+I0121 15:45:23.898509  6240 net.cpp:137] Memory required for data: 1693696
+I0121 15:45:23.898512  6240 layer_factory.hpp:77] Creating layer fc2
+I0121 15:45:23.898524  6240 net.cpp:84] Creating Layer fc2
+I0121 15:45:23.898535  6240 net.cpp:406] fc2 <- drop3
+I0121 15:45:23.898551  6240 net.cpp:380] fc2 -> fc2
+I0121 15:45:23.898723  6240 net.cpp:122] Setting up fc2
+I0121 15:45:23.898746  6240 net.cpp:129] Top shape: 1 10 (10)
+I0121 15:45:23.898753  6240 net.cpp:137] Memory required for data: 1693736
+I0121 15:45:23.898764  6240 layer_factory.hpp:77] Creating layer prob
+I0121 15:45:23.898790  6240 net.cpp:84] Creating Layer prob
+I0121 15:45:23.898799  6240 net.cpp:406] prob <- fc2
+I0121 15:45:23.898808  6240 net.cpp:380] prob -> prob
+I0121 15:45:23.900177  6240 net.cpp:122] Setting up prob
+I0121 15:45:23.900200  6240 net.cpp:129] Top shape: 1 10 (10)
+I0121 15:45:23.900208  6240 net.cpp:137] Memory required for data: 1693776
+I0121 15:45:23.900215  6240 net.cpp:200] prob does not need backward computation.
+I0121 15:45:23.900223  6240 net.cpp:200] fc2 does not need backward computation.
+I0121 15:45:23.900228  6240 net.cpp:200] drop3 does not need backward computation.
+I0121 15:45:23.900236  6240 net.cpp:200] relu5 does not need backward computation.
+I0121 15:45:23.900249  6240 net.cpp:200] scale5 does not need backward computation.
+I0121 15:45:23.900256  6240 net.cpp:200] bn5 does not need backward computation.
+I0121 15:45:23.900264  6240 net.cpp:200] fc1 does not need backward computation.
+I0121 15:45:23.900269  6240 net.cpp:200] drop2 does not need backward computation.
+I0121 15:45:23.900275  6240 net.cpp:200] pool2 does not need backward computation.
+I0121 15:45:23.900281  6240 net.cpp:200] relu4 does not need backward computation.
+I0121 15:45:23.900287  6240 net.cpp:200] scale4 does not need backward computation.
+I0121 15:45:23.900310  6240 net.cpp:200] bn4 does not need backward computation.
+I0121 15:45:23.900324  6240 net.cpp:200] conv4 does not need backward computation.
+I0121 15:45:23.900332  6240 net.cpp:200] relu3 does not need backward computation.
+I0121 15:45:23.900338  6240 net.cpp:200] scale3 does not need backward computation.
+I0121 15:45:23.900346  6240 net.cpp:200] bn3 does not need backward computation.
+I0121 15:45:23.900352  6240 net.cpp:200] conv3 does not need backward computation.
+I0121 15:45:23.900370  6240 net.cpp:200] drop1 does not need backward computation.
+I0121 15:45:23.900395  6240 net.cpp:200] pool1 does not need backward computation.
+I0121 15:45:23.900419  6240 net.cpp:200] relu2 does not need backward computation.
+I0121 15:45:23.900434  6240 net.cpp:200] scale2 does not need backward computation.
+I0121 15:45:23.900442  6240 net.cpp:200] bn2 does not need backward computation.
+I0121 15:45:23.900449  6240 net.cpp:200] conv2 does not need backward computation.
+I0121 15:45:23.900455  6240 net.cpp:200] relu1 does not need backward computation.
+I0121 15:45:23.900461  6240 net.cpp:200] scale1 does not need backward computation.
+I0121 15:45:23.900467  6240 net.cpp:200] bn1 does not need backward computation.
+I0121 15:45:23.900487  6240 net.cpp:200] conv1 does not need backward computation.
+I0121 15:45:23.900503  6240 net.cpp:200] data does not need backward computation.
+I0121 15:45:23.900511  6240 net.cpp:242] This network produces output prob
+I0121 15:45:23.900544  6240 net.cpp:255] Network initialization done.
+I0121 15:45:23.905956  6240 upgrade_proto.cpp:77] Attempting to upgrade batch norm layers using deprecated params: cifar10/caffe/models/miniVggNet/m3/snapshot_3_miniVggNet__iter_40000.caffemodel
+I0121 15:45:23.905980  6240 upgrade_proto.cpp:80] Successfully upgraded batch norm layers using deprecated params.
+I0121 15:45:23.907347  6240 net.cpp:744] Ignoring source layer loss
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00044.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00004.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00059.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00055.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00068.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00079.jpg
+PREDICTED: 9
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00038.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00039.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00064.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00013.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00002.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00081.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00072.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00078.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00035.jpg
+PREDICTED: 6
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00054.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00085.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00021.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00080.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00093.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00026.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00067.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00018.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00096.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00010.jpg
+PREDICTED: 6
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00039.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00022.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00042.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00009.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00054.jpg
+PREDICTED: 8
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00002.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00047.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00029.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00005.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00066.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00064.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00063.jpg
+PREDICTED: 4
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00002.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00065.jpg
+PREDICTED: 5
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00100.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00034.jpg
+PREDICTED: 8
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00011.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00057.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00078.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00087.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00094.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00098.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00094.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00029.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00059.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00070.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00063.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00059.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00051.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00067.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00069.jpg
+PREDICTED: 2
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00087.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00095.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00009.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00092.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00055.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00074.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00078.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00082.jpg
+PREDICTED: 3
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00058.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00096.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00002.jpg
+PREDICTED: 3
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00017.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00091.jpg
+PREDICTED: 0
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00035.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00028.jpg
+PREDICTED: 8
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00047.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00075.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00088.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00062.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00018.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00081.jpg
+PREDICTED: 1
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00003.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00073.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00086.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00019.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00067.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00012.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00047.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00082.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00050.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00040.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00075.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00092.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00089.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00044.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00031.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00010.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00043.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00029.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00086.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00011.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00085.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00006.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00081.jpg
+PREDICTED: 4
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00006.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00059.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00048.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00092.jpg
+PREDICTED: 8
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00029.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00037.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00091.jpg
+PREDICTED: 4
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00059.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00068.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00073.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00026.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00044.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00072.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00035.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00004.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00048.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00099.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00079.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00053.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00046.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00058.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00060.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00073.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00097.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00035.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00061.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00046.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00070.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00059.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00002.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00008.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00034.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00098.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00004.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00070.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00017.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00074.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00094.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00018.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00051.jpg
+PREDICTED: 2
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00037.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00042.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00087.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00011.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00008.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00066.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00097.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00051.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00063.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00091.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00080.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00032.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00096.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00069.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00077.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00027.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00080.jpg
+PREDICTED: 3
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00019.jpg
+PREDICTED: 8
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00020.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00038.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00003.jpg
+PREDICTED: 4
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00001.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00033.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00057.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00051.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00010.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00086.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00081.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00065.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00090.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00054.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00006.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00029.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00098.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00020.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00064.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00079.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00066.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00086.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00034.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00090.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00077.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00085.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00061.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00054.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00094.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00044.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00030.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00050.jpg
+PREDICTED: 6
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00016.jpg
+PREDICTED: 3
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00094.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00058.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00076.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00065.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00062.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00032.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00097.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00054.jpg
+PREDICTED: 4
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00060.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00029.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00065.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00065.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00079.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00100.jpg
+PREDICTED: 3
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00031.jpg
+PREDICTED: 3
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00053.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00073.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00015.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00028.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00068.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00028.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00047.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00019.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00053.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00045.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00081.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00100.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00087.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00035.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00033.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00036.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00069.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00049.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00036.jpg
+PREDICTED: 9
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00100.jpg
+PREDICTED: 2
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00093.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00040.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00031.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00049.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00069.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00001.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00094.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00031.jpg
+PREDICTED: 4
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00001.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00071.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00036.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00012.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00075.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00055.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00095.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00090.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00051.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00058.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00052.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00007.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00039.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00028.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00008.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00070.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00044.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00003.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00053.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00029.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00071.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00050.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00084.jpg
+PREDICTED: 3
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00032.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00088.jpg
+PREDICTED: 6
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00026.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00044.jpg
+PREDICTED: 0
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00060.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00021.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00064.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00009.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00084.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00072.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00032.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00011.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00094.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00023.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00086.jpg
+PREDICTED: 6
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00022.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00021.jpg
+PREDICTED: 0
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00090.jpg
+PREDICTED: 4
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00045.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00078.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00076.jpg
+PREDICTED: 3
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00093.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00099.jpg
+PREDICTED: 3
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00019.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00013.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00082.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00100.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00074.jpg
+PREDICTED: 0
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00025.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00031.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00061.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00041.jpg
+PREDICTED: 6
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00048.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00049.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00074.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00097.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00064.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00088.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00040.jpg
+PREDICTED: 0
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00083.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00041.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00013.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00022.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00027.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00086.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00048.jpg
+PREDICTED: 4
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00086.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00034.jpg
+PREDICTED: 1
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00099.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00053.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00035.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00068.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00002.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00073.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00074.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00038.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00001.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00046.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00010.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00014.jpg
+PREDICTED: 8
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00015.jpg
+PREDICTED: 5
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00094.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00026.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00083.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00002.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00032.jpg
+PREDICTED: 2
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00036.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00046.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00087.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00083.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00082.jpg
+PREDICTED: 2
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00095.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00010.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00037.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00060.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00031.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00015.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00011.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00024.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00005.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00038.jpg
+PREDICTED: 9
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00092.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00043.jpg
+PREDICTED: 2
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00067.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00010.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00096.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00089.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00073.jpg
+PREDICTED: 4
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00085.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00045.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00004.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00004.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00084.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00041.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00099.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00057.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00098.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00095.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00072.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00068.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00009.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00005.jpg
+PREDICTED: 5
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00093.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00026.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00099.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00036.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00053.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00080.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00061.jpg
+PREDICTED: 4
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00082.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00008.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00099.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00026.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00033.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00007.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00069.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00026.jpg
+PREDICTED: 9
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00079.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00021.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00018.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00026.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00084.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00070.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00056.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00093.jpg
+PREDICTED: 6
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00020.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00026.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00041.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00087.jpg
+PREDICTED: 1
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00019.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00006.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00028.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00010.jpg
+PREDICTED: 3
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00046.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00008.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00021.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00007.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00077.jpg
+PREDICTED: 0
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00014.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00072.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00089.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00048.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00003.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00049.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00095.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00096.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00082.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00098.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00016.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00069.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00064.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00084.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00083.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00055.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00035.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00005.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00082.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00043.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00019.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00022.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00016.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00088.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00045.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00056.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00080.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00021.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00009.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00073.jpg
+PREDICTED: 3
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00037.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00067.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00097.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00015.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00014.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00061.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00091.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00056.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00011.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00048.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00037.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00008.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00015.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00018.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00002.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00058.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00043.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00034.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00091.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00020.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00060.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00007.jpg
+PREDICTED: 3
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00064.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00069.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00082.jpg
+PREDICTED: 6
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00009.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00059.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00088.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00078.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00031.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00006.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00007.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00023.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00004.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00003.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00075.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00006.jpg
+PREDICTED: 3
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00085.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00100.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00033.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00053.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00095.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00059.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00090.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00053.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00036.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00090.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00083.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00056.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00054.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00039.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00007.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00006.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00076.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00027.jpg
+PREDICTED: 3
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00030.jpg
+PREDICTED: 0
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00083.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00085.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00047.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00005.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00023.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00092.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00076.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00042.jpg
+PREDICTED: 9
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00088.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00050.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00071.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00074.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00058.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00057.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00068.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00087.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00049.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00073.jpg
+PREDICTED: 2
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00023.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00055.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00030.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00016.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00086.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00060.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00039.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00063.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00056.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00025.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00033.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00021.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00033.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00042.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00080.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00041.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00012.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00033.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00096.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00092.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00039.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00020.jpg
+PREDICTED: 3
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00100.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00084.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00081.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00088.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00084.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00020.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00007.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00078.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00041.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00012.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00044.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00099.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00098.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00028.jpg
+PREDICTED: 8
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00062.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00081.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00097.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00031.jpg
+PREDICTED: 1
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00060.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00068.jpg
+PREDICTED: 8
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00065.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00045.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00053.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00074.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00063.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00033.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00038.jpg
+PREDICTED: 4
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00006.jpg
+PREDICTED: 5
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00017.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00043.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00097.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00022.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00062.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00085.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00025.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00091.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00043.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00056.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00013.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00036.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00030.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00079.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00023.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00045.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00013.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00013.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00080.jpg
+PREDICTED: 2
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00075.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00034.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00027.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00011.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00052.jpg
+PREDICTED: 7
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00017.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00049.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00014.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00018.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00063.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00080.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00095.jpg
+PREDICTED: 4
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00066.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00055.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00005.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00096.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00099.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00064.jpg
+PREDICTED: 9
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00018.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00080.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00098.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00062.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00008.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00057.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00028.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00085.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00061.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00088.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00005.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00090.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00077.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00035.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00015.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00022.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00009.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00039.jpg
+PREDICTED: 0
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00066.jpg
+PREDICTED: 9
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00023.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00051.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00063.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00074.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00041.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00072.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00055.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00076.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00058.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00017.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00038.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00079.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00040.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00018.jpg
+PREDICTED: 0
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00018.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00048.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00027.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00024.jpg
+PREDICTED: 0
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00070.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00076.jpg
+PREDICTED: 9
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00071.jpg
+PREDICTED: 0
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00023.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00045.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00015.jpg
+PREDICTED: 3
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00071.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00044.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00056.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00015.jpg
+PREDICTED: 2
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00016.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00076.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00022.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00014.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00027.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00077.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00098.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00005.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00077.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00100.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00013.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00068.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00010.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00075.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00042.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00100.jpg
+PREDICTED: 2
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00052.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00061.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00042.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00019.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00014.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00095.jpg
+PREDICTED: 3
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00056.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00040.jpg
+PREDICTED: 6
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00094.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00050.jpg
+PREDICTED: 5
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00074.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00055.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00061.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00085.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00013.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00016.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00078.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00067.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00071.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00016.jpg
+PREDICTED: 0
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00075.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00015.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00020.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00012.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00047.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00001.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00059.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00021.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00097.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00081.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00072.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00068.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00040.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00058.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00042.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00022.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00091.jpg
+PREDICTED: 2
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00046.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00092.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00075.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00008.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00027.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00064.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00001.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00096.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00009.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00089.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00098.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00006.jpg
+PREDICTED: 7
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00098.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00042.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00028.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00091.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00051.jpg
+PREDICTED: 4
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00047.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00070.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00025.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00081.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00009.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00030.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00008.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00050.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00025.jpg
+PREDICTED: 3
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00043.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00017.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00004.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00024.jpg
+PREDICTED: 3
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00029.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00051.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00100.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00030.jpg
+PREDICTED: 5
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00014.jpg
+PREDICTED: 3
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00076.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00025.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00031.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00069.jpg
+PREDICTED: 3
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00040.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00066.jpg
+PREDICTED: 6
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00028.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00041.jpg
+PREDICTED: 4
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00034.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00073.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00008.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00085.jpg
+PREDICTED: 6
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00025.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00042.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00087.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00050.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00040.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00079.jpg
+PREDICTED: 5
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00045.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00060.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00027.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00084.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00030.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00038.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00072.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00058.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00093.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00059.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00039.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00038.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00070.jpg
+PREDICTED: 0
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00092.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00062.jpg
+PREDICTED: 3
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00078.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00062.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00088.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00027.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00032.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00025.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00065.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00071.jpg
+PREDICTED: 8
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00065.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00079.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00093.jpg
+PREDICTED: 3
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00025.jpg
+PREDICTED: 3
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00077.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00047.jpg
+PREDICTED: 8
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00025.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00011.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00091.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00019.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00076.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00041.jpg
+PREDICTED: 6
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00006.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00077.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00048.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00062.jpg
+PREDICTED: 3
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00099.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00012.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00022.jpg
+PREDICTED: 6
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00077.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00003.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00007.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00063.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00051.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00026.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00070.jpg
+PREDICTED: 0
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00093.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00079.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00052.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00024.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00054.jpg
+PREDICTED: 3
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00003.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00017.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00030.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00007.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00086.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00097.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00046.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00095.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00016.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00082.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00044.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00027.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00071.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00029.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00002.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00036.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00040.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00063.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00072.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00067.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00012.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00037.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00083.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00050.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00075.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00096.jpg
+PREDICTED: 1
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00007.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00024.jpg
+PREDICTED: 9
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00083.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00024.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00035.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00078.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00062.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00089.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00011.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00062.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00092.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00034.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00050.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00014.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00055.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00018.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00073.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00034.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00033.jpg
+PREDICTED: 6
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00010.jpg
+PREDICTED: 8
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00046.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00069.jpg
+PREDICTED: 0
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00034.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00061.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00049.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00049.jpg
+PREDICTED: 3
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00054.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00039.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00097.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00082.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00089.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00038.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00021.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00092.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00043.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00093.jpg
+PREDICTED: 7
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00071.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00087.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00081.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00060.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00086.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00032.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00042.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00012.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00024.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00056.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00041.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00024.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00038.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00003.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00037.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00061.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00083.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00052.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00050.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00013.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00017.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00001.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00037.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00075.jpg
+PREDICTED: 6
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00084.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00009.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00054.jpg
+PREDICTED: 3
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00024.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00044.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00013.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00083.jpg
+PREDICTED: 0
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00005.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00037.jpg
+PREDICTED: 5
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00090.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00068.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00070.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00030.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00020.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00037.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00084.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00028.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00094.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00023.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00077.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00078.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00014.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00066.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00024.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00089.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00014.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00036.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00057.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00043.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00020.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00021.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00015.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00048.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00030.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00003.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00049.jpg
+PREDICTED: 4
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00017.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00035.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00010.jpg
+PREDICTED: 6
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00067.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00020.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00004.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00045.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00069.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00090.jpg
+PREDICTED: 7
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00048.jpg
+PREDICTED: 8
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00023.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00045.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00065.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00039.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00055.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00040.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00046.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00019.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00046.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00060.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00063.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00057.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00067.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00066.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00052.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00029.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00016.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00052.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00033.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00074.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00052.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00057.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00011.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00032.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00022.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00072.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00065.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00005.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00047.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00058.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00043.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00066.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00089.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00093.jpg
+PREDICTED: 1
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00090.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00047.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00054.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00017.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00049.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00056.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00012.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00071.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00036.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00012.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00004.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00001.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00099.jpg
+PREDICTED: 9
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00080.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00016.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00066.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00051.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00002.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00004.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00052.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/truck_00032.jpg
+PREDICTED: 9
+EXPECTED : 9
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00089.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00089.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00087.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00057.jpg
+PREDICTED: 3
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00023.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/deer_00057.jpg
+PREDICTED: 4
+EXPECTED : 4
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00001.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00052.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/ship_00076.jpg
+PREDICTED: 8
+EXPECTED : 8
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/frog_00019.jpg
+PREDICTED: 6
+EXPECTED : 6
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00088.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00001.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00064.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00091.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/bird_00053.jpg
+PREDICTED: 2
+EXPECTED : 2
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/dog_00032.jpg
+PREDICTED: 5
+EXPECTED : 5
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00003.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/cat_00096.jpg
+PREDICTED: 3
+EXPECTED : 3
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/airplane_00067.jpg
+PREDICTED: 0
+EXPECTED : 0
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/horse_00095.jpg
+PREDICTED: 7
+EXPECTED : 7
+-------
+IMAGE: /home/ubuntu/ML/cifar10/input/cifar10_jpg/test/automobile_00031.jpg
+PREDICTED: 1
+EXPECTED : 1
+-------
+              precision    recall  f1-score   support
+
+    airplane       0.83      0.84      0.84       100
+  automobile       0.94      0.92      0.93       100
+        bird       0.88      0.81      0.84       100
+         cat       0.74      0.82      0.78       100
+        deer       0.86      0.91      0.88       100
+         dog       0.91      0.78      0.84       100
+        frog       0.85      0.94      0.90       100
+       horse       0.96      0.88      0.92       100
+        ship       0.89      0.93      0.91       100
+       truck       0.90      0.89      0.89       100
+
+   micro avg       0.87      0.87      0.87      1000
+   macro avg       0.88      0.87      0.87      1000
+weighted avg       0.88      0.87      0.87      1000
+
+SKLEARN Accuracy = 0.87
+
+
+TOP-5 ACCURACY                    = 1.00 
+TOP-5 FALSE                       =  0
+TOP-5 TRUE                        =  1000
+
+
+TOTAL NUMBER OF TRUE  PREDICTIONS =  872
+TOTAL NUMBER OF FALSE PREDICTIONS =  128
+MANUALLY COMPUTED RECALL = 0.87 

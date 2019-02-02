@@ -1,0 +1,55 @@
+#!/bin/sh
+
+ln -s ../test_images/ ./test_images
+cp ./src/fps_main.cc ./src/main.cc
+make clean
+make: Warning: File 'Makefile' has modification time 15439276 s in the future
+rm -f -rf /root/cifar10/deephi/miniVggNet/zcu102/baseline/build
+rm -f miniVggNet 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make
+make: Warning: File 'Makefile' has modification time 15439276 s in the future
+mkdir -p /root/cifar10/deephi/miniVggNet/zcu102/baseline/build 
+g++ -c -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/cifar10/deephi/miniVggNet/zcu102/baseline/src/main.cc -o /root/cifar10/deephi/miniVggNet/zcu102/baseline/build/main.o
+g++ -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/cifar10/deephi/miniVggNet/zcu102/baseline/build/main.o /root/cifar10/deephi/miniVggNet/zcu102/baseline/model/arm64_4096/dpu_miniVggNet_0.elf  -o miniVggNet -L/usr/local/lib -lopencv_highgui -lopencv_shape -lopencv_video -lopencv_videoio -lopencv_imgcodecs -lopencv_imgproc -lopencv_core -lhineon -ln2cube -ldputils -lpthread
+g++ -c -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/cifar10/deephi/miniVggNet/zcu102/baseline/src/main.conv.cc -o /root/cifar10/deephi/miniVggNet/zcu102/baseline/build/main.conv.o
+g++ -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/cifar10/deephi/miniVggNet/zcu102/baseline/build/main.conv.o /root/cifar10/deephi/miniVggNet/zcu102/baseline/model/arm64_4096/dpu_miniVggNet_0.elf  -o miniVggNet_conv -L/usr/local/lib -lopencv_highgui -lopencv_shape -lopencv_video -lopencv_videoio -lopencv_imgcodecs -lopencv_imgproc -lopencv_core -lhineon -ln2cube -ldputils -lpthread
+make: warning:  Clock skew detected.  Your build may be incomplete.
+mv miniVggNet fps_miniVggNet
+
+echo "./miniVggNet 1"
+./miniVggNet 1
+./fps_miniVggNet 1
+total image : 1000
+[Time]717536us
+[FPS]1393.66
+echo "./miniVggNet 2"
+./miniVggNet 2
+./fps_miniVggNet 2
+total image : 1000
+[Time]432826us
+[FPS]2310.4
+echo "./miniVggNet 3"
+./miniVggNet 3
+./fps_miniVggNet 3
+total image : 1000
+[Time]269486us
+[FPS]3710.77
+echo "./miniVggNet 4"
+./miniVggNet 4
+./fps_miniVggNet 4
+total image : 1000
+[Time]305007us
+[FPS]3278.61
+echo "./miniVggNet 5"
+./miniVggNet 5
+./fps_miniVggNet 5
+total image : 1000
+[Time]276601us
+[FPS]3615.32
+echo "./miniVggNet 6"
+./miniVggNet 6
+./fps_miniVggNet 6
+total image : 1000
+[Time]282857us
+[FPS]3535.36
