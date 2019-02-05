@@ -100,7 +100,7 @@ If you do use previous releases, you should get the same top-1 accuracy results 
 
 ## 3.3 Docker Image
 
-My colleague [Kester Aernoudt](mailto:kestera@xilinx.com) has created an image with the [Docker](https://www.docker.com/) container. Please contact him directly. The image has all the ML tools needed to run this tutorial already pre-installed. This is likely the simplest way for you to get the tools up and running.
+[Kester Aernoudt](mailto:kestera@xilinx.com) has created an image with the [Docker](https://www.docker.com/) container, you can download it [here](https://cloud.docker.com/u/kesteraernoudt/repository/docker/kesteraernoudt/dnndk_2.08). The image has all the ML tools needed to run this tutorial already pre-installed. This is likely the simplest way for you to get the tools up and running.
 
 :pushpin: **Note:** To use this Docker image, you need to have the [Nvidia Docker Tool](https://github.com/NVIDIA/nvidia-docker) and an NVIDIA GPU card installed.
 
@@ -171,7 +171,7 @@ It is recommended not to deviate from the above structure. The alternative is ch
 
 Furthermore, to correctly use the pathnames adopted in the ``.prototxt`` files, all the ``*.sh`` shell scripts must be launched from the ``$HOME/ML/`` directory.
 
-Finally, sometimes you might need to pre-process the``*.sh`` shell scripts with the [dos2unix]( http://archive.ubuntu.com/ubuntu/pool/universe/d/dos2unix/dos2unix_6.0.4.orig.tar.gz) utility before executing them. 
+Finally, sometimes you might need to pre-process the``*.sh`` shell scripts with the [dos2unix]( http://archive.ubuntu.com/ubuntu/pool/universe/d/dos2unix/dos2unix_6.0.4.orig.tar.gz) utility before executing them.
 
 
 # 4 Xilinx DNNDK Overview
