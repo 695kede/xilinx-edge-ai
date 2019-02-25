@@ -1,0 +1,15 @@
+
+DNNC Kernel Information
+
+1. Overview
+kernel numbers  : 1
+kernel topology : ssd_kernel_graph.jpg
+
+2. Kernel Description in Detail
+kernel id       : 0
+kernel name     : ssd
+type            : DPUKernel
+nodes           : NA
+input node(s)   : conv1_1(0) 
+output node(s)  : mbox_loc(0) mbox_conf(0) 
+
