@@ -57,7 +57,7 @@ By the end of this tutorial, you will understand how to train a custom CNN in Ca
 
 # 3 Prerequisites
 
-This tutorial assumes you are using a PC mounting Ubuntu 16.04 Linux OS with [Python 2.7](https://www.python.org/download/releases/2.7/) and its [virtual environments](https://docs.python-guide.org/dev/virtualenvs), [Caffe BVLC](https://github.com/BVLC/caffe), and [Keras](https://keras.io/) on the TensorFlow backend. The PC must have a CUDA-compatible GPU card and the following libraries: CUDA 8.0 or 9.0, cuDNN 7.0.5, and NCCL1.x. Alternatively, you can use a p2.xlarge instance of Deep Learning Base AMI Ubuntu version 15 from AWS. Many of the Ubuntu packages required by ML tools are already required by Xilinx [SDx tools](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2018_1/ug1238-sdx-rnil.pdf) as well, so you would have to install them anyway.
+This tutorial assumes you are using a PC mounting Ubuntu 16.04 Linux OS with [Python 2.7](https://www.python.org/download/releases/2.7/) and its [virtual environments](https://docs.python-guide.org/dev/virtualenvs), [Caffe BVLC](https://github.com/BVLC/caffe), and [Keras](https://keras.io/) on the TensorFlow backend. The PC must have a CUDA-compatible GPU card and the following libraries: CUDA 8.0 or 9.0, and cuDNN 7.0.5. Alternatively, you can use a p2.xlarge instance of Deep Learning Base AMI Ubuntu version 15 from AWS. Many of the Ubuntu packages required by ML tools are already required by Xilinx [SDx tools](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2018_1/ug1238-sdx-rnil.pdf) as well, so you would have to install them anyway.
 
 After downloading and uncompressing the tutorial archive, ``Edge-AI-Platform-Tutorials.zip``, move the ``docs/ML-CIFAR10-Caffe`` subfolder to the ``$HOME/ML`` directory and rename it to ``cifar10``, using instructions similar to those in the example below:
 ```
@@ -320,10 +320,6 @@ You do not need to be in a Python virtual environment to launch the quantization
 ```
 source ~/ML/cifar10/aws_scripts/aws_activate_dnndk_cuda9.sh
 ```
-
-When the quantization is done, two output files are generated. These become the inputs to the ``dnnc`` compiler:
-- ``deploy.prototxt``: This is the new description text file of the quantized CNN model.
-- ``deploy.caffemodel``: This is the file with fixed-point quantized weights (this is not a standard Caffe format).
 
 ## 8.1 Input and Output .prototxt Files
 

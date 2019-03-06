@@ -1,10 +1,15 @@
-#!/bin/sh
+#!/bin/bash
 
-PRUNE_ROOT=$HOME/ML/DNNDK/tools
-WORK_DIR=cifar10/deephi/miniGoogleNet/pruning
+ML_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && cd ../../.. && pwd )"
+export ML_DIR
+
+PRUNE_ROOT=/usr/local/bin
+WORK_DIR=$ML_DIR/deephi/miniGoogleNet/pruning
+
+[ -f /usr/local/bin/deephi_compress ] || PRUNE_ROOT=$HOME/ML/DNNDK/tools
 
 #take the caffemodel with a (forced) soft link to save HD space
-ln -nsf $HOME/ML/cifar10/caffe/models/miniGoogleNet/m3/snapshot_3_miniGoogleNet__iter_40000.caffemodel ${WORK_DIR}/float.caffemodel
+ln -nsf $ML_DIR/caffe/models/miniGoogleNet/m3/snapshot_3_miniGoogleNet__iter_40000.caffemodel ${WORK_DIR}/float.caffemodel
 
 # leave commented the next lines, here added only for "documentation" 
 #copy the solver and edit it by reducing the amount of iterations and changing the pathnames

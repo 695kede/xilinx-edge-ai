@@ -34,7 +34,7 @@ print("TRAINING WITH CAFFE")
 caffe_solver  = SOLVER 
 caffe_logfile = LOGFILE
 
-caffe_command = CAFFE_TRAINING + ' --solver ' + caffe_solver + ' 2>&1 | tee ' + caffe_logfile
+caffe_command = CAFFE_TRAINING + ' --gpu all ' + ' --solver ' + caffe_solver + ' 2>&1 | tee ' + caffe_logfile
 
 startTime1 = datetime.now()
 os.system(caffe_command)

@@ -1,18 +1,23 @@
-#!/bin/sh
+#!/bin/bash
 
-PRUNE_ROOT=$HOME/ML/DNNDK/tools
-WORK_DIR=cifar10/deephi/miniVggNet/pruning
+ML_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && cd ../../.. && pwd )"
+export ML_DIR
+
+PRUNE_ROOT=/usr/local/bin
+WORK_DIR=$ML_DIR/deephi/miniVggNet/pruning
+
+[ -f /usr/local/bin/deephi_compress ] || PRUNE_ROOT=$HOME/ML/DNNDK/tools
 
 #take the caffemodel with a (forced) soft link to save HD space
-ln -nsf $HOME/ML/cifar10/caffe/models/miniVggNet/m3/snapshot_3_miniVggNet__iter_40000.caffemodel ${WORK_DIR}/float.caffemodel
+ln -nsf $ML_DIR/caffe/models/miniVggNet/m3/snapshot_3_miniVggNet__iter_40000.caffemodel ${WORK_DIR}/float.caffemodel
 
 # leave commented the next lines, here added only for "documentation" 
 
 #copy the solver and edit it by reducing the amount of iterations and changing the pathnames
-##cp $HOME/ML/cifar10/caffe/models/miniVggNet/m3/solver_3_miniVggNet.prototxt ./solver.prototxt
+##cp $ML_DIR/caffe/models/miniVggNet/m3/solver_3_miniVggNet.prototxt ./solver.prototxt
 
 #copy the description model and edit it by adding top-1 and top-5 accuracy layers at the bottom and changing the pathnames
-##cp $HOME/ML/cifar10/caffe/models/miniVggNet/m3/train_val_3_miniVggNet.prototxt ./train_val.prototxt
+##cp $ML_DIR/caffe/models/miniVggNet/m3/train_val_3_miniVggNet.prototxt ./train_val.prototxt
 
 # analysis: you do it only once
 ${PRUNE_ROOT}/deephi_compress ana -config ${WORK_DIR}/config0.prototxt      2>&1 | tee ${WORK_DIR}/rpt/logfile_ana_miniVggNet.txt

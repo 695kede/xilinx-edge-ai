@@ -1,8 +1,12 @@
 #!/bin/sh
 
-CAFFE_ROOT=$HOME/caffe_tools/BVLC1v0-Caffe
-CAFFE_TOOLS_DIR=$CAFFE_ROOT/distribute
-WORK_DIR=$HOME/ML/cifar10/caffe #working dir
+ML_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && cd .. && pwd )"
+export ML_DIR
+echo ML_DIR is $ML_DIR
+
+export CAFFE_ROOT=$HOME/caffe_tools/BVLC1v0-Caffe
+export CAFFE_TOOLS_DIR=$CAFFE_ROOT/distribute
+export WORK_DIR=$HOME/ML/cifar10/caffe #working dir
 
 MOD_NUM=3   # model number
 NUMIT=40000 # number of iterations

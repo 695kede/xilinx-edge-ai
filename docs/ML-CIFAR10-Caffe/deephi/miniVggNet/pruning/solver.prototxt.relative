@@ -1,0 +1,32 @@
+net:  "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/train_val.prototxt"
+#
+#
+test_iter: 180          # test_iter = test dataset size / test batch size
+#
+test_interval: 1000       # amount of iterations after which the NN will test the performance on the test dataset
+#
+base_lr: 0.01            # the beginning of learning rate
+#
+lr_policy: "poly"         # it could be "step", "fixed", "exp", "poly", "sigmoid"
+power: 1
+#
+#gamma: 0.1               # how much the learning rate should be changed every time we reach the next step
+#
+#stepsize: 8000
+display:  100
+max_iter: 20000          # end of NN training. Note that max_iter  = num_epochs * training set size / test batch size
+#
+momentum: 0.9
+weight_decay: 0.0005
+snapshot: 20000
+#snapshot_format: HDF5
+snapshot_prefix: "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/snapshot_"
+#
+#solver_mode: CPU
+solver_mode: GPU
+#
+#type: "Nesterov"
+type: "SGD"
+random_seed: 1201
+
+#snapshot_after_train: true
