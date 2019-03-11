@@ -4,11 +4,11 @@ I would like to thank:
 
 2) **Jonathan Cory** helped me a lot with his suggestions during the development of this project, he was also my only reference in my moments of darkness.
 
-3) **Rebecca O'Hagan** and **Erin Truax**, my fantastic technical editors.
+3) **Kester Aernoudt** for the Docker work, for the many improvements he did to my shell scripts and for all the Linux tricks I have learned from him.
 
-4) Again **Andy Luo** and **Jonathan Cory** because they did the final review.
+4) **Rebecca O'Hagan** and **Erin Truax**, my fantastic technical editors.
 
-5) Kester Aernoudt for the Docker work.
+5) Again Andy Luo and Jonathan Cory because they did the final review.
 
 6) Nick Ni, Kamran Khan, Ed Ducharme, Brian Wall, Mike Konopinsky, Yann Clin and Ralph Bergmann for their support.
 

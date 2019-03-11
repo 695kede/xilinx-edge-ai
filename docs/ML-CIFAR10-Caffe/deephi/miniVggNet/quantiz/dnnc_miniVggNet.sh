@@ -29,7 +29,7 @@ cp ${output_dir}/dpu_${net}\_*.elf  ${output_dir}/../../zcu102/baseline/model/ar
 echo " copying the test images to be used by the ZCU102"
 cp -r $ML_DIR/input/cifar10_jpg/test ${output_dir}/../../zcu102/test_images
 
-mv ${net}_kernel*.* ${work_dir}/dnnc_output
+#mv ${net}_kernel*.* ${work_dir}/dnnc_output
 
 # The following lines are for documentation only. Leave them commented
 # now you can create the tar archive that you will then scp/ssh copy from HOST PC to TARGET board 

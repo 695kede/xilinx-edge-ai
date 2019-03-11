@@ -1,4 +1,4 @@
-net: "cats-vs-dogs/caffe/models/alexnetBNnoLRN/m2/train_val_2_alexnetBNnoLRN.prototxt"
+net: "caffe/models/alexnetBNnoLRN/m2/train_val_2_alexnetBNnoLRN.prototxt"
 
 test_iter: 80 # test_iter = validation dataset size / validation batch size
 
@@ -18,7 +18,7 @@ weight_decay: 0.0005
 
 snapshot: 5000
 
-snapshot_prefix: "cats-vs-dogs/caffe/models/alexnetBNnoLRN/m2/snapshot_2_alexnetBNnoLRN_"
+snapshot_prefix: "caffe/models/alexnetBNnoLRN/m2/snapshot_2_alexnetBNnoLRN_"
 
 solver_mode: GPU
 

@@ -1,4 +1,4 @@
-net:  "cifar10/caffe/models/miniGoogleNet/m3/train_val_3_miniGoogleNet.prototxt"
+net:  "caffe/models/miniGoogleNet/m3/train_val_3_miniGoogleNet.prototxt"
 #
 #
 test_iter: 180          # test_iter = test dataset size / test batch size
@@ -21,7 +21,7 @@ momentum: 0.9
 weight_decay: 0.001
 snapshot: 10000
 #snapshot_format: HDF5
-snapshot_prefix: "cifar10/caffe/models/miniGoogleNet/m3/snapshot_3_miniGoogleNet_"
+snapshot_prefix: "caffe/models/miniGoogleNet/m3/snapshot_3_miniGoogleNet_"
 #
 #solver_mode: CPU
 solver_mode: GPU

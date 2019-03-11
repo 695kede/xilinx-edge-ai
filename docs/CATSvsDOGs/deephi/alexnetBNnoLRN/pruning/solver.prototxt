@@ -1,4 +1,4 @@
-net: "cats-vs-dogs/deephi/alexnetBNnoLRN/pruning/train_val.prototxt"
+net: "deephi/alexnetBNnoLRN/pruning/train_val.prototxt"
 
 test_iter: 80 # test_iter = validation dataset size / validation batch size
 
@@ -16,9 +16,9 @@ max_iter: 12000
 momentum: 0.9
 weight_decay: 0.0005
 
-snapshot: 12000
+snapshot: 500
 
-snapshot_prefix: "cats-vs-dogs/deephi/alexnetBNnoLRN/pruning/snapshot_"
+snapshot_prefix: "deephi/alexnetBNnoLRN/pruning/snapshot_"
 
 solver_mode: GPU
 

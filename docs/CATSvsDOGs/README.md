@@ -37,11 +37,10 @@ This AlexNet model has all the features of the original AlexNet CNN, but the way
 By the end of this tutorial, you will understand how to train a modified AlexNet CNN in Caffe from zero using the Kaggle [Dogs vs. Cats](https://www.kaggle.com/c/dogs-vs-cats) dataset. You will also learn how to run it on the ZCU102 board after quantization (and optionally pruning) with the Xilinx DNNDK tools. This is accomplished by performing the following steps:
 
 1) Use a powerful set of Python scripts that enable you to do the following:
-
-      i. Create the databases for training, validation, testing, and calibration.
-      ii. Train the CNN using Caffe and generate the ``.caffemodel`` file of floating point weights.
-      iii. Use the trained network to make predictions from images and compute the top-1 accuracy with the ``.caffemodel`` weights file.
-      iv. Plot the learning curves of your training process and the CNN block diagram.
+- Create the databases for training, validation, testing, and calibration.
+- Train the CNN using Caffe and generate the ``.caffemodel`` file of floating point weights.
+- Use the trained network to make predictions from images and compute the top-1 accuracy with the ``.caffemodel`` weights file.
+- Plot the learning curves of your training process and the CNN block diagram.
 
 2) Use the Xilinx DNNDK tools to quantize the floating point weights of your original ``.caffemodel`` file (normally called  the _baseline_).
 
@@ -87,11 +86,11 @@ You can also target alternative boards such as the following:
 - [ZCU104img](http://www.deephi.com/assets/2018-12-04-zcu104-desktop-stretch.img.zip)
 - [DP8020img](http://deephi.com/assets/2018-12-04-dp-8020-desktop-stretch.img.zip)
 
- The DNNDK User Guide is available here:
+The DNNDK User Guide is available here:
 
  - [DNNDK User Guide (UG1327)](https://www.xilinx.com/support/documentation/user_guides/ug1327-dnndk-user-guide.pdf)
 
- If you do use previous releases, you should get the same top-1 accuracy results with a difference of 2-3%. A larger difference implies that something is wrong in the environment.
+If you do use previous releases, you should get the same top-1 accuracy results with a difference of 2-3%. A larger difference implies that something is wrong in the environment.
 
 ## 3.3 Docker image
 

@@ -1,5 +1,5 @@
 # directory where saving the output files
-workspace: "cifar10/deephi/miniVggNet/pruning"
+workspace: "deephi/miniVggNet/pruning"
 
 gpu: "0"
 
@@ -11,13 +11,13 @@ test_iter: 180
 #acc_name: "top-5"
 acc_name: "top-1"
 
-model:   "cifar10/deephi/miniVggNet/pruning/train_val.prototxt"
+model:   "deephi/miniVggNet/pruning/train_val.prototxt"
 
 #third run
-weights: "cifar10/deephi/miniVggNet/pruning/regular_rate_0.2/snapshots/_iter_20000.caffemodel"
+weights: "deephi/miniVggNet/pruning/regular_rate_0.2/snapshots/_iter_40000.caffemodel"
 
 # solver used for fine tuning
-solver:  "cifar10/deephi/miniVggNet/pruning/solver.prototxt"
+solver:  "deephi/miniVggNet/pruning/solver.prototxt"
 
 # expected compression ratio: 0.1 means 10%
 rate: 0.3 

@@ -30,11 +30,11 @@ layer {
     mean_value: 123
     mean_value: 114
     #mean file is not supported by DeePhi DPU
-    #mean_file: "cifar10/input/mean.binaryproto"    
+    #mean_file: "input/mean.binaryproto"    
   }
   image_data_param {
-    source: "cifar10/deephi/miniGoogleNet/quantiz/data/calib/calibration.txt"
-    root_folder: "cifar10/deephi/miniGoogleNet/quantiz/data/calib/"  
+    source: "deephi/miniGoogleNet/quantiz/data/calib/calibration.txt"
+    root_folder: "deephi/miniGoogleNet/quantiz/data/calib/"  
     batch_size: 10
     shuffle: true
   }
@@ -52,13 +52,13 @@ layer {
 #  transform_param {
 #    mirror: true
 #    #crop_size: 32
-#    mean_file: "cifar10/input/mean.binaryproto"
+#    mean_file: "input/mean.binaryproto"
 #    #    mean_value: 104
 #    #    mean_value: 117
 #    #    mean_value: 123
 #  }
 #  data_param {
-#    source: "cifar10/input/lmdb/train_lmdb"
+#    source: "input/lmdb/train_lmdb"
 #    batch_size: 128 
 #    backend: LMDB
 #  }
@@ -74,13 +74,13 @@ layer {
   transform_param {
     mirror: false
     #crop_size: 32
-    #mean_file: "cifar10/input/mean.binaryproto"
+    #mean_file: "input/mean.binaryproto"
     mean_value: 125
     mean_value: 123
     mean_value: 114    
   }
   data_param {
-    source: "cifar10/input/lmdb/valid_lmdb"
+    source: "input/lmdb/valid_lmdb"
     batch_size: 50
     backend: LMDB
   }

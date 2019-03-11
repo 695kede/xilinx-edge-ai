@@ -14,7 +14,7 @@ layer {
     mean_value: 124
   }
   data_param {
-    source: "cats-vs-dogs/input/lmdb/train_lmdb"
+    source: "input/lmdb/train_lmdb"
     batch_size: 256
     backend: LMDB
   }
@@ -35,7 +35,7 @@ layer {
     mean_value: 124
   }
   data_param {
-    source: "cats-vs-dogs/input/lmdb/valid_lmdb"
+    source: "input/lmdb/valid_lmdb"
     batch_size: 50
     backend: LMDB
   }

@@ -1,0 +1,28 @@
+# directory where output files are saved
+workspace: "INSERT_ABSOLUTE_PATH_HERE/deephi/alexnetBNnoLRN/pruning"
+
+gpu: "0"
+
+# the number of iterations to run in test phase.
+# Max num =validation set / batch_size = 4000 / 50
+test_iter: 80
+
+# the accuracy name of the model output you care about
+#acc_name: "top-5"
+acc_name: "top-1"
+
+model:   "INSERT_ABSOLUTE_PATH_HERE/deephi/alexnetBNnoLRN/pruning/train_val.prototxt"
+
+#first run
+#weights: "INSERT_ABSOLUTE_PATH_HERE/deephi/alexnetBNnoLRN/pruning/float.caffemodel"
+weights: "INSERT_ABSOLUTE_PATH_HERE/deephi/alexnetBNnoLRN/pruning/regular_rate_0/snapshots/_iter_12000.caffemodel"
+
+# solver used for fine tuning
+solver:  "INSERT_ABSOLUTE_PATH_HERE/deephi/alexnetBNnoLRN/pruning/solver.prototxt"
+
+# expected compression ratio: 0.1 means 10%
+rate: 0.1 
+
+
+#compression method used (only REGULAR is available)
+pruner { method: REGULAR }

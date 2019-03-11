@@ -1,10 +1,16 @@
 #!/bin/sh
 
-PRUNE_ROOT=$HOME/ML/DNNDK/tools
-WORK_DIR=$HOME/ML/cats-vs-dogs/deephi/alexnetBNnoLRN/pruning
+ML_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && cd ../../.. && pwd )"
+export ML_DIR
+
+PRUNE_ROOT=/usr/local/bin
+WORK_DIR=$ML_DIR/deephi/alexnetBNnoLRN/pruning
+
+[ -f /usr/local/bin/deephi_compress ] || PRUNE_ROOT=$HOME/ML/DNNDK/tools
+
 
 #take the caffemodel with a soft link to save HD space
-ln -nsf $HOME/ML/cats-vs-dogs/caffe/models/alexnetBNnoLRN/m2/snapshot_2_alexnetBNnoLRN__iter_12000.caffemodel  ${WORK_DIR}/float.caffemodel
+ln -nsf $ML_DIR/caffe/models/alexnetBNnoLRN/m2/snapshot_2_alexnetBNnoLRN__iter_12000.caffemodel  ${WORK_DIR}/float.caffemodel
 #ln -nsf $HOME/ML/cats-vs-dogs/caffe/models/alexnetBNnoLRN/m2/rpt/aws_float.caffemodel  ${WORK_DIR}/float.caffemodel
 
 # analysis: you do it only once
@@ -55,6 +61,8 @@ $PRUNE_ROOT/deephi_compress finetune -config ${WORK_DIR}/config7.prototxt 2>&1 |
 $PRUNE_ROOT/deephi_compress transform -model ${WORK_DIR}/train_val.prototxt -weights ${WORK_DIR}/regular_rate_0.7/sparse.caffemodel 2>&1 | tee ${WORK_DIR}/rpt/logfile_transform_alexnetBNnoLRN.txt
 
 # get flops and the number of parameters of a model
-$PRUNE_ROOT/deephi_compress stat -model ${WORK_DIR}/train_val.prototxt 2>&1 | tee ${WORK_DIR}/rpt/logfile_stat_alexnetBNnoLRN.txt
+#$PRUNE_ROOT/deephi_compress stat -model ${WORK_DIR}/train_val.prototxt 2>&1 | tee ${WORK_DIR}/rpt/logfile_stat_alexnetBNnoLRN.txt
 
-mv transformed.caffemodel ${WORK_DIR}/
+for file in $(find $ML_DIR -name transformed.caffemodel); do
+    mv ${file} ${WORK_DIR}
+done

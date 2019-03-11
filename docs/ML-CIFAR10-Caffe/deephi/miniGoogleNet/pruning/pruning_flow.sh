@@ -47,16 +47,16 @@ $PRUNE_ROOT/deephi_compress compress -config ${WORK_DIR}/config4.prototxt 2>&1 |
 $PRUNE_ROOT/deephi_compress finetune -config ${WORK_DIR}/config4.prototxt 2>&1 | tee ${WORK_DIR}/rpt/logfile_finetune4_miniGoogleNet.txt
 
 
-
-
 ## last step: get the final output model
 ## note that it does not work if you used the "final.prototxt" as wrongly described by transform help
 #
 $PRUNE_ROOT/deephi_compress transform -model ${WORK_DIR}/train_val.prototxt -weights ${WORK_DIR}/regular_rate_0.4/snapshots/_iter_40000.caffemodel 2>&1 | tee ${WORK_DIR}/rpt/logfile_transform_miniGoogleNet.txt
-mv transformed.caffemodel ${WORK_DIR}
 
 # get flops and the number of parameters of a model
 $PRUNE_ROOT/deephi_compress stat -model ${WORK_DIR}/train_val.prototxt 2>&1 | tee ${WORK_DIR}/rpt/logfile_stat_miniGoogleNet.txt
 
+for file in $(find $ML_DIR -name transformed.caffemodel); do
+    mv ${file} ${WORK_DIR}
+done
 
 

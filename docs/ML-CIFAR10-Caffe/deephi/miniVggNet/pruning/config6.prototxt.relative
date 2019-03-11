@@ -14,7 +14,7 @@ acc_name: "top-1"
 model:   "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/train_val.prototxt"
 
 # 6-th run
-weights: "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/regular_rate_0.5/snapshots/_iter_20000.caffemodel"
+weights: "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/regular_rate_0.5/snapshots/_iter_40000.caffemodel"
 
 # solver used for fine tuning
 solver:  "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/solver.prototxt"

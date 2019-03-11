@@ -1,4 +1,4 @@
-net:  "cifar10/caffe/models/miniVggNet/m3/train_val_3_miniVggNet.prototxt"
+net:  "caffe/models/miniVggNet/m3/train_val_3_miniVggNet.prototxt"
 #
 #
 test_iter: 180           # test_iter = test dataset size / test batch size
@@ -20,7 +20,7 @@ momentum: 0.9
 weight_decay: 0.0005
 snapshot: 10000
 #snapshot_format: HDF5
-snapshot_prefix: "cifar10/caffe/models/miniVggNet/m3/snapshot_3_miniVggNet_"
+snapshot_prefix: "caffe/models/miniVggNet/m3/snapshot_3_miniVggNet_"
 #
 #solver_mode: CPU
 solver_mode: GPU

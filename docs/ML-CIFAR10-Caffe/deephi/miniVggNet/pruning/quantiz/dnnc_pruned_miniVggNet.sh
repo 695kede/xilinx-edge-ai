@@ -28,13 +28,14 @@ cp ${output_dir}/dpu_${net}\_*.elf  ${output_dir}/../../../zcu102/pruned/model/a
 
 echo " copying the test images to be used by the ZCU102"
 cp -r $ML_DIR/input/cifar10_jpg/test ${output_dir}/../../../zcu102/test_images
-mv ${net}_kernel* ${work_dir}/dnnc_output
+#mv $ML_DIR/../${net}_kernel*   ${work_dir}/dnnc_output
 
 cd $ML_DIR/deephi/miniVggNet/zcu102/pruned
 #force a soft link to the testing images
 ln -nsf ../test_images ./test_images
 
-cd ${work_dir}/
+cd $ML_DIR
+
 
 
 

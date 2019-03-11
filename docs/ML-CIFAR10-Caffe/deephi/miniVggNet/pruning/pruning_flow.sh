@@ -70,8 +70,11 @@ ${PRUNE_ROOT}/deephi_compress finetune -config ${WORK_DIR}/config7.prototxt 2>&1
 ## note that it does not work if you used the "final.prototxt" as wrongly described by transform help
 #
 ${PRUNE_ROOT}/deephi_compress transform -model ${WORK_DIR}/train_val.prototxt -weights ${WORK_DIR}/regular_rate_0.7/snapshots/_iter_20000.caffemodel 2>&1 | tee ${WORK_DIR}/rpt/logfile_transform_miniVggNet.txt
-mv transformed.caffemodel ${WORK_DIR}
 
 # get flops and the number of parameters of a model
 ${PRUNE_ROOT}/deephi_compress stat -model ${WORK_DIR}/train_val.prototxt 2>&1 | tee ${WORK_DIR}/rpt/logfile_stat_miniVggNet.txt
+
+for file in $(find $ML_DIR -name transformed.caffemodel); do
+    mv ${file} ${WORK_DIR}
+done
 

@@ -1,0 +1,21 @@
+layer {
+  name: "data"
+  type: "ImageData"
+  top: "data"
+  top: "label"
+  include {
+    phase: TRAIN
+  }
+  transform_param {
+    crop_size: 227
+    mean_value: 106
+    mean_value: 116
+    mean_value: 124
+  }
+  image_data_param {
+    source: "INSERT_ABSOLUTE_PATH_HERE/deephi/alexnetBNnoLRN/quantiz/data/calib/calibration.txt"
+    root_folder: "INSERT_ABSOLUTE_PATH_HERE/deephi/alexnetBNnoLRN/quantiz/data/calib/"  
+    batch_size: 10
+    shuffle: true
+  }
+}

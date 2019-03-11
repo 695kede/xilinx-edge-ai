@@ -8,23 +8,25 @@ I would like to thank:
 
 2) **Jonathan Cory** helped me a lot with his suggestions during the development of this project, he was also my only reference in my moments of darkness.
 
-3) **Rebecca O'Hagan** and **Erin Truax**, my fantastic technical editors. Again **Andy Luo** and **Jonathan Cory** because they did the final review.
+3) **Kester Aernoudt** improved a lot all my shell scripts to make them independent on the directory structure (you can launch them from every place). I have also learned a lot of useful Linux tricks from him.
 
-4) Mark Harvey and Giovanni Guasti for teaching me about Anaconda (Mark also reviewed my material)
+4) **Rebecca O'Hagan** and **Erin Truax**, my fantastic technical editors. Again **Andy Luo** and **Jonathan Cory** because they did the final review.
 
-5) Giovanni Guasti and **Antonello Di Fresco** for their critical review of the **miniGoogleNet** example.
+5) Mark Harvey and Giovanni Guasti for teaching me about Anaconda (Mark also reviewed my material)
 
-6) The whole Xilinx Italian office of Milano (Giovanni Guasti, Antonello Di Fresco, Gianluca Gilardi, Alberto Fusaschi, Francesco Porpora, Francesco Contu, Paolo Novellini, Mark Harvey, Massimo Chirico, Franca Distaso, Marika Palubo, Daniela Grassi), as they were exposed live to the whole tutorial when it was still in a very embryonic form a lot of months ago and gave me so many precious suggestions.
+6) Giovanni Guasti and **Antonello Di Fresco** for their critical review of the **miniGoogleNet** example.
 
-7) Eddy De Waegeneer and **Kester Aernoudt** for the Docker work. Eddy pushed this idea first and Kester implemented effectively the **Docker image**. They also reviewed the whole tutorial. From Kester I have also learnt a lot of useful Linux tricks.
+7) The whole Xilinx Italian office of Milano (Giovanni Guasti, Antonello Di Fresco, Gianluca Gilardi, Alberto Fusaschi, Francesco Porpora, Francesco Contu, Paolo Novellini, Mark Harvey, Massimo Chirico, Franca Distaso, Marika Palubo, Daniela Grassi), as they were exposed live to the whole tutorial when it was still in a very embryonic form a lot of months ago and gave me so many precious suggestions.
 
-8) Nick Ni, Kamran Khan, Ed Ducharme, Brian Wall, Mike Konopinsky, Yann Clin and Ralph Bergmann for their support.
+8) Eddy De Waegeneer and Kester Aernoudt for the Docker work. Eddy pushed this idea first and Kester implemented effectively the **Docker image**. They also reviewed the whole tutorial.
 
-9) Jim Heaton, John Bieker, Terry O'Neal gave me very useful suggestions.
+9) Nick Ni, Kamran Khan, Ed Ducharme, Brian Wall, Mike Konopinsky, Yann Clin and Ralph Bergmann for their support.
 
-10) Olivier Tremois, Jens Schmidt, Jens Stapelfeldt, Mark Van Der Bolt, Karsten Schwenk, Karsten Trott, Giulio Corradi, Martin Kellerman, Bob Tait, Jack Dunnigan, Mark Timmons, Jason Beil, Sophie Lemarie, James Robson, Adi Michaeli, Guy Osi, Shmulink Preil, Dror Sfarady, Guy Lampert, Yigal Shamaev, Gideon Kedem, David Hawk, Martin Nismo, Sergei Storojev for their feedbacks and their spreading this tutorial internally and externally to Xilinx.
+10) Jim Heaton, John Bieker, Terry O'Neal gave me very useful suggestions.
 
-11) Last but not least a very special **thank you** goes to the fantastic **DeePhi Team in Beijing**: Shuai Zhang, Bingqing Guo, Yi Shan, Lu Tian, Xiaoming Sun, Jingxiu Liu, Fan Jiang for their continuous help and support.  
+11) Olivier Tremois, Jens Schmidt, Jens Stapelfeldt, Mark Van Der Bolt, Karsten Schwenk, Karsten Trott, Giulio Corradi, Martin Kellerman, Bob Tait, Jack Dunnigan, Mark Timmons, Jason Beil, Sophie Lemarie, James Robson, Adi Michaeli, Guy Osi, Shmulink Preil, Dror Sfarady, Guy Lampert, Yigal Shamaev, Gideon Kedem, David Hawk, Martin Nismo, Sergei Storojev for their feedbacks and their spreading this tutorial internally and externally to Xilinx.
+
+12) Last but not least a very special **thank you** goes to the fantastic **DeePhi Team in Beijing**: Shuai Zhang, Bingqing Guo, Yi Shan, Lu Tian, Xiaoming Sun, Jingxiu Liu, Fan Jiang for their continuous help and support.  
 
 [Daniele Bagni](mailto:daniele.bagni@xilinx.com)
 

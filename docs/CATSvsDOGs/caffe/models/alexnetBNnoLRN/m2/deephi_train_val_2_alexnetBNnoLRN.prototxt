@@ -18,8 +18,8 @@ layer {
     #mean_file: "cats-vs-dogs/input/lmdb/mean.binaryproto"
   }
   image_data_param {
-    source: "cats-vs-dogs/deephi/alexnetBNnoLRN/quantiz/data/calib/calibration.txt"
-    root_folder: "cats-vs-dogs/deephi/alexnetBNnoLRN/quantiz/data/calib/"  
+    source: "deephi/alexnetBNnoLRN/quantiz/data/calib/calibration.txt"
+    root_folder: "deephi/alexnetBNnoLRN/quantiz/data/calib/"  
     
     batch_size: 10
     shuffle: true
@@ -39,13 +39,13 @@ layer {
 #  transform_param {
 #    mirror: true
 #    crop_size: 227
-#    #mean_file: "cats-vs-dogs/input/lmdb/mean.binaryproto"
+#    #mean_file: "input/lmdb/mean.binaryproto"
 #    mean_value: 106 
 #    mean_value: 116 
 #    mean_value: 124 
 #  }
 #  data_param {
-#    source: "cats-vs-dogs/input/lmdb/train_lmdb"
+#    source: "input/lmdb/train_lmdb"
 #    batch_size: 256
 #    backend: LMDB
 #  }
@@ -61,13 +61,13 @@ layer {
   transform_param {
     mirror: false
     crop_size: 227
-    #mean_file: "cats-vs-dogs/input/lmdb/mean.binaryproto"
+    #mean_file: "input/lmdb/mean.binaryproto"
     mean_value: 106 
     mean_value: 116 
     mean_value: 124 
   }
   data_param {
-    source: "cats-vs-dogs/input/lmdb/valid_lmdb"
+    source: "input/lmdb/valid_lmdb"
     batch_size: 50
     backend: LMDB
   }

@@ -1,5 +1,5 @@
-# directory where saving the output files
-workspace: "cats-vs-dogs/deephi/alexnetBNnoLRN/pruning"
+# directory where output files are saved
+workspace: "deephi/alexnetBNnoLRN/pruning"
 
 gpu: "0"
 
@@ -11,13 +11,13 @@ test_iter: 80
 #acc_name: "top-5"
 acc_name: "top-1"
 
-model:   "cats-vs-dogs/deephi/alexnetBNnoLRN/pruning/train_val.prototxt"
+model:   "deephi/alexnetBNnoLRN/pruning/train_val.prototxt"
 
 # 6-th run
-weights: "cats-vs-dogs/deephi/alexnetBNnoLRN/pruning/regular_rate_0.5/snapshots/_iter_12000.caffemodel"
+weights: "deephi/alexnetBNnoLRN/pruning/regular_rate_0.5/snapshots/_iter_12000.caffemodel"
 
 # solver used for fine tuning
-solver:  "cats-vs-dogs/deephi/alexnetBNnoLRN/pruning/solver.prototxt"
+solver:  "deephi/alexnetBNnoLRN/pruning/solver.prototxt"
 
 # expected compression ratio: 0.1 means 10%
 rate: 0.6

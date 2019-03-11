@@ -40,12 +40,10 @@ Links to reference articles are available in this complementary PDF: [CIFAR10_0_
 By the end of this tutorial, you will understand how to train a custom CNN in Caffe from zero with the CIFAR10 dataset. You will also learn how to run it in the ZCU102 board after quantization (and optionally pruning) with the Xilinx DNNDK tools. This is accomplished by performing the steps listed below:
 
 1) Use a powerful set of Python scripts to do the following:
-
-    - Create the databases for training, validation, testing, and calibration.
-    - Train the CNN using Caffe and generate the ``.caffemodel`` file of floating point weights.
-    - Use the trained network to make predictions from images and compute the top-1 accuracy with the ``.caffemodel`` weights file.
-    - Plot the learning curves of your training process and the CNN block diagram.
-
+- Create the databases for training, validation, testing, and calibration.
+- Train the CNN using Caffe and generate the ``.caffemodel`` file of floating point weights.
+- Use the trained network to make predictions from images and compute the top-1 accuracy with the ``.caffemodel`` weights file.
+- Plot the learning curves of your training process and the CNN block diagram.
 
 2) Use the Xilinx DNNDK tools to quantize the floating point weights of your original ``.caffemodel`` file (normally called  the _baseline_).
 

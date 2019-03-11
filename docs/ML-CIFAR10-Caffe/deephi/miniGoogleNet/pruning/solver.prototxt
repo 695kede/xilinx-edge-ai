@@ -1,4 +1,4 @@
-net:  "cifar10/deephi/pruning/train_val.prototxt"
+net:  "deephi/pruning/train_val.prototxt"
 #
 #
 test_iter: 180          # test_iter = test dataset size / test batch size
@@ -22,7 +22,7 @@ momentum: 0.9
 weight_decay: 0.001
 snapshot: 20000
 #snapshot_format: HDF5
-snapshot_prefix: "cifar10/deephi/pruning/snapshot_3_miniGoogleNet_"
+snapshot_prefix: "deephi/pruning/snapshot_3_miniGoogleNet_"
 #
 #solver_mode: CPU
 solver_mode: GPU

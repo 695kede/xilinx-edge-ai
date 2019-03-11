@@ -13,7 +13,7 @@ layer {
     mean_value: 123
   }
   data_param {
-    source: "cifar10/input/lmdb/train_lmdb"
+    source: "input/lmdb/train_lmdb"
     batch_size: 128
     backend: LMDB
   }
@@ -33,7 +33,7 @@ layer {
     mean_value: 123
   }
   data_param {
-    source: "cifar10/input/lmdb/valid_lmdb"
+    source: "input/lmdb/valid_lmdb"
     batch_size: 50
     backend: LMDB
   }

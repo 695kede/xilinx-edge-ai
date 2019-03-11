@@ -14,7 +14,7 @@ power: 1
 #
 #stepsize: 8000
 display:  100
-max_iter: 20000          # end of NN training. Note that max_iter  = num_epochs * training set size / test batch size
+max_iter: 40000          # end of NN training. Note that max_iter  = num_epochs * training set size / test batch size
 #
 momentum: 0.9
 weight_decay: 0.0005

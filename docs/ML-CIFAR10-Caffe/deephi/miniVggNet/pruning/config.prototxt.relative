@@ -16,17 +16,17 @@ model:   "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/train_val.prototxt
 weights: "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/float.caffemodel"
 
 ## second run
-#weights: "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/regular_rate_0.1/snapshots/_iter_20000.caffemodel"
+#weights: "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/regular_rate_0.1/snapshots/_iter_40000.caffemodel"
 ## third run
-#weights: "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/regular_rate_0.2/snapshots/_iter_20000.caffemodel"
+#weights: "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/regular_rate_0.2/snapshots/_iter_40000.caffemodel"
 ## 4-th run
-#weights: "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/regular_rate_0.3/snapshots/_iter_20000.caffemodel"
+#weights: "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/regular_rate_0.3/snapshots/_iter_40000.caffemodel"
 ## 5-th run
-#weights: "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/regular_rate_0.4/snapshots/_iter_20000.caffemodel"
+#weights: "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/regular_rate_0.4/snapshots/_iter_40000.caffemodel"
 ## 6-th run
-#weights: "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/regular_rate_0.5/snapshots/_iter_20000.caffemodel"
+#weights: "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/regular_rate_0.5/snapshots/_iter_40000.caffemodel"
 ## 7-th run
-#weights: "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/regular_rate_0.6/snapshots/_iter_20000.caffemodel"
+#weights: "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/regular_rate_0.6/snapshots/_iter_40000.caffemodel"
 
 # solver used for fine tuning
 solver:  "INSERT_ABSOLUTE_PATH_HERE/deephi/miniVggNet/pruning/solver.prototxt"
