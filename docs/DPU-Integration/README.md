@@ -464,6 +464,135 @@ If you want to go through full process to rebuild the SDK, use the following ste
 
 **Note:** If you do not specify the directory (`-d`), the SDK will be installed at `images/linux/sdk`.
 
+# Build Machine Learning Applications Using Xilinx SDK
+
+Use the following steps to build two machine learning applications that take advantage of the DPU, using the Xilinx&reg; SDK:
+
+## Step 1: Launch Xilinx SDK
+
+Run the following command to launch the Xilinx SDK GUI:
+
+```
+xsdk
+```
+
+When the GUI opens, browse to the empty workspace at `<PROJ ROOT>/sdk_workspace`.
+
+## Step 2:	Create a New Application Project
+
+ Use the following steps to create a new application project:
+ 1. Click **File** and select **New Application Project**
+
+ 2. Enter the parameters as follows:
+      - Name: **resnet50**
+      - OS Platform: **Linux**
+      - Processor Type: **psu_cortexa53**
+      - Language: **C++**
+
+3. Click **Next**
+
+4. Select **Empty Application**
+
+5. Click **Finish**.
+
+![New Project](./images/image8.png "New Project")
+
+## Step 3: Import Source Files and Model .elf Files
+
+Use the following steps to import source files and model .elf files:
+  1. Click **File** and select **Import** -> **General** -> **Filesystem**
+
+  2. Browse to `<PROJ ROOT>/files/resnet50`
+
+  3. Click **OK**
+
+  4. Select **main.cc**
+
+  5. Check if the `Into Folder` is set to **resnet50/src**
+
+  6. Click **Finish**, and allow it to overwrite `main.cc`.
+
+  7. Repeat the previous steps to import the DPU model `.elfs`, `dpu_resnet50_0.elf`, and `dpu_resenet50_2.elf` files.
+
+  **Note:** You can use the pre-built models from `<PROJ ROOT>/files/resnet50/B1152_1.3.0`, if you do not have your own.
+
+## Step 4: Update the Application Build Settings
+Use the following steps to update the application build settings:
+
+1. Right-click on **resnet50 application** and select **C/C++ Build Settings**.
+
+2. In **C/C++ Build** -> **Environment**, add SYSROOT and point to the following location:
+
+  ```
+  ${workspace_loc}/../petalinux/images/linux/sdk/sysroots/aarch64-xilinx-linux
+  ```
+
+  ![Environment Variables](./images/image9.png "Environment Variables")  
+3. Point the compiler and the linker to SYSROOT:
+    - g++ linker settings:
+
+        **Miscellaneous** -> **Linker Flags** : `--sysroot=${SYSROOT}`
+
+        ![Linker Flags](./images/image10.png "Linker Flags")
+    - g++ compiler settings:
+
+        **Miscellaneous** -> **Other Flags**:  `--sysroot=${SYSROOT}`
+        ![Other Flags](./images/image11.png "Other Flags")
+4. In the g++ linker libraries tab, add the following libraries:
+    - n2cube
+    - dputils
+    - opencv_core
+    - opencv_imgcodecs
+    - opencv_highgui
+
+      ![Linker libraries](./images/image12.png "Linker libraries")
+
+5. In **g++ linker** -> **Miscellaneous**, add the model `.elfs` to **Other Objects**.
+6. Add `dpu_resnet50_0.elf` and `dpu_resnet50_2.elf` from the `resnet50/src directory`.
+ **Note:** You can use the **workspace** button and browse to the objects you want, as shown in the following figure:
+
+  ![File Selection](./images/image13.png "File Selection")
+
+  ![Other Objects](./images/image14.png "Other Objects")
+
+      **Note:** This will cause the `.elfs` to be statically linked to the application. It is also possible to dynamically link these objects at runtime(not covered in this guide).
+
+7. Click **OK**.
+8. Right-click on the **resnet50** application and select **Build Project**.
+
+
+## Step 5: Build the Face Detection Application
+
+Use the following steps to build the face detection application:
+1. Repeat steps 2 through 5 above.
+
+2. Add the source file `<PROJ ROOT>/files/face_detection/face_detection.cc`.
+
+3. Delete `main.cc` from the project.
+
+4. Add `dpu_densebox.elf` from `<PROJ ROOT>/files/face_detection/B1152_1.3.0`, if you do not have your own.
+
+5. Set the SYSROOT Environment Variable to the proper value.
+
+6. Point to SYSROOT in compiler and linker miscellaneous settings.
+
+7. Add the following libraries:
+    - n2cube
+    - dputils
+    - opencv_core
+    - opencv_imgcodecs
+    - opencv_highgui
+    - opencv_imgproc
+    - opencv_videoio
+    - pthread
+
+
+8. For the g++ Linker Miscellaneous **Other Objects**, select `face_detection/src/dpu_densebox.elf`.
+
+9. Click **OK**.
+
+10. Right-click on the **face_detection** application and select **Build Project**.
+
 # Working with Ultra96
 
 ## Setting up Ultra96
