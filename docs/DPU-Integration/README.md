@@ -19,7 +19,7 @@ This tutorial demonstrates how to build a custom system that utilizes the 1.3.0 
 
 3. Use Xilinx SDK to build two machine learning applications that take advantage of the DPU.
 
-**Note:** The Ultra96 will be the targeted hardware platform.  
+**Note:** The Ultra96 will be the targeted hardware platform. The DPU IP and yocto recipes are based on the ZCU102 DPU v1.3.0 TRD, which can be downloaded [here.](https://www.xilinx.com/member/forms/download/design-license-xef.html?filename=zcu102-dpu-trd-2018-2-190322.zip)
 
 
 # Requirements for Using the Xilinx DPU
@@ -59,8 +59,7 @@ This section lists the software and hardware tools required to use the Xilinx&re
 * USB webcam
 
 # Project Archive
-Download and extract the full tutorial archive from this repository and move the DPU Integration Tutorial sub-directory to your working area.
-This will create a directory named “dpu_integration_lab” with the directory structure as shown in the following figure:
+Download and extract the full tutorial archive from this repository and move the DPU Integration/reference-files sub-directory to your working area. Rename this directory to "dpu_integration_lab". You should end up with a directory structure as shown in the following figure:
 
 ![Directory Structure](./images/image1.png "Directory structure")
 
@@ -332,17 +331,16 @@ Use the following to open the top-level PetaLinux project configuration GUI.
 
     **Note:** Do not enable the dev or dbg packages.
 
-  **Apps ->**
+    **Apps ->**
       - dnndk
       - autostart
 
-  **Filesystem Packages ->**
+    **Filesystem Packages ->**
 
       - console->tools->protobuf  (Note: this is related to the OpenCV modification)
       - libs->libmali-xlnx->libmali-xlnx
 
-  **Modules ->**
-
+    **Modules ->**
       - dpu
 
 
@@ -429,7 +427,7 @@ In the device tree, each interrupt 3-tuple is defined as follows:
   --pmufw pmufw.elf --fpga system.bit --force
   ```
 
-## Step 9: Create `sysroot`
+## Step 9: Create sysroot
 
 The `sysroot` is required to build applications against the libraries/header files that are provided by some of the packages that are built into the root file system.
 
@@ -437,7 +435,7 @@ The `sysroot` is required to build applications against the libraries/header fil
 
 Running through the full process to rebuild the SDK can take over an hour to complete. Therefore, a pre-built SDK has been provided with the tutorial files.
 
-To download the pre-built SDK file, download and extract the zip file located at https://www.xilinx.com/cgi-bin/docs/rdoc?v=2018.3;d=ug1350-design-files.zip, then copy the `sdk.sh` file to `../files`.
+To download the pre-built SDK file, download and extract the zip file [from this link](https://www.xilinx.com/cgi-bin/docs/rdoc?v=2018.3;d=ug1350-design-files.zip), then copy the `sdk.sh` file to `../files`.
 
 To install the pre-built SDK, use the following command:
 
@@ -480,14 +478,16 @@ When the GUI opens, browse to the empty workspace at `<PROJ ROOT>/sdk_workspace`
 
 ## Step 2:	Create a New Application Project
 
- Use the following steps to create a new application project:
- 1. Click **File** and select **New Application Project**
+Use the following steps to create a new application project:
 
- 2. Enter the parameters as follows:
+1. Click **File** and select **New Application Project**
+
+2. Enter the parameters as follows:
       - Name: **resnet50**
       - OS Platform: **Linux**
       - Processor Type: **psu_cortexa53**
       - Language: **C++**
+
 
 3. Click **Next**
 
@@ -499,35 +499,38 @@ When the GUI opens, browse to the empty workspace at `<PROJ ROOT>/sdk_workspace`
 
 ## Step 3: Import Source Files and Model .elf Files
 
-Use the following steps to import source files and model .elf files:
-  1. Click **File** and select **Import** -> **General** -> **Filesystem**
+Use the following steps to import source files and model .elfs files:
 
-  2. Browse to `<PROJ ROOT>/files/resnet50`
+1. Click **File** and select **Import** -> **General** -> **Filesystem**.
 
-  3. Click **OK**
+2. Browse to `<PROJ ROOT>/files/resnet50`.
 
-  4. Select **main.cc**
+3. Click **OK**.
 
-  5. Check if the `Into Folder` is set to **resnet50/src**
+4. Select **main.cc**.
 
-  6. Click **Finish**, and allow it to overwrite `main.cc`.
+5. Check if the `Into Folder` is set to **resnet50/src**.
 
-  7. Repeat the previous steps to import the DPU model `.elfs`, `dpu_resnet50_0.elf`, and `dpu_resenet50_2.elf` files.
+6. Click **Finish**, and allow it to overwrite `main.cc`.
+
+7. Follow the same steps to import the DPU model `.elfs`, `dpu_resnet50_0.elf`, and `dpu_resenet50_2.elf` files.
 
   **Note:** You can use the pre-built models from `<PROJ ROOT>/files/resnet50/B1152_1.3.0`, if you do not have your own.
 
 ## Step 4: Update the Application Build Settings
+
 Use the following steps to update the application build settings:
 
 1. Right-click on **resnet50 application** and select **C/C++ Build Settings**.
 
-2. In **C/C++ Build** -> **Environment**, add SYSROOT and point to the following location:
+2. In **C/C++ Build** -> **Environment**, add SYSROOT and point to the following:
 
-  ```
-  ${workspace_loc}/../petalinux/images/linux/sdk/sysroots/aarch64-xilinx-linux
-  ```
+    ```
+    ${workspace_loc}/../petalinux/images/linux/sdk/sysroots/aarch64-xilinx-linux
+    ```
 
   ![Environment Variables](./images/image9.png "Environment Variables")  
+
 3. Point the compiler and the linker to SYSROOT:
     - g++ linker settings:
 
@@ -548,14 +551,15 @@ Use the following steps to update the application build settings:
       ![Linker libraries](./images/image12.png "Linker libraries")
 
 5. In **g++ linker** -> **Miscellaneous**, add the model `.elfs` to **Other Objects**.
+
 6. Add `dpu_resnet50_0.elf` and `dpu_resnet50_2.elf` from the `resnet50/src directory`.
- **Note:** You can use the **workspace** button and browse to the objects you want, as shown in the following figure:
+ **Note:** You can click **Workspace** to browse to the objects you want, as shown in the following figure:
 
   ![File Selection](./images/image13.png "File Selection")
 
   ![Other Objects](./images/image14.png "Other Objects")
 
-      **Note:** This will cause the `.elfs` to be statically linked to the application. It is also possible to dynamically link these objects at runtime(not covered in this guide).
+    **Note:** This will cause the `.elfs` to be statically linked to the application. It is also possible to dynamically link these objects at runtime(not covered in this guide).
 
 7. Click **OK**.
 8. Right-click on the **resnet50** application and select **Build Project**.
@@ -564,9 +568,10 @@ Use the following steps to update the application build settings:
 ## Step 5: Build the Face Detection Application
 
 Use the following steps to build the face detection application:
+
 1. Repeat steps 2 through 5 above.
 
-2. Add the source file `<PROJ ROOT>/files/face_detection/face_detection.cc`.
+2. Add the source file <PROJ ROOT>/files/face_detection/face_detection.cc.
 
 3. Delete `main.cc` from the project.
 
@@ -585,7 +590,6 @@ Use the following steps to build the face detection application:
     - opencv_imgproc
     - opencv_videoio
     - pthread
-
 
 8. For the g++ Linker Miscellaneous **Other Objects**, select `face_detection/src/dpu_densebox.elf`.
 
@@ -651,16 +655,17 @@ Place the micro SD card into the Ultra96 and power on the board. Once the board 
 
 Run the commands below to prepare the display:
 
-`export DISPLAY=:0.0
+```
+export DISPLAY=:0.0
 xrandr --output DP-1 --mode 800x600
 xset -dpms
-`
+```
 
 **Note:** Use `xrandr` to find a suitable mode for your monitor. When running at 1920x1080, the screen may flicker due to memory bandwidth issues.  
 
 If the display goes blank between runs, use `xset -dpms` to re-enable the display.
 
-## Step 4:	Run `Resnet50`
+## Step 4:	Run Resnet50
 
 Change to the directory with the `resnet50` application and execute the program.
 •	cd /media/card/resnet50

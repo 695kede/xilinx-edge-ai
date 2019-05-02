@@ -1,4 +1,5 @@
-#!/usr/bin/sh 
+#!/usr/bin/bash
+
 
 ML_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && cd ../../.. && pwd )"
 export ML_DIR
@@ -28,4 +29,3 @@ decent     quantize                   \
            -output_dir ${output_dir} \
 	   -method 1 \
 	   -auto_test -test_iter 80
-

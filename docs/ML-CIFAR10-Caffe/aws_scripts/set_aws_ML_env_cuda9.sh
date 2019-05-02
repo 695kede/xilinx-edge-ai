@@ -1,21 +1,14 @@
 #!/bin/bash
 
-#put here the name of your caffe distribution
-export CAFFE_ROOT=$HOME/src/caffe_python_2
-
-# remove previous installs
-sudo unlink /home/ubuntu/src/caffe_python_2/distribute/bin/caffe.bin
-sudo unlink /home/ubuntu/src/caffe_python_2/distribute
-sudo unlink /home/ubuntu/src/caffe_python_2/build/install/bin/compute_image_mean.bin
 
 
 ##################################################################################
 # set caffe dir
 mkdir $HOME/caffe_tools
-mkdir $HOME/caffe_tools/BVLC1v0-Caffe
 
-sudo ln -nsf /home/ubuntu/src/caffe_python_2/                           $CAFFE_ROOT
-#export CAFFE_ROOT=$CAFFE_ROOT_DIR/caffe_python_2
+sudo ln -nsf /home/ubuntu/src/caffe_python_2/                           $HOME/caffe_tools/BVLC1v0-Caffe
+export CAFFE_ROOT=$HOME/caffe_tools/BVLC1v0-Caffe
+
 sudo ln -nsf /home/ubuntu/src/caffe_python_2/build/install              $CAFFE_ROOT/distribute
 sudo ln -nsf /home/ubuntu/src/caffe_python_2/build/install/bin/caffe    $CAFFE_ROOT/distribute/bin/caffe.bin
 sudo ln -nsf /home/ubuntu/src/caffe_python_2/build/install/bin/compute_image_mean $CAFFE_ROOT/distribute/bin/compute_image_mean.bin
@@ -33,7 +26,7 @@ if [ ! -d $HOME/ML/DNNDK ]; then
 	mkdir $HOME/ML/DNNDK
 	cd $HOME
 	cp xlnx_host_208tools_cuda9.tar.gz $HOME/ML/DNNDK
-	
+
 	cd $HOME/ML/DNNDK
 	tar -xvf xlnx_host_208tools_cuda9.tar.gz
 	cd ./cuda9_tools

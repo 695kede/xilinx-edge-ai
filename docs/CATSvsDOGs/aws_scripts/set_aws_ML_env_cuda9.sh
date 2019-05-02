@@ -1,21 +1,15 @@
 #!/bin/bash
 
 #put here the name of your caffe distribution
-export CAFFE_ROOT=$HOME/caffe_tools/BVLC1v0-Caffe
-
-
-# remove previous installs
-sudo unlink /home/ubuntu/src/caffe_python_2/distribute/bin/caffe.bin
-sudo unlink /home/ubuntu/src/caffe_python_2/distribute
-sudo unlink /home/ubuntu/src/caffe_python_2/build/install/bin/compute_image_mean.bin
 
 
 ##################################################################################
 # set caffe dir
 mkdir $HOME/caffe_tools
-mkdir $HOME/caffe_tools/BVLC1v0-Caffe
 
-sudo ln -nsf /home/ubuntu/src/caffe_python_2/                           $CAFFE_ROOT
+sudo ln -nsf /home/ubuntu/src/caffe_python_2/                           $HOME/caffe_tools/BVLC1v0-Caffe
+export CAFFE_ROOT=$HOME/caffe_tools/BVLC1v0-Caffe
+
 sudo ln -nsf /home/ubuntu/src/caffe_python_2/build/install              $CAFFE_ROOT/distribute
 sudo ln -nsf /home/ubuntu/src/caffe_python_2/build/install/bin/caffe    $CAFFE_ROOT/distribute/bin/caffe.bin
 sudo ln -nsf /home/ubuntu/src/caffe_python_2/build/install/bin/compute_image_mean /home/ubuntu/src/caffe_python_2/build/install/bin/compute_image_mean.bin

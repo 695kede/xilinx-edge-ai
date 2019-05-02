@@ -4,7 +4,7 @@
    </td>
  </tr>
  <tr>
- <td align="center"><h3>CIFAR10 Caffe Tutorial (UG1335)</h3>
+ <td align="center"><h3>CIFAR10 Caffe Tutorial</h3>
  </td>
  </tr>
 </table>
@@ -105,7 +105,7 @@ If you do use previous releases, you should get the same top-1 accuracy results 
 
 ## 3.4 AWS p2.xlarge Instance
 
-A good reason to use [AWS](https://aws.amazon.com/) is that most of the ML SW tools are already preinstalled on the Deep Learning Base AMI Ubuntu (version 15), shown in the below screenshot. You only need to install Keras on the TensorFlow backend.
+A good reason to use [AWS](https://aws.amazon.com/) is that most of the ML SW tools are already preinstalled on the Deep Learning Base AMI Ubuntu (version 15 and above), shown in the below screenshot. You only need to install Keras on the TensorFlow backend.
 ![figure](images/aws_ami.png)
 
 If you choose a p2.xlarge EC2 instance, as illustrated in the following screenshot, you get a K80 NVIDIA GPU, which is more than enough to run this tutorial:
@@ -159,7 +159,7 @@ In Caffe, ``.prototxt`` files cannot use Linux environmental variables; only rel
 
 If you use AWS Ubuntu AMI, the [set_aws_ML_env_cuda9.sh](aws_scripts/set_aws_ML_env_cuda9.sh) script creates the directory structure for the whole project, assuming the following values:
   - ``$HOME`` stays for ``/home/ubuntu``.
-  - ``$CAFFE_ROOT`` stays for ``/home/ubuntu/src/caffe_python2``.
+  - ``$CAFFE_ROOT`` stays for ``/home/ubuntu/caffe_tools/BVLC1v0-Caffe`` which is soft-linked to ``/home/ubuntu/src/caffe_python2``.
 
 If you use your own Ubuntu PC instead of the AWS:
 - ``$HOME`` is your home directory, shortly ``~`` in Linux (for example, ``/home/danieleb``).
@@ -257,8 +257,8 @@ source cifar10/caffe/caffe_flow_miniVggNet.sh 2>&1 | tee cifar10/caffe/models/mi
 ```
 If you are working on the AWS, the shell script needs some changes due to the different environment. Apply the [aws_caffe_flow_miniVggNet.sh](caffe/aws_caffe_flow_miniVggNet.sh) script instead, with similar commands:
 ```
-cd $HOME/ML
-source cifar10/caffe/aws_caffe_flow_miniVggNet.sh 2>&1 | tee cifar10/caffe/models/miniVggNet/m3/aws_logfile_3_miniVggNet.txt
+cd $HOME/ML/cifar10
+source caffe/aws_caffe_flow_miniVggNet.sh 2>&1 | tee caffe/models/miniVggNet/m3/aws_logfile_3_miniVggNet.txt
 ```
 
 **:warning: Warning:** Relative pathnames are used in the ``.prototxt`` files. Do not launch the scripts in a directory different from ``$HOME/ML``, or they will fail.
@@ -451,7 +451,7 @@ cd ~/ML/cifar10/deephi/zcu102/baseline/rpt
 scp root@192.168.1.100:/root/cifar10/miniVggNet/zcu102/baseline/rpt/logfile_top5_miniVggNet.txt .
 python ~/ML/cifar10/caffe/codecheck_dpu_runtime_accuracy.py \
    -i ./logfile_top5_miniVggNet.txt 2>&1 | tee ./logfile_check_dpu_top5_miniVggNet.txt
-   ```
+```
 
 ## 8.7  Performance of the Quantized Baseline miniVggNet on ZCU102
 
@@ -576,7 +576,7 @@ cd ~/ML/cifar10/deephi/zcu102/pruned/rpt
 scp root@192.168.1.100:/root/cifar10/miniVggNet/zcu102/pruned/rpt/logfile_top5_pruned_miniVggNet.txt .
 python ~/ML/cifar10/caffe/codecheck_dpu_runtime_accuracy.py \
    -i ./logfile_top5_pruned_miniVggNet.txt 2>&1 | tee ./logfile_check_dpu_top5_pruned_miniVggNet.txt
-   ```
+```
 
 ## 10.3 Performance of the Quantized Pruned miniVggNet on ZCU102
 

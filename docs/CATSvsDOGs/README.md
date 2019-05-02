@@ -4,7 +4,7 @@
    </td>
  </tr>
  <tr>
- <td align="center"><h3>Cats vs. Dogs Caffe Tutorial (UG1336)</h3>
+ <td align="center"><h3>Cats vs. Dogs Caffe Tutorial</h3>
  </td>
  </tr>
 </table>
@@ -101,7 +101,7 @@ My colleague [Kester Aernoudt](mailto:kestera@xilinx.com) has created an image w
 
 ## 3.4 AWS p2.xlarge Instance
 
-A good reason to use [AWS](https://aws.amazon.com/) is that most of the ML SW tools are already preinstalled on Deep Learning Base AMI Ubuntu (version 15), shown in the below screenshot
+A good reason to use [AWS](https://aws.amazon.com/) is that most of the ML SW tools are already preinstalled on Deep Learning Base AMI Ubuntu (version 15 and above), shown in the below screenshot
 ![figure](images/aws_ami.png)
 
 If you choose a p2.xlarge EC2 instance, as illustrated on the following screenshot, you get a K80 NVIDIA GPU which is more than enough to run this tutorial:
@@ -154,7 +154,7 @@ In Caffe, ``.prototxt`` files cannot use Linux environmental variables; only rel
 
 If you use AWS Ubuntu AMI, the [set_aws_ML_env_cuda9.sh](aws_scripts/set_aws_ML_env_cuda9.sh) script creates the directory structure for the whole project, assuming the following values:
   - ``$HOME`` stays for ``/home/ubuntu``.
-  - ``$CAFFE_ROOT`` stays for ``/home/ubuntu/src/caffe_python2``.
+  - ``$CAFFE_ROOT`` stays for ``/home/ubuntu/caffe_tools/BVLC1v0-Caffe`` which is soft-linked to  ``/home/ubuntu/src/caffe_python2``.
 
 If you use your own Ubuntu PC instead of the AWS:
 - ``$HOME`` is your home directory, shortly ``~`` in Linux (in my case, with value ``/home/danieleb``).
@@ -268,8 +268,8 @@ source cats-vs-dogs/caffe/caffe_flow_AlexNet.sh 2>&1 | tee cats-vs-dogs/caffe/rp
 If you are working on the AWS, the shell script needs some changes due to the different environment. Apply the [aws_caffe_flow_AlexNet.sh](caffe/aws_caffe_flow_AlexNet.sh) script instead, with similar commands:
 ```
 source activate caffe_p27
-cd $HOME/ML
-source cats-vs-dogs/caffe/aws_caffe_flow_AlexNet.sh 2>&1 | tee cats-vs-dogs/caffe/rpt/aws_logfile_caffe_flow_AlexNet.txt
+cd $HOME/ML/cats-vs-dogs
+source caffe/aws_caffe_flow_AlexNet.sh 2>&1 | tee caffe/rpt/aws_logfile_caffe_flow_AlexNet.txt
 ```
 
 :pushpin: **Note:** In a Linux shell, you can comment out a set of lines by surrounding them with the following symbols: ``: '``  before the first line to be commented and `` ' `` after the last line to be commented.
@@ -449,7 +449,7 @@ cd ~/ML/cats-vs-dogs/deephi/zcu102/baseline/rpt
 scp root@192.168.1.100:/root/cats-vs-dogs/alexnetBNnoLRN/zcu102/baseline/rpt/logfile_top5_alexnetBNnoLRN.txt .
 python ~/ML/cats-vs-dogs/caffe/codecheck_dpu_runtime_accuracy.py \
    -i ./logfile_top5_alexnetBNnoLRN.txt 2>&1 | tee ./logfile_check_dpu_top5_alexnetBNnoLRN.txt
-   ```
+```
 
 ## 8.7  Performance of the Quantized Baseline AlexNet on ZCU102
 
@@ -572,7 +572,7 @@ cd ~/ML/cats-vs-dogs/deephi/zcu102/pruned/rpt
 scp root@192.168.1.100:/root/cats-vs-dogs/alexnetBNnoLRN/zcu102/pruned/rpt/logfile_top5_pruned_alexnetBNnoLRN.txt .
 python ~/ML/cats-vs-dogs/caffe/codecheck_dpu_runtime_accuracy.py \
    -i ./logfile_top5_pruned_alexnetBNnoLRN.txt 2>&1 | tee ./logfile_check_dpu_top5_pruned_alexnetBNnoLRN.txt
-   ```
+```
 
 ## 10.3 Performance of the Quantized Pruned AlexNet on ZCU102
 

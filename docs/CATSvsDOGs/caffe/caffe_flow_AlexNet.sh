@@ -33,6 +33,12 @@ if [ ! -d $ML_DIR/input/lmdb/ ]; then
     python $WORK_DIR/code/2a_create_lmdb.py -i  $WORK_DIR/../input/jpg/ -o  $WORK_DIR/../input/lmdb
     python $WORK_DIR/code/2b_compute_mean.py
 
+		# make all *.sh scripts to be executable
+		##https://askubuntu.com/questions/484718/how-to-make-a-file-executable
+		for file in $(find $HOME/ML/ -name *.sh); do
+			chmod +x ${file}
+		done
+		
     #remove redundant images
     #cd $WORK_DIR/input/jpg
     #rm -r cats dogs train
@@ -80,7 +86,7 @@ cp -f $WORK_DIR/models/$NET/m$MOD_NUM/retrain_logfile_$MOD_NUM\_$NET.log $WORK_D
 '
 
 : '
-# alternative example to plot learing curves 
+# alternative example to plot learing curves
 ## 0 Test Accuracy vs Iters
 ## 1 Test Accuracy vs Seconds
 ## 2 Test Loss     vs Iters
@@ -93,5 +99,3 @@ python $WORK_DIR/code/plot_training_log.py 6 $WORK_DIR/models/$NET/m$MOD_NUM/plt
 python $WORK_DIR/code/plot_training_log.py 2 $WORK_DIR/models/$NET/m$MOD_NUM/plt_testLoss_$MOD_NUM\_$NET.png      $WORK_DIR/models/$NET/m$MOD_NUM/logfile_$MOD_NUM\_$NET.log
 python $WORK_DIR/code/plot_training_log.py 0 $WORK_DIR/models/$NET/m$MOD_NUM/plt_testAccuracy_$MOD_NUM\_$NET.png  $WORK_DIR/models/$NET/m$MOD_NUM/logfile_$MOD_NUM\_$NET.log
 '
-
-

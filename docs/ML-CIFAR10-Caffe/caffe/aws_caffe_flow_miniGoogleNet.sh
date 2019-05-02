@@ -27,7 +27,7 @@ if [ ! -d $HOME/ML/cifar10/input/cifar10_jpg/ ]; then
 	# go to TensorFlow environment, load the database from Keras and write it as JPEG images
 	source activate tensorflow_p27
 	export PYTHONPATH=/usr/local/lib/python2.7/dist-packages/:/home/ubuntu/anaconda3/envs/caffe_p27/lib/python2.7/site-packages/:$PYTHONPATH #needed for opencv
-	python $WORK_DIR/code/1_write_cifar10_images.py 
+	python $WORK_DIR/code/1_write_cifar10_images.py
 	export PYTHONPATH=/home/ubuntu/src/cntk/bindings/python
 	source deactivate tensorflow_p27
 
@@ -40,11 +40,13 @@ if [ ! -d $HOME/ML/cifar10/input/cifar10_jpg/ ]; then
 	python $WORK_DIR/code/2a_create_lmdb.py
 	# DO NOT RUN BELOW COMMAND AS mean.binaryproto is already available! Is is here only for reference
 	##python $WORK_DIR/code/2b_compute_mean.py
+
+	#check goodness of LMDB databases (just for debug: you can skip it)
+	python $WORK_DIR/code/3_read_lmdb.py
+	source deactivate caffe_p27
+
 fi
-
-#check goodness of LMDB databases (just for debug: you can skip it)
-python $WORK_DIR/code/3_read_lmdb.py
-
+source activate caffe_p27
 
 # ################################################################################################################
 # SCRIPT 4  (SOLVER AND TRAINING AND LEARNING CURVE)
@@ -86,7 +88,7 @@ cp -f $WORK_DIR/models/$NET/m$MOD_NUM/retrain_logfile_$MOD_NUM\_$NET.log $WORK_D
 '
 
 : '
-# alternative example to plot learing curves 
+# alternative example to plot learing curves
 ## 0 Test Accuracy vs Iters
 ## 1 Test Accuracy vs Seconds
 ## 2 Test Loss     vs Iters

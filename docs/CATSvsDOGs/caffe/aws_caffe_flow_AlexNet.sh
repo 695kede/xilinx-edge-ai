@@ -9,7 +9,7 @@ export CAFFE_TOOLS_DIR=$CAFFE_ROOT/distribute
 export WORK_DIR=$HOME/ML/cats-vs-dogs/caffe #working dir
 
 NUMIT=12000  # number of iterations
-NET=alexnetBNnoLRN 
+NET=alexnetBNnoLRN
 MOD_NUM=2   # model number
 
 ##modify the prototxt files to have the correct path (need an absolute path)
@@ -41,7 +41,6 @@ fi
 #cd $HOME/ML/cats-vs-dogs/input/jpg
 #rm -r cats dogs train
 
-
 # ################################################################################################################
 # SCRIPT 4  (SOLVER AND TRAINING AND LEARNING CURVE)
 echo "TRAINING. Remember that: <Epoch_index = floor((iteration_index * batch_size) / (# data_samples))>"
@@ -64,7 +63,7 @@ python $WORK_DIR/code/5_plot_learning_curve.py $WORK_DIR/models/$NET/m$MOD_NUM/l
 # SCRIPT 6 (PREDICTION)
 echo "COMPUTE PREDICTIONS"
 python $WORK_DIR/code/6_make_predictions.py -d $WORK_DIR/models/$NET/m$MOD_NUM/deploy_$MOD_NUM\_$NET.prototxt -w $WORK_DIR/models/$NET/m$MOD_NUM/snapshot_$MOD_NUM\_$NET\__iter_$NUMIT.caffemodel 2>&1 | tee $WORK_DIR/models/$NET/m$MOD_NUM/predictions_$MOD_NUM\_$NET.txt
-
+'
 
 # ################################################################################################################
 # The below code is commented, as not needed to run this tutorial. But I think it can be useful for reference
@@ -72,7 +71,6 @@ python $WORK_DIR/code/6_make_predictions.py -d $WORK_DIR/models/$NET/m$MOD_NUM/d
 : '
 #training by direct command
 $CAFFE_TOOLS_DIR/bin/caffe.bin train --solver $WORK_DIR/models/$NET/m$MOD_NUM/solver_$MOD_NUM\_$NET.prototxt 2>&1 | tee $WORK_DIR/models/$NET/m$MOD_NUM/logfile_$MOD_NUM\_$NET.log
-'
 
 : '
 # example of trainining the CNN from a certain snapshot
@@ -83,7 +81,7 @@ cp -f $WORK_DIR/models/$NET/m$MOD_NUM/retrain_logfile_$MOD_NUM\_$NET.log $WORK_D
 '
 
 : '
-# alternative example to plot learing curves 
+# alternative example to plot learing curves
 ## 0 Test Accuracy vs Iters
 ## 1 Test Accuracy vs Seconds
 ## 2 Test Loss     vs Iters
@@ -96,4 +94,3 @@ python $WORK_DIR/code/plot_training_log.py 6 $WORK_DIR/models/$NET/m$MOD_NUM/plt
 python $WORK_DIR/code/plot_training_log.py 2 $WORK_DIR/models/$NET/m$MOD_NUM/plt_testLoss_$MOD_NUM\_$NET.png      $WORK_DIR/models/$NET/m$MOD_NUM/logfile_$MOD_NUM\_$NET.log
 python $WORK_DIR/code/plot_training_log.py 0 $WORK_DIR/models/$NET/m$MOD_NUM/plt_testAccuracy_$MOD_NUM\_$NET.png  $WORK_DIR/models/$NET/m$MOD_NUM/logfile_$MOD_NUM\_$NET.log
 '
-
