@@ -24,6 +24,12 @@
  <tr>
  <td align="center"><a href="docs/DPU-Integration">DPU Integration Lab (UG1350)</a></td>
  <td>Build a custom system that utilizes the Xilinx Deep Learning Processor (DPU) IP to accelerate machine learning algorithms.</td>
- </tr> </table>
+ </tr>
+ <tr>
+ <td align="center"><a href="docs/Darknet-Caffe-Conversion">Yolov3 Tutorial with Darknet to Caffe Converter and Xilinx DNNDK (UG1334)</a></td>
+ <td>
+Use the Yolov3 example, which converts the Darknet model to Caffe model and uses the DNNDK tool chain for quantization, compilation, and deployment on the FPGA.</td>
+ </tr>
+ </table>
 
 <p align="center"><sup>Copyright&copy; 2019 Xilinx</sup></p>
