@@ -30,6 +30,15 @@
  <td>
 Use the Yolov3 example, which converts the Darknet model to Caffe model and uses the DNNDK tool chain for quantization, compilation, and deployment on the FPGA.</td>
  </tr>
+ <tr>
+ <td align="center"><a href="docs/MNIST_tf">MNIST Classification with TensorFlow (UG1337)</a></td>
+ <td>
+Learn the DNNDK v3.0 TensorFlow design process for creating a compiled `.elf` file that is ready for deployment on the Xilinx&reg; DPU accelerator from a simple network model built using Python. This tutorial uses the MNIST test dataset.</td>
+ </tr><tr>
+ <td align="center"><a href="docs/CIFAR10_tf">CIFAR10 Classification with TensorFlow (UG1338)</a></td>
+ <td>
+Learn the DNNDK v3.0 TensorFlow design process for creating a compiled `.elf` file that is ready for deployment on the Xilinx&reg; DPU accelerator from a simple network model built using Python. This tutorial uses the CIFAR-10 test dataset.</td>
+ </tr>
  </table>
 
 <p align="center"><sup>Copyright&copy; 2019 Xilinx</sup></p>
