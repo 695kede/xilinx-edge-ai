@@ -1,0 +1,83 @@
+2019-07-10 17:24:21.972332: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
+2019-07-10 17:24:22.043839: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1392] Found device 0 with properties: 
+name: Quadro P6000 major: 6 minor: 1 memoryClockRate(GHz): 1.645
+pciBusID: 0000:65:00.0
+totalMemory: 23.86GiB freeMemory: 23.11GiB
+2019-07-10 17:24:22.043862: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-07-10 17:24:22.303285: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-10 17:24:22.303313: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-07-10 17:24:22.303318: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-07-10 17:24:22.303874: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22423 MB memory) -> physical GPU (device: 0, name: Quadro P6000, pci bus id: 0000:65:00.0, compute capability: 6.1)
+[INFO] compiling model...
+[INFO] training model...
+Epoch 1/5
+ - 82s - loss: 0.3895 - acc: 0.8974 - val_loss: 0.3653 - val_acc: 0.9060
+
+Epoch 00001: val_loss improved from inf to 0.36529, saving model to keras_model/cifar10/LeNet/best_chkpt.hdf5
+Epoch 2/5
+ - 80s - loss: 0.2965 - acc: 0.9292 - val_loss: 0.3581 - val_acc: 0.9076
+
+Epoch 00002: val_loss improved from 0.36529 to 0.35809, saving model to keras_model/cifar10/LeNet/best_chkpt.hdf5
+Epoch 3/5
+ - 80s - loss: 0.2724 - acc: 0.9388 - val_loss: 0.3513 - val_acc: 0.9105
+
+Epoch 00003: val_loss improved from 0.35809 to 0.35131, saving model to keras_model/cifar10/LeNet/best_chkpt.hdf5
+Epoch 4/5
+ - 80s - loss: 0.2572 - acc: 0.9448 - val_loss: 0.3527 - val_acc: 0.9113
+
+Epoch 00004: val_loss did not improve from 0.35131
+Epoch 5/5
+ - 80s - loss: 0.2469 - acc: 0.9487 - val_loss: 0.3518 - val_acc: 0.9125
+
+Epoch 00005: val_loss did not improve from 0.35131
+
+
+Elapsed time for Keras training (s):  403.675384
+
+
+[INFO] evaluating network on Test and Validation datasets...
+
+  32/5000 [..............................] - ETA: 0s
+ 736/5000 [===>..........................] - ETA: 0s
+1472/5000 [=======>......................] - ETA: 0s
+2144/5000 [===========>..................] - ETA: 0s
+2816/5000 [===============>..............] - ETA: 0s
+3456/5000 [===================>..........] - ETA: 0s
+4096/5000 [=======================>......] - ETA: 0s
+4704/5000 [===========================>..] - ETA: 0s
+5000/5000 [==============================] - 0s 78us/step
+Validation Loss: 0.351
+validation Accuracy: 0.913
+
+  32/5000 [..............................] - ETA: 0s
+ 640/5000 [==>...........................] - ETA: 0s
+1280/5000 [======>.......................] - ETA: 0s
+1920/5000 [==========>...................] - ETA: 0s
+2560/5000 [==============>...............] - ETA: 0s
+3168/5000 [==================>...........] - ETA: 0s
+3776/5000 [=====================>........] - ETA: 0s
+4416/5000 [=========================>....] - ETA: 0s
+5000/5000 [==============================] - 0s 82us/step
+Using TensorFlow backend.
+Test Loss: 0.357
+Test Accuracy: 0.910
+              precision    recall  f1-score   support
+
+    airplane       0.87      0.85      0.86       500
+  automobile       0.99      0.99      0.99       500
+        bird       0.87      0.84      0.85       500
+         cat       0.91      0.90      0.91       500
+        deer       0.82      0.89      0.86       500
+         dog       0.98      0.98      0.98       500
+        frog       0.75      0.75      0.75       500
+       horse       0.94      0.97      0.96       500
+        ship       0.99      0.97      0.98       500
+       truck       0.98      0.96      0.97       500
+
+   micro avg       0.91      0.91      0.91      5000
+   macro avg       0.91      0.91      0.91      5000
+weighted avg       0.91      0.91      0.91      5000
+
+
+TRAINING LeNet FINISHED
+

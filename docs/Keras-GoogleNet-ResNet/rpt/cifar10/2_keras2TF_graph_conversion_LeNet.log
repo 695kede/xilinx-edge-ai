@@ -1,0 +1,47 @@
+2019-07-10 20:49:28.148599: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
+2019-07-10 20:49:28.232015: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1392] Found device 0 with properties: 
+name: Quadro P6000 major: 6 minor: 1 memoryClockRate(GHz): 1.645
+pciBusID: 0000:65:00.0
+totalMemory: 23.86GiB freeMemory: 23.18GiB
+2019-07-10 20:49:28.232036: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-07-10 20:49:28.514534: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-10 20:49:28.514563: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-07-10 20:49:28.514568: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-07-10 20:49:28.515103: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22493 MB memory) -> physical GPU (device: 0, name: Quadro P6000, pci bus id: 0000:65:00.0, compute capability: 6.1)
+Using TensorFlow backend.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d_1_input (InputLayer)  (None, 32, 32, 3)         0         
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 32, 32, 50)        3800      
+_________________________________________________________________
+batch_normalization_2 (Batch (None, 32, 32, 50)        200       
+_________________________________________________________________
+activation_2 (Activation)    (None, 32, 32, 50)        0         
+_________________________________________________________________
+max_pooling2d_2 (MaxPooling2 (None, 16, 16, 50)        0         
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 12800)             0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 500)               6400500   
+_________________________________________________________________
+activation_3 (Activation)    (None, 500)               0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 10)                5010      
+_________________________________________________________________
+activation_4 (Activation)    (None, 10)                0         
+=================================================================
+Total params: 6,409,510
+Trainable params: 6,409,410
+Non-trainable params: 100
+_________________________________________________________________
+
+ TF input node name:
+[<tf.Tensor 'conv2d_1_input:0' shape=(?, 32, 32, 3) dtype=float32>]
+
+ TF output node name:
+[<tf.Tensor 'activation_4/Softmax:0' shape=(?, 10) dtype=float32>]
+
+FINISHED CREATING TF FILES
+

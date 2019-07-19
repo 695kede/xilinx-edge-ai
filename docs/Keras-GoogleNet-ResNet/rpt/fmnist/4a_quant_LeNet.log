@@ -1,0 +1,79 @@
+Optimizing fused batch norm node name: "batch_normalization_2/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_2/BiasAdd"
+input: "batch_normalization_2/gamma"
+input: "batch_normalization_2/beta"
+input: "batch_normalization_2/moving_mean"
+input: "batch_normalization_2/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_2/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_2/BiasAdd"
+input: "batch_normalization_2/gamma"
+input: "batch_normalization_2/beta"
+input: "batch_normalization_2/moving_mean"
+input: "batch_normalization_2/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+  0% |                                                                        |  5% |###                                                                     | 10% |#######                                                                 | 15% |##########                                                              | 20% |##############                                                          | 25% |##################                                                      | 30% |#####################                                                   | 35% |#########################                                               | 40% |############################                                            | 45% |################################                                        | 50% |####################################                                    | 55% |#######################################                                 | 60% |###########################################                             | 65% |##############################################                          | 70% |##################################################                      | 75% |######################################################                  | 80% |#########################################################               | 85% |#############################################################           | 90% |################################################################        | 95% |####################################################################    |100% |########################################################################|
+script running on folder  /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/code
+CALIB DIR  /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/code/../dataset/fashion-mnist/calib/
+INFO: Start Float Graph Check
+INFO: Done Float Graph Check
+INFO: Start Calibration for 20 iterations:
+INFO: Done Calibration
+INFO: Start Generate Deploy Model
+INFO: End Generate Deploy Model
+********************* Quantization Summary *********************
+INFO: Output:
+  quantize_eval_model: ../quantized_results/fmnist/LeNet/quantize_eval_model.pb
+  deploy_model: ../quantized_results/fmnist/LeNet/deploy_model.pb

@@ -1,0 +1,10 @@
+2019-07-10 20:50:25.365494: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
+2019-07-10 20:50:25.440669: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1392] Found device 0 with properties: 
+name: Quadro P6000 major: 6 minor: 1 memoryClockRate(GHz): 1.645
+pciBusID: 0000:65:00.0
+totalMemory: 23.86GiB freeMemory: 23.18GiB
+2019-07-10 20:50:25.440690: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-07-10 20:50:25.713827: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-10 20:50:25.713858: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-07-10 20:50:25.713862: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-07-10 20:50:25.714396: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22493 MB memory) -> physical GPU (device: 0, name: Quadro P6000, pci bus id: 0000:65:00.0, compute capability: 6.1)

@@ -1,0 +1,4364 @@
+./rpt/logfile_top5_miniGoogleNet.txt  has  35004  lines
+LINE:   pullover_2315.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.827410  name = shirt
+top[1] prob = 0.087208  name = pullover
+top[2] prob = 0.041194  name = coat
+top[3] prob = 0.032082  name = top
+top[4] prob = 0.003381  name = dress
+
+
+LINE:   coat_4272.png
+
+PREDICTED:  2 pullover
+EXPECTED :  4 coat
+top[0] prob = 0.607804  name = pullover
+top[1] prob = 0.368652  name = shirt
+top[2] prob = 0.014294  name = coat
+top[3] prob = 0.004095  name = top
+top[4] prob = 0.003189  name = bag
+
+
+LINE:   trouser_5533.png
+
+PREDICTED:  3 dress
+EXPECTED :  1 trouser
+top[0] prob = 0.998691  name = dress
+top[1] prob = 0.001169  name = trouser
+top[2] prob = 0.000045  name = bag
+top[3] prob = 0.000045  name = sandal
+top[4] prob = 0.000028  name = ankleBoot
+
+
+LINE:   shirt_4106.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.379729  name = dress
+top[1] prob = 0.295733  name = shirt
+top[2] prob = 0.179371  name = pullover
+top[3] prob = 0.084729  name = top
+top[4] prob = 0.040023  name = coat
+
+
+LINE:   shirt_7222.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.540233  name = coat
+top[1] prob = 0.420734  name = shirt
+top[2] prob = 0.020947  name = top
+top[3] prob = 0.006001  name = bag
+top[4] prob = 0.006001  name = pullover
+
+
+LINE:   coat_2617.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.765022  name = shirt
+top[1] prob = 0.132941  name = coat
+top[2] prob = 0.048906  name = bag
+top[3] prob = 0.023102  name = top
+top[4] prob = 0.017992  name = pullover
+
+
+LINE:   shirt_7167.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.525298  name = dress
+top[1] prob = 0.409103  name = top
+top[2] prob = 0.033581  name = pullover
+top[3] prob = 0.015863  name = bag
+top[4] prob = 0.007493  name = shirt
+
+
+LINE:   shirt_7941.png
+
+PREDICTED:  2 pullover
+EXPECTED :  6 shirt
+top[0] prob = 0.509018  name = pullover
+top[1] prob = 0.187257  name = shirt
+top[2] prob = 0.113577  name = coat
+top[3] prob = 0.113577  name = top
+top[4] prob = 0.068888  name = dress
+
+
+LINE:   dress_4056.png
+
+PREDICTED:  1 trouser
+EXPECTED :  3 dress
+top[0] prob = 0.292129  name = trouser
+top[1] prob = 0.227510  name = shirt
+top[2] prob = 0.177185  name = top
+top[3] prob = 0.107468  name = dress
+top[4] prob = 0.107468  name = pullover
+
+
+LINE:   top_2677.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.561532  name = shirt
+top[1] prob = 0.437322  name = top
+top[2] prob = 0.000657  name = dress
+top[3] prob = 0.000399  name = pullover
+top[4] prob = 0.000033  name = sandal
+
+
+LINE:   sneaker_2146.png
+
+PREDICTED:  5 sandal
+EXPECTED :  7 sneaker
+top[0] prob = 0.723311  name = sandal
+top[1] prob = 0.266091  name = sneaker
+top[2] prob = 0.010317  name = ankleBoot
+top[3] prob = 0.000070  name = bag
+top[4] prob = 0.000070  name = pullover
+
+
+LINE:   shirt_8005.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.681507  name = dress
+top[1] prob = 0.152065  name = shirt
+top[2] prob = 0.043567  name = coat
+top[3] prob = 0.043567  name = top
+top[4] prob = 0.026425  name = bag
+
+
+LINE:   dress_2318.png
+
+PREDICTED:  2 pullover
+EXPECTED :  3 dress
+top[0] prob = 0.734151  name = pullover
+top[1] prob = 0.210338  name = shirt
+top[2] prob = 0.036551  name = dress
+top[3] prob = 0.008156  name = bag
+top[4] prob = 0.004947  name = trouser
+
+
+LINE:   dress_8646.png
+
+PREDICTED:  4 coat
+EXPECTED :  3 dress
+top[0] prob = 0.611968  name = coat
+top[1] prob = 0.371177  name = dress
+top[2] prob = 0.006798  name = shirt
+top[3] prob = 0.006798  name = pullover
+top[4] prob = 0.001517  name = trouser
+
+
+LINE:   shirt_3416.png
+
+PREDICTED:  8 bag
+EXPECTED :  6 shirt
+top[0] prob = 0.483517  name = bag
+top[1] prob = 0.293268  name = top
+top[2] prob = 0.107887  name = coat
+top[3] prob = 0.050962  name = shirt
+top[4] prob = 0.039690  name = dress
+
+
+LINE:   pullover_9105.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.428750  name = shirt
+top[1] prob = 0.428750  name = pullover
+top[2] prob = 0.122839  name = top
+top[3] prob = 0.016624  name = dress
+top[4] prob = 0.002250  name = trouser
+
+
+LINE:   coat_7571.png
+
+PREDICTED:  3 dress
+EXPECTED :  4 coat
+top[0] prob = 0.923734  name = dress
+top[1] prob = 0.075825  name = coat
+top[2] prob = 0.000241  name = bag
+top[3] prob = 0.000114  name = pullover
+top[4] prob = 0.000025  name = ankleBoot
+
+
+LINE:   shirt_5885.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.820724  name = coat
+top[1] prob = 0.142620  name = shirt
+top[2] prob = 0.019302  name = dress
+top[3] prob = 0.007101  name = sandal
+top[4] prob = 0.005530  name = pullover
+
+
+LINE:   shirt_9977.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.962325  name = top
+top[1] prob = 0.037313  name = shirt
+top[2] prob = 0.000323  name = pullover
+top[3] prob = 0.000034  name = dress
+top[4] prob = 0.000003  name = sandal
+
+
+LINE:   sneaker_4101.png
+
+PREDICTED:  9 ankleBoot
+EXPECTED :  7 sneaker
+top[0] prob = 0.496395  name = ankleBoot
+top[1] prob = 0.496395  name = sneaker
+top[2] prob = 0.007081  name = sandal
+top[3] prob = 0.000061  name = dress
+top[4] prob = 0.000029  name = top
+
+
+LINE:   top_5028.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.616556  name = shirt
+top[1] prob = 0.373960  name = top
+top[2] prob = 0.005334  name = pullover
+top[3] prob = 0.002520  name = bag
+top[4] prob = 0.001190  name = dress
+
+
+LINE:   sneaker_5316.png
+
+PREDICTED:  9 ankleBoot
+EXPECTED :  7 sneaker
+top[0] prob = 0.968054  name = ankleBoot
+top[1] prob = 0.022766  name = sneaker
+top[2] prob = 0.008375  name = sandal
+top[3] prob = 0.000325  name = bag
+top[4] prob = 0.000253  name = coat
+
+
+LINE:   pullover_9067.png
+
+PREDICTED:  0 top
+EXPECTED :  2 pullover
+top[0] prob = 0.617592  name = top
+top[1] prob = 0.374588  name = pullover
+top[2] prob = 0.006861  name = shirt
+top[3] prob = 0.000342  name = bag
+top[4] prob = 0.000266  name = dress
+
+
+LINE:   bag_635.png
+
+PREDICTED:  1 trouser
+EXPECTED :  8 bag
+top[0] prob = 0.440159  name = trouser
+top[1] prob = 0.342797  name = sandal
+top[2] prob = 0.161926  name = bag
+top[3] prob = 0.036130  name = pullover
+top[4] prob = 0.010352  name = top
+
+
+LINE:   pullover_7013.png
+
+PREDICTED:  8 bag
+EXPECTED :  2 pullover
+top[0] prob = 0.516759  name = bag
+top[1] prob = 0.115304  name = pullover
+top[2] prob = 0.089799  name = top
+top[3] prob = 0.069936  name = sandal
+top[4] prob = 0.069936  name = coat
+
+
+LINE:   top_5334.png
+
+PREDICTED:  3 dress
+EXPECTED :  0 top
+top[0] prob = 0.999261  name = dress
+top[1] prob = 0.000710  name = top
+top[2] prob = 0.000008  name = shirt
+top[3] prob = 0.000008  name = trouser
+top[4] prob = 0.000006  name = pullover
+
+
+LINE:   sneaker_4920.png
+
+PREDICTED:  9 ankleBoot
+EXPECTED :  7 sneaker
+top[0] prob = 0.560393  name = ankleBoot
+top[1] prob = 0.436435  name = sneaker
+top[2] prob = 0.002941  name = sandal
+top[3] prob = 0.000089  name = top
+top[4] prob = 0.000054  name = pullover
+
+
+LINE:   sandal_8463.png
+
+PREDICTED:  7 sneaker
+EXPECTED :  5 sandal
+top[0] prob = 0.678900  name = sneaker
+top[1] prob = 0.320689  name = sandal
+top[2] prob = 0.000228  name = ankleBoot
+top[3] prob = 0.000065  name = bag
+top[4] prob = 0.000040  name = dress
+
+
+LINE:   coat_3229.png
+
+PREDICTED:  3 dress
+EXPECTED :  4 coat
+top[0] prob = 0.438170  name = dress
+top[1] prob = 0.438170  name = trouser
+top[2] prob = 0.076143  name = pullover
+top[3] prob = 0.021815  name = ankleBoot
+top[4] prob = 0.013232  name = coat
+
+
+LINE:   shirt_2588.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.587124  name = top
+top[1] prob = 0.356109  name = shirt
+top[2] prob = 0.048194  name = dress
+top[3] prob = 0.008375  name = pullover
+top[4] prob = 0.000072  name = coat
+
+
+LINE:   top_8034.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.614536  name = shirt
+top[1] prob = 0.372735  name = top
+top[2] prob = 0.006827  name = coat
+top[3] prob = 0.001956  name = bag
+top[4] prob = 0.001523  name = dress
+
+
+LINE:   top_454.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.957512  name = shirt
+top[1] prob = 0.028914  name = top
+top[2] prob = 0.008284  name = pullover
+top[3] prob = 0.003913  name = dress
+top[4] prob = 0.000530  name = bag
+
+
+LINE:   pullover_5860.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.842671  name = shirt
+top[1] prob = 0.146434  name = pullover
+top[2] prob = 0.007291  name = top
+top[3] prob = 0.002089  name = dress
+top[4] prob = 0.000987  name = coat
+
+
+LINE:   pullover_248.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.365956  name = shirt
+top[1] prob = 0.365956  name = top
+top[2] prob = 0.221964  name = pullover
+top[3] prob = 0.038572  name = bag
+top[4] prob = 0.003166  name = trouser
+
+
+LINE:   pullover_8710.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.466449  name = shirt
+top[1] prob = 0.466449  name = pullover
+top[2] prob = 0.029819  name = coat
+top[3] prob = 0.023223  name = top
+top[4] prob = 0.010970  name = dress
+
+
+LINE:   pullover_4159.png
+
+PREDICTED:  0 top
+EXPECTED :  2 pullover
+top[0] prob = 0.816108  name = top
+top[1] prob = 0.182098  name = pullover
+top[2] prob = 0.001575  name = shirt
+top[3] prob = 0.000166  name = dress
+top[4] prob = 0.000029  name = trouser
+
+
+LINE:   ankleBoot_316.png
+
+PREDICTED:  7 sneaker
+EXPECTED :  9 ankleBoot
+top[0] prob = 0.560527  name = sneaker
+top[1] prob = 0.436539  name = ankleBoot
+top[2] prob = 0.002291  name = sandal
+top[3] prob = 0.000398  name = coat
+top[4] prob = 0.000114  name = pullover
+
+
+LINE:   pullover_6404.png
+
+PREDICTED:  4 coat
+EXPECTED :  2 pullover
+top[0] prob = 0.526855  name = coat
+top[1] prob = 0.319554  name = pullover
+top[2] prob = 0.091554  name = shirt
+top[3] prob = 0.033681  name = trouser
+top[4] prob = 0.009650  name = bag
+
+
+LINE:   shirt_7024.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.621077  name = coat
+top[1] prob = 0.376702  name = shirt
+top[2] prob = 0.000727  name = dress
+top[3] prob = 0.000566  name = bag
+top[4] prob = 0.000441  name = pullover
+
+
+LINE:   shirt_7711.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.849368  name = coat
+top[1] prob = 0.147598  name = shirt
+top[2] prob = 0.002105  name = pullover
+top[3] prob = 0.000366  name = top
+top[4] prob = 0.000135  name = bag
+
+
+LINE:   top_7899.png
+
+PREDICTED:  8 bag
+EXPECTED :  0 top
+top[0] prob = 0.532690  name = bag
+top[1] prob = 0.152618  name = top
+top[2] prob = 0.118859  name = pullover
+top[3] prob = 0.092568  name = ankleBoot
+top[4] prob = 0.034054  name = shirt
+
+
+LINE:   shirt_2629.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.648145  name = top
+top[1] prob = 0.238439  name = dress
+top[2] prob = 0.112631  name = shirt
+top[3] prob = 0.000217  name = sandal
+top[4] prob = 0.000217  name = trouser
+
+
+LINE:   coat_3220.png
+
+PREDICTED:  3 dress
+EXPECTED :  4 coat
+top[0] prob = 0.775616  name = dress
+top[1] prob = 0.222218  name = coat
+top[2] prob = 0.001497  name = shirt
+top[3] prob = 0.000429  name = pullover
+top[4] prob = 0.000058  name = ankleBoot
+
+
+LINE:   top_452.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.622349  name = shirt
+top[1] prob = 0.377474  name = top
+top[2] prob = 0.000077  name = pullover
+top[3] prob = 0.000047  name = bag
+top[4] prob = 0.000036  name = sandal
+
+
+LINE:   ankleBoot_9474.png
+
+PREDICTED:  5 sandal
+EXPECTED :  9 ankleBoot
+top[0] prob = 0.604951  name = sandal
+top[1] prob = 0.366921  name = ankleBoot
+top[2] prob = 0.023456  name = trouser
+top[3] prob = 0.004076  name = dress
+top[4] prob = 0.000335  name = bag
+
+
+LINE:   trouser_787.png
+
+PREDICTED:  3 dress
+EXPECTED :  1 trouser
+top[0] prob = 0.996552  name = dress
+top[1] prob = 0.003172  name = trouser
+top[2] prob = 0.000058  name = shirt
+top[3] prob = 0.000058  name = sandal
+top[4] prob = 0.000058  name = top
+
+
+LINE:   top_9662.png
+
+PREDICTED:  3 dress
+EXPECTED :  0 top
+top[0] prob = 0.315588  name = dress
+top[1] prob = 0.191414  name = top
+top[2] prob = 0.149073  name = bag
+top[3] prob = 0.149073  name = shirt
+top[4] prob = 0.116098  name = pullover
+
+
+LINE:   pullover_6532.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.723950  name = shirt
+top[1] prob = 0.207415  name = pullover
+top[2] prob = 0.036043  name = dress
+top[3] prob = 0.017026  name = top
+top[4] prob = 0.013260  name = coat
+
+
+LINE:   top_5338.png
+
+PREDICTED:  8 bag
+EXPECTED :  0 top
+top[0] prob = 0.674888  name = bag
+top[1] prob = 0.248278  name = sandal
+top[2] prob = 0.071133  name = top
+top[3] prob = 0.001673  name = sneaker
+top[4] prob = 0.001303  name = shirt
+
+
+LINE:   pullover_9604.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.838476  name = shirt
+top[1] prob = 0.145705  name = top
+top[2] prob = 0.015357  name = pullover
+top[3] prob = 0.000281  name = dress
+top[4] prob = 0.000133  name = trouser
+
+
+LINE:   pullover_7165.png
+
+PREDICTED:  4 coat
+EXPECTED :  2 pullover
+top[0] prob = 0.923528  name = coat
+top[1] prob = 0.075808  name = pullover
+top[2] prob = 0.000146  name = dress
+top[3] prob = 0.000146  name = trouser
+top[4] prob = 0.000114  name = ankleBoot
+
+
+LINE:   top_2571.png
+
+PREDICTED:  2 pullover
+EXPECTED :  0 top
+top[0] prob = 0.726016  name = pullover
+top[1] prob = 0.208007  name = top
+top[2] prob = 0.036146  name = shirt
+top[3] prob = 0.021924  name = dress
+top[4] prob = 0.002967  name = trouser
+
+
+LINE:   dress_2817.png
+
+PREDICTED:  5 sandal
+EXPECTED :  3 dress
+top[0] prob = 0.477986  name = sandal
+top[1] prob = 0.175841  name = coat
+top[2] prob = 0.083061  name = shirt
+top[3] prob = 0.083061  name = dress
+top[4] prob = 0.083061  name = pullover
+
+
+LINE:   ankleBoot_8688.png
+
+PREDICTED:  5 sandal
+EXPECTED :  9 ankleBoot
+top[0] prob = 0.998202  name = sandal
+top[1] prob = 0.000709  name = bag
+top[2] prob = 0.000552  name = ankleBoot
+top[3] prob = 0.000430  name = dress
+top[4] prob = 0.000096  name = trouser
+
+
+LINE:   coat_8799.png
+
+PREDICTED:  2 pullover
+EXPECTED :  4 coat
+top[0] prob = 0.709472  name = pullover
+top[1] prob = 0.158305  name = shirt
+top[2] prob = 0.096017  name = coat
+top[3] prob = 0.021424  name = top
+top[4] prob = 0.006138  name = dress
+
+
+LINE:   pullover_2001.png
+
+PREDICTED:  3 dress
+EXPECTED :  2 pullover
+top[0] prob = 0.647453  name = dress
+top[1] prob = 0.305835  name = coat
+top[2] prob = 0.041390  name = shirt
+top[3] prob = 0.001605  name = pullover
+top[4] prob = 0.001605  name = top
+
+
+LINE:   shirt_6844.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.373124  name = coat
+top[1] prob = 0.290589  name = shirt
+top[2] prob = 0.290589  name = pullover
+top[3] prob = 0.018577  name = bag
+top[4] prob = 0.014468  name = top
+
+
+LINE:   shirt_5096.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.621948  name = coat
+top[1] prob = 0.377230  name = shirt
+top[2] prob = 0.000344  name = dress
+top[3] prob = 0.000127  name = bag
+top[4] prob = 0.000099  name = pullover
+
+
+LINE:   ankleBoot_4850.png
+
+PREDICTED:  7 sneaker
+EXPECTED :  9 ankleBoot
+top[0] prob = 0.872202  name = sneaker
+top[1] prob = 0.118040  name = ankleBoot
+top[2] prob = 0.009689  name = sandal
+top[3] prob = 0.000019  name = bag
+top[4] prob = 0.000015  name = coat
+
+
+LINE:   top_6926.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.311145  name = shirt
+top[1] prob = 0.311145  name = dress
+top[2] prob = 0.242320  name = top
+top[3] prob = 0.114464  name = trouser
+top[4] prob = 0.009396  name = bag
+
+
+LINE:   top_7831.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.621878  name = shirt
+top[1] prob = 0.377188  name = top
+top[2] prob = 0.000567  name = dress
+top[3] prob = 0.000209  name = pullover
+top[4] prob = 0.000060  name = bag
+
+
+LINE:   shirt_2397.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.729263  name = top
+top[1] prob = 0.268281  name = shirt
+top[2] prob = 0.002321  name = dress
+top[3] prob = 0.000090  name = trouser
+top[4] prob = 0.000020  name = bag
+
+
+LINE:   coat_4668.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.693536  name = shirt
+top[1] prob = 0.154749  name = pullover
+top[2] prob = 0.093860  name = top
+top[3] prob = 0.020943  name = coat
+top[4] prob = 0.016310  name = bag
+
+
+LINE:   shirt_444.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.704264  name = coat
+top[1] prob = 0.201775  name = dress
+top[2] prob = 0.074229  name = shirt
+top[3] prob = 0.016563  name = pullover
+top[4] prob = 0.001360  name = bag
+
+
+LINE:   shirt_921.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.770074  name = coat
+top[1] prob = 0.220630  name = shirt
+top[2] prob = 0.004041  name = dress
+top[3] prob = 0.002451  name = pullover
+top[4] prob = 0.001158  name = bag
+
+
+LINE:   shirt_9687.png
+
+PREDICTED:  2 pullover
+EXPECTED :  6 shirt
+top[0] prob = 0.646514  name = pullover
+top[1] prob = 0.305392  name = shirt
+top[2] prob = 0.041330  name = top
+top[3] prob = 0.004356  name = coat
+top[4] prob = 0.000972  name = bag
+
+
+LINE:   shirt_7190.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.602473  name = top
+top[1] prob = 0.365418  name = shirt
+top[2] prob = 0.029995  name = dress
+top[3] prob = 0.001163  name = pullover
+top[4] prob = 0.000549  name = sandal
+
+
+LINE:   coat_6547.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.770956  name = shirt
+top[1] prob = 0.133972  name = coat
+top[2] prob = 0.038384  name = dress
+top[3] prob = 0.029893  name = bag
+top[4] prob = 0.014121  name = pullover
+
+
+LINE:   pullover_48.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.447374  name = shirt
+top[1] prob = 0.447374  name = pullover
+top[2] prob = 0.099823  name = top
+top[3] prob = 0.002348  name = trouser
+top[4] prob = 0.000864  name = sandal
+
+
+LINE:   pullover_2650.png
+
+PREDICTED:  4 coat
+EXPECTED :  2 pullover
+top[0] prob = 0.500772  name = coat
+top[1] prob = 0.390001  name = pullover
+top[2] prob = 0.087021  name = shirt
+top[3] prob = 0.019417  name = dress
+top[4] prob = 0.000967  name = top
+
+
+LINE:   shirt_8373.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.445341  name = dress
+top[1] prob = 0.445341  name = pullover
+top[2] prob = 0.060270  name = top
+top[3] prob = 0.046939  name = shirt
+top[4] prob = 0.000670  name = bag
+
+
+LINE:   shirt_6248.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.746566  name = dress
+top[1] prob = 0.213895  name = shirt
+top[2] prob = 0.037169  name = top
+top[3] prob = 0.000874  name = sandal
+top[4] prob = 0.000681  name = coat
+
+
+LINE:   top_6688.png
+
+PREDICTED:  3 dress
+EXPECTED :  0 top
+top[0] prob = 0.582382  name = dress
+top[1] prob = 0.353233  name = shirt
+top[2] prob = 0.047805  name = coat
+top[3] prob = 0.006470  name = bag
+top[4] prob = 0.005039  name = top
+
+
+LINE:   coat_5167.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.905322  name = shirt
+top[1] prob = 0.057875  name = coat
+top[2] prob = 0.035103  name = dress
+top[3] prob = 0.001361  name = top
+top[4] prob = 0.000237  name = pullover
+
+
+LINE:   pullover_3816.png
+
+PREDICTED:  4 coat
+EXPECTED :  2 pullover
+top[0] prob = 0.947979  name = coat
+top[1] prob = 0.047197  name = pullover
+top[2] prob = 0.003017  name = shirt
+top[3] prob = 0.000524  name = bag
+top[4] prob = 0.000318  name = ankleBoot
+
+
+LINE:   coat_7914.png
+
+PREDICTED:  3 dress
+EXPECTED :  4 coat
+top[0] prob = 0.678790  name = dress
+top[1] prob = 0.320638  name = coat
+top[2] prob = 0.000292  name = pullover
+top[3] prob = 0.000108  name = bag
+top[4] prob = 0.000108  name = shirt
+
+
+LINE:   shirt_2311.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.914311  name = dress
+top[1] prob = 0.035452  name = trouser
+top[2] prob = 0.021503  name = coat
+top[3] prob = 0.016746  name = top
+top[4] prob = 0.004798  name = shirt
+
+
+LINE:   shirt_711.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.780390  name = dress
+top[1] prob = 0.135611  name = top
+top[2] prob = 0.082253  name = shirt
+top[3] prob = 0.000712  name = pullover
+top[4] prob = 0.000432  name = sandal
+
+
+LINE:   top_9928.png
+
+PREDICTED:  8 bag
+EXPECTED :  0 top
+top[0] prob = 0.897412  name = bag
+top[1] prob = 0.073664  name = top
+top[2] prob = 0.027099  name = sandal
+top[3] prob = 0.000818  name = trouser
+top[4] prob = 0.000496  name = shirt
+
+
+LINE:   shirt_244.png
+
+PREDICTED:  2 pullover
+EXPECTED :  6 shirt
+top[0] prob = 0.964701  name = pullover
+top[1] prob = 0.022688  name = shirt
+top[2] prob = 0.003943  name = coat
+top[3] prob = 0.003943  name = dress
+top[4] prob = 0.002391  name = top
+
+
+LINE:   pullover_6691.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.801910  name = shirt
+top[1] prob = 0.108527  name = pullover
+top[2] prob = 0.084521  name = top
+top[3] prob = 0.002552  name = dress
+top[4] prob = 0.001206  name = trouser
+
+
+LINE:   shirt_2986.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.556248  name = top
+top[1] prob = 0.433206  name = shirt
+top[2] prob = 0.002919  name = bag
+top[3] prob = 0.002919  name = dress
+top[4] prob = 0.002919  name = pullover
+
+
+LINE:   shirt_2856.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.621905  name = top
+top[1] prob = 0.377205  name = shirt
+top[2] prob = 0.000344  name = dress
+top[3] prob = 0.000268  name = sandal
+top[4] prob = 0.000077  name = bag
+
+
+LINE:   shirt_6169.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.729168  name = top
+top[1] prob = 0.268246  name = shirt
+top[2] prob = 0.001807  name = dress
+top[3] prob = 0.000518  name = pullover
+top[4] prob = 0.000148  name = bag
+
+
+LINE:   pullover_3284.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.831338  name = shirt
+top[1] prob = 0.087622  name = top
+top[2] prob = 0.068240  name = pullover
+top[3] prob = 0.009235  name = coat
+top[4] prob = 0.001250  name = dress
+
+
+LINE:   shirt_4299.png
+
+PREDICTED:  2 pullover
+EXPECTED :  6 shirt
+top[0] prob = 0.624444  name = pullover
+top[1] prob = 0.294967  name = top
+top[2] prob = 0.031089  name = shirt
+top[3] prob = 0.031089  name = dress
+top[4] prob = 0.011437  name = trouser
+
+
+LINE:   dress_4084.png
+
+PREDICTED:  0 top
+EXPECTED :  3 dress
+top[0] prob = 0.707755  name = top
+top[1] prob = 0.122989  name = shirt
+top[2] prob = 0.122989  name = pullover
+top[3] prob = 0.045245  name = dress
+top[4] prob = 0.000305  name = coat
+
+
+LINE:   pullover_2920.png
+
+PREDICTED:  4 coat
+EXPECTED :  2 pullover
+top[0] prob = 0.602667  name = coat
+top[1] prob = 0.365536  name = pullover
+top[2] prob = 0.023368  name = shirt
+top[3] prob = 0.003163  name = trouser
+top[4] prob = 0.001494  name = bag
+
+
+LINE:   coat_324.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.996779  name = shirt
+top[1] prob = 0.001499  name = coat
+top[2] prob = 0.001167  name = top
+top[3] prob = 0.000158  name = bag
+top[4] prob = 0.000158  name = dress
+
+
+LINE:   pullover_9256.png
+
+PREDICTED:  4 coat
+EXPECTED :  2 pullover
+top[0] prob = 0.673407  name = coat
+top[1] prob = 0.150257  name = dress
+top[2] prob = 0.117021  name = pullover
+top[3] prob = 0.026111  name = shirt
+top[4] prob = 0.020335  name = bag
+
+
+LINE:   top_6485.png
+
+PREDICTED:  5 sandal
+EXPECTED :  0 top
+top[0] prob = 0.570979  name = sandal
+top[1] prob = 0.269711  name = bag
+top[2] prob = 0.077274  name = coat
+top[3] prob = 0.036501  name = shirt
+top[4] prob = 0.036501  name = top
+
+
+LINE:   pullover_3933.png
+
+PREDICTED:  4 coat
+EXPECTED :  2 pullover
+top[0] prob = 0.621553  name = coat
+top[1] prob = 0.376991  name = pullover
+top[2] prob = 0.000728  name = dress
+top[3] prob = 0.000268  name = ankleBoot
+top[4] prob = 0.000162  name = shirt
+
+
+LINE:   dress_8896.png
+
+PREDICTED:  0 top
+EXPECTED :  3 dress
+top[0] prob = 0.816443  name = top
+top[1] prob = 0.141876  name = dress
+top[2] prob = 0.040648  name = shirt
+top[3] prob = 0.000452  name = trouser
+top[4] prob = 0.000274  name = pullover
+
+
+LINE:   sneaker_6857.png
+
+PREDICTED:  5 sandal
+EXPECTED :  7 sneaker
+top[0] prob = 0.849432  name = sandal
+top[1] prob = 0.147609  name = sneaker
+top[2] prob = 0.002704  name = ankleBoot
+top[3] prob = 0.000135  name = bag
+top[4] prob = 0.000050  name = coat
+
+
+LINE:   top_6654.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.816736  name = shirt
+top[1] prob = 0.182238  name = top
+top[2] prob = 0.000452  name = dress
+top[3] prob = 0.000452  name = pullover
+top[4] prob = 0.000048  name = sandal
+
+
+LINE:   top_3760.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.848978  name = shirt
+top[1] prob = 0.147530  name = top
+top[2] prob = 0.002702  name = dress
+top[3] prob = 0.000603  name = pullover
+top[4] prob = 0.000082  name = sandal
+
+
+LINE:   top_3522.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.479967  name = shirt
+top[1] prob = 0.479967  name = top
+top[2] prob = 0.039398  name = dress
+top[3] prob = 0.000265  name = trouser
+top[4] prob = 0.000161  name = bag
+
+
+LINE:   shirt_5266.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.959045  name = top
+top[1] prob = 0.028961  name = shirt
+top[2] prob = 0.010654  name = dress
+top[3] prob = 0.000681  name = bag
+top[4] prob = 0.000322  name = sandal
+
+
+LINE:   shirt_3323.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.558845  name = top
+top[1] prob = 0.435229  name = shirt
+top[2] prob = 0.004835  name = pullover
+top[3] prob = 0.000654  name = dress
+top[4] prob = 0.000187  name = sandal
+
+
+LINE:   shirt_5123.png
+
+PREDICTED:  8 bag
+EXPECTED :  6 shirt
+top[0] prob = 0.488948  name = bag
+top[1] prob = 0.488948  name = shirt
+top[2] prob = 0.011499  name = coat
+top[3] prob = 0.004230  name = top
+top[4] prob = 0.002566  name = pullover
+
+
+LINE:   shirt_5248.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.935511  name = dress
+top[1] prob = 0.036274  name = top
+top[2] prob = 0.022001  name = trouser
+top[3] prob = 0.004909  name = shirt
+top[4] prob = 0.000664  name = bag
+
+
+LINE:   top_4067.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.747905  name = shirt
+top[1] prob = 0.214278  name = top
+top[2] prob = 0.037236  name = dress
+top[3] prob = 0.000251  name = pullover
+top[4] prob = 0.000195  name = bag
+
+
+LINE:   top_1231.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.924102  name = shirt
+top[1] prob = 0.046008  name = top
+top[2] prob = 0.027905  name = dress
+top[3] prob = 0.001082  name = coat
+top[4] prob = 0.000511  name = pullover
+
+
+LINE:   ankleBoot_4404.png
+
+PREDICTED:  7 sneaker
+EXPECTED :  9 ankleBoot
+top[0] prob = 0.878841  name = sneaker
+top[1] prob = 0.118938  name = ankleBoot
+top[2] prob = 0.002178  name = sandal
+top[3] prob = 0.000011  name = coat
+top[4] prob = 0.000007  name = bag
+
+
+LINE:   pullover_6721.png
+
+PREDICTED:  0 top
+EXPECTED :  2 pullover
+top[0] prob = 0.774101  name = top
+top[1] prob = 0.221784  name = pullover
+top[2] prob = 0.004062  name = shirt
+top[3] prob = 0.000027  name = dress
+top[4] prob = 0.000017  name = trouser
+
+
+LINE:   pullover_3458.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.781238  name = shirt
+top[1] prob = 0.174318  name = pullover
+top[2] prob = 0.038896  name = top
+top[3] prob = 0.002487  name = dress
+top[4] prob = 0.001508  name = bag
+
+
+LINE:   coat_150.png
+
+PREDICTED:  3 dress
+EXPECTED :  4 coat
+top[0] prob = 0.892236  name = dress
+top[1] prob = 0.073239  name = coat
+top[2] prob = 0.020983  name = shirt
+top[3] prob = 0.012727  name = pullover
+top[4] prob = 0.000384  name = top
+
+
+LINE:   pullover_8384.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.405831  name = shirt
+top[1] prob = 0.405831  name = pullover
+top[2] prob = 0.090553  name = coat
+top[3] prob = 0.070523  name = top
+top[4] prob = 0.009544  name = bag
+
+
+LINE:   top_9061.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.939870  name = shirt
+top[1] prob = 0.060084  name = top
+top[2] prob = 0.000026  name = dress
+top[3] prob = 0.000016  name = pullover
+top[4] prob = 0.000003  name = sandal
+
+
+LINE:   top_4145.png
+
+PREDICTED:  3 dress
+EXPECTED :  0 top
+top[0] prob = 0.856582  name = dress
+top[1] prob = 0.115926  name = top
+top[2] prob = 0.025867  name = shirt
+top[3] prob = 0.000608  name = trouser
+top[4] prob = 0.000369  name = bag
+
+
+LINE:   pullover_1743.png
+
+PREDICTED:  4 coat
+EXPECTED :  2 pullover
+top[0] prob = 0.994601  name = coat
+top[1] prob = 0.003166  name = shirt
+top[2] prob = 0.001920  name = pullover
+top[3] prob = 0.000096  name = bag
+top[4] prob = 0.000074  name = sneaker
+
+
+LINE:   sneaker_800.png
+
+PREDICTED:  9 ankleBoot
+EXPECTED :  7 sneaker
+top[0] prob = 0.774002  name = ankleBoot
+top[1] prob = 0.221755  name = sneaker
+top[2] prob = 0.004062  name = sandal
+top[3] prob = 0.000058  name = coat
+top[4] prob = 0.000035  name = bag
+
+
+LINE:   shirt_8211.png
+
+PREDICTED:  8 bag
+EXPECTED :  6 shirt
+top[0] prob = 0.503692  name = bag
+top[1] prob = 0.305505  name = pullover
+top[2] prob = 0.087529  name = shirt
+top[3] prob = 0.053089  name = ankleBoot
+top[4] prob = 0.041346  name = top
+
+
+LINE:   dress_2312.png
+
+PREDICTED:  0 top
+EXPECTED :  3 dress
+top[0] prob = 0.652734  name = top
+top[1] prob = 0.240128  name = dress
+top[2] prob = 0.088338  name = shirt
+top[3] prob = 0.011955  name = bag
+top[4] prob = 0.003425  name = pullover
+
+
+LINE:   shirt_3429.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.597293  name = dress
+top[1] prob = 0.362276  name = top
+top[2] prob = 0.038184  name = shirt
+top[3] prob = 0.000898  name = trouser
+top[4] prob = 0.000699  name = sandal
+
+
+LINE:   top_5672.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.962555  name = shirt
+top[1] prob = 0.037322  name = top
+top[2] prob = 0.000093  name = coat
+top[3] prob = 0.000013  name = dress
+top[4] prob = 0.000010  name = sandal
+
+
+LINE:   trouser_7555.png
+
+PREDICTED:  3 dress
+EXPECTED :  1 trouser
+top[0] prob = 0.922420  name = dress
+top[1] prob = 0.075717  name = trouser
+top[2] prob = 0.000397  name = ankleBoot
+top[3] prob = 0.000397  name = bag
+top[4] prob = 0.000397  name = top
+
+
+LINE:   trouser_5597.png
+
+PREDICTED:  3 dress
+EXPECTED :  1 trouser
+top[0] prob = 0.543066  name = dress
+top[1] prob = 0.256526  name = trouser
+top[2] prob = 0.155591  name = coat
+top[3] prob = 0.021057  name = bag
+top[4] prob = 0.007746  name = sandal
+
+
+LINE:   shirt_4127.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.951833  name = top
+top[1] prob = 0.028743  name = shirt
+top[2] prob = 0.013577  name = dress
+top[3] prob = 0.003029  name = bag
+top[4] prob = 0.001431  name = pullover
+
+
+LINE:   coat_6561.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.389081  name = shirt
+top[1] prob = 0.303017  name = coat
+top[2] prob = 0.303017  name = dress
+top[3] prob = 0.003366  name = bag
+top[4] prob = 0.000964  name = top
+
+
+LINE:   shirt_4941.png
+
+PREDICTED:  2 pullover
+EXPECTED :  6 shirt
+top[0] prob = 0.668587  name = pullover
+top[1] prob = 0.149182  name = coat
+top[2] prob = 0.054881  name = shirt
+top[3] prob = 0.054881  name = top
+top[4] prob = 0.033287  name = trouser
+
+
+LINE:   dress_6280.png
+
+PREDICTED:  1 trouser
+EXPECTED :  3 dress
+top[0] prob = 0.629306  name = trouser
+top[1] prob = 0.297263  name = dress
+top[2] prob = 0.040230  name = top
+top[3] prob = 0.011526  name = shirt
+top[4] prob = 0.008977  name = bag
+
+
+LINE:   top_965.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.582650  name = shirt
+top[1] prob = 0.353395  name = top
+top[2] prob = 0.061411  name = pullover
+top[3] prob = 0.001444  name = dress
+top[4] prob = 0.000414  name = bag
+
+
+LINE:   sneaker_4693.png
+
+PREDICTED:  9 ankleBoot
+EXPECTED :  7 sneaker
+top[0] prob = 0.982241  name = ankleBoot
+top[1] prob = 0.010912  name = sandal
+top[2] prob = 0.006618  name = sneaker
+top[3] prob = 0.000074  name = coat
+top[4] prob = 0.000045  name = dress
+
+
+LINE:   dress_6927.png
+
+PREDICTED:  6 shirt
+EXPECTED :  3 dress
+top[0] prob = 0.662363  name = shirt
+top[1] prob = 0.189770  name = top
+top[2] prob = 0.147793  name = dress
+top[3] prob = 0.000050  name = sandal
+top[4] prob = 0.000014  name = pullover
+
+
+LINE:   top_9002.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.497802  name = shirt
+top[1] prob = 0.497802  name = top
+top[2] prob = 0.004307  name = dress
+top[3] prob = 0.000037  name = pullover
+top[4] prob = 0.000023  name = sandal
+
+
+LINE:   coat_637.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.669823  name = shirt
+top[1] prob = 0.316402  name = coat
+top[2] prob = 0.004513  name = dress
+top[3] prob = 0.004513  name = top
+top[4] prob = 0.001660  name = bag
+
+
+LINE:   shirt_1496.png
+
+PREDICTED:  2 pullover
+EXPECTED :  6 shirt
+top[0] prob = 0.633458  name = pullover
+top[1] prob = 0.299224  name = shirt
+top[2] prob = 0.051997  name = top
+top[3] prob = 0.011602  name = dress
+top[4] prob = 0.002016  name = trouser
+
+
+LINE:   dress_2898.png
+
+PREDICTED:  6 shirt
+EXPECTED :  3 dress
+top[0] prob = 0.460527  name = shirt
+top[1] prob = 0.279324  name = coat
+top[2] prob = 0.217538  name = dress
+top[3] prob = 0.029441  name = top
+top[4] prob = 0.008435  name = pullover
+
+
+LINE:   top_5297.png
+
+PREDICTED:  3 dress
+EXPECTED :  0 top
+top[0] prob = 0.381744  name = dress
+top[1] prob = 0.381744  name = top
+top[2] prob = 0.140436  name = pullover
+top[3] prob = 0.066337  name = shirt
+top[4] prob = 0.019006  name = bag
+
+
+LINE:   pullover_5734.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.476198  name = shirt
+top[1] prob = 0.370863  name = pullover
+top[2] prob = 0.106254  name = top
+top[3] prob = 0.023708  name = coat
+top[4] prob = 0.011199  name = bag
+
+
+LINE:   top_1218.png
+
+PREDICTED:  3 dress
+EXPECTED :  0 top
+top[0] prob = 0.740730  name = dress
+top[1] prob = 0.212223  name = top
+top[2] prob = 0.028721  name = shirt
+top[3] prob = 0.013567  name = pullover
+top[4] prob = 0.001836  name = sandal
+
+
+LINE:   trouser_7876.png
+
+PREDICTED:  4 coat
+EXPECTED :  1 trouser
+top[0] prob = 0.371484  name = coat
+top[1] prob = 0.289312  name = dress
+top[2] prob = 0.175477  name = trouser
+top[3] prob = 0.064554  name = shirt
+top[4] prob = 0.064554  name = pullover
+
+
+LINE:   pullover_3365.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.341489  name = shirt
+top[1] prob = 0.341489  name = pullover
+top[2] prob = 0.125627  name = dress
+top[3] prob = 0.125627  name = top
+top[4] prob = 0.046215  name = bag
+
+
+LINE:   shirt_909.png
+
+PREDICTED:  2 pullover
+EXPECTED :  6 shirt
+top[0] prob = 0.399508  name = pullover
+top[1] prob = 0.311137  name = top
+top[2] prob = 0.146971  name = shirt
+top[3] prob = 0.089142  name = trouser
+top[4] prob = 0.025540  name = sandal
+
+
+LINE:   trouser_3627.png
+
+PREDICTED:  8 bag
+EXPECTED :  1 trouser
+top[0] prob = 0.768421  name = bag
+top[1] prob = 0.220156  name = trouser
+top[2] prob = 0.008536  name = top
+top[3] prob = 0.001905  name = dress
+top[4] prob = 0.000425  name = shirt
+
+
+LINE:   sneaker_5608.png
+
+PREDICTED:  5 sandal
+EXPECTED :  7 sneaker
+top[0] prob = 0.851625  name = sandal
+top[1] prob = 0.147990  name = sneaker
+top[2] prob = 0.000286  name = ankleBoot
+top[3] prob = 0.000050  name = bag
+top[4] prob = 0.000018  name = dress
+
+
+LINE:   top_9577.png
+
+PREDICTED:  2 pullover
+EXPECTED :  0 top
+top[0] prob = 0.345770  name = pullover
+top[1] prob = 0.345770  name = top
+top[2] prob = 0.269286  name = shirt
+top[3] prob = 0.036444  name = dress
+top[4] prob = 0.001101  name = trouser
+
+
+LINE:   pullover_9154.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.808009  name = shirt
+top[1] prob = 0.085164  name = dress
+top[2] prob = 0.066325  name = top
+top[3] prob = 0.024400  name = pullover
+top[4] prob = 0.006991  name = bag
+
+
+LINE:   shirt_5987.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.986444  name = dress
+top[1] prob = 0.010958  name = trouser
+top[2] prob = 0.000701  name = bag
+top[3] prob = 0.000546  name = top
+top[4] prob = 0.000425  name = ankleBoot
+
+
+LINE:   sneaker_2914.png
+
+PREDICTED:  9 ankleBoot
+EXPECTED :  7 sneaker
+top[0] prob = 0.999756  name = ankleBoot
+top[1] prob = 0.000158  name = sandal
+top[2] prob = 0.000075  name = sneaker
+top[3] prob = 0.000002  name = trouser
+top[4] prob = 0.000002  name = bag
+
+
+LINE:   shirt_6861.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.710062  name = dress
+top[1] prob = 0.158436  name = shirt
+top[2] prob = 0.123390  name = coat
+top[3] prob = 0.003726  name = pullover
+top[4] prob = 0.002260  name = top
+
+
+LINE:   coat_1895.png
+
+PREDICTED:  1 trouser
+EXPECTED :  4 coat
+top[0] prob = 0.394395  name = trouser
+top[1] prob = 0.307155  name = coat
+top[2] prob = 0.239213  name = pullover
+top[3] prob = 0.032374  name = shirt
+top[4] prob = 0.015292  name = dress
+
+
+LINE:   coat_3176.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.844553  name = shirt
+top[1] prob = 0.146761  name = coat
+top[2] prob = 0.007307  name = dress
+top[3] prob = 0.000989  name = top
+top[4] prob = 0.000134  name = bag
+
+
+LINE:   coat_5546.png
+
+PREDICTED:  2 pullover
+EXPECTED :  4 coat
+top[0] prob = 0.718371  name = pullover
+top[1] prob = 0.160290  name = trouser
+top[2] prob = 0.097221  name = coat
+top[3] prob = 0.016894  name = shirt
+top[4] prob = 0.002286  name = bag
+
+
+LINE:   sneaker_5234.png
+
+PREDICTED:  5 sandal
+EXPECTED :  7 sneaker
+top[0] prob = 0.679051  name = sandal
+top[1] prob = 0.320761  name = sneaker
+top[2] prob = 0.000177  name = ankleBoot
+top[3] prob = 0.000005  name = dress
+top[4] prob = 0.000002  name = bag
+
+
+LINE:   pullover_8598.png
+
+PREDICTED:  0 top
+EXPECTED :  2 pullover
+top[0] prob = 0.692501  name = top
+top[1] prob = 0.254757  name = shirt
+top[2] prob = 0.044270  name = pullover
+top[3] prob = 0.003634  name = bag
+top[4] prob = 0.003634  name = dress
+
+
+LINE:   coat_8621.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.577981  name = shirt
+top[1] prob = 0.273019  name = pullover
+top[2] prob = 0.100438  name = trouser
+top[3] prob = 0.022411  name = top
+top[4] prob = 0.008244  name = dress
+
+
+LINE:   coat_6242.png
+
+PREDICTED:  3 dress
+EXPECTED :  4 coat
+top[0] prob = 0.782921  name = dress
+top[1] prob = 0.174693  name = coat
+top[2] prob = 0.038979  name = shirt
+top[3] prob = 0.001511  name = pullover
+top[4] prob = 0.000917  name = top
+
+
+LINE:   pullover_5236.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.719846  name = shirt
+top[1] prob = 0.206239  name = pullover
+top[2] prob = 0.059089  name = top
+top[3] prob = 0.006228  name = coat
+top[4] prob = 0.006228  name = dress
+
+
+LINE:   shirt_9157.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.708930  name = dress
+top[1] prob = 0.203112  name = shirt
+top[2] prob = 0.058193  name = top
+top[3] prob = 0.012985  name = pullover
+top[4] prob = 0.004777  name = bag
+
+
+LINE:   dress_2245.png
+
+PREDICTED:  4 coat
+EXPECTED :  3 dress
+top[0] prob = 0.523051  name = coat
+top[1] prob = 0.407353  name = dress
+top[2] prob = 0.055129  name = shirt
+top[3] prob = 0.009580  name = pullover
+top[4] prob = 0.003524  name = trouser
+
+
+LINE:   pullover_9582.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.612430  name = shirt
+top[1] prob = 0.175464  name = pullover
+top[2] prob = 0.106424  name = top
+top[3] prob = 0.064550  name = trouser
+top[4] prob = 0.030491  name = dress
+
+
+LINE:   shirt_2839.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.929173  name = top
+top[1] prob = 0.059400  name = shirt
+top[2] prob = 0.010322  name = pullover
+top[3] prob = 0.001088  name = dress
+top[4] prob = 0.000006  name = sandal
+
+
+LINE:   top_6671.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.484444  name = shirt
+top[1] prob = 0.484444  name = top
+top[2] prob = 0.030969  name = dress
+top[3] prob = 0.000060  name = sandal
+top[4] prob = 0.000028  name = pullover
+
+
+LINE:   shirt_2869.png
+
+PREDICTED:  8 bag
+EXPECTED :  6 shirt
+top[0] prob = 0.432747  name = bag
+top[1] prob = 0.432747  name = coat
+top[2] prob = 0.123984  name = shirt
+top[3] prob = 0.006173  name = pullover
+top[4] prob = 0.001769  name = ankleBoot
+
+
+LINE:   coat_8140.png
+
+PREDICTED:  2 pullover
+EXPECTED :  4 coat
+top[0] prob = 0.969621  name = pullover
+top[1] prob = 0.029280  name = coat
+top[2] prob = 0.000536  name = shirt
+top[3] prob = 0.000418  name = trouser
+top[4] prob = 0.000057  name = top
+
+
+LINE:   dress_560.png
+
+PREDICTED:  1 trouser
+EXPECTED :  3 dress
+top[0] prob = 0.920801  name = trouser
+top[1] prob = 0.075584  name = dress
+top[2] prob = 0.001778  name = bag
+top[3] prob = 0.001384  name = sandal
+top[4] prob = 0.000187  name = pullover
+
+
+LINE:   shirt_8202.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.475241  name = coat
+top[1] prob = 0.288248  name = shirt
+top[2] prob = 0.106041  name = bag
+top[3] prob = 0.082584  name = dress
+top[4] prob = 0.030381  name = top
+
+
+LINE:   top_3132.png
+
+PREDICTED:  2 pullover
+EXPECTED :  0 top
+top[0] prob = 0.982830  name = pullover
+top[1] prob = 0.010918  name = coat
+top[2] prob = 0.001897  name = top
+top[3] prob = 0.001478  name = shirt
+top[4] prob = 0.001151  name = bag
+
+
+LINE:   top_4705.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.661489  name = shirt
+top[1] prob = 0.312465  name = top
+top[2] prob = 0.025649  name = dress
+top[3] prob = 0.000135  name = pullover
+top[4] prob = 0.000105  name = bag
+
+
+LINE:   sneaker_6701.png
+
+PREDICTED:  9 ankleBoot
+EXPECTED :  7 sneaker
+top[0] prob = 0.975198  name = ankleBoot
+top[1] prob = 0.017861  name = sneaker
+top[2] prob = 0.006571  name = sandal
+top[3] prob = 0.000255  name = bag
+top[4] prob = 0.000057  name = coat
+
+
+LINE:   top_9149.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.897691  name = shirt
+top[1] prob = 0.057387  name = dress
+top[2] prob = 0.044693  name = top
+top[3] prob = 0.000111  name = sandal
+top[4] prob = 0.000086  name = trouser
+
+
+LINE:   coat_8569.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.558387  name = shirt
+top[1] prob = 0.434872  name = coat
+top[2] prob = 0.002930  name = pullover
+top[3] prob = 0.001384  name = dress
+top[4] prob = 0.001078  name = top
+
+
+LINE:   sneaker_3439.png
+
+PREDICTED:  9 ankleBoot
+EXPECTED :  7 sneaker
+top[0] prob = 0.551211  name = ankleBoot
+top[1] prob = 0.429283  name = sneaker
+top[2] prob = 0.016645  name = sandal
+top[3] prob = 0.001754  name = coat
+top[4] prob = 0.000645  name = bag
+
+
+LINE:   top_8425.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.879222  name = shirt
+top[1] prob = 0.118990  name = top
+top[2] prob = 0.001029  name = dress
+top[3] prob = 0.000624  name = pullover
+top[4] prob = 0.000051  name = bag
+
+
+LINE:   shirt_9133.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.879464  name = top
+top[1] prob = 0.119023  name = shirt
+top[2] prob = 0.001322  name = dress
+top[3] prob = 0.000179  name = pullover
+top[4] prob = 0.000005  name = sandal
+
+
+LINE:   shirt_6958.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.969970  name = top
+top[1] prob = 0.029291  name = shirt
+top[2] prob = 0.000325  name = dress
+top[3] prob = 0.000253  name = bag
+top[4] prob = 0.000120  name = pullover
+
+
+LINE:   pullover_2908.png
+
+PREDICTED:  0 top
+EXPECTED :  2 pullover
+top[0] prob = 0.582797  name = top
+top[1] prob = 0.353484  name = pullover
+top[2] prob = 0.037257  name = shirt
+top[3] prob = 0.022598  name = trouser
+top[4] prob = 0.002382  name = dress
+
+
+LINE:   shirt_8399.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.916092  name = coat
+top[1] prob = 0.075197  name = dress
+top[2] prob = 0.007926  name = shirt
+top[3] prob = 0.000651  name = pullover
+top[4] prob = 0.000069  name = bag
+
+
+LINE:   shirt_5826.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.677781  name = coat
+top[1] prob = 0.151233  name = shirt
+top[2] prob = 0.151233  name = pullover
+top[3] prob = 0.005864  name = top
+top[4] prob = 0.004567  name = bag
+
+
+LINE:   shirt_4194.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.843811  name = top
+top[1] prob = 0.146632  name = shirt
+top[2] prob = 0.009374  name = dress
+top[3] prob = 0.000081  name = pullover
+top[4] prob = 0.000038  name = sandal
+
+
+LINE:   pullover_4527.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.595325  name = shirt
+top[1] prob = 0.281212  name = pullover
+top[2] prob = 0.080568  name = coat
+top[3] prob = 0.023083  name = top
+top[4] prob = 0.014001  name = dress
+
+
+LINE:   coat_8283.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.850040  name = shirt
+top[1] prob = 0.147715  name = coat
+top[2] prob = 0.001641  name = top
+top[3] prob = 0.000285  name = dress
+top[4] prob = 0.000135  name = sneaker
+
+
+LINE:   shirt_7906.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.911876  name = coat
+top[1] prob = 0.074851  name = shirt
+top[2] prob = 0.003727  name = bag
+top[3] prob = 0.003727  name = pullover
+top[4] prob = 0.003727  name = top
+
+
+LINE:   shirt_7095.png
+
+PREDICTED:  2 pullover
+EXPECTED :  6 shirt
+top[0] prob = 0.661431  name = pullover
+top[1] prob = 0.243327  name = shirt
+top[2] prob = 0.069714  name = top
+top[3] prob = 0.019973  name = dress
+top[4] prob = 0.001640  name = ankleBoot
+
+
+LINE:   pullover_314.png
+
+PREDICTED:  0 top
+EXPECTED :  2 pullover
+top[0] prob = 0.715486  name = top
+top[1] prob = 0.263213  name = pullover
+top[2] prob = 0.016827  name = dress
+top[3] prob = 0.002924  name = shirt
+top[4] prob = 0.000838  name = trouser
+
+
+LINE:   sneaker_308.png
+
+PREDICTED:  5 sandal
+EXPECTED :  7 sneaker
+top[0] prob = 0.562132  name = sandal
+top[1] prob = 0.437789  name = sneaker
+top[2] prob = 0.000054  name = ankleBoot
+top[3] prob = 0.000007  name = bag
+top[4] prob = 0.000006  name = dress
+
+
+LINE:   shirt_1487.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.910253  name = coat
+top[1] prob = 0.058191  name = shirt
+top[2] prob = 0.016672  name = dress
+top[3] prob = 0.007875  name = top
+top[4] prob = 0.002256  name = bag
+
+
+LINE:   top_7818.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.417819  name = shirt
+top[1] prob = 0.325398  name = top
+top[2] prob = 0.253420  name = pullover
+top[3] prob = 0.001708  name = dress
+top[4] prob = 0.001036  name = bag
+
+
+LINE:   shirt_9947.png
+
+PREDICTED:  2 pullover
+EXPECTED :  6 shirt
+top[0] prob = 0.881800  name = pullover
+top[1] prob = 0.092941  name = shirt
+top[2] prob = 0.012578  name = top
+top[3] prob = 0.007629  name = dress
+top[4] prob = 0.002186  name = coat
+
+
+LINE:   shirt_563.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.720336  name = top
+top[1] prob = 0.264997  name = shirt
+top[2] prob = 0.013193  name = dress
+top[3] prob = 0.000657  name = sandal
+top[4] prob = 0.000657  name = pullover
+
+
+LINE:   top_9405.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.923463  name = shirt
+top[1] prob = 0.075802  name = top
+top[2] prob = 0.000656  name = dress
+top[3] prob = 0.000025  name = bag
+top[4] prob = 0.000025  name = sandal
+
+
+LINE:   shirt_2985.png
+
+PREDICTED:  2 pullover
+EXPECTED :  6 shirt
+top[0] prob = 0.770543  name = pullover
+top[1] prob = 0.220764  name = shirt
+top[2] prob = 0.004043  name = top
+top[3] prob = 0.002452  name = coat
+top[4] prob = 0.000902  name = dress
+
+
+LINE:   pullover_3880.png
+
+PREDICTED:  1 trouser
+EXPECTED :  2 pullover
+top[0] prob = 0.922034  name = trouser
+top[1] prob = 0.035751  name = dress
+top[2] prob = 0.021684  name = pullover
+top[3] prob = 0.016888  name = coat
+top[4] prob = 0.001386  name = ankleBoot
+
+
+LINE:   shirt_1025.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.950514  name = coat
+top[1] prob = 0.047323  name = shirt
+top[2] prob = 0.001835  name = pullover
+top[3] prob = 0.000091  name = dress
+top[4] prob = 0.000091  name = top
+
+
+LINE:   shirt_9499.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.503145  name = dress
+top[1] prob = 0.305173  name = shirt
+top[2] prob = 0.185097  name = coat
+top[3] prob = 0.003390  name = trouser
+top[4] prob = 0.001601  name = pullover
+
+
+LINE:   sneaker_6472.png
+
+PREDICTED:  5 sandal
+EXPECTED :  7 sneaker
+top[0] prob = 0.996716  name = sandal
+top[1] prob = 0.003172  name = sneaker
+top[2] prob = 0.000058  name = bag
+top[3] prob = 0.000045  name = ankleBoot
+top[4] prob = 0.000005  name = dress
+
+
+LINE:   coat_2698.png
+
+PREDICTED:  3 dress
+EXPECTED :  4 coat
+top[0] prob = 0.632090  name = dress
+top[1] prob = 0.232533  name = coat
+top[2] prob = 0.051885  name = shirt
+top[3] prob = 0.051885  name = pullover
+top[4] prob = 0.011577  name = top
+
+
+LINE:   shirt_7863.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.717673  name = top
+top[1] prob = 0.264017  name = shirt
+top[2] prob = 0.010237  name = trouser
+top[3] prob = 0.006209  name = dress
+top[4] prob = 0.000654  name = pullover
+
+
+LINE:   dress_3706.png
+
+PREDICTED:  0 top
+EXPECTED :  3 dress
+top[0] prob = 0.525016  name = top
+top[1] prob = 0.318438  name = shirt
+top[2] prob = 0.091234  name = dress
+top[3] prob = 0.043096  name = bag
+top[4] prob = 0.012347  name = coat
+
+
+LINE:   shirt_5522.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.969981  name = top
+top[1] prob = 0.029291  name = shirt
+top[2] prob = 0.000689  name = dress
+top[3] prob = 0.000013  name = pullover
+top[4] prob = 0.000013  name = trouser
+
+
+LINE:   pullover_9449.png
+
+PREDICTED:  3 dress
+EXPECTED :  2 pullover
+top[0] prob = 0.556383  name = dress
+top[1] prob = 0.337463  name = coat
+top[2] prob = 0.058642  name = shirt
+top[3] prob = 0.021573  name = top
+top[4] prob = 0.016801  name = pullover
+
+
+LINE:   dress_3167.png
+
+PREDICTED:  0 top
+EXPECTED :  3 dress
+top[0] prob = 0.875954  name = top
+top[1] prob = 0.118547  name = dress
+top[2] prob = 0.004597  name = shirt
+top[3] prob = 0.000622  name = trouser
+top[4] prob = 0.000108  name = pullover
+
+
+LINE:   pullover_1192.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.568640  name = shirt
+top[1] prob = 0.344897  name = top
+top[2] prob = 0.076957  name = pullover
+top[3] prob = 0.006317  name = dress
+top[4] prob = 0.002324  name = trouser
+
+
+LINE:   bag_1846.png
+
+PREDICTED:  5 sandal
+EXPECTED :  8 bag
+top[0] prob = 0.820396  name = sandal
+top[1] prob = 0.111029  name = bag
+top[2] prob = 0.040845  name = top
+top[3] prob = 0.019294  name = sneaker
+top[4] prob = 0.003353  name = trouser
+
+
+LINE:   shirt_3669.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.875288  name = coat
+top[1] prob = 0.118457  name = pullover
+top[2] prob = 0.002786  name = bag
+top[3] prob = 0.001690  name = dress
+top[4] prob = 0.001025  name = trouser
+
+
+LINE:   top_9880.png
+
+PREDICTED:  3 dress
+EXPECTED :  0 top
+top[0] prob = 0.878165  name = dress
+top[1] prob = 0.072084  name = top
+top[2] prob = 0.043721  name = trouser
+top[3] prob = 0.002795  name = sandal
+top[4] prob = 0.002177  name = bag
+
+
+LINE:   pullover_2733.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.921152  name = shirt
+top[1] prob = 0.058887  name = pullover
+top[2] prob = 0.010233  name = coat
+top[3] prob = 0.004834  name = top
+top[4] prob = 0.002932  name = dress
+
+
+LINE:   shirt_9904.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.776159  name = coat
+top[1] prob = 0.105042  name = shirt
+top[2] prob = 0.105042  name = dress
+top[3] prob = 0.008622  name = pullover
+top[4] prob = 0.003172  name = top
+
+
+LINE:   top_6293.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.923549  name = shirt
+top[1] prob = 0.075809  name = top
+top[2] prob = 0.000310  name = dress
+top[3] prob = 0.000188  name = trouser
+top[4] prob = 0.000089  name = pullover
+
+
+LINE:   dress_3779.png
+
+PREDICTED:  0 top
+EXPECTED :  3 dress
+top[0] prob = 0.645768  name = top
+top[1] prob = 0.237565  name = dress
+top[2] prob = 0.112218  name = shirt
+top[3] prob = 0.002055  name = trouser
+top[4] prob = 0.001247  name = pullover
+
+
+LINE:   shirt_7495.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.817149  name = top
+top[1] prob = 0.182331  name = shirt
+top[2] prob = 0.000129  name = coat
+top[3] prob = 0.000129  name = dress
+top[4] prob = 0.000101  name = sandal
+
+
+LINE:   shirt_5249.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.946992  name = dress
+top[1] prob = 0.028597  name = bag
+top[2] prob = 0.008193  name = sandal
+top[3] prob = 0.008193  name = coat
+top[4] prob = 0.003870  name = top
+
+
+LINE:   pullover_6146.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.461716  name = shirt
+top[1] prob = 0.461716  name = pullover
+top[2] prob = 0.062486  name = coat
+top[3] prob = 0.008457  name = top
+top[4] prob = 0.002423  name = trouser
+
+
+LINE:   pullover_8877.png
+
+PREDICTED:  0 top
+EXPECTED :  2 pullover
+top[0] prob = 0.676312  name = top
+top[1] prob = 0.319467  name = shirt
+top[2] prob = 0.002764  name = pullover
+top[3] prob = 0.001306  name = dress
+top[4] prob = 0.000065  name = trouser
+
+
+LINE:   shirt_6160.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.731031  name = coat
+top[1] prob = 0.268931  name = shirt
+top[2] prob = 0.000010  name = top
+top[3] prob = 0.000007  name = pullover
+top[4] prob = 0.000006  name = bag
+
+
+LINE:   pullover_5284.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.751794  name = shirt
+top[1] prob = 0.167748  name = pullover
+top[2] prob = 0.079238  name = top
+top[3] prob = 0.000534  name = dress
+top[4] prob = 0.000416  name = bag
+
+
+LINE:   pullover_1254.png
+
+PREDICTED:  3 dress
+EXPECTED :  2 pullover
+top[0] prob = 0.705599  name = dress
+top[1] prob = 0.122615  name = pullover
+top[2] prob = 0.095492  name = shirt
+top[3] prob = 0.035130  name = coat
+top[4] prob = 0.016594  name = top
+
+
+LINE:   top_2236.png
+
+PREDICTED:  3 dress
+EXPECTED :  0 top
+top[0] prob = 0.753576  name = dress
+top[1] prob = 0.215903  name = top
+top[2] prob = 0.029219  name = shirt
+top[3] prob = 0.000687  name = sandal
+top[4] prob = 0.000197  name = bag
+
+
+LINE:   bag_2905.png
+
+PREDICTED:  5 sandal
+EXPECTED :  8 bag
+top[0] prob = 0.512493  name = sandal
+top[1] prob = 0.146832  name = trouser
+top[2] prob = 0.146832  name = top
+top[3] prob = 0.114353  name = bag
+top[4] prob = 0.042068  name = dress
+
+
+LINE:   top_2832.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.489682  name = shirt
+top[1] prob = 0.489682  name = top
+top[2] prob = 0.018987  name = dress
+top[3] prob = 0.000945  name = pullover
+top[4] prob = 0.000348  name = trouser
+
+
+LINE:   pullover_732.png
+
+PREDICTED:  0 top
+EXPECTED :  2 pullover
+top[0] prob = 0.998685  name = top
+top[1] prob = 0.001169  name = shirt
+top[2] prob = 0.000123  name = pullover
+top[3] prob = 0.000021  name = dress
+top[4] prob = 0.000000  name = sandal
+
+
+LINE:   shirt_4079.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.880765  name = coat
+top[1] prob = 0.119199  name = shirt
+top[2] prob = 0.000011  name = pullover
+top[3] prob = 0.000009  name = dress
+top[4] prob = 0.000007  name = bag
+
+
+LINE:   top_9251.png
+
+PREDICTED:  8 bag
+EXPECTED :  0 top
+top[0] prob = 0.641385  name = bag
+top[1] prob = 0.143112  name = top
+top[2] prob = 0.111456  name = coat
+top[3] prob = 0.041002  name = shirt
+top[4] prob = 0.041002  name = trouser
+
+
+LINE:   dress_3019.png
+
+PREDICTED:  2 pullover
+EXPECTED :  3 dress
+top[0] prob = 0.836344  name = pullover
+top[1] prob = 0.088150  name = top
+top[2] prob = 0.053466  name = shirt
+top[3] prob = 0.019669  name = dress
+top[4] prob = 0.001257  name = bag
+
+
+LINE:   dress_578.png
+
+PREDICTED:  6 shirt
+EXPECTED :  3 dress
+top[0] prob = 0.590937  name = shirt
+top[1] prob = 0.358422  name = top
+top[2] prob = 0.048507  name = dress
+top[3] prob = 0.000888  name = pullover
+top[4] prob = 0.000692  name = trouser
+
+
+LINE:   pullover_893.png
+
+PREDICTED:  4 coat
+EXPECTED :  2 pullover
+top[0] prob = 0.787830  name = coat
+top[1] prob = 0.136904  name = dress
+top[2] prob = 0.030547  name = pullover
+top[3] prob = 0.018528  name = ankleBoot
+top[4] prob = 0.014430  name = shirt
+
+
+LINE:   shirt_1352.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.776877  name = coat
+top[1] prob = 0.222579  name = shirt
+top[2] prob = 0.000203  name = pullover
+top[3] prob = 0.000123  name = dress
+top[4] prob = 0.000096  name = top
+
+
+LINE:   coat_6395.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.596425  name = shirt
+top[1] prob = 0.361750  name = coat
+top[2] prob = 0.023126  name = dress
+top[3] prob = 0.014027  name = pullover
+top[4] prob = 0.003130  name = top
+
+
+LINE:   shirt_8745.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.900952  name = top
+top[1] prob = 0.094960  name = shirt
+top[2] prob = 0.003682  name = dress
+top[3] prob = 0.000235  name = pullover
+top[4] prob = 0.000067  name = sandal
+
+
+LINE:   trouser_9095.png
+
+PREDICTED:  3 dress
+EXPECTED :  1 trouser
+top[0] prob = 0.519306  name = dress
+top[1] prob = 0.314975  name = top
+top[2] prob = 0.090242  name = shirt
+top[3] prob = 0.042627  name = trouser
+top[4] prob = 0.025855  name = pullover
+
+
+LINE:   top_9210.png
+
+PREDICTED:  3 dress
+EXPECTED :  0 top
+top[0] prob = 0.493168  name = dress
+top[1] prob = 0.493168  name = top
+top[2] prob = 0.007035  name = shirt
+top[3] prob = 0.005479  name = trouser
+top[4] prob = 0.000450  name = sandal
+
+
+LINE:   pullover_4104.png
+
+PREDICTED:  3 dress
+EXPECTED :  2 pullover
+top[0] prob = 0.544070  name = dress
+top[1] prob = 0.257001  name = shirt
+top[2] prob = 0.094545  name = top
+top[3] prob = 0.073632  name = coat
+top[4] prob = 0.021096  name = pullover
+
+
+LINE:   sneaker_4065.png
+
+PREDICTED:  9 ankleBoot
+EXPECTED :  7 sneaker
+top[0] prob = 0.571245  name = ankleBoot
+top[1] prob = 0.346478  name = sneaker
+top[2] prob = 0.077310  name = sandal
+top[3] prob = 0.002998  name = bag
+top[4] prob = 0.001416  name = coat
+
+
+LINE:   coat_9724.png
+
+PREDICTED:  3 dress
+EXPECTED :  4 coat
+top[0] prob = 0.677779  name = dress
+top[1] prob = 0.320160  name = coat
+top[2] prob = 0.001680  name = shirt
+top[3] prob = 0.000227  name = pullover
+top[4] prob = 0.000065  name = top
+
+
+LINE:   coat_594.png
+
+PREDICTED:  3 dress
+EXPECTED :  4 coat
+top[0] prob = 0.771980  name = dress
+top[1] prob = 0.221176  name = coat
+top[2] prob = 0.004051  name = bag
+top[3] prob = 0.002457  name = pullover
+top[4] prob = 0.000202  name = trouser
+
+
+LINE:   pullover_7442.png
+
+PREDICTED:  4 coat
+EXPECTED :  2 pullover
+top[0] prob = 0.803140  name = coat
+top[1] prob = 0.179205  name = pullover
+top[2] prob = 0.014710  name = shirt
+top[3] prob = 0.000940  name = bag
+top[4] prob = 0.000570  name = sneaker
+
+
+LINE:   pullover_3187.png
+
+PREDICTED:  4 coat
+EXPECTED :  2 pullover
+top[0] prob = 0.582106  name = coat
+top[1] prob = 0.214145  name = shirt
+top[2] prob = 0.101155  name = pullover
+top[3] prob = 0.047782  name = dress
+top[4] prob = 0.028981  name = top
+
+
+LINE:   coat_997.png
+
+PREDICTED:  2 pullover
+EXPECTED :  4 coat
+top[0] prob = 0.646359  name = pullover
+top[1] prob = 0.305318  name = coat
+top[2] prob = 0.015201  name = shirt
+top[3] prob = 0.015201  name = top
+top[4] prob = 0.005592  name = trouser
+
+
+LINE:   top_3789.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.587537  name = shirt
+top[1] prob = 0.277533  name = top
+top[2] prob = 0.079514  name = bag
+top[3] prob = 0.029252  name = dress
+top[4] prob = 0.013818  name = pullover
+
+
+LINE:   ankleBoot_5946.png
+
+PREDICTED:  5 sandal
+EXPECTED :  9 ankleBoot
+top[0] prob = 0.992875  name = sandal
+top[1] prob = 0.006690  name = ankleBoot
+top[2] prob = 0.000202  name = bag
+top[3] prob = 0.000095  name = trouser
+top[4] prob = 0.000045  name = top
+
+
+LINE:   coat_6241.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.913689  name = shirt
+top[1] prob = 0.035428  name = top
+top[2] prob = 0.027591  name = pullover
+top[3] prob = 0.021488  name = coat
+top[4] prob = 0.000649  name = bag
+
+
+LINE:   shirt_2431.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.871953  name = top
+top[1] prob = 0.118006  name = shirt
+top[2] prob = 0.007544  name = dress
+top[3] prob = 0.001311  name = pullover
+top[4] prob = 0.000619  name = sandal
+
+
+LINE:   pullover_2956.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.485442  name = shirt
+top[1] prob = 0.485442  name = pullover
+top[2] prob = 0.011416  name = coat
+top[3] prob = 0.008891  name = dress
+top[4] prob = 0.006924  name = top
+
+
+LINE:   coat_4484.png
+
+PREDICTED:  3 dress
+EXPECTED :  4 coat
+top[0] prob = 0.678239  name = dress
+top[1] prob = 0.320377  name = coat
+top[2] prob = 0.000375  name = shirt
+top[3] prob = 0.000292  name = pullover
+top[4] prob = 0.000292  name = trouser
+
+
+LINE:   shirt_5006.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.838614  name = dress
+top[1] prob = 0.113494  name = trouser
+top[2] prob = 0.032517  name = top
+top[3] prob = 0.011962  name = shirt
+top[4] prob = 0.001261  name = ankleBoot
+
+
+LINE:   shirt_1740.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.550326  name = top
+top[1] prob = 0.428594  name = shirt
+top[2] prob = 0.016618  name = dress
+top[3] prob = 0.001752  name = pullover
+top[4] prob = 0.001364  name = coat
+
+
+LINE:   trouser_2478.png
+
+PREDICTED:  3 dress
+EXPECTED :  1 trouser
+top[0] prob = 0.648934  name = dress
+top[1] prob = 0.238729  name = trouser
+top[2] prob = 0.068397  name = top
+top[3] prob = 0.041485  name = shirt
+top[4] prob = 0.000976  name = sandal
+
+
+LINE:   coat_4526.png
+
+PREDICTED:  3 dress
+EXPECTED :  4 coat
+top[0] prob = 0.640723  name = dress
+top[1] prob = 0.235709  name = shirt
+top[2] prob = 0.052594  name = coat
+top[3] prob = 0.024844  name = top
+top[4] prob = 0.019348  name = pullover
+
+
+LINE:   top_4711.png
+
+PREDICTED:  3 dress
+EXPECTED :  0 top
+top[0] prob = 0.492973  name = dress
+top[1] prob = 0.232864  name = pullover
+top[2] prob = 0.181355  name = top
+top[3] prob = 0.066717  name = shirt
+top[4] prob = 0.014887  name = bag
+
+
+LINE:   dress_4394.png
+
+PREDICTED:  8 bag
+EXPECTED :  3 dress
+top[0] prob = 0.542952  name = bag
+top[1] prob = 0.256472  name = dress
+top[2] prob = 0.121149  name = trouser
+top[3] prob = 0.034710  name = sandal
+top[4] prob = 0.027032  name = top
+
+
+LINE:   pullover_2837.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.553810  name = shirt
+top[1] prob = 0.335903  name = pullover
+top[2] prob = 0.096238  name = top
+top[3] prob = 0.010143  name = dress
+top[4] prob = 0.001373  name = coat
+
+
+LINE:   top_8832.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.998810  name = shirt
+top[1] prob = 0.000552  name = coat
+top[2] prob = 0.000335  name = top
+top[3] prob = 0.000203  name = pullover
+top[4] prob = 0.000058  name = bag
+
+
+LINE:   shirt_7348.png
+
+PREDICTED:  1 trouser
+EXPECTED :  6 shirt
+top[0] prob = 0.966830  name = trouser
+top[1] prob = 0.022738  name = shirt
+top[2] prob = 0.008365  name = top
+top[3] prob = 0.001454  name = pullover
+top[4] prob = 0.000324  name = dress
+
+
+LINE:   pullover_3255.png
+
+PREDICTED:  0 top
+EXPECTED :  2 pullover
+top[0] prob = 0.836366  name = top
+top[1] prob = 0.088152  name = bag
+top[2] prob = 0.041640  name = shirt
+top[3] prob = 0.019669  name = pullover
+top[4] prob = 0.011930  name = dress
+
+
+LINE:   pullover_5468.png
+
+PREDICTED:  0 top
+EXPECTED :  2 pullover
+top[0] prob = 0.514071  name = top
+top[1] prob = 0.400359  name = shirt
+top[2] prob = 0.069572  name = pullover
+top[3] prob = 0.015524  name = dress
+top[4] prob = 0.000134  name = bag
+
+
+LINE:   dress_1336.png
+
+PREDICTED:  0 top
+EXPECTED :  3 dress
+top[0] prob = 0.610132  name = top
+top[1] prob = 0.370064  name = shirt
+top[2] prob = 0.011175  name = trouser
+top[3] prob = 0.005279  name = dress
+top[4] prob = 0.003202  name = bag
+
+
+LINE:   shirt_4672.png
+
+PREDICTED:  2 pullover
+EXPECTED :  6 shirt
+top[0] prob = 0.615790  name = pullover
+top[1] prob = 0.176427  name = coat
+top[2] prob = 0.176427  name = trouser
+top[3] prob = 0.018595  name = shirt
+top[4] prob = 0.008784  name = bag
+
+
+LINE:   coat_3731.png
+
+PREDICTED:  2 pullover
+EXPECTED :  4 coat
+top[0] prob = 0.980112  name = pullover
+top[1] prob = 0.010888  name = top
+top[2] prob = 0.003119  name = bag
+top[3] prob = 0.001892  name = coat
+top[4] prob = 0.001892  name = trouser
+
+
+LINE:   coat_4433.png
+
+PREDICTED:  2 pullover
+EXPECTED :  4 coat
+top[0] prob = 0.645175  name = pullover
+top[1] prob = 0.304759  name = coat
+top[2] prob = 0.019483  name = dress
+top[3] prob = 0.015173  name = shirt
+top[4] prob = 0.007167  name = top
+
+
+LINE:   sandal_6147.png
+
+PREDICTED:  7 sneaker
+EXPECTED :  5 sandal
+top[0] prob = 0.809467  name = sneaker
+top[1] prob = 0.180616  name = sandal
+top[2] prob = 0.008992  name = ankleBoot
+top[3] prob = 0.000575  name = bag
+top[4] prob = 0.000128  name = coat
+
+
+LINE:   coat_1408.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.990942  name = shirt
+top[1] prob = 0.003154  name = pullover
+top[2] prob = 0.003154  name = top
+top[3] prob = 0.001913  name = dress
+top[4] prob = 0.000548  name = coat
+
+
+LINE:   shirt_3830.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.971219  name = dress
+top[1] prob = 0.013854  name = coat
+top[2] prob = 0.010789  name = shirt
+top[3] prob = 0.001875  name = top
+top[4] prob = 0.000886  name = sandal
+
+
+LINE:   top_2308.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.616981  name = shirt
+top[1] prob = 0.374218  name = top
+top[2] prob = 0.004157  name = dress
+top[3] prob = 0.002521  name = trouser
+top[4] prob = 0.001191  name = sandal
+
+
+LINE:   dress_4934.png
+
+PREDICTED:  2 pullover
+EXPECTED :  3 dress
+top[0] prob = 0.673163  name = pullover
+top[1] prob = 0.317980  name = top
+top[2] prob = 0.003532  name = dress
+top[3] prob = 0.002751  name = bag
+top[4] prob = 0.002143  name = shirt
+
+
+LINE:   ankleBoot_5567.png
+
+PREDICTED:  5 sandal
+EXPECTED :  9 ankleBoot
+top[0] prob = 0.993300  name = sandal
+top[1] prob = 0.006693  name = ankleBoot
+top[2] prob = 0.000003  name = trouser
+top[3] prob = 0.000002  name = bag
+top[4] prob = 0.000001  name = sneaker
+
+
+LINE:   pullover_5820.png
+
+PREDICTED:  0 top
+EXPECTED :  2 pullover
+top[0] prob = 0.659247  name = top
+top[1] prob = 0.242523  name = shirt
+top[2] prob = 0.069484  name = dress
+top[3] prob = 0.019908  name = pullover
+top[4] prob = 0.003459  name = bag
+
+
+LINE:   shirt_4451.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.727246  name = top
+top[1] prob = 0.208359  name = shirt
+top[2] prob = 0.028198  name = bag
+top[3] prob = 0.021961  name = dress
+top[4] prob = 0.010374  name = trouser
+
+
+LINE:   sneaker_4782.png
+
+PREDICTED:  5 sandal
+EXPECTED :  7 sneaker
+top[0] prob = 0.880742  name = sandal
+top[1] prob = 0.119195  name = sneaker
+top[2] prob = 0.000051  name = ankleBoot
+top[3] prob = 0.000004  name = dress
+top[4] prob = 0.000003  name = pullover
+
+
+LINE:   shirt_3741.png
+
+PREDICTED:  8 bag
+EXPECTED :  6 shirt
+top[0] prob = 0.997800  name = bag
+top[1] prob = 0.001500  name = top
+top[2] prob = 0.000552  name = shirt
+top[3] prob = 0.000035  name = sandal
+top[4] prob = 0.000035  name = pullover
+
+
+LINE:   top_1586.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.459015  name = shirt
+top[1] prob = 0.459015  name = top
+top[2] prob = 0.062121  name = dress
+top[3] prob = 0.010795  name = trouser
+top[4] prob = 0.008407  name = pullover
+
+
+LINE:   coat_2681.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.849558  name = shirt
+top[1] prob = 0.147631  name = coat
+top[2] prob = 0.000995  name = bag
+top[3] prob = 0.000775  name = dress
+top[4] prob = 0.000775  name = top
+
+
+LINE:   sneaker_9056.png
+
+PREDICTED:  5 sandal
+EXPECTED :  7 sneaker
+top[0] prob = 0.985471  name = sandal
+top[1] prob = 0.014057  name = sneaker
+top[2] prob = 0.000424  name = ankleBoot
+top[3] prob = 0.000021  name = dress
+top[4] prob = 0.000016  name = bag
+
+
+LINE:   dress_8259.png
+
+PREDICTED:  6 shirt
+EXPECTED :  3 dress
+top[0] prob = 0.439831  name = shirt
+top[1] prob = 0.342540  name = dress
+top[2] prob = 0.207761  name = top
+top[3] prob = 0.002964  name = sandal
+top[4] prob = 0.002308  name = bag
+
+
+LINE:   pullover_2293.png
+
+PREDICTED:  4 coat
+EXPECTED :  2 pullover
+top[0] prob = 0.878520  name = coat
+top[1] prob = 0.118895  name = pullover
+top[2] prob = 0.001321  name = shirt
+top[3] prob = 0.000486  name = dress
+top[4] prob = 0.000295  name = bag
+
+
+LINE:   top_1859.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.679108  name = shirt
+top[1] prob = 0.320788  name = top
+top[2] prob = 0.000051  name = dress
+top[3] prob = 0.000024  name = pullover
+top[4] prob = 0.000011  name = sandal
+
+
+LINE:   pullover_2272.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.971572  name = shirt
+top[1] prob = 0.022849  name = coat
+top[2] prob = 0.005098  name = pullover
+top[3] prob = 0.000254  name = dress
+top[4] prob = 0.000154  name = top
+
+
+LINE:   top_8695.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.499315  name = shirt
+top[1] prob = 0.499315  name = top
+top[2] prob = 0.000964  name = pullover
+top[3] prob = 0.000130  name = bag
+top[4] prob = 0.000102  name = sandal
+
+
+LINE:   top_1686.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.816214  name = shirt
+top[1] prob = 0.182122  name = top
+top[2] prob = 0.000956  name = pullover
+top[3] prob = 0.000580  name = dress
+top[4] prob = 0.000061  name = sandal
+
+
+LINE:   coat_2919.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.972072  name = shirt
+top[1] prob = 0.013866  name = pullover
+top[2] prob = 0.008410  name = top
+top[3] prob = 0.003973  name = coat
+top[4] prob = 0.001138  name = trouser
+
+
+LINE:   coat_6478.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.729319  name = shirt
+top[1] prob = 0.268301  name = coat
+top[2] prob = 0.001808  name = dress
+top[3] prob = 0.000314  name = pullover
+top[4] prob = 0.000191  name = top
+
+
+LINE:   shirt_4280.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.904548  name = top
+top[1] prob = 0.095339  name = shirt
+top[2] prob = 0.000068  name = pullover
+top[3] prob = 0.000041  name = dress
+top[4] prob = 0.000002  name = sandal
+
+
+LINE:   top_8324.png
+
+PREDICTED:  4 coat
+EXPECTED :  0 top
+top[0] prob = 0.461337  name = coat
+top[1] prob = 0.461337  name = dress
+top[2] prob = 0.048625  name = pullover
+top[3] prob = 0.013931  name = shirt
+top[4] prob = 0.005125  name = bag
+
+
+LINE:   ankleBoot_1471.png
+
+PREDICTED:  7 sneaker
+EXPECTED :  9 ankleBoot
+top[0] prob = 0.499272  name = sneaker
+top[1] prob = 0.388833  name = ankleBoot
+top[2] prob = 0.111403  name = sandal
+top[3] prob = 0.000130  name = dress
+top[4] prob = 0.000102  name = pullover
+
+
+LINE:   shirt_6558.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.879943  name = top
+top[1] prob = 0.119087  name = shirt
+top[2] prob = 0.000802  name = pullover
+top[3] prob = 0.000139  name = dress
+top[4] prob = 0.000011  name = trouser
+
+
+LINE:   shirt_8939.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.851354  name = top
+top[1] prob = 0.115218  name = dress
+top[2] prob = 0.020022  name = shirt
+top[3] prob = 0.012144  name = pullover
+top[4] prob = 0.000605  name = sandal
+
+
+LINE:   coat_2779.png
+
+PREDICTED:  3 dress
+EXPECTED :  4 coat
+top[0] prob = 0.776148  name = dress
+top[1] prob = 0.222370  name = coat
+top[2] prob = 0.000429  name = trouser
+top[3] prob = 0.000260  name = pullover
+top[4] prob = 0.000203  name = bag
+
+
+LINE:   pullover_2490.png
+
+PREDICTED:  8 bag
+EXPECTED :  2 pullover
+top[0] prob = 0.314495  name = bag
+top[1] prob = 0.314495  name = top
+top[2] prob = 0.190751  name = shirt
+top[3] prob = 0.148557  name = pullover
+top[4] prob = 0.012194  name = ankleBoot
+
+
+LINE:   sneaker_5520.png
+
+PREDICTED:  9 ankleBoot
+EXPECTED :  7 sneaker
+top[0] prob = 0.970556  name = ankleBoot
+top[1] prob = 0.022825  name = sandal
+top[2] prob = 0.006540  name = sneaker
+top[3] prob = 0.000021  name = pullover
+top[4] prob = 0.000016  name = coat
+
+
+LINE:   pullover_5474.png
+
+PREDICTED:  4 coat
+EXPECTED :  2 pullover
+top[0] prob = 0.957696  name = coat
+top[1] prob = 0.037134  name = pullover
+top[2] prob = 0.002374  name = shirt
+top[3] prob = 0.000680  name = bag
+top[4] prob = 0.000680  name = trouser
+
+
+LINE:   shirt_2491.png
+
+PREDICTED:  2 pullover
+EXPECTED :  6 shirt
+top[0] prob = 0.550914  name = pullover
+top[1] prob = 0.429052  name = shirt
+top[2] prob = 0.010090  name = top
+top[3] prob = 0.004766  name = dress
+top[4] prob = 0.001753  name = coat
+
+
+LINE:   top_4143.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.358784  name = shirt
+top[1] prob = 0.358784  name = top
+top[2] prob = 0.279421  name = pullover
+top[3] prob = 0.001142  name = trouser
+top[4] prob = 0.000539  name = bag
+
+
+LINE:   coat_8958.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.971989  name = shirt
+top[1] prob = 0.022859  name = coat
+top[2] prob = 0.001876  name = dress
+top[3] prob = 0.001876  name = pullover
+top[4] prob = 0.000886  name = top
+
+
+LINE:   shirt_8906.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.560874  name = top
+top[1] prob = 0.436809  name = shirt
+top[2] prob = 0.001785  name = pullover
+top[3] prob = 0.000398  name = dress
+top[4] prob = 0.000054  name = bag
+
+
+LINE:   coat_967.png
+
+PREDICTED:  3 dress
+EXPECTED :  4 coat
+top[0] prob = 0.622345  name = dress
+top[1] prob = 0.377472  name = coat
+top[2] prob = 0.000127  name = shirt
+top[3] prob = 0.000036  name = pullover
+top[4] prob = 0.000006  name = bag
+
+
+LINE:   coat_2798.png
+
+PREDICTED:  3 dress
+EXPECTED :  4 coat
+top[0] prob = 0.796663  name = dress
+top[1] prob = 0.177759  name = coat
+top[2] prob = 0.024057  name = shirt
+top[3] prob = 0.000566  name = top
+top[4] prob = 0.000343  name = bag
+
+
+LINE:   top_2717.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.475977  name = shirt
+top[1] prob = 0.475977  name = top
+top[2] prob = 0.023697  name = dress
+top[3] prob = 0.023697  name = pullover
+top[4] prob = 0.000205  name = coat
+
+
+LINE:   shirt_9601.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.999123  name = dress
+top[1] prob = 0.000710  name = shirt
+top[2] prob = 0.000096  name = coat
+top[3] prob = 0.000058  name = top
+top[4] prob = 0.000005  name = sandal
+
+
+LINE:   top_1005.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.786649  name = shirt
+top[1] prob = 0.175525  name = top
+top[2] prob = 0.023755  name = dress
+top[3] prob = 0.005300  name = bag
+top[4] prob = 0.002504  name = pullover
+
+
+LINE:   shirt_2540.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.987893  name = coat
+top[1] prob = 0.006656  name = shirt
+top[2] prob = 0.005184  name = pullover
+top[3] prob = 0.000074  name = bag
+top[4] prob = 0.000058  name = dress
+
+
+LINE:   coat_8827.png
+
+PREDICTED:  3 dress
+EXPECTED :  4 coat
+top[0] prob = 0.904151  name = dress
+top[1] prob = 0.095297  name = coat
+top[2] prob = 0.000236  name = bag
+top[3] prob = 0.000112  name = sandal
+top[4] prob = 0.000053  name = shirt
+
+
+LINE:   pullover_1194.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.974568  name = shirt
+top[1] prob = 0.017850  name = top
+top[2] prob = 0.005114  name = pullover
+top[3] prob = 0.001465  name = bag
+top[4] prob = 0.000420  name = coat
+
+
+LINE:   ankleBoot_7983.png
+
+PREDICTED:  7 sneaker
+EXPECTED :  9 ankleBoot
+top[0] prob = 0.621649  name = sneaker
+top[1] prob = 0.377049  name = ankleBoot
+top[2] prob = 0.001200  name = sandal
+top[3] prob = 0.000036  name = pullover
+top[4] prob = 0.000028  name = top
+
+
+LINE:   sneaker_309.png
+
+PREDICTED:  9 ankleBoot
+EXPECTED :  7 sneaker
+top[0] prob = 0.542509  name = ankleBoot
+top[1] prob = 0.422506  name = sneaker
+top[2] prob = 0.034681  name = sandal
+top[3] prob = 0.000142  name = coat
+top[4] prob = 0.000052  name = pullover
+
+
+LINE:   ankleBoot_9757.png
+
+PREDICTED:  7 sneaker
+EXPECTED :  9 ankleBoot
+top[0] prob = 0.559641  name = sneaker
+top[1] prob = 0.435849  name = ankleBoot
+top[2] prob = 0.003771  name = sandal
+top[3] prob = 0.000188  name = bag
+top[4] prob = 0.000188  name = coat
+
+
+LINE:   shirt_1642.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.561579  name = top
+top[1] prob = 0.340615  name = sandal
+top[2] prob = 0.076001  name = shirt
+top[3] prob = 0.013207  name = trouser
+top[4] prob = 0.008010  name = bag
+
+
+LINE:   pullover_6286.png
+
+PREDICTED:  0 top
+EXPECTED :  2 pullover
+top[0] prob = 0.505592  name = top
+top[1] prob = 0.238825  name = shirt
+top[2] prob = 0.238825  name = pullover
+top[3] prob = 0.015268  name = dress
+top[4] prob = 0.000760  name = bag
+
+
+LINE:   pullover_66.png
+
+PREDICTED:  3 dress
+EXPECTED :  2 pullover
+top[0] prob = 0.319573  name = dress
+top[1] prob = 0.319573  name = pullover
+top[2] prob = 0.248883  name = shirt
+top[3] prob = 0.091559  name = top
+top[4] prob = 0.009650  name = trouser
+
+
+LINE:   coat_2684.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.946905  name = shirt
+top[1] prob = 0.036715  name = coat
+top[2] prob = 0.013507  name = dress
+top[3] prob = 0.001424  name = top
+top[4] prob = 0.001109  name = pullover
+
+
+LINE:   dress_8591.png
+
+PREDICTED:  0 top
+EXPECTED :  3 dress
+top[0] prob = 0.717238  name = top
+top[1] prob = 0.263857  name = shirt
+top[2] prob = 0.010231  name = dress
+top[3] prob = 0.007968  name = trouser
+top[4] prob = 0.000309  name = sandal
+
+
+LINE:   top_6542.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.904525  name = shirt
+top[1] prob = 0.095336  name = top
+top[2] prob = 0.000112  name = pullover
+top[3] prob = 0.000025  name = dress
+top[4] prob = 0.000002  name = sandal
+
+
+LINE:   trouser_8156.png
+
+PREDICTED:  8 bag
+EXPECTED :  1 trouser
+top[0] prob = 0.462011  name = bag
+top[1] prob = 0.280224  name = shirt
+top[2] prob = 0.103088  name = top
+top[3] prob = 0.048696  name = pullover
+top[4] prob = 0.048696  name = trouser
+
+
+LINE:   pullover_9972.png
+
+PREDICTED:  0 top
+EXPECTED :  2 pullover
+top[0] prob = 0.619162  name = top
+top[1] prob = 0.292471  name = shirt
+top[2] prob = 0.083794  name = pullover
+top[3] prob = 0.004172  name = dress
+top[4] prob = 0.000208  name = trouser
+
+
+LINE:   pullover_2593.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.744906  name = shirt
+top[1] prob = 0.213419  name = coat
+top[2] prob = 0.037087  name = pullover
+top[3] prob = 0.002371  name = dress
+top[4] prob = 0.001438  name = top
+
+
+LINE:   sneaker_160.png
+
+PREDICTED:  5 sandal
+EXPECTED :  7 sneaker
+top[0] prob = 0.561943  name = sandal
+top[1] prob = 0.437642  name = sneaker
+top[2] prob = 0.000399  name = ankleBoot
+top[3] prob = 0.000006  name = bag
+top[4] prob = 0.000003  name = dress
+
+
+LINE:   shirt_4692.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.961746  name = top
+top[1] prob = 0.037291  name = shirt
+top[2] prob = 0.000877  name = dress
+top[3] prob = 0.000044  name = pullover
+top[4] prob = 0.000016  name = coat
+
+
+LINE:   shirt_1129.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.705003  name = top
+top[1] prob = 0.259356  name = shirt
+top[2] prob = 0.035100  name = dress
+top[3] prob = 0.000237  name = pullover
+top[4] prob = 0.000143  name = sandal
+
+
+LINE:   dress_2721.png
+
+PREDICTED:  6 shirt
+EXPECTED :  3 dress
+top[0] prob = 0.750688  name = shirt
+top[1] prob = 0.167501  name = top
+top[2] prob = 0.079122  name = dress
+top[3] prob = 0.002389  name = pullover
+top[4] prob = 0.000093  name = sandal
+
+
+LINE:   ankleBoot_3674.png
+
+PREDICTED:  7 sneaker
+EXPECTED :  9 ankleBoot
+top[0] prob = 0.561859  name = sneaker
+top[1] prob = 0.437576  name = ankleBoot
+top[2] prob = 0.000512  name = sandal
+top[3] prob = 0.000015  name = pullover
+top[4] prob = 0.000012  name = top
+
+
+LINE:   dress_7196.png
+
+PREDICTED:  6 shirt
+EXPECTED :  3 dress
+top[0] prob = 0.441663  name = shirt
+top[1] prob = 0.343968  name = dress
+top[2] prob = 0.208627  name = top
+top[3] prob = 0.002976  name = trouser
+top[4] prob = 0.000664  name = coat
+
+
+LINE:   coat_9040.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.472677  name = shirt
+top[1] prob = 0.286693  name = coat
+top[2] prob = 0.173888  name = pullover
+top[3] prob = 0.038800  name = top
+top[4] prob = 0.006742  name = bag
+
+
+LINE:   sneaker_6129.png
+
+PREDICTED:  9 ankleBoot
+EXPECTED :  7 sneaker
+top[0] prob = 0.499047  name = ankleBoot
+top[1] prob = 0.499047  name = sneaker
+top[2] prob = 0.001237  name = sandal
+top[3] prob = 0.000354  name = bag
+top[4] prob = 0.000102  name = pullover
+
+
+LINE:   top_5172.png
+
+PREDICTED:  3 dress
+EXPECTED :  0 top
+top[0] prob = 0.597565  name = dress
+top[1] prob = 0.362441  name = top
+top[2] prob = 0.029751  name = shirt
+top[3] prob = 0.008524  name = trouser
+top[4] prob = 0.001154  name = bag
+
+
+LINE:   sneaker_7226.png
+
+PREDICTED:  5 sandal
+EXPECTED :  7 sneaker
+top[0] prob = 0.939847  name = sandal
+top[1] prob = 0.060082  name = sneaker
+top[2] prob = 0.000043  name = ankleBoot
+top[3] prob = 0.000016  name = bag
+top[4] prob = 0.000004  name = dress
+
+
+LINE:   pullover_4378.png
+
+PREDICTED:  4 coat
+EXPECTED :  2 pullover
+top[0] prob = 0.508587  name = coat
+top[1] prob = 0.396088  name = pullover
+top[2] prob = 0.053605  name = dress
+top[3] prob = 0.032513  name = trouser
+top[4] prob = 0.005650  name = shirt
+
+
+LINE:   shirt_8069.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.913639  name = top
+top[1] prob = 0.058407  name = pullover
+top[2] prob = 0.027590  name = shirt
+top[3] prob = 0.000186  name = dress
+top[4] prob = 0.000088  name = bag
+
+
+LINE:   pullover_1949.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.969322  name = shirt
+top[1] prob = 0.029271  name = pullover
+top[2] prob = 0.000884  name = top
+top[3] prob = 0.000253  name = coat
+top[4] prob = 0.000197  name = dress
+
+
+LINE:   dress_6362.png
+
+PREDICTED:  1 trouser
+EXPECTED :  3 dress
+top[0] prob = 0.847515  name = trouser
+top[1] prob = 0.114699  name = dress
+top[2] prob = 0.032862  name = sandal
+top[3] prob = 0.004447  name = bag
+top[4] prob = 0.000284  name = top
+
+
+LINE:   pullover_1749.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.550688  name = shirt
+top[1] prob = 0.428877  name = pullover
+top[2] prob = 0.010086  name = top
+top[3] prob = 0.007855  name = dress
+top[4] prob = 0.001365  name = trouser
+
+
+LINE:   shirt_8658.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.739397  name = dress
+top[1] prob = 0.100067  name = bag
+top[2] prob = 0.077932  name = top
+top[3] prob = 0.060693  name = shirt
+top[4] prob = 0.010547  name = sandal
+
+
+LINE:   top_9884.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.814232  name = shirt
+top[1] prob = 0.181680  name = top
+top[2] prob = 0.002018  name = sandal
+top[3] prob = 0.000578  name = bag
+top[4] prob = 0.000578  name = dress
+
+
+LINE:   ankleBoot_6984.png
+
+PREDICTED:  7 sneaker
+EXPECTED :  9 ankleBoot
+top[0] prob = 0.873882  name = sneaker
+top[1] prob = 0.118267  name = ankleBoot
+top[2] prob = 0.007561  name = sandal
+top[3] prob = 0.000108  name = coat
+top[4] prob = 0.000084  name = pullover
+
+
+LINE:   sneaker_8278.png
+
+PREDICTED:  5 sandal
+EXPECTED :  7 sneaker
+top[0] prob = 0.998999  name = sandal
+top[1] prob = 0.000709  name = bag
+top[2] prob = 0.000261  name = sneaker
+top[3] prob = 0.000021  name = ankleBoot
+top[4] prob = 0.000005  name = trouser
+
+
+LINE:   shirt_3334.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.979539  name = dress
+top[1] prob = 0.017941  name = shirt
+top[2] prob = 0.002428  name = top
+top[3] prob = 0.000035  name = coat
+top[4] prob = 0.000035  name = pullover
+
+
+LINE:   pullover_6474.png
+
+PREDICTED:  3 dress
+EXPECTED :  2 pullover
+top[0] prob = 0.860062  name = dress
+top[1] prob = 0.090650  name = shirt
+top[2] prob = 0.033348  name = coat
+top[3] prob = 0.005795  name = top
+top[4] prob = 0.003515  name = trouser
+
+
+LINE:   shirt_9729.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.986217  name = top
+top[1] prob = 0.010956  name = shirt
+top[2] prob = 0.001904  name = pullover
+top[3] prob = 0.000331  name = bag
+top[4] prob = 0.000331  name = sandal
+
+
+LINE:   dress_688.png
+
+PREDICTED:  6 shirt
+EXPECTED :  3 dress
+top[0] prob = 0.960862  name = shirt
+top[1] prob = 0.029016  name = top
+top[2] prob = 0.005042  name = pullover
+top[3] prob = 0.003058  name = dress
+top[4] prob = 0.001125  name = trouser
+
+
+LINE:   top_9945.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.728685  name = shirt
+top[1] prob = 0.268068  name = top
+top[2] prob = 0.002319  name = dress
+top[3] prob = 0.000853  name = pullover
+top[4] prob = 0.000026  name = sandal
+
+
+LINE:   top_6094.png
+
+PREDICTED:  2 pullover
+EXPECTED :  0 top
+top[0] prob = 0.357776  name = pullover
+top[1] prob = 0.357776  name = top
+top[2] prob = 0.278636  name = shirt
+top[3] prob = 0.003975  name = dress
+top[4] prob = 0.000538  name = coat
+
+
+LINE:   pullover_7369.png
+
+PREDICTED:  0 top
+EXPECTED :  2 pullover
+top[0] prob = 0.952494  name = top
+top[1] prob = 0.047422  name = shirt
+top[2] prob = 0.000071  name = pullover
+top[3] prob = 0.000012  name = dress
+top[4] prob = 0.000000  name = sandal
+
+
+LINE:   pullover_5471.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.652352  name = shirt
+top[1] prob = 0.308149  name = coat
+top[2] prob = 0.015342  name = dress
+top[3] prob = 0.015342  name = pullover
+top[4] prob = 0.003423  name = top
+
+
+LINE:   coat_7265.png
+
+PREDICTED:  8 bag
+EXPECTED :  4 coat
+top[0] prob = 0.699714  name = bag
+top[1] prob = 0.200472  name = coat
+top[2] prob = 0.094696  name = pullover
+top[3] prob = 0.002227  name = top
+top[4] prob = 0.000819  name = dress
+
+
+LINE:   ankleBoot_1632.png
+
+PREDICTED:  7 sneaker
+EXPECTED :  9 ankleBoot
+top[0] prob = 0.668344  name = sneaker
+top[1] prob = 0.315703  name = ankleBoot
+top[2] prob = 0.015718  name = sandal
+top[3] prob = 0.000064  name = dress
+top[4] prob = 0.000050  name = top
+
+
+LINE:   coat_8556.png
+
+PREDICTED:  3 dress
+EXPECTED :  4 coat
+top[0] prob = 0.777118  name = dress
+top[1] prob = 0.222648  name = coat
+top[2] prob = 0.000075  name = bag
+top[3] prob = 0.000058  name = shirt
+top[4] prob = 0.000058  name = pullover
+
+
+LINE:   pullover_9531.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.465763  name = shirt
+top[1] prob = 0.362737  name = top
+top[2] prob = 0.103926  name = pullover
+top[3] prob = 0.063034  name = trouser
+top[4] prob = 0.001482  name = bag
+
+
+LINE:   shirt_6626.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.765807  name = coat
+top[1] prob = 0.219407  name = shirt
+top[2] prob = 0.006626  name = pullover
+top[3] prob = 0.006626  name = trouser
+top[4] prob = 0.000897  name = top
+
+
+LINE:   dress_3051.png
+
+PREDICTED:  0 top
+EXPECTED :  3 dress
+top[0] prob = 0.490510  name = top
+top[1] prob = 0.297509  name = dress
+top[2] prob = 0.180449  name = trouser
+top[3] prob = 0.011536  name = sandal
+top[4] prob = 0.008984  name = shirt
+
+
+LINE:   sneaker_3291.png
+
+PREDICTED:  5 sandal
+EXPECTED :  7 sneaker
+top[0] prob = 0.562074  name = sandal
+top[1] prob = 0.437744  name = sneaker
+top[2] prob = 0.000147  name = ankleBoot
+top[3] prob = 0.000020  name = bag
+top[4] prob = 0.000007  name = dress
+
+
+LINE:   shirt_8260.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.621066  name = coat
+top[1] prob = 0.376695  name = shirt
+top[2] prob = 0.001977  name = pullover
+top[3] prob = 0.000077  name = dress
+top[4] prob = 0.000077  name = top
+
+
+LINE:   shirt_3198.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.909287  name = coat
+top[1] prob = 0.074639  name = shirt
+top[2] prob = 0.010101  name = pullover
+top[3] prob = 0.002894  name = dress
+top[4] prob = 0.001367  name = bag
+
+
+LINE:   trouser_3974.png
+
+PREDICTED:  3 dress
+EXPECTED :  1 trouser
+top[0] prob = 0.313087  name = dress
+top[1] prob = 0.243832  name = trouser
+top[2] prob = 0.189897  name = shirt
+top[3] prob = 0.189897  name = top
+top[4] prob = 0.025700  name = bag
+
+
+LINE:   pullover_49.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.897068  name = shirt
+top[1] prob = 0.044662  name = pullover
+top[2] prob = 0.044662  name = top
+top[3] prob = 0.012796  name = dress
+top[4] prob = 0.000234  name = bag
+
+
+LINE:   coat_4173.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.472485  name = shirt
+top[1] prob = 0.472485  name = coat
+top[2] prob = 0.049800  name = dress
+top[3] prob = 0.004088  name = top
+top[4] prob = 0.000431  name = pullover
+
+
+LINE:   coat_3181.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.621221  name = shirt
+top[1] prob = 0.293444  name = top
+top[2] prob = 0.050993  name = pullover
+top[3] prob = 0.018759  name = coat
+top[4] prob = 0.005375  name = bag
+
+
+LINE:   bag_3468.png
+
+PREDICTED:  5 sandal
+EXPECTED :  8 bag
+top[0] prob = 0.760917  name = sandal
+top[1] prob = 0.169783  name = ankleBoot
+top[2] prob = 0.062460  name = bag
+top[3] prob = 0.003993  name = sneaker
+top[4] prob = 0.001469  name = pullover
+
+
+LINE:   coat_2776.png
+
+PREDICTED:  2 pullover
+EXPECTED :  4 coat
+top[0] prob = 0.889399  name = pullover
+top[1] prob = 0.073006  name = coat
+top[2] prob = 0.020917  name = top
+top[3] prob = 0.007695  name = dress
+top[4] prob = 0.004667  name = shirt
+
+
+LINE:   shirt_1620.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.719417  name = top
+top[1] prob = 0.264659  name = shirt
+top[2] prob = 0.006224  name = bag
+top[3] prob = 0.006224  name = dress
+top[4] prob = 0.000842  name = sandal
+
+
+LINE:   sneaker_2811.png
+
+PREDICTED:  9 ankleBoot
+EXPECTED :  7 sneaker
+top[0] prob = 0.561500  name = ankleBoot
+top[1] prob = 0.437297  name = sneaker
+top[2] prob = 0.001084  name = sandal
+top[3] prob = 0.000042  name = pullover
+top[4] prob = 0.000025  name = top
+
+
+LINE:   shirt_8633.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.834698  name = coat
+top[1] prob = 0.112964  name = shirt
+top[2] prob = 0.025206  name = top
+top[3] prob = 0.015288  name = dress
+top[4] prob = 0.007222  name = pullover
+
+
+LINE:   dress_6940.png
+
+PREDICTED:  6 shirt
+EXPECTED :  3 dress
+top[0] prob = 0.492174  name = shirt
+top[1] prob = 0.492174  name = dress
+top[2] prob = 0.007020  name = coat
+top[3] prob = 0.007020  name = top
+top[4] prob = 0.000740  name = bag
+
+
+LINE:   sneaker_9152.png
+
+PREDICTED:  9 ankleBoot
+EXPECTED :  7 sneaker
+top[0] prob = 0.808055  name = ankleBoot
+top[1] prob = 0.140419  name = sneaker
+top[2] prob = 0.024401  name = bag
+top[3] prob = 0.024401  name = sandal
+top[4] prob = 0.001560  name = pullover
+
+
+LINE:   shirt_147.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.982052  name = dress
+top[1] prob = 0.014008  name = coat
+top[2] prob = 0.001150  name = bag
+top[3] prob = 0.000896  name = top
+top[4] prob = 0.000543  name = shirt
+
+
+LINE:   coat_558.png
+
+PREDICTED:  2 pullover
+EXPECTED :  4 coat
+top[0] prob = 0.634913  name = pullover
+top[1] prob = 0.141668  name = shirt
+top[2] prob = 0.141668  name = trouser
+top[3] prob = 0.040589  name = coat
+top[4] prob = 0.019173  name = top
+
+
+LINE:   sneaker_2965.png
+
+PREDICTED:  9 ankleBoot
+EXPECTED :  7 sneaker
+top[0] prob = 0.984897  name = ankleBoot
+top[1] prob = 0.010941  name = sneaker
+top[2] prob = 0.001901  name = sandal
+top[3] prob = 0.001481  name = pullover
+top[4] prob = 0.000257  name = coat
+
+
+LINE:   top_3919.png
+
+PREDICTED:  8 bag
+EXPECTED :  0 top
+top[0] prob = 0.735547  name = bag
+top[1] prob = 0.127819  name = shirt
+top[2] prob = 0.127819  name = top
+top[3] prob = 0.006364  name = pullover
+top[4] prob = 0.000861  name = ankleBoot
+
+
+LINE:   trouser_2741.png
+
+PREDICTED:  6 shirt
+EXPECTED :  1 trouser
+top[0] prob = 0.640900  name = shirt
+top[1] prob = 0.143004  name = trouser
+top[2] prob = 0.143004  name = top
+top[3] prob = 0.052608  name = dress
+top[4] prob = 0.011738  name = bag
+
+
+LINE:   pullover_382.png
+
+PREDICTED:  0 top
+EXPECTED :  2 pullover
+top[0] prob = 0.990956  name = top
+top[1] prob = 0.008573  name = pullover
+top[2] prob = 0.000259  name = shirt
+top[3] prob = 0.000202  name = dress
+top[4] prob = 0.000004  name = ankleBoot
+
+
+LINE:   dress_5204.png
+
+PREDICTED:  6 shirt
+EXPECTED :  3 dress
+top[0] prob = 0.695972  name = shirt
+top[1] prob = 0.155292  name = top
+top[2] prob = 0.120942  name = dress
+top[3] prob = 0.016368  name = sandal
+top[4] prob = 0.003652  name = pullover
+
+
+LINE:   top_5939.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.850911  name = shirt
+top[1] prob = 0.147866  name = top
+top[2] prob = 0.000471  name = sandal
+top[3] prob = 0.000367  name = dress
+top[4] prob = 0.000222  name = bag
+
+
+LINE:   sneaker_1059.png
+
+PREDICTED:  9 ankleBoot
+EXPECTED :  7 sneaker
+top[0] prob = 0.499174  name = ankleBoot
+top[1] prob = 0.499174  name = sneaker
+top[2] prob = 0.001589  name = sandal
+top[3] prob = 0.000023  name = coat
+top[4] prob = 0.000018  name = dress
+
+
+LINE:   top_3342.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.483458  name = shirt
+top[1] prob = 0.483458  name = top
+top[2] prob = 0.018746  name = pullover
+top[3] prob = 0.006896  name = dress
+top[4] prob = 0.004183  name = bag
+
+
+LINE:   top_2653.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.478271  name = shirt
+top[1] prob = 0.478271  name = top
+top[2] prob = 0.039259  name = pullover
+top[3] prob = 0.004138  name = dress
+top[4] prob = 0.000036  name = trouser
+
+
+LINE:   shirt_8664.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.560751  name = top
+top[1] prob = 0.436713  name = shirt
+top[2] prob = 0.002292  name = dress
+top[3] prob = 0.000089  name = pullover
+top[4] prob = 0.000069  name = bag
+
+
+LINE:   top_9502.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.565601  name = shirt
+top[1] prob = 0.208073  name = top
+top[2] prob = 0.126203  name = dress
+top[3] prob = 0.076546  name = bag
+top[4] prob = 0.010359  name = pullover
+
+
+LINE:   shirt_6832.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.571910  name = top
+top[1] prob = 0.346881  name = shirt
+top[2] prob = 0.022175  name = dress
+top[3] prob = 0.017270  name = bag
+top[4] prob = 0.017270  name = coat
+
+
+LINE:   ankleBoot_6733.png
+
+PREDICTED:  7 sneaker
+EXPECTED :  9 ankleBoot
+top[0] prob = 0.670791  name = sneaker
+top[1] prob = 0.316859  name = ankleBoot
+top[2] prob = 0.012286  name = sandal
+top[3] prob = 0.000024  name = bag
+top[4] prob = 0.000014  name = trouser
+
+
+LINE:   pullover_3532.png
+
+PREDICTED:  4 coat
+EXPECTED :  2 pullover
+top[0] prob = 0.636956  name = coat
+top[1] prob = 0.300877  name = shirt
+top[2] prob = 0.040719  name = pullover
+top[3] prob = 0.014980  name = top
+top[4] prob = 0.002603  name = bag
+
+
+LINE:   shirt_6996.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.458855  name = top
+top[1] prob = 0.357357  name = shirt
+top[2] prob = 0.168803  name = dress
+top[3] prob = 0.010791  name = sandal
+top[4] prob = 0.001875  name = bag
+
+
+LINE:   shirt_4542.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.496844  name = top
+top[1] prob = 0.301351  name = dress
+top[2] prob = 0.182779  name = shirt
+top[3] prob = 0.015003  name = coat
+top[4] prob = 0.003348  name = pullover
+
+
+LINE:   pullover_9648.png
+
+PREDICTED:  4 coat
+EXPECTED :  2 pullover
+top[0] prob = 0.675155  name = coat
+top[1] prob = 0.193435  name = pullover
+top[2] prob = 0.117324  name = shirt
+top[3] prob = 0.004549  name = trouser
+top[4] prob = 0.003543  name = top
+
+
+LINE:   dress_2309.png
+
+PREDICTED:  6 shirt
+EXPECTED :  3 dress
+top[0] prob = 0.953053  name = shirt
+top[1] prob = 0.022414  name = dress
+top[2] prob = 0.013595  name = coat
+top[3] prob = 0.006422  name = pullover
+top[4] prob = 0.003895  name = top
+
+
+LINE:   coat_25.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.565332  name = shirt
+top[1] prob = 0.342891  name = pullover
+top[2] prob = 0.076509  name = coat
+top[3] prob = 0.010354  name = top
+top[4] prob = 0.002967  name = trouser
+
+
+LINE:   shirt_9573.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.557938  name = top
+top[1] prob = 0.338407  name = dress
+top[2] prob = 0.096955  name = shirt
+top[3] prob = 0.002928  name = pullover
+top[4] prob = 0.001383  name = trouser
+
+
+LINE:   coat_905.png
+
+PREDICTED:  6 shirt
+EXPECTED :  4 coat
+top[0] prob = 0.874590  name = shirt
+top[1] prob = 0.092181  name = pullover
+top[2] prob = 0.020568  name = top
+top[3] prob = 0.004589  name = ankleBoot
+top[4] prob = 0.003574  name = dress
+
+
+LINE:   shirt_1210.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.987001  name = top
+top[1] prob = 0.008539  name = shirt
+top[2] prob = 0.003141  name = dress
+top[3] prob = 0.000900  name = trouser
+top[4] prob = 0.000331  name = sandal
+
+
+LINE:   bag_6230.png
+
+PREDICTED:  6 shirt
+EXPECTED :  8 bag
+top[0] prob = 0.471719  name = shirt
+top[1] prob = 0.367375  name = bag
+top[2] prob = 0.081972  name = top
+top[3] prob = 0.038721  name = pullover
+top[4] prob = 0.018291  name = coat
+
+
+LINE:   shirt_4399.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.816416  name = coat
+top[1] prob = 0.182167  name = shirt
+top[2] prob = 0.000580  name = top
+top[3] prob = 0.000274  name = pullover
+top[4] prob = 0.000213  name = bag
+
+
+LINE:   shirt_7195.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.962246  name = top
+top[1] prob = 0.037310  name = shirt
+top[2] prob = 0.000251  name = pullover
+top[3] prob = 0.000152  name = dress
+top[4] prob = 0.000013  name = sandal
+
+
+LINE:   top_4965.png
+
+PREDICTED:  6 shirt
+EXPECTED :  0 top
+top[0] prob = 0.561810  name = shirt
+top[1] prob = 0.437538  name = top
+top[2] prob = 0.000512  name = pullover
+top[3] prob = 0.000114  name = dress
+top[4] prob = 0.000009  name = sandal
+
+
+LINE:   dress_6207.png
+
+PREDICTED:  4 coat
+EXPECTED :  3 dress
+top[0] prob = 0.922282  name = coat
+top[1] prob = 0.075706  name = dress
+top[2] prob = 0.001387  name = shirt
+top[3] prob = 0.000309  name = bag
+top[4] prob = 0.000146  name = trouser
+
+
+LINE:   shirt_5004.png
+
+PREDICTED:  4 coat
+EXPECTED :  6 shirt
+top[0] prob = 0.816238  name = coat
+top[1] prob = 0.182127  name = shirt
+top[2] prob = 0.000744  name = pullover
+top[3] prob = 0.000580  name = top
+top[4] prob = 0.000078  name = bag
+
+
+LINE:   pullover_5974.png
+
+PREDICTED:  4 coat
+EXPECTED :  2 pullover
+top[0] prob = 0.998198  name = coat
+top[1] prob = 0.001501  name = shirt
+top[2] prob = 0.000203  name = pullover
+top[3] prob = 0.000058  name = dress
+top[4] prob = 0.000027  name = trouser
+
+
+LINE:   pullover_3554.png
+
+PREDICTED:  3 dress
+EXPECTED :  2 pullover
+top[0] prob = 0.745420  name = dress
+top[1] prob = 0.166326  name = coat
+top[2] prob = 0.047653  name = shirt
+top[3] prob = 0.028903  name = pullover
+top[4] prob = 0.006449  name = bag
+
+
+LINE:   shirt_3020.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.959937  name = top
+top[1] prob = 0.037221  name = shirt
+top[2] prob = 0.002379  name = dress
+top[3] prob = 0.000152  name = sandal
+top[4] prob = 0.000118  name = pullover
+
+
+LINE:   pullover_1763.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.418910  name = shirt
+top[1] prob = 0.418910  name = pullover
+top[2] prob = 0.120020  name = coat
+top[3] prob = 0.020856  name = dress
+top[4] prob = 0.012650  name = top
+
+
+LINE:   shirt_9140.png
+
+PREDICTED:  8 bag
+EXPECTED :  6 shirt
+top[0] prob = 0.376728  name = bag
+top[1] prob = 0.376728  name = top
+top[2] prob = 0.228497  name = shirt
+top[3] prob = 0.014607  name = dress
+top[4] prob = 0.001977  name = sandal
+
+
+LINE:   shirt_9306.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.615815  name = dress
+top[1] prob = 0.290890  name = shirt
+top[2] prob = 0.064906  name = pullover
+top[3] prob = 0.014483  name = coat
+top[4] prob = 0.005328  name = bag
+
+
+LINE:   shirt_3625.png
+
+PREDICTED:  0 top
+EXPECTED :  6 shirt
+top[0] prob = 0.851659  name = top
+top[1] prob = 0.147996  name = shirt
+top[2] prob = 0.000286  name = dress
+top[3] prob = 0.000050  name = pullover
+top[4] prob = 0.000005  name = sandal
+
+
+LINE:   shirt_8705.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.362596  name = dress
+top[1] prob = 0.362596  name = top
+top[2] prob = 0.171278  name = shirt
+top[3] prob = 0.080906  name = pullover
+top[4] prob = 0.008527  name = bag
+
+
+LINE:   shirt_5569.png
+
+PREDICTED:  3 dress
+EXPECTED :  6 shirt
+top[0] prob = 0.936310  name = dress
+top[1] prob = 0.059856  name = coat
+top[2] prob = 0.001808  name = bag
+top[3] prob = 0.001096  name = pullover
+top[4] prob = 0.000665  name = trouser
+
+
+LINE:   pullover_7640.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.486422  name = shirt
+top[1] prob = 0.378826  name = pullover
+top[2] prob = 0.065830  name = top
+top[3] prob = 0.051269  name = dress
+top[4] prob = 0.006938  name = coat
+
+
+LINE:   dress_5576.png
+
+PREDICTED:  4 coat
+EXPECTED :  3 dress
+top[0] prob = 0.997069  name = coat
+top[1] prob = 0.002471  name = dress
+top[2] prob = 0.000203  name = bag
+top[3] prob = 0.000203  name = pullover
+top[4] prob = 0.000027  name = trouser
+
+
+LINE:   pullover_670.png
+
+PREDICTED:  6 shirt
+EXPECTED :  2 pullover
+top[0] prob = 0.898825  name = shirt
+top[1] prob = 0.073780  name = top
+top[2] prob = 0.021138  name = pullover
+top[3] prob = 0.002861  name = bag
+top[4] prob = 0.002228  name = coat
+
+
+LINE:   dress_9235.png
+
+PREDICTED:  6 shirt
+EXPECTED :  3 dress
+top[0] prob = 0.867733  name = shirt
+top[1] prob = 0.071228  name = dress
+top[2] prob = 0.043202  name = top
+top[3] prob = 0.007507  name = coat
+top[4] prob = 0.005847  name = trouser
+
+
+LINE:   bag_1557.png
+
+PREDICTED:  1 trouser
+EXPECTED :  8 bag
+top[0] prob = 0.614235  name = trouser
+top[1] prob = 0.372552  name = bag
+top[2] prob = 0.008762  name = sandal
+top[3] prob = 0.004139  name = dress
+top[4] prob = 0.000206  name = pullover
+
+
+number of total images predicted  4999
+number of top1 false predictions  332
+number of top1 right predictions  4667
+number of top5 false predictions  7
+number of top5 right predictions  4992
+top1 accuracy = 0.93
+top5 accuracy = 1.00

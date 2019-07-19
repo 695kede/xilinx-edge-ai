@@ -1,0 +1,72 @@
+make: Warning: File 'Makefile' has modification time 5110782 s in the future
+rm -f -rf /root/target_zcu102/cifar10/LeNet/build/*.o /root/target_zcu102/cifar10/LeNet/build
+rm -f LeNet
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Warning: File 'Makefile' has modification time 5110782 s in the future
+mkdir -p /root/target_zcu102/cifar10/LeNet/build
+g++ -c -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/target_zcu102/cifar10/LeNet/src/tf_main.cc -o /root/target_zcu102/cifar10/LeNet/build/tf_main.o
+/root/target_zcu102/cifar10/LeNet/src/tf_main.cc: In function ‘void TopK(const float*, int, int, std::vector<std::__cxx11::basic_string<char> >&)’:
+/root/target_zcu102/cifar10/LeNet/src/tf_main.cc:151:11: warning: unused variable ‘real_ki’ [-Wunused-variable]
+       int real_ki = ki.second;
+           ^~~~~~~
+/root/target_zcu102/cifar10/LeNet/src/tf_main.cc: In function ‘void set_input_image(DPUTask*, const string&, const cv::Mat&, float*)’:
+/root/target_zcu102/cifar10/LeNet/src/tf_main.cc:190:7: warning: unused variable ‘width’ [-Wunused-variable]
+   int width = dpuGetTensorWidth(dpu_in);
+       ^~~~~
+/root/target_zcu102/cifar10/LeNet/src/tf_main.cc:191:7: warning: unused variable ‘height’ [-Wunused-variable]
+   int height = dpuGetTensorHeight(dpu_in);
+       ^~~~~~
+/root/target_zcu102/cifar10/LeNet/src/tf_main.cc:192:7: warning: unused variable ‘size’ [-Wunused-variable]
+   int size = dpuGetTensorSize(dpu_in);
+       ^~~~
+g++ -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/target_zcu102/cifar10/LeNet/build/tf_main.o /root/target_zcu102/cifar10/LeNet/model/dpu_LeNet_0.elf -o LeNet -lopencv_dnn -lopencv_highgui -lopencv_shape -lopencv_video -lopencv_videoio -lopencv_imgcodecs -lopencv_imgproc -lopencv_core -lhineon -ln2cube -ldputils  -lpthread
+make: warning:  Clock skew detected.  Your build may be incomplete.
+ 
+./LeNet 1
+now running ./fps_LeNet 1
+total image : 5000
+[Time]7215902us
+[FPS]692.914
+ 
+./LeNet 2
+now running ./fps_LeNet 2
+total image : 5000
+[Time]4017937us
+[FPS]1244.42
+ 
+./LeNet 3
+now running ./fps_LeNet 3
+total image : 5000
+[Time]3374485us
+[FPS]1481.71
+ 
+./LeNet 4
+now running ./fps_LeNet 4
+total image : 5000
+[Time]2939111us
+[FPS]1701.19
+ 
+./LeNet 5
+now running ./fps_LeNet 5
+total image : 5000
+[Time]3020357us
+[FPS]1655.43
+ 
+./LeNet 6
+now running ./fps_LeNet 6
+total image : 5000
+[Time]2968103us
+[FPS]1684.58
+ 
+./LeNet 7
+now running ./fps_LeNet 7
+total image : 5000
+[Time]2955676us
+[FPS]1691.66
+ 
+./LeNet 8
+now running ./fps_LeNet 8
+total image : 5000
+[Time]2967057us
+[FPS]1685.17
+ 

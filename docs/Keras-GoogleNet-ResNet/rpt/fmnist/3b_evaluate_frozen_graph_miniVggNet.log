@@ -1,0 +1,147 @@
+2019-07-11 00:19:55.386483: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
+2019-07-11 00:19:55.461968: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1392] Found device 0 with properties: 
+name: Quadro P6000 major: 6 minor: 1 memoryClockRate(GHz): 1.645
+pciBusID: 0000:65:00.0
+totalMemory: 23.86GiB freeMemory: 23.18GiB
+2019-07-11 00:19:55.461990: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-07-11 00:19:55.732107: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-11 00:19:55.732136: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-07-11 00:19:55.732141: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-07-11 00:19:55.732646: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22493 MB memory) -> physical GPU (device: 0, name: Quadro P6000, pci bus id: 0000:65:00.0, compute capability: 6.1)
+Optimizing fused batch norm node name: "batch_normalization_1/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_1/convolution"
+input: "batch_normalization_1/gamma"
+input: "batch_normalization_1/beta"
+input: "batch_normalization_1/moving_mean"
+input: "batch_normalization_1/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_2/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_2/convolution"
+input: "batch_normalization_2/gamma"
+input: "batch_normalization_2/beta"
+input: "batch_normalization_2/moving_mean"
+input: "batch_normalization_2/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_3/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_3/convolution"
+input: "batch_normalization_3/gamma"
+input: "batch_normalization_3/beta"
+input: "batch_normalization_3/moving_mean"
+input: "batch_normalization_3/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_4/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_4/convolution"
+input: "batch_normalization_4/gamma"
+input: "batch_normalization_4/beta"
+input: "batch_normalization_4/moving_mean"
+input: "batch_normalization_4/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+
+ eval_graph.py runs from  /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/fashion-mnist
+ Top 1 accuracy with test dataset: 0.9390
+ Top 5 accuracy with test dataset: 0.9996
+FINISHED!

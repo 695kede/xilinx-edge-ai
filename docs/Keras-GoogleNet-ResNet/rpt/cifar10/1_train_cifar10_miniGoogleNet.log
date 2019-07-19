@@ -1,0 +1,353 @@
+2019-07-10 17:43:09.241791: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
+2019-07-10 17:43:09.309988: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1392] Found device 0 with properties: 
+name: Quadro P6000 major: 6 minor: 1 memoryClockRate(GHz): 1.645
+pciBusID: 0000:65:00.0
+totalMemory: 23.86GiB freeMemory: 23.22GiB
+2019-07-10 17:43:09.310010: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-07-10 17:43:09.529157: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-10 17:43:09.529186: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-07-10 17:43:09.529190: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-07-10 17:43:09.529713: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22528 MB memory) -> physical GPU (device: 0, name: Quadro P6000, pci bus id: 0000:65:00.0, compute capability: 6.1)
+[INFO] compiling model...
+[INFO] training model...
+Epoch 1/70
+ - 49s - loss: 0.5032 - acc: 0.8198 - val_loss: 0.3397 - val_acc: 0.8806
+
+Epoch 00001: val_loss improved from inf to 0.33971, saving model to keras_model/cifar10/miniGoogleNet/best_chkpt.hdf5
+Epoch 2/70
+ - 46s - loss: 0.2800 - acc: 0.8999 - val_loss: 0.3479 - val_acc: 0.8814
+
+Epoch 00002: val_loss did not improve from 0.33971
+Epoch 3/70
+ - 47s - loss: 0.2245 - acc: 0.9205 - val_loss: 0.3818 - val_acc: 0.8707
+
+Epoch 00003: val_loss did not improve from 0.33971
+Epoch 4/70
+ - 46s - loss: 0.1894 - acc: 0.9333 - val_loss: 0.3142 - val_acc: 0.8931
+
+Epoch 00004: val_loss improved from 0.33971 to 0.31421, saving model to keras_model/cifar10/miniGoogleNet/best_chkpt.hdf5
+Epoch 5/70
+ - 46s - loss: 0.1542 - acc: 0.9458 - val_loss: 0.2555 - val_acc: 0.9140
+
+Epoch 00005: val_loss improved from 0.31421 to 0.25546, saving model to keras_model/cifar10/miniGoogleNet/best_chkpt.hdf5
+Epoch 6/70
+ - 46s - loss: 0.1279 - acc: 0.9548 - val_loss: 0.3563 - val_acc: 0.8839
+
+Epoch 00006: val_loss did not improve from 0.25546
+Epoch 7/70
+ - 46s - loss: 0.0988 - acc: 0.9661 - val_loss: 0.2431 - val_acc: 0.9262
+
+Epoch 00007: val_loss improved from 0.25546 to 0.24306, saving model to keras_model/cifar10/miniGoogleNet/best_chkpt.hdf5
+Epoch 8/70
+ - 46s - loss: 0.0763 - acc: 0.9741 - val_loss: 0.2871 - val_acc: 0.9226
+
+Epoch 00008: val_loss did not improve from 0.24306
+Epoch 9/70
+ - 46s - loss: 0.0570 - acc: 0.9817 - val_loss: 0.5547 - val_acc: 0.8811
+
+Epoch 00009: val_loss did not improve from 0.24306
+Epoch 10/70
+ - 46s - loss: 0.0437 - acc: 0.9860 - val_loss: 0.2951 - val_acc: 0.9164
+
+Epoch 00010: val_loss did not improve from 0.24306
+Epoch 11/70
+ - 46s - loss: 0.0292 - acc: 0.9916 - val_loss: 0.3081 - val_acc: 0.9201
+
+Epoch 00011: val_loss did not improve from 0.24306
+Epoch 12/70
+ - 46s - loss: 0.0200 - acc: 0.9949 - val_loss: 0.3744 - val_acc: 0.9147
+
+Epoch 00012: val_loss did not improve from 0.24306
+Epoch 13/70
+ - 46s - loss: 0.0132 - acc: 0.9974 - val_loss: 0.3090 - val_acc: 0.9253
+
+Epoch 00013: val_loss did not improve from 0.24306
+Epoch 14/70
+ - 46s - loss: 0.0088 - acc: 0.9986 - val_loss: 0.3100 - val_acc: 0.9229
+
+Epoch 00014: val_loss did not improve from 0.24306
+Epoch 15/70
+ - 46s - loss: 0.0064 - acc: 0.9992 - val_loss: 0.2918 - val_acc: 0.9331
+
+Epoch 00015: val_loss did not improve from 0.24306
+Epoch 16/70
+ - 46s - loss: 0.0050 - acc: 0.9994 - val_loss: 0.2847 - val_acc: 0.9295
+
+Epoch 00016: val_loss did not improve from 0.24306
+Epoch 17/70
+ - 46s - loss: 0.0036 - acc: 0.9998 - val_loss: 0.2955 - val_acc: 0.9370
+
+Epoch 00017: val_loss did not improve from 0.24306
+Epoch 18/70
+ - 46s - loss: 0.0030 - acc: 0.9998 - val_loss: 0.3119 - val_acc: 0.9318
+
+Epoch 00018: val_loss did not improve from 0.24306
+Epoch 19/70
+ - 46s - loss: 0.0026 - acc: 0.9999 - val_loss: 0.3061 - val_acc: 0.9322
+
+Epoch 00019: val_loss did not improve from 0.24306
+Epoch 20/70
+ - 46s - loss: 0.0023 - acc: 0.9999 - val_loss: 0.3133 - val_acc: 0.9286
+
+Epoch 00020: val_loss did not improve from 0.24306
+Epoch 21/70
+ - 46s - loss: 0.0021 - acc: 0.9999 - val_loss: 0.2952 - val_acc: 0.9355
+
+Epoch 00021: val_loss did not improve from 0.24306
+Epoch 22/70
+ - 46s - loss: 0.0018 - acc: 0.9999 - val_loss: 0.3041 - val_acc: 0.9332
+
+Epoch 00022: val_loss did not improve from 0.24306
+Epoch 23/70
+ - 46s - loss: 0.0017 - acc: 0.9999 - val_loss: 0.3159 - val_acc: 0.9319
+
+Epoch 00023: val_loss did not improve from 0.24306
+Epoch 24/70
+ - 46s - loss: 0.0016 - acc: 1.0000 - val_loss: 0.2966 - val_acc: 0.9375
+
+Epoch 00024: val_loss did not improve from 0.24306
+Epoch 25/70
+ - 46s - loss: 0.0014 - acc: 1.0000 - val_loss: 0.3133 - val_acc: 0.9344
+
+Epoch 00025: val_loss did not improve from 0.24306
+Epoch 26/70
+ - 46s - loss: 0.0014 - acc: 1.0000 - val_loss: 0.3189 - val_acc: 0.9309
+
+Epoch 00026: val_loss did not improve from 0.24306
+Epoch 27/70
+ - 46s - loss: 0.0012 - acc: 1.0000 - val_loss: 0.3117 - val_acc: 0.9322
+
+Epoch 00027: val_loss did not improve from 0.24306
+Epoch 28/70
+ - 46s - loss: 0.0013 - acc: 0.9999 - val_loss: 0.3061 - val_acc: 0.9342
+
+Epoch 00028: val_loss did not improve from 0.24306
+Epoch 29/70
+ - 46s - loss: 0.0011 - acc: 1.0000 - val_loss: 0.3264 - val_acc: 0.9325
+
+Epoch 00029: val_loss did not improve from 0.24306
+Epoch 30/70
+ - 46s - loss: 0.0011 - acc: 1.0000 - val_loss: 0.3098 - val_acc: 0.9330
+
+Epoch 00030: val_loss did not improve from 0.24306
+Epoch 31/70
+ - 46s - loss: 0.0011 - acc: 1.0000 - val_loss: 0.3281 - val_acc: 0.9337
+
+Epoch 00031: val_loss did not improve from 0.24306
+Epoch 32/70
+ - 46s - loss: 9.9379e-04 - acc: 1.0000 - val_loss: 0.3220 - val_acc: 0.9352
+
+Epoch 00032: val_loss did not improve from 0.24306
+Epoch 33/70
+ - 46s - loss: 9.8658e-04 - acc: 1.0000 - val_loss: 0.3175 - val_acc: 0.9342
+
+Epoch 00033: val_loss did not improve from 0.24306
+Epoch 34/70
+ - 46s - loss: 9.0243e-04 - acc: 1.0000 - val_loss: 0.3322 - val_acc: 0.9324
+
+Epoch 00034: val_loss did not improve from 0.24306
+Epoch 35/70
+ - 46s - loss: 9.2122e-04 - acc: 1.0000 - val_loss: 0.3191 - val_acc: 0.9350
+
+Epoch 00035: val_loss did not improve from 0.24306
+Epoch 36/70
+ - 46s - loss: 8.1040e-04 - acc: 1.0000 - val_loss: 0.3176 - val_acc: 0.9350
+
+Epoch 00036: val_loss did not improve from 0.24306
+Epoch 37/70
+ - 46s - loss: 8.0157e-04 - acc: 1.0000 - val_loss: 0.3218 - val_acc: 0.9315
+
+Epoch 00037: val_loss did not improve from 0.24306
+Epoch 38/70
+ - 46s - loss: 8.0181e-04 - acc: 1.0000 - val_loss: 0.3391 - val_acc: 0.9314
+
+Epoch 00038: val_loss did not improve from 0.24306
+Epoch 39/70
+ - 46s - loss: 7.6841e-04 - acc: 1.0000 - val_loss: 0.3029 - val_acc: 0.9359
+
+Epoch 00039: val_loss did not improve from 0.24306
+Epoch 40/70
+ - 46s - loss: 7.2282e-04 - acc: 1.0000 - val_loss: 0.3297 - val_acc: 0.9334
+
+Epoch 00040: val_loss did not improve from 0.24306
+Epoch 41/70
+ - 46s - loss: 7.6592e-04 - acc: 1.0000 - val_loss: 0.3215 - val_acc: 0.9333
+
+Epoch 00041: val_loss did not improve from 0.24306
+Epoch 42/70
+ - 46s - loss: 7.1200e-04 - acc: 1.0000 - val_loss: 0.3312 - val_acc: 0.9320
+
+Epoch 00042: val_loss did not improve from 0.24306
+Epoch 43/70
+ - 46s - loss: 6.6229e-04 - acc: 1.0000 - val_loss: 0.3216 - val_acc: 0.9324
+
+Epoch 00043: val_loss did not improve from 0.24306
+Epoch 44/70
+ - 46s - loss: 6.7444e-04 - acc: 1.0000 - val_loss: 0.3305 - val_acc: 0.9321
+
+Epoch 00044: val_loss did not improve from 0.24306
+Epoch 45/70
+ - 46s - loss: 6.9418e-04 - acc: 1.0000 - val_loss: 0.3297 - val_acc: 0.9335
+
+Epoch 00045: val_loss did not improve from 0.24306
+Epoch 46/70
+ - 47s - loss: 6.3968e-04 - acc: 1.0000 - val_loss: 0.3229 - val_acc: 0.9337
+
+Epoch 00046: val_loss did not improve from 0.24306
+Epoch 47/70
+ - 46s - loss: 6.2610e-04 - acc: 1.0000 - val_loss: 0.3310 - val_acc: 0.9322
+
+Epoch 00047: val_loss did not improve from 0.24306
+Epoch 48/70
+ - 46s - loss: 6.1161e-04 - acc: 1.0000 - val_loss: 0.3331 - val_acc: 0.9326
+
+Epoch 00048: val_loss did not improve from 0.24306
+Epoch 49/70
+ - 46s - loss: 6.5008e-04 - acc: 1.0000 - val_loss: 0.3222 - val_acc: 0.9335
+
+Epoch 00049: val_loss did not improve from 0.24306
+Epoch 50/70
+ - 46s - loss: 5.9523e-04 - acc: 1.0000 - val_loss: 0.3252 - val_acc: 0.9340
+
+Epoch 00050: val_loss did not improve from 0.24306
+Epoch 51/70
+ - 46s - loss: 5.7155e-04 - acc: 1.0000 - val_loss: 0.3292 - val_acc: 0.9324
+
+Epoch 00051: val_loss did not improve from 0.24306
+Epoch 52/70
+ - 46s - loss: 5.6283e-04 - acc: 1.0000 - val_loss: 0.3341 - val_acc: 0.9324
+
+Epoch 00052: val_loss did not improve from 0.24306
+Epoch 53/70
+ - 46s - loss: 5.4711e-04 - acc: 1.0000 - val_loss: 0.3304 - val_acc: 0.9340
+
+Epoch 00053: val_loss did not improve from 0.24306
+Epoch 54/70
+ - 46s - loss: 5.3570e-04 - acc: 1.0000 - val_loss: 0.3354 - val_acc: 0.9323
+
+Epoch 00054: val_loss did not improve from 0.24306
+Epoch 55/70
+ - 47s - loss: 5.3530e-04 - acc: 1.0000 - val_loss: 0.3369 - val_acc: 0.9341
+
+Epoch 00055: val_loss did not improve from 0.24306
+Epoch 56/70
+ - 47s - loss: 5.8573e-04 - acc: 1.0000 - val_loss: 0.3232 - val_acc: 0.9351
+
+Epoch 00056: val_loss did not improve from 0.24306
+Epoch 57/70
+ - 47s - loss: 5.4005e-04 - acc: 1.0000 - val_loss: 0.3312 - val_acc: 0.9348
+
+Epoch 00057: val_loss did not improve from 0.24306
+Epoch 58/70
+ - 47s - loss: 5.1538e-04 - acc: 1.0000 - val_loss: 0.3325 - val_acc: 0.9323
+
+Epoch 00058: val_loss did not improve from 0.24306
+Epoch 59/70
+ - 46s - loss: 4.9335e-04 - acc: 1.0000 - val_loss: 0.3378 - val_acc: 0.9325
+
+Epoch 00059: val_loss did not improve from 0.24306
+Epoch 60/70
+ - 47s - loss: 5.0890e-04 - acc: 1.0000 - val_loss: 0.3226 - val_acc: 0.9361
+
+Epoch 00060: val_loss did not improve from 0.24306
+Epoch 61/70
+ - 46s - loss: 4.9598e-04 - acc: 1.0000 - val_loss: 0.3268 - val_acc: 0.9343
+
+Epoch 00061: val_loss did not improve from 0.24306
+Epoch 62/70
+ - 47s - loss: 4.7849e-04 - acc: 1.0000 - val_loss: 0.3343 - val_acc: 0.9331
+
+Epoch 00062: val_loss did not improve from 0.24306
+Epoch 63/70
+ - 47s - loss: 5.1249e-04 - acc: 1.0000 - val_loss: 0.3265 - val_acc: 0.9342
+
+Epoch 00063: val_loss did not improve from 0.24306
+Epoch 64/70
+ - 47s - loss: 4.7122e-04 - acc: 1.0000 - val_loss: 0.3340 - val_acc: 0.9333
+
+Epoch 00064: val_loss did not improve from 0.24306
+Epoch 65/70
+ - 47s - loss: 4.7243e-04 - acc: 1.0000 - val_loss: 0.3206 - val_acc: 0.9338
+
+Epoch 00065: val_loss did not improve from 0.24306
+Epoch 66/70
+ - 46s - loss: 4.5249e-04 - acc: 1.0000 - val_loss: 0.3402 - val_acc: 0.9323
+
+Epoch 00066: val_loss did not improve from 0.24306
+Epoch 67/70
+ - 46s - loss: 4.7081e-04 - acc: 1.0000 - val_loss: 0.3413 - val_acc: 0.9320
+
+Epoch 00067: val_loss did not improve from 0.24306
+Epoch 68/70
+ - 46s - loss: 4.7284e-04 - acc: 1.0000 - val_loss: 0.3256 - val_acc: 0.9332
+
+Epoch 00068: val_loss did not improve from 0.24306
+Epoch 69/70
+ - 47s - loss: 4.3811e-04 - acc: 1.0000 - val_loss: 0.3167 - val_acc: 0.9369
+
+Epoch 00069: val_loss did not improve from 0.24306
+Epoch 70/70
+ - 46s - loss: 4.5966e-04 - acc: 1.0000 - val_loss: 0.3510 - val_acc: 0.9304
+
+Epoch 00070: val_loss did not improve from 0.24306
+
+
+Elapsed time for Keras training (s):  3244.754083
+
+
+[INFO] evaluating network on Test and Validation datasets...
+
+ 128/5000 [..............................] - ETA: 0s
+ 512/5000 [==>...........................] - ETA: 0s
+ 896/5000 [====>.........................] - ETA: 0s
+1280/5000 [======>.......................] - ETA: 0s
+1664/5000 [========>.....................] - ETA: 0s
+2048/5000 [===========>..................] - ETA: 0s
+2432/5000 [=============>................] - ETA: 0s
+2816/5000 [===============>..............] - ETA: 0s
+3200/5000 [==================>...........] - ETA: 0s
+3584/5000 [====================>.........] - ETA: 0s
+3968/5000 [======================>.......] - ETA: 0s
+4352/5000 [=========================>....] - ETA: 0s
+4736/5000 [===========================>..] - ETA: 0s
+5000/5000 [==============================] - 1s 138us/step
+Validation Loss: 0.333
+validation Accuracy: 0.934
+
+ 128/5000 [..............................] - ETA: 0s
+ 512/5000 [==>...........................] - ETA: 0s
+ 896/5000 [====>.........................] - ETA: 0s
+1280/5000 [======>.......................] - ETA: 0s
+1664/5000 [========>.....................] - ETA: 0s
+2048/5000 [===========>..................] - ETA: 0s
+2432/5000 [=============>................] - ETA: 0s
+2816/5000 [===============>..............] - ETA: 0s
+3200/5000 [==================>...........] - ETA: 0s
+3584/5000 [====================>.........] - ETA: 0s
+3968/5000 [======================>.......] - ETA: 0s
+4352/5000 [=========================>....] - ETA: 0s
+4736/5000 [===========================>..] - ETA: 0s
+5000/5000 [==============================] - 1s 138us/step
+Using TensorFlow backend.
+Test Loss: 0.370
+Test Accuracy: 0.931
+              precision    recall  f1-score   support
+
+    airplane       0.87      0.88      0.88       500
+  automobile       0.99      0.99      0.99       500
+        bird       0.89      0.91      0.90       500
+         cat       0.93      0.93      0.93       500
+        deer       0.89      0.89      0.89       500
+         dog       0.99      0.98      0.98       500
+        frog       0.81      0.78      0.79       500
+       horse       0.96      0.98      0.97       500
+        ship       0.98      0.99      0.99       500
+       truck       0.99      0.96      0.97       500
+
+   micro avg       0.93      0.93      0.93      5000
+   macro avg       0.93      0.93      0.93      5000
+weighted avg       0.93      0.93      0.93      5000
+
+
+TRAINING miniGoogleNet FINISHED
+

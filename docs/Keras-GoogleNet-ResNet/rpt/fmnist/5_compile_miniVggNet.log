@@ -1,0 +1,23 @@
+[0;33m[DNNC][Warning] layer [activation_6_Softmax] is not supported in DPU, deploy it in CPU instead.
+[m
+DNNC Kernel Information
+
+1. Overview
+kernel numbers  : 2
+kernel topology : miniVggNet_kernel_graph.jpg
+
+2. Kernel Description in Detail
+kernel id       : 0
+kernel name     : miniVggNet_0
+type            : DPUKernel
+nodes           : NA
+input node(s)   : conv2d_1_convolution(0) 
+output node(s)  : dense_2_MatMul(0) 
+
+kernel id       : 1
+kernel name     : miniVggNet_1
+type            : CPUKernel
+nodes           : NA
+input node(s)   : activation_6_Softmax 
+output node(s)  : activation_6_Softmax 
+

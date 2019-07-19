@@ -1,0 +1,2754 @@
+2019-07-11 00:20:07.767091: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
+2019-07-11 00:20:07.857305: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1392] Found device 0 with properties: 
+name: Quadro P6000 major: 6 minor: 1 memoryClockRate(GHz): 1.645
+pciBusID: 0000:65:00.0
+totalMemory: 23.86GiB freeMemory: 23.18GiB
+2019-07-11 00:20:07.857327: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-07-11 00:20:08.132751: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-11 00:20:08.132782: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-07-11 00:20:08.132786: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-07-11 00:20:08.133321: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22493 MB memory) -> physical GPU (device: 0, name: Quadro P6000, pci bus id: 0000:65:00.0, compute capability: 6.1)
+Optimizing fused batch norm node name: "batch_normalization_80/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_26/add"
+input: "batch_normalization_80/gamma"
+input: "batch_normalization_80/beta"
+input: "batch_normalization_80/moving_mean"
+input: "batch_normalization_80/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_81/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_83/convolution"
+input: "batch_normalization_81/gamma"
+input: "batch_normalization_81/beta"
+input: "batch_normalization_81/moving_mean"
+input: "batch_normalization_81/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_82/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_84/convolution"
+input: "batch_normalization_82/gamma"
+input: "batch_normalization_82/beta"
+input: "batch_normalization_82/moving_mean"
+input: "batch_normalization_82/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_77/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_25/add"
+input: "batch_normalization_77/gamma"
+input: "batch_normalization_77/beta"
+input: "batch_normalization_77/moving_mean"
+input: "batch_normalization_77/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_78/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_80/convolution"
+input: "batch_normalization_78/gamma"
+input: "batch_normalization_78/beta"
+input: "batch_normalization_78/moving_mean"
+input: "batch_normalization_78/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_79/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_81/convolution"
+input: "batch_normalization_79/gamma"
+input: "batch_normalization_79/beta"
+input: "batch_normalization_79/moving_mean"
+input: "batch_normalization_79/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_74/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_24/add"
+input: "batch_normalization_74/gamma"
+input: "batch_normalization_74/beta"
+input: "batch_normalization_74/moving_mean"
+input: "batch_normalization_74/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_75/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_77/convolution"
+input: "batch_normalization_75/gamma"
+input: "batch_normalization_75/beta"
+input: "batch_normalization_75/moving_mean"
+input: "batch_normalization_75/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_76/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_78/convolution"
+input: "batch_normalization_76/gamma"
+input: "batch_normalization_76/beta"
+input: "batch_normalization_76/moving_mean"
+input: "batch_normalization_76/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_71/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_23/add"
+input: "batch_normalization_71/gamma"
+input: "batch_normalization_71/beta"
+input: "batch_normalization_71/moving_mean"
+input: "batch_normalization_71/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_72/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_74/convolution"
+input: "batch_normalization_72/gamma"
+input: "batch_normalization_72/beta"
+input: "batch_normalization_72/moving_mean"
+input: "batch_normalization_72/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_73/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_75/convolution"
+input: "batch_normalization_73/gamma"
+input: "batch_normalization_73/beta"
+input: "batch_normalization_73/moving_mean"
+input: "batch_normalization_73/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_68/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_22/add"
+input: "batch_normalization_68/gamma"
+input: "batch_normalization_68/beta"
+input: "batch_normalization_68/moving_mean"
+input: "batch_normalization_68/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_69/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_71/convolution"
+input: "batch_normalization_69/gamma"
+input: "batch_normalization_69/beta"
+input: "batch_normalization_69/moving_mean"
+input: "batch_normalization_69/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_70/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_72/convolution"
+input: "batch_normalization_70/gamma"
+input: "batch_normalization_70/beta"
+input: "batch_normalization_70/moving_mean"
+input: "batch_normalization_70/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_65/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_21/add"
+input: "batch_normalization_65/gamma"
+input: "batch_normalization_65/beta"
+input: "batch_normalization_65/moving_mean"
+input: "batch_normalization_65/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_66/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_68/convolution"
+input: "batch_normalization_66/gamma"
+input: "batch_normalization_66/beta"
+input: "batch_normalization_66/moving_mean"
+input: "batch_normalization_66/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_67/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_69/convolution"
+input: "batch_normalization_67/gamma"
+input: "batch_normalization_67/beta"
+input: "batch_normalization_67/moving_mean"
+input: "batch_normalization_67/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_62/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_20/add"
+input: "batch_normalization_62/gamma"
+input: "batch_normalization_62/beta"
+input: "batch_normalization_62/moving_mean"
+input: "batch_normalization_62/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_63/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_65/convolution"
+input: "batch_normalization_63/gamma"
+input: "batch_normalization_63/beta"
+input: "batch_normalization_63/moving_mean"
+input: "batch_normalization_63/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_64/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_66/convolution"
+input: "batch_normalization_64/gamma"
+input: "batch_normalization_64/beta"
+input: "batch_normalization_64/moving_mean"
+input: "batch_normalization_64/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_59/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_19/add"
+input: "batch_normalization_59/gamma"
+input: "batch_normalization_59/beta"
+input: "batch_normalization_59/moving_mean"
+input: "batch_normalization_59/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_60/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_62/convolution"
+input: "batch_normalization_60/gamma"
+input: "batch_normalization_60/beta"
+input: "batch_normalization_60/moving_mean"
+input: "batch_normalization_60/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_61/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_63/convolution"
+input: "batch_normalization_61/gamma"
+input: "batch_normalization_61/beta"
+input: "batch_normalization_61/moving_mean"
+input: "batch_normalization_61/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_57/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_58/convolution"
+input: "batch_normalization_57/gamma"
+input: "batch_normalization_57/beta"
+input: "batch_normalization_57/moving_mean"
+input: "batch_normalization_57/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_58/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_59/convolution"
+input: "batch_normalization_58/gamma"
+input: "batch_normalization_58/beta"
+input: "batch_normalization_58/moving_mean"
+input: "batch_normalization_58/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_53/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_17/add"
+input: "batch_normalization_53/gamma"
+input: "batch_normalization_53/beta"
+input: "batch_normalization_53/moving_mean"
+input: "batch_normalization_53/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_54/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_55/convolution"
+input: "batch_normalization_54/gamma"
+input: "batch_normalization_54/beta"
+input: "batch_normalization_54/moving_mean"
+input: "batch_normalization_54/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_55/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_56/convolution"
+input: "batch_normalization_55/gamma"
+input: "batch_normalization_55/beta"
+input: "batch_normalization_55/moving_mean"
+input: "batch_normalization_55/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_50/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_16/add"
+input: "batch_normalization_50/gamma"
+input: "batch_normalization_50/beta"
+input: "batch_normalization_50/moving_mean"
+input: "batch_normalization_50/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_51/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_52/convolution"
+input: "batch_normalization_51/gamma"
+input: "batch_normalization_51/beta"
+input: "batch_normalization_51/moving_mean"
+input: "batch_normalization_51/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_52/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_53/convolution"
+input: "batch_normalization_52/gamma"
+input: "batch_normalization_52/beta"
+input: "batch_normalization_52/moving_mean"
+input: "batch_normalization_52/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_47/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_15/add"
+input: "batch_normalization_47/gamma"
+input: "batch_normalization_47/beta"
+input: "batch_normalization_47/moving_mean"
+input: "batch_normalization_47/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_48/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_49/convolution"
+input: "batch_normalization_48/gamma"
+input: "batch_normalization_48/beta"
+input: "batch_normalization_48/moving_mean"
+input: "batch_normalization_48/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_49/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_50/convolution"
+input: "batch_normalization_49/gamma"
+input: "batch_normalization_49/beta"
+input: "batch_normalization_49/moving_mean"
+input: "batch_normalization_49/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_44/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_14/add"
+input: "batch_normalization_44/gamma"
+input: "batch_normalization_44/beta"
+input: "batch_normalization_44/moving_mean"
+input: "batch_normalization_44/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_45/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_46/convolution"
+input: "batch_normalization_45/gamma"
+input: "batch_normalization_45/beta"
+input: "batch_normalization_45/moving_mean"
+input: "batch_normalization_45/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_46/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_47/convolution"
+input: "batch_normalization_46/gamma"
+input: "batch_normalization_46/beta"
+input: "batch_normalization_46/moving_mean"
+input: "batch_normalization_46/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_41/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_13/add"
+input: "batch_normalization_41/gamma"
+input: "batch_normalization_41/beta"
+input: "batch_normalization_41/moving_mean"
+input: "batch_normalization_41/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_42/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_43/convolution"
+input: "batch_normalization_42/gamma"
+input: "batch_normalization_42/beta"
+input: "batch_normalization_42/moving_mean"
+input: "batch_normalization_42/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_43/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_44/convolution"
+input: "batch_normalization_43/gamma"
+input: "batch_normalization_43/beta"
+input: "batch_normalization_43/moving_mean"
+input: "batch_normalization_43/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_38/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_12/add"
+input: "batch_normalization_38/gamma"
+input: "batch_normalization_38/beta"
+input: "batch_normalization_38/moving_mean"
+input: "batch_normalization_38/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_39/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_40/convolution"
+input: "batch_normalization_39/gamma"
+input: "batch_normalization_39/beta"
+input: "batch_normalization_39/moving_mean"
+input: "batch_normalization_39/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_40/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_41/convolution"
+input: "batch_normalization_40/gamma"
+input: "batch_normalization_40/beta"
+input: "batch_normalization_40/moving_mean"
+input: "batch_normalization_40/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_35/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_11/add"
+input: "batch_normalization_35/gamma"
+input: "batch_normalization_35/beta"
+input: "batch_normalization_35/moving_mean"
+input: "batch_normalization_35/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_36/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_37/convolution"
+input: "batch_normalization_36/gamma"
+input: "batch_normalization_36/beta"
+input: "batch_normalization_36/moving_mean"
+input: "batch_normalization_36/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_37/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_38/convolution"
+input: "batch_normalization_37/gamma"
+input: "batch_normalization_37/beta"
+input: "batch_normalization_37/moving_mean"
+input: "batch_normalization_37/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_32/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_10/add"
+input: "batch_normalization_32/gamma"
+input: "batch_normalization_32/beta"
+input: "batch_normalization_32/moving_mean"
+input: "batch_normalization_32/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_33/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_34/convolution"
+input: "batch_normalization_33/gamma"
+input: "batch_normalization_33/beta"
+input: "batch_normalization_33/moving_mean"
+input: "batch_normalization_33/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_34/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_35/convolution"
+input: "batch_normalization_34/gamma"
+input: "batch_normalization_34/beta"
+input: "batch_normalization_34/moving_mean"
+input: "batch_normalization_34/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_30/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_30/convolution"
+input: "batch_normalization_30/gamma"
+input: "batch_normalization_30/beta"
+input: "batch_normalization_30/moving_mean"
+input: "batch_normalization_30/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_31/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_31/convolution"
+input: "batch_normalization_31/gamma"
+input: "batch_normalization_31/beta"
+input: "batch_normalization_31/moving_mean"
+input: "batch_normalization_31/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_26/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_8/add"
+input: "batch_normalization_26/gamma"
+input: "batch_normalization_26/beta"
+input: "batch_normalization_26/moving_mean"
+input: "batch_normalization_26/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_27/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_27/convolution"
+input: "batch_normalization_27/gamma"
+input: "batch_normalization_27/beta"
+input: "batch_normalization_27/moving_mean"
+input: "batch_normalization_27/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_28/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_28/convolution"
+input: "batch_normalization_28/gamma"
+input: "batch_normalization_28/beta"
+input: "batch_normalization_28/moving_mean"
+input: "batch_normalization_28/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_23/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_7/add"
+input: "batch_normalization_23/gamma"
+input: "batch_normalization_23/beta"
+input: "batch_normalization_23/moving_mean"
+input: "batch_normalization_23/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_24/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_24/convolution"
+input: "batch_normalization_24/gamma"
+input: "batch_normalization_24/beta"
+input: "batch_normalization_24/moving_mean"
+input: "batch_normalization_24/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_25/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_25/convolution"
+input: "batch_normalization_25/gamma"
+input: "batch_normalization_25/beta"
+input: "batch_normalization_25/moving_mean"
+input: "batch_normalization_25/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_20/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_6/add"
+input: "batch_normalization_20/gamma"
+input: "batch_normalization_20/beta"
+input: "batch_normalization_20/moving_mean"
+input: "batch_normalization_20/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_21/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_21/convolution"
+input: "batch_normalization_21/gamma"
+input: "batch_normalization_21/beta"
+input: "batch_normalization_21/moving_mean"
+input: "batch_normalization_21/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_22/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_22/convolution"
+input: "batch_normalization_22/gamma"
+input: "batch_normalization_22/beta"
+input: "batch_normalization_22/moving_mean"
+input: "batch_normalization_22/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_17/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_5/add"
+input: "batch_normalization_17/gamma"
+input: "batch_normalization_17/beta"
+input: "batch_normalization_17/moving_mean"
+input: "batch_normalization_17/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_18/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_18/convolution"
+input: "batch_normalization_18/gamma"
+input: "batch_normalization_18/beta"
+input: "batch_normalization_18/moving_mean"
+input: "batch_normalization_18/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_19/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_19/convolution"
+input: "batch_normalization_19/gamma"
+input: "batch_normalization_19/beta"
+input: "batch_normalization_19/moving_mean"
+input: "batch_normalization_19/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_14/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_4/add"
+input: "batch_normalization_14/gamma"
+input: "batch_normalization_14/beta"
+input: "batch_normalization_14/moving_mean"
+input: "batch_normalization_14/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_15/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_15/convolution"
+input: "batch_normalization_15/gamma"
+input: "batch_normalization_15/beta"
+input: "batch_normalization_15/moving_mean"
+input: "batch_normalization_15/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_16/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_16/convolution"
+input: "batch_normalization_16/gamma"
+input: "batch_normalization_16/beta"
+input: "batch_normalization_16/moving_mean"
+input: "batch_normalization_16/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_11/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_3/add"
+input: "batch_normalization_11/gamma"
+input: "batch_normalization_11/beta"
+input: "batch_normalization_11/moving_mean"
+input: "batch_normalization_11/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_12/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_12/convolution"
+input: "batch_normalization_12/gamma"
+input: "batch_normalization_12/beta"
+input: "batch_normalization_12/moving_mean"
+input: "batch_normalization_12/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_13/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_13/convolution"
+input: "batch_normalization_13/gamma"
+input: "batch_normalization_13/beta"
+input: "batch_normalization_13/moving_mean"
+input: "batch_normalization_13/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_8/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_2/add"
+input: "batch_normalization_8/gamma"
+input: "batch_normalization_8/beta"
+input: "batch_normalization_8/moving_mean"
+input: "batch_normalization_8/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_9/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_9/convolution"
+input: "batch_normalization_9/gamma"
+input: "batch_normalization_9/beta"
+input: "batch_normalization_9/moving_mean"
+input: "batch_normalization_9/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_10/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_10/convolution"
+input: "batch_normalization_10/gamma"
+input: "batch_normalization_10/beta"
+input: "batch_normalization_10/moving_mean"
+input: "batch_normalization_10/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_5/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_1/add"
+input: "batch_normalization_5/gamma"
+input: "batch_normalization_5/beta"
+input: "batch_normalization_5/moving_mean"
+input: "batch_normalization_5/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_6/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_6/convolution"
+input: "batch_normalization_6/gamma"
+input: "batch_normalization_6/beta"
+input: "batch_normalization_6/moving_mean"
+input: "batch_normalization_6/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_7/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_7/convolution"
+input: "batch_normalization_7/gamma"
+input: "batch_normalization_7/beta"
+input: "batch_normalization_7/moving_mean"
+input: "batch_normalization_7/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_3/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_2/convolution"
+input: "batch_normalization_3/gamma"
+input: "batch_normalization_3/beta"
+input: "batch_normalization_3/moving_mean"
+input: "batch_normalization_3/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_4/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_3/convolution"
+input: "batch_normalization_4/gamma"
+input: "batch_normalization_4/beta"
+input: "batch_normalization_4/moving_mean"
+input: "batch_normalization_4/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_1/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_1_input"
+input: "batch_normalization_1/gamma"
+input: "batch_normalization_1/beta"
+input: "batch_normalization_1/moving_mean"
+input: "batch_normalization_1/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_2/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "conv2d_1/convolution"
+input: "batch_normalization_2/gamma"
+input: "batch_normalization_2/beta"
+input: "batch_normalization_2/moving_mean"
+input: "batch_normalization_2/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_29/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_9/add"
+input: "batch_normalization_29/gamma"
+input: "batch_normalization_29/beta"
+input: "batch_normalization_29/moving_mean"
+input: "batch_normalization_29/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_56/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_18/add"
+input: "batch_normalization_56/gamma"
+input: "batch_normalization_56/beta"
+input: "batch_normalization_56/moving_mean"
+input: "batch_normalization_56/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+Optimizing fused batch norm node name: "batch_normalization_83/FusedBatchNorm_1"
+op: "FusedBatchNorm"
+input: "add_27/add"
+input: "batch_normalization_83/gamma"
+input: "batch_normalization_83/beta"
+input: "batch_normalization_83/moving_mean"
+input: "batch_normalization_83/moving_variance"
+device: "/job:localhost/replica:0/task:0/device:GPU:0"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "data_format"
+  value {
+    s: "NHWC"
+  }
+}
+attr {
+  key: "epsilon"
+  value {
+    f: 2e-05
+  }
+}
+attr {
+  key: "is_training"
+  value {
+    b: false
+  }
+}
+
+
+ eval_graph.py runs from  /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/fashion-mnist
+ Top 1 accuracy with test dataset: 0.9462
+ Top 5 accuracy with test dataset: 0.9998
+FINISHED!

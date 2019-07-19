@@ -1,0 +1,72 @@
+make: Warning: File 'Makefile' has modification time 5172220 s in the future
+rm -f -rf /root/target_zcu102/cifar10/miniGoogleNet/build/*.o /root/target_zcu102/cifar10/miniGoogleNet/build
+rm -f miniGoogleNet
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Warning: File 'Makefile' has modification time 5172220 s in the future
+mkdir -p /root/target_zcu102/cifar10/miniGoogleNet/build
+g++ -c -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/target_zcu102/cifar10/miniGoogleNet/src/tf_main.cc -o /root/target_zcu102/cifar10/miniGoogleNet/build/tf_main.o
+/root/target_zcu102/cifar10/miniGoogleNet/src/tf_main.cc: In function ‘void TopK(const float*, int, int, std::vector<std::__cxx11::basic_string<char> >&)’:
+/root/target_zcu102/cifar10/miniGoogleNet/src/tf_main.cc:151:11: warning: unused variable ‘real_ki’ [-Wunused-variable]
+       int real_ki = ki.second;
+           ^~~~~~~
+/root/target_zcu102/cifar10/miniGoogleNet/src/tf_main.cc: In function ‘void set_input_image(DPUTask*, const string&, const cv::Mat&, float*)’:
+/root/target_zcu102/cifar10/miniGoogleNet/src/tf_main.cc:190:7: warning: unused variable ‘width’ [-Wunused-variable]
+   int width = dpuGetTensorWidth(dpu_in);
+       ^~~~~
+/root/target_zcu102/cifar10/miniGoogleNet/src/tf_main.cc:191:7: warning: unused variable ‘height’ [-Wunused-variable]
+   int height = dpuGetTensorHeight(dpu_in);
+       ^~~~~~
+/root/target_zcu102/cifar10/miniGoogleNet/src/tf_main.cc:192:7: warning: unused variable ‘size’ [-Wunused-variable]
+   int size = dpuGetTensorSize(dpu_in);
+       ^~~~
+g++ -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/target_zcu102/cifar10/miniGoogleNet/build/tf_main.o /root/target_zcu102/cifar10/miniGoogleNet/model/dpu_miniGoogleNet_0.elf -o miniGoogleNet -lopencv_dnn -lopencv_highgui -lopencv_shape -lopencv_video -lopencv_videoio -lopencv_imgcodecs -lopencv_imgproc -lopencv_core -lhineon -ln2cube -ldputils  -lpthread
+make: warning:  Clock skew detected.  Your build may be incomplete.
+ 
+./miniGoogleNet 1
+now running ./fps_miniGoogleNet 1
+total image : 5000
+[Time]5818101us
+[FPS]859.387
+ 
+./miniGoogleNet 2
+now running ./fps_miniGoogleNet 2
+total image : 5000
+[Time]3001483us
+[FPS]1665.84
+ 
+./miniGoogleNet 3
+now running ./fps_miniGoogleNet 3
+total image : 5000
+[Time]2315424us
+[FPS]2159.43
+ 
+./miniGoogleNet 4
+now running ./fps_miniGoogleNet 4
+total image : 5000
+[Time]1920895us
+[FPS]2602.95
+ 
+./miniGoogleNet 5
+now running ./fps_miniGoogleNet 5
+total image : 5000
+[Time]1941023us
+[FPS]2575.96
+ 
+./miniGoogleNet 6
+now running ./fps_miniGoogleNet 6
+total image : 5000
+[Time]1895885us
+[FPS]2637.29
+ 
+./miniGoogleNet 7
+now running ./fps_miniGoogleNet 7
+total image : 5000
+[Time]1922708us
+[FPS]2600.5
+ 
+./miniGoogleNet 8
+now running ./fps_miniGoogleNet 8
+total image : 5000
+[Time]1914418us
+[FPS]2611.76
+ 

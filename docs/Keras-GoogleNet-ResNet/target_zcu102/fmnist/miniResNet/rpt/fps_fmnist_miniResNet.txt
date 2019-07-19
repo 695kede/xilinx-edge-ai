@@ -1,0 +1,72 @@
+make: Warning: File 'Makefile' has modification time 5113552 s in the future
+rm -f -rf /root/target_zcu102/fmnist/miniResNet/build/*.o /root/target_zcu102/fmnist/miniResNet/build
+rm -f miniResNet
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Warning: File 'Makefile' has modification time 5113552 s in the future
+mkdir -p /root/target_zcu102/fmnist/miniResNet/build
+g++ -c -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/target_zcu102/fmnist/miniResNet/src/tf_main.cc -o /root/target_zcu102/fmnist/miniResNet/build/tf_main.o
+/root/target_zcu102/fmnist/miniResNet/src/tf_main.cc: In function ‘void TopK(const float*, int, int, std::vector<std::__cxx11::basic_string<char> >&)’:
+/root/target_zcu102/fmnist/miniResNet/src/tf_main.cc:151:11: warning: unused variable ‘real_ki’ [-Wunused-variable]
+       int real_ki = ki.second;
+           ^~~~~~~
+/root/target_zcu102/fmnist/miniResNet/src/tf_main.cc: In function ‘void set_input_image(DPUTask*, const string&, const cv::Mat&, float*)’:
+/root/target_zcu102/fmnist/miniResNet/src/tf_main.cc:190:7: warning: unused variable ‘width’ [-Wunused-variable]
+   int width = dpuGetTensorWidth(dpu_in);
+       ^~~~~
+/root/target_zcu102/fmnist/miniResNet/src/tf_main.cc:191:7: warning: unused variable ‘height’ [-Wunused-variable]
+   int height = dpuGetTensorHeight(dpu_in);
+       ^~~~~~
+/root/target_zcu102/fmnist/miniResNet/src/tf_main.cc:192:7: warning: unused variable ‘size’ [-Wunused-variable]
+   int size = dpuGetTensorSize(dpu_in);
+       ^~~~
+g++ -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/target_zcu102/fmnist/miniResNet/build/tf_main.o /root/target_zcu102/fmnist/miniResNet/model/dpu_miniResNet_0.elf -o miniResNet -lopencv_dnn -lopencv_highgui -lopencv_shape -lopencv_video -lopencv_videoio -lopencv_imgcodecs -lopencv_imgproc -lopencv_core -lhineon -ln2cube -ldputils  -lpthread
+make: warning:  Clock skew detected.  Your build may be incomplete.
+ 
+./miniResNet 1
+now running ./fps_miniResNet 1
+total image : 5000
+[Time]16438463us
+[FPS]304.165
+ 
+./miniResNet 2
+now running ./fps_miniResNet 2
+total image : 5000
+[Time]8699243us
+[FPS]574.763
+ 
+./miniResNet 3
+now running ./fps_miniResNet 3
+total image : 5000
+[Time]7355665us
+[FPS]679.748
+ 
+./miniResNet 4
+now running ./fps_miniResNet 4
+total image : 5000
+[Time]6463506us
+[FPS]773.574
+ 
+./miniResNet 5
+now running ./fps_miniResNet 5
+total image : 5000
+[Time]6293257us
+[FPS]794.501
+ 
+./miniResNet 6
+now running ./fps_miniResNet 6
+total image : 5000
+[Time]6284559us
+[FPS]795.601
+ 
+./miniResNet 7
+now running ./fps_miniResNet 7
+total image : 5000
+[Time]6315495us
+[FPS]791.704
+ 
+./miniResNet 8
+now running ./fps_miniResNet 8
+total image : 5000
+[Time]6405115us
+[FPS]780.626
+ 
