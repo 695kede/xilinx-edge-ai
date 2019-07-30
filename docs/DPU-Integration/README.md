@@ -11,7 +11,7 @@
 
 # Introduction
 
-This tutorial demonstrates how to build a custom system that utilizes the 1.3.0 version of Xilinx&reg; Deep Learning Processor (DPU) IP to accelerate machine learning algorithms using the following development flow:
+This tutorial demonstrates how to build a custom system that utilizes the DPU v2.0 (v1.4.0 architecture) of the Xilinx&reg; Deep Learning Processor (DPU) IP to accelerate machine learning algorithms using the following development flow:
 
 1. Build the hardware platform in the Vivado&reg; Design Suite.
 
@@ -19,7 +19,10 @@ This tutorial demonstrates how to build a custom system that utilizes the 1.3.0 
 
 3. Use Xilinx SDK to build two machine learning applications that take advantage of the DPU.
 
-**Note:** The Ultra96 will be the targeted hardware platform. The DPU IP and yocto recipes are based on the ZCU102 DPU v1.3.0 TRD, which can be downloaded [here.](https://www.xilinx.com/member/forms/download/design-license-xef.html?filename=zcu102-dpu-trd-2018-2-190322.zip)
+**Note:**
+
+* The Ultra96 will be the targeted hardware platform. The DPU IP and yocto recipes are based on the ZCU102 DPU TRD v2.0, which can be downloaded [here.](https://www.xilinx.com/products/design-tools/ai-inference/ai-developer-hub.html#edge)
+* This tutorial uses the DPU B1152. Pre-built model .elfs are also provided for the B2304.
 
 
 # Requirements for Using the Xilinx DPU
@@ -32,15 +35,15 @@ This section lists the software and hardware tools required to use the Xilinx&re
 * Xilinx SDK 2018.2
 * PetaLinux 2018.2
 
- **Note:** This tutorial is known to work with Vivado/Petalinux/SDK v2018.3, but 2018.2 will provided the best experience at this time. To use with 2018.3, you’ll need to make the following three changes:
+ **Note:** This tutorial is known to work with Vivado/Petalinux/SDK v2018.3, but 2018.2 will provided the best experience at this time. To use it with 2018.3, you will need to make the following changes:
 
- 1. Edit the `u96_dpu_bd.tcl` script to specify 2018.3.
+ 1. Edit the `u96_dpuv2.0_2018.2.tcl` script to specify 2018.3.
 
  2. Change the `petalinux-image.bbappend` to `petalinux-image-full.bbappend`.
 
- 3. The `protobuf` package isn’t needed.
 
 ## Hardware Requirements
+
 
 * The Ultra96 board
 
@@ -50,15 +53,14 @@ This section lists the software and hardware tools required to use the Xilinx&re
 
 * AES-ACC-USB-JTAG board
 
-* DisplayPort monitor
-
-* Mini-display port cable suitable for the chosen monitor
-
 * A blank, FAT32 formatted microSD card
 
-* USB webcam
+* DisplayPort monitor (Optional)
 
-# Project Archive
+* Mini-display port cable suitable for the chosen monitor  (Optional)
+
+* USB Webcam  (Optional)
+
 Download and extract the full tutorial archive from this repository and move the DPU Integration/reference-files sub-directory to your working area. Rename this directory to "dpu_integration_lab". You should end up with a directory structure as shown in the following figure:
 
 ![Directory Structure](./images/image1.png "Directory structure")
@@ -138,8 +140,8 @@ The high-level tool flow is shown in the following figure:
 
   ```
   cd <PROJ ROOT>/vivado/
-vivado
-```
+  vivado
+  ```
 
 2. Create a new project based on the Ultra96 boards files:
 
@@ -161,13 +163,14 @@ vivado
   2. Right-click **Vivado Repository** and select **Add Repository**.
 
   3. Select **<PROJ ROOT>/ip_repo**
-  **Note:** You should see a message indicating that one repository and one IP is added.
+
+    **Note:** You should see a message indicating that one repository and one IP is added.
 
 ## Step 3: Create the Block Design
   1. Open the TCL Console tab, `cd` to the `<PROJ ROOT>/vivado` directory, and source the `.tcl` script that has been provided to create the IP integrator block design for you:
 
      ```
-     source u96_dpu_bd.tcl
+     source u96_dpuv2.0_2018.2.tcl
      ```
 
   2. When the block design is complete, right-click on the **design_1** in the Sources tab and select **Create HDL Wrapper**.
@@ -178,16 +181,21 @@ vivado
 
   4. Analyze the components and connections in the block design before continuing.
 
+**Note**:
+- When using the B2304 in the ZU3EG device found on the Ultra96, you must set the DSP Usage to Low in the DPU configuration GUI.  
+-  When setting the RAM Usage to Low, the DPU is compatible with DNNC v1.4.0. When setting the RAM usage to High, DNNC v1.4.0.1 must be used to generate compatible instructions.
+
+
 ## Step 4: Copy the pre-built `.hdf` to the `hsi` directory (Optional)
 
-  To use the pre-built option, execute the following command to copy the pre-built `.hdf` into the project:
+ To save time, we can skip building the Vivado project  and manually export a pre-built `.hdf` file to the directory where the PetaLinux flow expects it. To use the pre-built option, execute the following command to copy the pre-built `.hdf` into the project:
 
 ```
 cd <PROJ ROOT>
-cp prebuilts/design_1_wrapper.hdf hsi`
+cp prebuilts/design_1_wrapper.hdf hsi
 ```
 
-**Note:** To save time, we can skip building the Vivado project during this lab session and manually export a pre-built `.hdf` file to the directory where the PetaLinux flow expects it.
+You can now skip to the PetaLinux section.
 
 ## Step 5: Generate the bitstream
 
@@ -215,8 +223,6 @@ You can begin with the PetaLinux flow, once the hardware definition file (`.hdf`
 
 **Tip:** To speed up text entry, use `commands.txt` file from the `<PROJ ROOT>/files` to copy and paste most of the commands. It is highly recommended that you copy and paste the commands to avoid command-line errors.
 
-**Note:** All the commands are not available in the `commands.txt` file. Make sure you see this lab document for proper sequencing.
-
 ## Step 1: Create a PetaLinux project
 
 Use the following command to create a new PetaLinux project based on the Zynq&reg; UltraScale+ template in a new directory named `petalinux`. This project is not based on an existing BSP.
@@ -232,38 +238,23 @@ In this step, you will add or edit some Yocto recipes to customize the kernel an
 
 **Note:** Make sure to `cd` in the PetaLinux directory first.
 
-1. Add a recipe for OpenCV v3.1.  This is the version that is required by the DPU libraries, but PetaLinux builds v3.3 by default.
-```
-cp -rp ../files/recipes-support project-spec/meta-user
-```
-2. Add a `bbappend` for the `protobuf` package to change the branch that its source is pulled from. This is needed due to the OpenCV v3.1 change.
-```
-cp -rp ../files/recipes-devtools project-spec/meta-user
-```
-3. Add a `bbappend` to modify the `LINUX_VERSION_EXTENSION` of the kernel. This is required to make the pre-built `dpu` kernel module (`dpu.ko`) “version magic” match the kernel that we built. This step will not be necessary once the DPU kernel sources are integrated into the kernel build. Without this change, `dpu.ko` will fail to be inserted at boot.
-```
-cp -rp ../files/recipes-kernel project-spec/meta-user
-```
-4. Add a recipe to add the DPU utilities, libraries, and header files into the root file system.
+1. Add a recipe to add the DPU utilities, libraries, and header files into the root file system.
 ```
 cp -rp ../files/recipes-apps/dnndk/ project-spec/meta-user/recipes-apps/
 ```
-5. Add a recipe to build  the DPU driver kernel module.
+2. Add a recipe to build  the DPU driver kernel module.
 ```
 cp -rp ../files/recipes-modules project-spec/meta-user
 ```
-6. Add a recipe to create hooks for adding an “austostart” script to run automatically during Linux init.
+3. Add a recipe to create hooks for adding an “austostart” script to run automatically during Linux init.
 ```
 cp -rp ../files/recipes-apps/autostart project-spec/meta-user/recipes-apps/
 ```
-7. Add a `bbappend` for the base-files recipe to do various things like auto insert the DPU driver, auto mount the SD card, modify the PATH, etc.
+4. Add a `bbappend` for the base-files recipe to do various things like auto insert the DPU driver, auto mount the SD card, modify the PATH, etc.
 ```
 cp -rp ../files/recipes-core/base-files/ project-spec/meta-user/recipes-core/
 ```
-8. Modify the PetaLinux Yocto configuration to use OpenCV v3.1 instead of v3.3.
-```
-cp ../files/petalinuxbsp.conf project-spec/meta-user/conf/
-```
+
 
 ## Step 3: Configure PetaLinux to install the `dnndk` files
 
@@ -287,7 +278,7 @@ cp ../files/petalinuxbsp.conf project-spec/meta-user/conf/
   petalinux-config --get-hw-description=../hsi
   ```
 
-2. Change the serial port to `PSU_UART1`.
+2. Change the serial port to `psu_uart_1`.
 
   ```
   Subsystem AUTO Hardware Settings->Serial Settings->Primary stdin/stdout = psu_uart1
@@ -311,7 +302,7 @@ cp ../files/petalinuxbsp.conf project-spec/meta-user/conf/
 
       ![DTG Settings](./images/image6.png "DTG Settings")
 
-4. Exit and save the changes.  This step will take about 5-7 minutes.
+4. Exit and save the changes.  This step will take a few minutes.
 
 ## Step 5: Configure the rootfs
 
@@ -323,25 +314,32 @@ Use the following to open the top-level PetaLinux project configuration GUI.
 
 1. Enable each item listed below:
 
+   **Note:** Do not enable the dev or dbg packages.
+
    **Petalinux Package Groups ->**
-      - opencv
-      - x11
-      - v4lutils
+
       - matchbox
+   - opencv
+   - v4lutils
+   - x11
 
-    **Note:** Do not enable the dev or dbg packages.
+   **Apps ->**
 
-    **Apps ->**
-      - dnndk
       - autostart
 
-    **Filesystem Packages ->**
+   **Filesystem Packages ->**   
 
-      - console->tools->protobuf  (Note: this is related to the OpenCV modification)
-      - libs->libmali-xlnx->libmali-xlnx
+   - libs->libmali-xlnx->libmali-xlnx
 
-    **Modules ->**
+**Modules ->**
+
       - dpu
+
+   **User Packages ->**
+
+      - dnndk
+
+
 
 
 2. Exit and save the changes.
@@ -349,7 +347,7 @@ Use the following to open the top-level PetaLinux project configuration GUI.
 
 ## Step 6: Add DPU to the device tree
 
-  At this time, the DPU is not supported by the device-tree generator. Therefore, we need to manually add a device-tree node to the DPU, based on our hardware settings.
+At this time, the DPU is not supported by the device-tree generator. Therefore, we need to manually add a device-tree node to the DPU, based on our hardware settings.
 
   At the bottom of `project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi`, add the following text:
 
@@ -357,7 +355,7 @@ Use the following to open the top-level PetaLinux project configuration GUI.
 
   **Tip:** You can copy and paste the amba node from `<PROJ ROOT>/files/dpu.dtsi`.
 
-  **Note:** In this version of the DPU driver, only the interrupts and core-num parameters are being parsed.  The DPU must be located at address `0x8F000000`. The `reg` and `memory` parameters are ignored.
+
 
 #### Interrupt Values
 
@@ -378,7 +376,6 @@ Use the following to open the top-level PetaLinux project configuration GUI.
 <td>96:89</td>
 </tr>
 </table>
-
 To calculate interrupt number(that is, the Linux IRQ), subtract 32 from the GIC IRQ number. For example, in the Vivado project, we connected to `PL_PS_IRQ0[0]` whose GIC IRQ number is 121 (as per TRM).
 Therefore, the Linux IRQ number is 121-32 = 89 (0x59).
 
@@ -408,9 +405,11 @@ In the device tree, each interrupt 3-tuple is defined as follows:
   If the DPU IP is configured to use more than one core, you will need multiple sets of interrupts, and the `core-num` parameter should be updated accordingly. For example, if you have three cores, `interrupts` and `core-num` should be set to the following values, assuming the interrupts are connected to `PL_PS_IRQ0[2:0]`:
 
   ```
-  interrupts = <0x0 0x59 0x1 0x0 0x5a 0x1 0x0 0x5b 0x1 >;
+  interrupts = <0x0 0x59 0x4 0x0 0x5a 0x4 0x0 0x5b 0x4 >;
   core-num = <0x3>;
   ```
+
+
 
 ## Step 7: Build the kernel and root file system
 
@@ -507,15 +506,15 @@ Use the following steps to import source files and model .elfs files:
 
 3. Click **OK**.
 
-4. Select **main.cc**.
+4. Select **main.cc**. (NEED A NEW main.cc with only one kernel since average pooling is done on DPU)
 
 5. Check if the `Into Folder` is set to **resnet50/src**.
 
 6. Click **Finish**, and allow it to overwrite `main.cc`.
 
-7. Follow the same steps to import the DPU model `.elfs`, `dpu_resnet50_0.elf`, and `dpu_resenet50_2.elf` files.
+7. Follow the same steps to import the DPU model `.elf`, `dpu_resnet50_0.elf`
 
-  **Note:** You can use the pre-built models from `<PROJ ROOT>/files/resnet50/B1152_1.3.0`, if you do not have your own.
+  **Note:** You can use the pre-built models from `<PROJ ROOT>/files/resnet50/B1152_1.4.0`, if you do not have your own.
 
 ## Step 4: Update the Application Build Settings
 
@@ -523,7 +522,7 @@ Use the following steps to update the application build settings:
 
 1. Right-click on **resnet50 application** and select **C/C++ Build Settings**.
 
-2. In **C/C++ Build** -> **Environment**, add SYSROOT and point to the following:
+2. In **C/C++ Build** -> **Environment**, add SYSROOT and point to the the sysroots location. For example:
 
     ```
     ${workspace_loc}/../petalinux/images/linux/sdk/sysroots/aarch64-xilinx-linux
@@ -543,17 +542,23 @@ Use the following steps to update the application build settings:
         ![Other Flags](./images/image11.png "Other Flags")
 4. In the g++ linker libraries tab, add the following libraries:
     - n2cube
+
     - dputils
+
+    - pthread
+
     - opencv_core
+
     - opencv_imgcodecs
+
     - opencv_highgui
 
       ![Linker libraries](./images/image12.png "Linker libraries")
 
 5. In **g++ linker** -> **Miscellaneous**, add the model `.elfs` to **Other Objects**.
 
-6. Add `dpu_resnet50_0.elf` and `dpu_resnet50_2.elf` from the `resnet50/src directory`.
- **Note:** You can click **Workspace** to browse to the objects you want, as shown in the following figure:
+6. Add `dpu_resnet50_0.elf`  from the `resnet50/src directory`.
+ **Note:** You can click **Workspace** to browse to the objects you want, as shown in the following figure (ignore the second .elf for this version of the tutorial):
 
   ![File Selection](./images/image13.png "File Selection")
 
@@ -569,13 +574,13 @@ Use the following steps to update the application build settings:
 
 Use the following steps to build the face detection application:
 
-1. Repeat steps 2 through 5 above.
+1. Repeat Step 3, substeps 2 through 5 above.
 
 2. Add the source file <PROJ ROOT>/files/face_detection/face_detection.cc.
 
 3. Delete `main.cc` from the project.
 
-4. Add `dpu_densebox.elf` from `<PROJ ROOT>/files/face_detection/B1152_1.3.0`, if you do not have your own.
+4. Add `dpu_densebox.elf` from `<PROJ ROOT>/files/face_detection/B1152_1.4.0`, if you do not have your own.
 
 5. Set the SYSROOT Environment Variable to the proper value.
 
@@ -607,13 +612,17 @@ Use the following steps to set up Ultra96:
 
 2. Connect the AES-ACC-USB-JTAG board.
 
-3. Connect a microUSB cable between the AES-ACC-USB-JTAG and your PC.
+3. Connect the Camera Mezzanine board to the Ultra96 (Optional)
 
-4. Connect a DisplayPort Monitor using a miniDisplayPort cable.
+4. Connect a microUSB cable between the AES-ACC-USB-JTAG and your PC.
 
-5. Connect a USB webcam to one of the host USB ports.
+5. Connect a second microUSB cable between from the Ultra96 USB3.0 connector to your PC for networking.
 
-6. Prepare a blank microSD card with a single FAT32 partition (this is done for you).
+6. Connect a DisplayPort Monitor using a miniDisplayPort cable (Optional)
+
+7. Connect a USB webcam to one of the host USB ports (Optional)
+
+8. Prepare a blank microSD card with a single FAT32 partition.
 
       ![Ultra96](./images/image15.jpeg "Ultra96")
 
@@ -631,9 +640,9 @@ Use the following steps to copy the files to the SD card:
 
 3. Copy `<PROJ_ROOT>/sdk_workspace/face_detection/Debug/face_detection.elf` to the `sdcard/face_detection` folder.
 
-  **Tip:** Click here to execute all the commands at once.</summary>
+   cd im
 
-4. Copy and paste the following commands:
+   You can  copy and paste the following commands:
 
  ```
   cd <PROJ ROOT>
@@ -643,7 +652,7 @@ Use the following steps to copy the files to the SD card:
   cp sdk_workspace/face_detection/Debug/face_detection.elf  sdcard/face_detection/`
  ```
 
-4. Copy all the files in the `sdcard` directory to a blank microSD card on your PC. For subsequent updates, you can skip the common directory that contains the test images and only copy over the update boot images and/or applications.
+4. Copy all the files in the `sdcard` directory to a blank microSD card on your PC.
 
 ## Step 2:	Boot the Ultra96
 Place the micro SD card into the Ultra96 and power on the board. Once the board has booted, login using the following credentials:
@@ -653,17 +662,53 @@ Place the micro SD card into the Ultra96 and power on the board. Once the board 
 
 ## Step 3: Initialize the display
 
-Run the commands below to prepare the display:
+There are two ways to display the results of the face detection application. You can either connect a display port monitor to the Ultra96, or you can stream the video over the network to a connected PC.
+
+### Local Monitor
+
+Run the commands below to prepare the display. If you include the autostart.sh on the SD card, this will happen automatically after boot. You'll still need to export the DISPLAY again, however.
 
 ```
+v4l2-ctl --set-fmt-video=width=640,height=480,pixelformat=UYVY
 export DISPLAY=:0.0
 xrandr --output DP-1 --mode 800x600
-xset -dpms
+xset s off -dpms
 ```
 
 **Note:** Use `xrandr` to find a suitable mode for your monitor. When running at 1920x1080, the screen may flicker due to memory bandwidth issues.  
 
-If the display goes blank between runs, use `xset -dpms` to re-enable the display.
+### Network Connected PC
+
+There are two ways to connect to the Ultra96 over the network:
+
+1. USB Ethernet adapter
+
+   * Connect a USB Ethernet adapter to one of the USB Host ports on the board, and connect to your local network or directly to your PC.
+
+2. RNDIS/Ethernet Gadget:
+
+   * Connect a micro USB cable between the Ultra96 USB3.0 port and the PC with RNDIS support enabled.
+
+   * After boot, issue the following commands to enable the interface:
+
+     ```
+     modprobe g_ether
+     ifup usb0
+     ```
+
+     These commands are issues automatically if the autostart.sh script is used.
+
+   ​
+
+#### Connect with SSH and use X11-Forwarding to PC
+
+On Windows, connect to the target over the network using an SSH client that provides an X-server, such as [MobaXterm](https://mobaxterm.mobatek.net/).  Ensure that X11-forwarding is enabled, and the DISPLAY environment variable is setup correctly.  When an application is launched from this shell, the output will be forwarded back to the PC and displayed in a separate window.
+
+For Linux (or windows command line) you can use the following command:
+
+* ssh -X root@[IP address of Ultra96].
+
+
 
 ## Step 4:	Run Resnet50
 
