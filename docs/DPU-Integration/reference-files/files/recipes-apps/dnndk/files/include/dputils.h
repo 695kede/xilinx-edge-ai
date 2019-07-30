@@ -67,3 +67,5 @@ int dpuSetInputImageWithScale(DPUTask *task, const char *nodeName,
 int dpuSetInputImage2(DPUTask *task, const char *nodeName, const cv::Mat &image, int idx = 0);
 
 #endif
+
+// 2ff8d57c0d5afa55f55c53fea2bba1a8a6bf5eb216ac887dc353ca12e8ead345

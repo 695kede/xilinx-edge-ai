@@ -45,49 +45,69 @@
 -- THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
 -- PART OF THIS FILE AT ALL TIMES.
 */
-
 #include <assert.h>
 #include <dirent.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <atomic>
 #include <sys/stat.h>
 #include <unistd.h>
 #include <cassert>
+#include <chrono>
 #include <cmath>
 #include <cstdio>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
 #include <queue>
+#include <mutex>
 #include <string>
 #include <vector>
-
-/* header file OpenCV for image processing */
+#include <thread>
+#include <mutex>
+#include <dnndk/dnndk.h>
 #include <opencv2/opencv.hpp>
 
-/* header file for DNNDK APIs */
-#include <dnndk/dnndk.h>
-//#include <dnndk/dnndk.h>
-
-
-using namespace std;
 using namespace cv;
+using namespace std;
+using namespace std::chrono;
 
-/* 7.71GOP computation for ResNet50 Convolution layers */
-#define RESNET50_WORKLOAD_CONV (7.71f)
-/* (4/1000)GOP computation for ResNet50 FC layers */
-#define RESNET50_WORKLOAD_FC (4.0f / 1000)
+int threadnum;
 
-/* DPU Kernel Name for ResNet50 CONV & FC layers */
-#define KRENEL_CONV "resnet50_0"
-#define KERNEL_FC "resnet50_2"
-
+mutex mutexshow;
+#define KERNEL_CONV "resnet50_0"
 #define CONV_INPUT_NODE "conv1"
-#define CONV_OUTPUT_NODE "res5c_branch2c"
-#define FC_INPUT_NODE "fc1000"
-#define FC_OUTPUT_NODE "fc1000"
+#define CONV_OUTPUT_NODE "fc1000"
 
-const string baseImagePath = "../common/image500_640_480/";
+const string baseImagePath = "./image/";
+
+#define TRDWarning()                            \
+{                                    \
+	cout << endl;                                 \
+	cout << "####################################################" << endl; \
+	cout << "Warning:                                            " << endl; \
+	cout << "The DPU in this TRD can only work 8 hours each time!" << endl; \
+	cout << "Please consult Sales for more details about this!   " << endl; \
+	cout << "####################################################" << endl; \
+	cout << endl;                                 \
+}
+
+//#define SHOWTIME
+#ifdef SHOWTIME
+#define _T(func)                                                              \
+{                                                                             \
+        auto _start = system_clock::now();                                    \
+        func;                                                                 \
+        auto _end = system_clock::now();                                      \
+        auto duration = (duration_cast<microseconds>(_end - _start)).count(); \
+        string tmp = #func;                                                   \
+        tmp = tmp.substr(0, tmp.find('('));                                   \
+        cout << "[TimeTest]" << left << setw(30) << tmp;                      \
+        cout << left << setw(10) << duration << "us" << endl;                 \
+}
+#else
+#define _T(func) func;
+#endif
 
 /**
  * @brief put image names to a vector
@@ -97,8 +117,7 @@ const string baseImagePath = "../common/image500_640_480/";
  *
  * @return none
  */
-void ListImages(string const &path, vector<string> &images) {
-    images.clear();
+void ListImages(string const &path, queue<string> &images) {
     struct dirent *entry;
 
     /*Check if path is a valid directory path. */
@@ -106,7 +125,6 @@ void ListImages(string const &path, vector<string> &images) {
     lstat(path.c_str(), &s);
     if (!S_ISDIR(s.st_mode)) {
         fprintf(stderr, "Error: %s is not a valid directory!\n", path.c_str());
-
         exit(1);
     }
 
@@ -120,9 +138,9 @@ void ListImages(string const &path, vector<string> &images) {
         if (entry->d_type == DT_REG || entry->d_type == DT_UNKNOWN) {
             string name = entry->d_name;
             string ext = name.substr(name.find_last_of(".") + 1);
-            if ((ext == "JPEG") || (ext == "jpeg") || (ext == "JPG") ||
-                (ext == "jpg") || (ext == "PNG") || (ext == "png")) {
-                images.push_back(name);
+            if ((ext == "JPEG") || (ext == "jpeg") || (ext == "JPG") || (ext == "jpg") ||
+                (ext == "PNG") || (ext == "png")) {
+                images.push(name);
             }
         }
     }
@@ -133,7 +151,7 @@ void ListImages(string const &path, vector<string> &images) {
 /**
  * @brief load kinds from file to a vector
  *
- * @param path - path of the kinds file
+ * @param path - path of the kind file
  * @param kinds - the vector of kinds string
  *
  * @return none
@@ -141,12 +159,10 @@ void ListImages(string const &path, vector<string> &images) {
 void LoadWords(string const &path, vector<string> &kinds) {
     kinds.clear();
     fstream fkinds(path);
-
     if (fkinds.fail()) {
         fprintf(stderr, "Error : Open %s failed.\n", path.c_str());
         exit(1);
     }
-
     string kind;
     while (getline(fkinds, kind)) {
         kinds.push_back(kind);
@@ -166,7 +182,7 @@ void LoadWords(string const &path, vector<string> &kinds) {
  *
  * @return none
  */
-void TopK(const float *d, int size, int k, vector<string> &vkinds) {
+void TopK(const float *d, int size, int k, vector<string> &vkinds, string name) {
     assert(d && size > 0 && k > 0);
     priority_queue<pair<float, int>> q;
 
@@ -174,169 +190,139 @@ void TopK(const float *d, int size, int k, vector<string> &vkinds) {
         q.push(pair<float, int>(d[i], i));
     }
 
+    cout << "\nLoad image: " << name << endl;
+
     for (auto i = 0; i < k; ++i) {
         pair<float, int> ki = q.top();
-        printf("top[%d] prob = %-8f  name = %s\n", i, d[ki.second],
-        vkinds[ki.second].c_str());
+        printf("[Top %d] prob = %-8f  name = %s\n", i, d[ki.second], vkinds[ki.second].c_str());
         q.pop();
     }
+    return;
 }
 
+
 /**
- * @brief Compute average pooling on CPU
+ * @brief run classification task for Resnet_50
  *
- * @param conv - pointer to ResNet50 CONV Task
- * @param fc - pointer to ResNet50 FC Task
+ * @param taskConv - pointer to DPU task of Resnet_50
+ * @param img - the single image to be classified
+ * @param imname - the actual label of the img(for comparison)
  *
  * @return none
  */
-void CPUCalcAvgPool(DPUTask *conv, DPUTask *fc) {
-    assert(conv && fc);
-
-    /* Get output Tensor to the last Node of ResNet50 CONV Task */
-    DPUTensor *outTensor = dpuGetOutputTensor(conv, CONV_OUTPUT_NODE);
-    /* Get size, height, width and channel of the output Tensor */
-    int tensorSize = dpuGetTensorSize(outTensor);
-    int outHeight = dpuGetTensorHeight(outTensor);
-    int outWidth = dpuGetTensorWidth(outTensor);
-    int outChannel = dpuGetTensorChannel(outTensor);
-
-    /* allocate memory buffer */
-    float *outBuffer = new float[tensorSize];
-
-    /* Get the input address to the first Node of FC Task */
-    int8_t *fcInput = dpuGetInputTensorAddress(fc, FC_INPUT_NODE);
-
-    /* Copy the last Node's output and convert them from IN8 to FP32 format */
-    dpuGetOutputTensorInHWCFP32(conv, CONV_OUTPUT_NODE, outBuffer, tensorSize);
-
-    /* Get scale value for the first input Node of FC task */
-    float scaleFC = dpuGetInputTensorScale(fc, FC_INPUT_NODE);
-    int length = outHeight * outWidth;
-    float avg = (float)(length * 1.0f);
-
-    float sum;
-    for (int i = 0; i < outChannel; i++) {
-        sum = 0.0f;
-        for (int j = 0; j < length; j++) {
-            sum += outBuffer[outChannel * j + i];
-        }
-
-        /* compute average and set into the first input Node of FC Task */
-        fcInput[i] = (int8_t)(sum / avg * scaleFC);
-    }
-
-    delete[] outBuffer;
+vector<string> kinds; // Storing the label of Resnet_50
+queue<string> images; // Storing the list of images
+void run_resnet_50(DPUTask *taskConv, const Mat &img, string imname) {
+    assert(taskConv);
+    // Get the number of category in Resnet_50
+    int channel = dpuGetOutputTensorChannel(taskConv, CONV_OUTPUT_NODE);
+    // Get the scale of classification result
+    float scale = dpuGetOutputTensorScale(taskConv, CONV_OUTPUT_NODE);
+    vector<float> smRes (channel);
+    int8_t* fcRes;
+    // Set the input image to the DPU task
+    _T(dpuSetInputImage2(taskConv, CONV_INPUT_NODE, img));
+    // Processing the classification in DPU
+    _T(dpuRunTask(taskConv));
+    // Get the output tensor from DPU in DPU INT8 format
+    DPUTensor* dpuOutTensorInt8 = dpuGetOutputTensorInHWCInt8(taskConv, CONV_OUTPUT_NODE);
+    // Get the data pointer from the output tensor
+    fcRes = dpuGetTensorAddress(dpuOutTensorInt8);
+    // Processing softmax in DPU with batchsize=1
+    _T(dpuRunSoftmax(fcRes, smRes.data(), channel, 1, scale));
+    mutexshow.lock();
+    // Show the top 5 classification results with their label and probability
+    _T(TopK(smRes.data(), channel, 5, kinds, imname));
+    mutexshow.unlock();
 }
 
 /**
- * @brief Run CONV Task and FC Task for ResNet50
+ * @The entry of the whole classification process
  *
- * @param taskConv - pointer to ResNet50 CONV Task
- * @param taskFC - pointer to ResNet50 FC Task
+ * @param kernelconv - the pointer to DPU task of Resnet_50
  *
  * @return none
- */
-void runResnet50(DPUTask *taskConv, DPUTask *taskFC) {
-    assert(taskConv && taskFC);
-    /* Mean value for ResNet50 specified in Caffe prototxt */
-    vector<string> kinds, images;
-    /* Load all image names.*/
-    ListImages(baseImagePath, images);
+ **/
+void classifyEntry(DPUKernel *kernelconv) {
+    ListImages(baseImagePath, images); // Load the list of images to be classified
     if (images.size() == 0) {
         cerr << "\nError: Not images exist in " << baseImagePath << endl;
         return;
+    } else {
+        cout << "total image : " << images.size() << endl;
     }
 
-    /* Load all kinds words.*/
-    LoadWords(baseImagePath + "words.txt", kinds);
-        if (kinds.size() == 0) {
-        cerr << "\nError: Not words exist in words.txt." << endl;
-        return;
+    thread workers[threadnum];
+    auto _start = system_clock::now();
+    int size = images.size();
+    for (auto i = 0; i < threadnum; i++)
+    {
+        workers[i] = thread([&,i]() {
+            // Create DPU Tasks for Resnet_50 from DPU Kernel
+            DPUTask *taskconv = dpuCreateTask(kernelconv, 0);
+            while(true){
+	        string imageName = images.front();
+	    	if(imageName == "")
+		    break;
+		images.pop();
+
+	        Mat image = imread(baseImagePath + imageName);
+		// Classifying single image
+                run_resnet_50(taskconv, image, imageName);
+	    }
+            // Destroy DPU Tasks & free resources
+            dpuDestroyTask(taskconv);
+        });
     }
 
-    /* Get channel count of the output Tensor for FC Task  */
-    int channel = dpuGetOutputTensorChannel(taskFC, FC_OUTPUT_NODE);
-    float *softmax = new float[channel];
-    float *FCResult = new float[channel];
-    for (auto &imageName : images) {
-        cout << "\nLoad image : " << imageName << endl;
-        /* Load image and Set image into CONV Task with mean value */
-        Mat image = imread(baseImagePath + imageName);
-        dpuSetInputImage2(taskConv, CONV_INPUT_NODE, image);
-
-        /* Launch RetNet50 CONV Task */
-        cout << "\nRun ResNet50 CONV layers ..." << endl;
-
-        dpuRunTask(taskConv);
-        /* Get DPU execution time (in us) of CONV Task */
-        long long timeProf = dpuGetTaskProfile(taskConv);
-        cout << "  DPU CONV Execution time: " << (timeProf * 1.0f) << "us\n";
-        float convProf = (RESNET50_WORKLOAD_CONV / timeProf) * 1000000.0f;
-        cout << "  DPU CONV Performance: " << convProf << "GOPS\n";
-
-        /* Compute average pooling on CPU */
-        CPUCalcAvgPool(taskConv, taskFC);
-
-        cout << "Run ResNet50 FC layers ..." << endl;
-
-        /* Launch RetNet50 FC Task */
-        dpuRunTask(taskFC);
-        /* Get DPU execution time (in us) for FC Task */
-        timeProf = dpuGetTaskProfile(taskFC);
-        cout << "  DPU FC Execution time: " << (timeProf * 1.0f) << "us\n";
-        float fcProf = (RESNET50_WORKLOAD_FC / timeProf) * 1000000.0f;
-        cout << "  DPU FC Performance: " << fcProf << "GOPS\n";
-        DPUTensor *outTensor = dpuGetOutputTensor(taskFC, FC_OUTPUT_NODE);
-        int8_t *outAddr = dpuGetTensorAddress(outTensor);
-        float convScale=dpuGetOutputTensorScale(taskFC, FC_OUTPUT_NODE,  0);
-        int size = dpuGetOutputTensorSize(taskFC, FC_OUTPUT_NODE);
-        /* Calculate softmax on CPU and show TOP5 classification result */
-        dpuRunSoftmax(outAddr, softmax, channel, size/channel ,convScale );
-        TopK(softmax, channel, 5, kinds);
-
-        /* Show the impage */
-        cv::imshow("Classification of ResNet50", image);
-        cv::waitKey(1);
+    // Processing multi-thread classification
+    for (auto &w : workers) {
+        if (w.joinable()) w.join();
     }
 
-    delete[] softmax;
-    delete[] FCResult;
+    auto _end = system_clock::now();
+    auto duration = (duration_cast<microseconds>(_end - _start)).count();
+    cout << "[Time]" << duration << "us" << endl;
+    cout << "[FPS]" << size*1000000.0/duration << endl;
+}
+
+void readTxt(string file)
+{
+    ifstream infile;
+    infile.open(file.data());
+    assert(infile.is_open());
+
+    string s;
+    while(getline(infile,s)){
+        kinds.emplace_back(s);
+    }
+    infile.close();
 }
 
 /**
- * @brief Entry for running ResNet50 neural network
+ * @brief Entry for running Resnet_50 neural network
  *
  */
-int main(void) {
-  /* DPU Kernels/Tasks for running ResNet50 */
-  DPUKernel *kernelConv;
-  DPUKernel *kernelFC;
-  DPUTask *taskConv;
-  DPUTask *taskFC;
+int main(int argc ,char** argv) {
 
+    threadnum = 5; //The number of thread with the highest efficiency
+    readTxt("./word_list.txt"); //Importing the Res50 label text
+    /* The main procress of using DPU kernel begin. */
+    DPUKernel *kernelConv;
 
+    TRDWarning();
 
-  /* Attach to DPU driver and prepare for running */
-  dpuOpen();
-  /* Create DPU Kernels for CONV & FC Nodes in ResNet50 */
-  kernelConv = dpuLoadKernel(KRENEL_CONV);
-  kernelFC = dpuLoadKernel(KERNEL_FC);
-  /* Create DPU Tasks for CONV & FC Nodes in ResNet50 */
-  taskConv = dpuCreateTask(kernelConv, 0);
-  taskFC = dpuCreateTask(kernelFC, 0);
+    dpuOpen();
+    // Create the kernel for Resnet_50
+    kernelConv = dpuLoadKernel(KERNEL_CONV);
+    // The main classification function
+    classifyEntry(kernelConv);
+    // Destroy the kernel of Resnet_50 after classification
+    dpuDestroyKernel(kernelConv);
 
-  /* Run CONV & FC Kernels for ResNet50 */
-  runResnet50(taskConv, taskFC);
+    dpuClose();
 
-  /* Destroy DPU Tasks & free resources */
-  dpuDestroyTask(taskConv);
-  dpuDestroyTask(taskFC);
-  /* Destroy DPU Kernels & free resources */
-  dpuDestroyKernel(kernelConv);
-  dpuDestroyKernel(kernelFC);
-  /* Dettach from DPU driver & free resources */
-  dpuClose();
-
-  return 0;
+    TRDWarning();
+    /* The main procress of using DPU kernel end. */
+    return 0;
 }

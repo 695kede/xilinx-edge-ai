@@ -32,11 +32,7 @@ int init_ext(struct device_node *pdpunode)
 
 	dprint(PLEVEL_INFO, "[PID %i]name:%s,func:%s\n", current->pid, current->comm, __func__);
 
-	node = of_find_compatible_node(NULL, NULL, "deephi,smfc");
-	if (!node) {
-		node = of_find_compatible_node(NULL, NULL, "deephi, smfc");
-	}
-
+	node = dpu_compatible_node("smfc");
 	if (node && (dpu_caps.softmax.valid || dpu_caps.fullconnect.valid)) {
 		uint32_t reg_base, reg_size;
 		dpr_init("Init SMFC IP...\n");
@@ -80,10 +76,7 @@ int init_ext(struct device_node *pdpunode)
 	}
 
 	// initialize resize IP
-	node = of_find_compatible_node(NULL, NULL, "deephi,resize");
-	if (!node) {
-		node = of_find_compatible_node(NULL, NULL, "deephi, resize");
-	}
+	node = dpu_compatible_node("resize");
 	if (node && dpu_caps.resize.valid) {
 		uint32_t reg_base, reg_size;
 

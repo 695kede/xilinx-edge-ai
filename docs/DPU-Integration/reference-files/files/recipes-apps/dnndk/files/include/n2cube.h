@@ -55,8 +55,8 @@ extern "C" {
 
 #include <stdint.h>
 
-#define DNNDK_VERSION    "2.08 beta"
-#define N2Cube_VERSION   "2.2"
+#define DNNDK_VERSION    "3.0"
+#define N2Cube_VERSION   "2.3"
 
 /* DPU Task runtime mode definitions */
 
@@ -215,6 +215,7 @@ int dpuGetOutputTensorInCHWFP32(DPUTask *task, const char *nodeName, float *data
 /* Get DPU Task's output Tensor and store them under DPU
    Tensor's order (height/width/channel) in INT8 format */
 DPUTensor* dpuGetOutputTensorInHWCInt8(DPUTask *task, const char *nodeName, int idx = 0);
+int dpuGetOutputTensorInHWCInt8(DPUTask *task, const char *nodeName, int8_t *data, int size, int idx = 0);
 
 /* Get DPU Task's output Tensor and store them under DPU
    Tensor's order (height/width/channel) in FP32 format */
@@ -243,3 +244,5 @@ int dpuGetTensorChannel(DPUTensor* tensor);
 int dpuRunSoftmax(int8_t *input, float *output, int numClasses, int batchSize, float scale);
 
 #endif
+
+// 2ff8d57c0d5afa55f55c53fea2bba1a8a6bf5eb216ac887dc353ca12e8ead345

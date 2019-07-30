@@ -2,20 +2,18 @@
 source /opt/xilinx/petalinux/2018.2/settings.sh
 petalinux-create -t project -n petalinux --template zynqMP
 
-cp -rp ../files/recipes-support project-spec/meta-user
-cp -rp ../files/recipes-devtools project-spec/meta-user
-cp -rp ../files/recipes-kernel project-spec/meta-user
 cp -rp ../files/recipes-modules project-spec/meta-user
 cp -rp ../files/recipes-apps/dnndk/ project-spec/meta-user/recipes-apps/
 cp -rp ../files/recipes-apps/autostart/ project-spec/meta-user/recipes-apps/
 cp -rp ../files/recipes-core/base-files/ project-spec/meta-user/recipes-core/
-cp ../files/petalinuxbsp.conf project-spec/meta-user/conf/
 
 vi project-spec/meta-user/recipes-core/images/petalinux-image.bbappend
 
 petalinux-config --get-hw-description=../hsi 
 
 petalinux-config -c rootfs
+
+petalinux-config -c kernel 
 
 vi project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi
 
@@ -36,16 +34,17 @@ petalinux-package --sysroot
 
 cp petalinux/images/linux/image.ub sdcard
 cp petalinux/images/linux/BOOT.BIN sdcard
-cp -rp prebuilts/sdcard/common sdcard
 cp sdk_workspace/resnet50/Debug/resnet50.elf sdcard/resnet50/
 cp sdk_workspace/face_detection/Debug/face_detection.elf sdcard/face_detection/
 
+cp -rp prebuilts/sdcard/common sdcard
 
 -- Serial Port 
 
 export DISPLAY=:0.0
 xrandr --output DP-1 --mode 800x600 --rate 60
-xset -dpms
+xset s off -dpms
+
 
 
 

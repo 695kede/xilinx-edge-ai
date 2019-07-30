@@ -1063,6 +1063,38 @@ uint32_t field_mask_value(uint32_t val, uint32_t mask)
 	return (val & mask) >> lowest_set_bit;
 };
 
+static const char *dts_node_prefix[] = {
+	"xilinx,",
+	"xilinx, ",
+	"Xilinx,",
+	"Xilinx, ",
+	"deephi,",
+	"deephi, ",
+	"Deephi,",
+	"Deephi, ",
+};
+
+struct device_node *dpu_compatible_node(const char *compat)
+{
+	int idx=0, max=0;
+	char dst_node[255];
+	struct device_node *pdpu_node = NULL;
+
+	if (strlen(compat)>128) {
+		return NULL;
+	}
+
+	max = sizeof(dts_node_prefix)/sizeof(char *);
+	for (idx=0; idx<max; idx++) {
+		memset(dst_node, 0x0, sizeof(dst_node));
+		sprintf(dst_node, "%s%s", dts_node_prefix[idx], compat);
+		pdpu_node = of_find_compatible_node(NULL, NULL, dst_node);
+		if (pdpu_node)
+			break;
+	}
+	return pdpu_node;
+};
+
 /**
  * dpu_probe - platform probe method for the dpu driver
  * @pdev:	Pointer to the platform_device structure
@@ -1074,9 +1106,10 @@ uint32_t field_mask_value(uint32_t val, uint32_t mask)
 static int dpu_probe(struct platform_device *pdev)
 {
 	int ret, i;
-	struct device_node *pdpu_node;
+	void *prop;
+	struct device_node *pdpu_node, *dpucore_node;
 	struct resource *res;
-
+	unsigned long base_addr_dtsi = 0 ;
 	uint32_t signature_length = 0;
 	uint32_t signature_field = 0;
 	uint32_t signature_temp;
@@ -1086,17 +1119,23 @@ static int dpu_probe(struct platform_device *pdev)
 	dpu_info_t dpu_info;
 
 	dprint(PLEVEL_INFO, "[PID %i]name:%s,func:%s\n", current->pid, current->comm, __func__);
-
 	dev_handler = &(pdev->dev);
-	pdpu_node = of_find_compatible_node(NULL, NULL, "deephi,dpu");
-	if (!pdpu_node) {
-		pdpu_node = of_find_compatible_node(NULL, NULL, "deephi, dpu");
-	}
 
+	dpucore_node = dpu_compatible_node("dpucore");
+
+	pdpu_node = dpu_compatible_node("dpu");
 	if (!pdpu_node) {
 		dpr_init("Not found DPU device node!\n");
 		return -ENXIO;
 	} else {
+		prop = of_get_property(pdpu_node, "base-addr", NULL);
+		if (prop) {
+			base_addr_dtsi = of_read_ulong(prop, 1);
+		}
+		if (base_addr_dtsi) {
+			dpr_init("Found DPU signature addr = 0x%lx in device-tree\n", base_addr_dtsi);
+			signature_addr = base_addr_dtsi + 0x00F00000;
+		}
 		if (signature_addr != SIG_BASE_NULL) {
 			dpr_init("Checking DPU signature at addr = 0x%lx, \n", signature_addr);
 			signature_va =
@@ -1304,6 +1343,9 @@ static int dpu_probe(struct platform_device *pdev)
 			dpu_caps.reg_size = DPU_SIZE;
 			DPU_CORE_NUM = dpu_caps.dpu_cnt;
 
+		} else if (base_addr_dtsi == signature_addr) {
+			dpr_init("Invalid 'signature-addr' value specified in DPU device tree, please check.\n");
+			return -ENXIO;
 		} else {
 			dpr_init("DPU signature NOT found, fallback to device-tree.\n");
 
@@ -1374,9 +1416,7 @@ static int dpu_probe(struct platform_device *pdev)
 
 	// register interrupt service routine for DPU
 	for (i = 0; i < DPU_CORE_NUM; i++) {
-		//FIXME, the logic shoudl be the next following line but failed to implement
-		//dpudev.irq_no[i] = dpu_caps.dpu_info[i].irq == 0? platform_get_irq(pdev, i): dpu_caps.dpu_info[i].irq;
-		dpudev.irq_no[i] = platform_get_irq(pdev, i);
+		dpudev.irq_no[i] = dpucore_node? irq_of_parse_and_map(dpucore_node, i): platform_get_irq(pdev, i);
 
 		if (dpudev.irq_no[i] < 0) {
 			dprint(PLEVEL_ERR, "IRQ resource not found for DPU core %d\n", i);
@@ -1435,6 +1475,8 @@ static int dpu_remove(struct platform_device *pdev)
 
 static const struct of_device_id dpu_dt_ids[] = { { .compatible = "deephi, dpu" },
 						{ .compatible = "deephi,dpu" },
+						{ .compatible = "xilinx,dpu" },
+						{ .compatible = "xilinx, dpu" },
 						{ /* end of table */ } };
 
 static struct platform_driver dpu_drv = {

@@ -42,7 +42,7 @@
 
 #include "dpudef.h"
 
-#define DPU_DRIVER_VERSION "2.1.0"
+#define DPU_DRIVER_VERSION "2.2.0"
 
 #define DPU_IDLE 0
 #define DPU_RUNNING 1
@@ -65,7 +65,12 @@
 			       ##args);                                 \
 	} while (0)
 
-#define dpr_init(fmt, args...) pr_alert("[DPU][%d]" fmt, current->pid, ##args);
+#define dpr_init(fmt, args...)                          		\
+	do {                                                       	\
+		printk(KERN_ERR "[DPU][%d]" fmt, current->pid, ##args); \
+	} while (0)
+
+//#define dpr_init(fmt, args...) pr_alert("[DPU][%d]" fmt, current->pid, ##args);
 
 /*dpu registers*/
 typedef struct __DPUReg {
@@ -152,5 +157,9 @@ struct memblk_node {
 	struct list_head list;
 };
 
+//////////////////////////////////////////////////
+// helper functions declare
+struct device_node *dpu_compatible_node(const char *compat);
+//////////////////////////////////////////////////
 #endif /*_DPU_H_*/
 
