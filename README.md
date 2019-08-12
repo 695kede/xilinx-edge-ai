@@ -33,11 +33,11 @@ Use the Yolov3 example, which converts the Darknet model to Caffe model and uses
  <tr>
  <td align="center"><a href="docs/MNIST_tf">MNIST Classification with TensorFlow (UG1337)</a></td>
  <td>
-Learn the DNNDK v3.0 TensorFlow design process for creating a compiled `.elf` file that is ready for deployment on the Xilinx&reg; DPU accelerator from a simple network model built using Python. This tutorial uses the MNIST test dataset.</td>
+Learn the DNNDK v3.0 TensorFlow design process for creating a compiled ELF file that is ready for deployment on the Xilinx&reg; DPU accelerator from a simple network model built using Python. This tutorial uses the MNIST test dataset.</td>
  </tr><tr>
  <td align="center"><a href="docs/CIFAR10_tf">CIFAR10 Classification with TensorFlow (UG1338)</a></td>
  <td>
-Learn the DNNDK v3.0 TensorFlow design process for creating a compiled `.elf` file that is ready for deployment on the Xilinx&reg; DPU accelerator from a simple network model built using Python. This tutorial uses the CIFAR-10 test dataset.</td>
+Learn the DNNDK v3.0 TensorFlow design process for creating a compiled ELF file that is ready for deployment on the Xilinx&reg; DPU accelerator from a simple network model built using Python. This tutorial uses the CIFAR-10 test dataset.</td>
  </tr>
  <tr>
  <td align="center"><a href="docs/Keras-freeze">Freezing a Keras model for use with DNNDK (UG1380)</a></td>
@@ -46,6 +46,9 @@ Learn the DNNDK v3.0 TensorFlow design process for creating a compiled `.elf` fi
  <tr> <td align="center"><a href="docs/Keras-GoogleNet-ResNet">Deep Learning with custom GoogleNet and ResNet in Keras and Xilinx DNNDK TF 3.0 (UG1381)</a></td>
   <td>
 Quantize in fixed point some custom CNNs and deploy them on the Xilinx ZCU102 board, using Keras and the Xilinx DNNDK 3.0 tool chain based on TensorFlow (TF).</tr>
+ <tr> <td align="center"><a href="docs/AI-Model-Zoo">Xilinx AI Model Zoo (UG1389)</a></td>
+  <td>
+Learn how to speed up the deployment of deep learning inference on Xilinx platforms by using free pre-trained deep learning models that cover different applications (such as ADAS/AD, video surveillance, robotics, data center, and so forth).</tr>
 
  </table>
 
