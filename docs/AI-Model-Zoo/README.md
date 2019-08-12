@@ -397,11 +397,11 @@ The following table lists the performance number including end-to-end throughput
 
 ## Contributing 
 We welcome community contributions. When contributing to this repository, first discuss the change you wish to make via:
-* [GitHub Issues](https://github.com/Xilinx/TechDocs/issues) 
+* [GitHub Issues](https://github.com/Xilinx/TechDocs/issues)
 * [Forum](https://forums.xilinx.com/t5/Deephi-DNNDK/bd-p/Deephi)
-* [eMail](<xilinx_ai_model_zoo@xilinx.com>)
+* [Email](mailto:xilinx_ai_model_zoo@xilinx.com)
 
-You can also submit a pull request with details on how to improve the product. Prior to submitting your pull request, ensure that you can build the product and run all the demos with your patch. In case of a larger feature, provide a relevant demo. 
+You can also submit a pull request with details on how to improve the product. Prior to submitting your pull request, ensure that you can build the product and run all the demos with your patch. In case of a larger feature, provide a relevant demo.
 
 ## License
 
