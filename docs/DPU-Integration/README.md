@@ -434,7 +434,7 @@ The `sysroot` is required to build applications against the libraries/header fil
 
 Running through the full process to rebuild the SDK can take over an hour to complete. Therefore, a pre-built SDK has been provided with the tutorial files.
 
-To download the pre-built SDK file, download and extract the zip file [from this link](https://www.xilinx.com/cgi-bin/docs/rdoc?v=2018.3;d=ug1350-design-files.zip), then copy the `sdk.sh` file to `../files`.
+To download the pre-built SDK file, download and extract the zip file [from this link](http://www.xilinx.com/support/documentation/sw_manuals/xilinx2018_2/ug1350-design-files_v2.zip), then copy the `sdk.sh` file to `../files`.
 
 To install the pre-built SDK, use the following command:
 
