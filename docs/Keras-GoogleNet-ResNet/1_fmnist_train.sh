@@ -14,7 +14,6 @@ echo "###########################################"
 python code/train_fashion_mnist.py --network miniVggNet --weights keras_model/fmnist/miniVggNet --epochs 25 --init_lr 0.01 --batch_size 64 2>&1 | tee rpt/fmnist/1_train_fashion_mnist_miniVggNet.log
 
 
-
 echo "#############################################"
 echo "TRAIN & EVAL miniGoogleNet on fashion MNIST"
 echo "#############################################"

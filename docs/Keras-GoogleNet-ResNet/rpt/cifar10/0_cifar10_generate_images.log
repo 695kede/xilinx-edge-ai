@@ -1,0 +1,57 @@
+Using TensorFlow backend.
+This script is located in:  /home/danieleb/ML/TF/KERAS-CUSTOM-CNN
+Directory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10 created 
+Directory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/train created 
+Directory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/valid created 
+Directory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/test created 
+Directory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/calib created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/train/airplane created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/train/automobile created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/train/bird created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/train/cat created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/train/deer created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/train/dog created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/train/frog created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/train/horse created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/train/ship created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/train/truck created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/valid/airplane created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/valid/automobile created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/valid/bird created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/valid/cat created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/valid/deer created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/valid/dog created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/valid/frog created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/valid/horse created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/valid/ship created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/valid/truck created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/test/airplane created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/test/automobile created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/test/bird created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/test/cat created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/test/deer created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/test/dog created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/test/frog created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/test/horse created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/test/ship created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/test/truck created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/calib/airplane created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/calib/automobile created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/calib/bird created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/calib/cat created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/calib/deer created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/calib/dog created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/calib/frog created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/calib/horse created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/calib/ship created 
+subDirectory /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10/calib/truck created 
+50000 images in original train dataset
+10000 images in original test  dataset
+classes histogram in train and test dataset:  [6000 6000 6000 6000 6000 6000 6000 6000 6000 6000]
+classes histogram in train and test dataset:  [1000 1000 1000 1000 1000 1000 1000 1000 1000 1000]
+num images in train folder =  50000
+num images in val folder   =  5000
+num images in pred folder  =  5000
+
+FINISHED CREATING DATASET
+

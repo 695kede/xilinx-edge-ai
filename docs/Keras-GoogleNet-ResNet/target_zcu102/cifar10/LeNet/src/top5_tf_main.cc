@@ -12,7 +12,7 @@
  * Sample source code showing how to deploy KERAS LeNet neural network on
  * DeePhi DPU on ZCU102 board.
  *
- * modified by Daniele Bagni on 11 July 2019
+ * modified by Daniele Bagni on 26 July 2019
  */
 
 #include <assert.h>
@@ -161,21 +161,21 @@ void central_crop(const Mat& image, int height, int width, Mat& img) {
   img = image(box);
 }
 
-void change_bgr(const Mat& image, int8_t* data, float scale, float* mean) {
-  for(int i = 0; i < 3; ++i)
-    for(int j = 0; j < image.rows; ++j)
-      for(int k = 0; k < image.cols; ++k) {
-		    data[j*image.rows*3+k*3+2-i] = (image.at<Vec3b>(j,k)[i] - (int8_t)mean[i]) * scale;
-      }
-
-}
+//void change_bgr(const Mat& image, int8_t* data, float scale, float* mean) {
+//  for(int i = 0; i < 3; ++i)
+//    for(int j = 0; j < image.rows; ++j)
+//      for(int k = 0; k < image.cols; ++k) {
+//	data[j*image.rows*3+k*3+2-i] = (image.at<Vec3b>(j,k)[i] - (int8_t)mean[i]) * scale;
+//     }
+//
+//}
 
 void normalize_image(const Mat& image, int8_t* data, float scale, float* mean) {
   for(int i = 0; i < 3; ++i) {
     for(int j = 0; j < image.rows; ++j) {
       for(int k = 0; k < image.cols; ++k) {
-	data[j*image.rows*3+k*3+2-i] = (float(image.at<Vec3b>(j,k)[i])/255.0 - 0.5)*2 * scale;
-	//data[j*image.rows*3+k*3+2-i] = (float(image.at<Vec3b>(j,k)[i])/255.0 ) * scale;
+	//data[j*image.rows*3+k*3+2-i] = (float(image.at<Vec3b>(j,k)[i])/255.0 ) * scale; //DB: original code	
+	data[j*image.cols*3+k*3+i] = (float(image.at<Vec3b>(j,k)[i])/255.0f - 0.5f)*2 * scale;
       }
      }
    }

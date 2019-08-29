@@ -1,72 +1,68 @@
-make: Warning: File 'Makefile' has modification time 5172242 s in the future
-rm -f -rf /root/target_zcu102/cifar10/miniResNet/build/*.o /root/target_zcu102/cifar10/miniResNet/build
+rm -f -rf /home/root/target_zcu102/cifar10/miniResNet/build/*.o /home/root/target_zcu102/cifar10/miniResNet/build
 rm -f miniResNet
-make: warning:  Clock skew detected.  Your build may be incomplete.
-make: Warning: File 'Makefile' has modification time 5172242 s in the future
-mkdir -p /root/target_zcu102/cifar10/miniResNet/build
-g++ -c -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/target_zcu102/cifar10/miniResNet/src/tf_main.cc -o /root/target_zcu102/cifar10/miniResNet/build/tf_main.o
-/root/target_zcu102/cifar10/miniResNet/src/tf_main.cc: In function ‘void TopK(const float*, int, int, std::vector<std::__cxx11::basic_string<char> >&)’:
-/root/target_zcu102/cifar10/miniResNet/src/tf_main.cc:151:11: warning: unused variable ‘real_ki’ [-Wunused-variable]
+mkdir -p /home/root/target_zcu102/cifar10/miniResNet/build
+g++ -c -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /home/root/target_zcu102/cifar10/miniResNet/src/tf_main.cc -o /home/root/target_zcu102/cifar10/miniResNet/build/tf_main.o
+/home/root/target_zcu102/cifar10/miniResNet/src/tf_main.cc: In function 'void TopK(const float*, int, int, std::vector<std::__cxx11::basic_string<char> >&)':
+/home/root/target_zcu102/cifar10/miniResNet/src/tf_main.cc:151:11: warning: unused variable 'real_ki' [-Wunused-variable]
        int real_ki = ki.second;
            ^~~~~~~
-/root/target_zcu102/cifar10/miniResNet/src/tf_main.cc: In function ‘void set_input_image(DPUTask*, const string&, const cv::Mat&, float*)’:
-/root/target_zcu102/cifar10/miniResNet/src/tf_main.cc:190:7: warning: unused variable ‘width’ [-Wunused-variable]
+/home/root/target_zcu102/cifar10/miniResNet/src/tf_main.cc: In function 'void set_input_image(DPUTask*, const string&, const cv::Mat&, float*)':
+/home/root/target_zcu102/cifar10/miniResNet/src/tf_main.cc:189:7: warning: unused variable 'width' [-Wunused-variable]
    int width = dpuGetTensorWidth(dpu_in);
        ^~~~~
-/root/target_zcu102/cifar10/miniResNet/src/tf_main.cc:191:7: warning: unused variable ‘height’ [-Wunused-variable]
+/home/root/target_zcu102/cifar10/miniResNet/src/tf_main.cc:190:7: warning: unused variable 'height' [-Wunused-variable]
    int height = dpuGetTensorHeight(dpu_in);
        ^~~~~~
-/root/target_zcu102/cifar10/miniResNet/src/tf_main.cc:192:7: warning: unused variable ‘size’ [-Wunused-variable]
+/home/root/target_zcu102/cifar10/miniResNet/src/tf_main.cc:191:7: warning: unused variable 'size' [-Wunused-variable]
    int size = dpuGetTensorSize(dpu_in);
        ^~~~
-g++ -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/target_zcu102/cifar10/miniResNet/build/tf_main.o /root/target_zcu102/cifar10/miniResNet/model/dpu_miniResNet_0.elf -o miniResNet -lopencv_dnn -lopencv_highgui -lopencv_shape -lopencv_video -lopencv_videoio -lopencv_imgcodecs -lopencv_imgproc -lopencv_core -lhineon -ln2cube -ldputils  -lpthread
-make: warning:  Clock skew detected.  Your build may be incomplete.
+g++ -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /home/root/target_zcu102/cifar10/miniResNet/build/tf_main.o /home/root/target_zcu102/cifar10/miniResNet/model/dpu_miniResNet_0.elf -o miniResNet -L/usr/share/OpenCV/3rdparty/lib -lopencv_stitching -lopencv_superres -lopencv_videostab -lopencv_aruco -lopencv_bgsegm -lopencv_bioinspired -lopencv_ccalib -lopencv_dpm -lopencv_face -lopencv_photo -lopencv_fuzzy -lopencv_hfs -lopencv_img_hash -lopencv_line_descriptor -lopencv_optflow -lopencv_reg -lopencv_rgbd -lopencv_saliency -lopencv_stereo -lopencv_structured_light -lopencv_phase_unwrapping -lopencv_surface_matching -lopencv_tracking -lopencv_datasets -lopencv_plot -lopencv_xfeatures2d -lopencv_shape -lopencv_video -lopencv_ml -lopencv_ximgproc -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_flann -lopencv_xobjdetect -lopencv_imgcodecs -lopencv_objdetect -lopencv_xphoto -lopencv_imgproc -lopencv_core -lhineon -ln2cube -ldputils  -lpthread
  
 ./miniResNet 1
 now running ./fps_miniResNet 1
 total image : 5000
-[Time]16536893us
-[FPS]302.354
+[Time]11991419us
+[FPS]416.965
  
 ./miniResNet 2
 now running ./fps_miniResNet 2
 total image : 5000
-[Time]8646732us
-[FPS]578.253
+[Time]7118054us
+[FPS]702.439
  
 ./miniResNet 3
 now running ./fps_miniResNet 3
 total image : 5000
-[Time]6806562us
-[FPS]734.585
+[Time]5822869us
+[FPS]858.683
  
 ./miniResNet 4
 now running ./fps_miniResNet 4
 total image : 5000
-[Time]6318290us
-[FPS]791.353
+[Time]5412342us
+[FPS]923.814
  
 ./miniResNet 5
 now running ./fps_miniResNet 5
 total image : 5000
-[Time]6240267us
-[FPS]801.248
+[Time]5383107us
+[FPS]928.832
  
 ./miniResNet 6
 now running ./fps_miniResNet 6
 total image : 5000
-[Time]6297429us
-[FPS]793.975
+[Time]5392748us
+[FPS]927.171
  
 ./miniResNet 7
 now running ./fps_miniResNet 7
 total image : 5000
-[Time]6262054us
-[FPS]798.46
+[Time]5412897us
+[FPS]923.72
  
 ./miniResNet 8
 now running ./fps_miniResNet 8
 total image : 5000
-[Time]6391925us
-[FPS]782.237
+[Time]5439633us
+[FPS]919.18
  

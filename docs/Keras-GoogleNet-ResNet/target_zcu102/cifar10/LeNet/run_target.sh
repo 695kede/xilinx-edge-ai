@@ -17,7 +17,7 @@ python2 ./check_runtime_top5_cifar10.py -i ./rpt/logfile_top5_LeNet.txt  2>&1 | 
 
 
 ## launch script to check fps
-source run_fps_LeNet.sh 2>&1 | tee ./rpt/fps_cifar10_LeNet.txt
+source ./run_fps_LeNet.sh 2>&1 | tee ./rpt/fps_cifar10_LeNet.txt
 
 : '
 # archive everything and copy back to your host PC with ssh/scp

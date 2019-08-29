@@ -5,7 +5,7 @@ Author: Mark Harvey (mark.harvey@xilinx.com)
 Date:   28 May 2019
 
 Modified by Daniele Bagni (daniele.bagni@xilinx.com)
-Date:   7 July 2019
+Date:   21 July 2019
 '''
 
 ##############################################################################################
@@ -22,7 +22,7 @@ import cv2
 from random import seed
 from random import random
 from random import shuffle #DB
-from keras.datasets import fashion_mnist
+from keras.datasets import cifar10
 import gc   #Garbage collector for cleaning deleted data from memory
 
 SCRIPT_DIR = cfg.SCRIPT_DIR
@@ -65,42 +65,39 @@ f = open(os.path.join(CALIB_DIR, IMAGE_LIST_FILE), 'w')
 imgList = list()
 
 #############################################################################################
-# Download FASHION MNIST Dataset
+# Download CIFAR10 Dataset
 ############################################################################################
-# MNIST dataset has 60k images. Training set is 60k, test set is 10k.
-# Each image is 28x28x1ch with 8bits x 1ch
+# Each image is 32x32x3ch with 8bits x 1ch
 
-mnist_dataset = fashion_mnist.load_data()
+cifar10_dataset = cifar10.load_data()
 
-(x_train, y_train), (x_test, y_test) = mnist_dataset
+(x_train, y_train), (x_test, y_test) = cifar10_dataset
 print("{n} images in original train dataset".format(n=x_train.shape[0]))
 print("{n} images in original test  dataset".format(n=x_test.shape[0]))
 
 
 ########################################################################################
-# convert in 3 channels to emulate RGB images (still in gray levels)
+# convert in RGB channels (remember that OpenCV works in BGR)
 # and fill the "train", "cal" and "test" folders without any classes imbalance
 ########################################################################################
 counter1 = np.array([0,0,0,0,0,0,0,0,0,0], dtype="uint32")
 
-
-
-x_train3 = np.zeros((x_train.shape[0],cfg.IMAGE_WIDTH,cfg.IMAGE_HEIGHT,3), dtype="uint8")
 num_train = 0
 for i in range (0, x_train.shape[0]):
-    t_rgb_img = cv2.cvtColor(x_train[i], cv2.COLOR_GRAY2BGR)
-    rgb_img = cv2.resize(t_rgb_img, (cfg.IMAGE_WIDTH,cfg.IMAGE_HEIGHT), interpolation=cv2.INTER_AREA)
     class_name = cfg.labelNames_list[int(y_train[i])]
     # store images in TRAIN_DIR
-    filename = os.path.join(TRAIN_DIR, class_name+"/"+class_name+"_"+str(i)+".png")
-    cv2.imwrite(filename, rgb_img)
+    filename = os.path.join(TRAIN_DIR, class_name+"/"+class_name+"_"+str(i)+ ".png")    
+    rgb_image = x_train[i].astype("uint8")
+    R,G,B = cv2.split(rgb_image)
+    bgr_image = cv2.merge([B,G,R])
+    #bgr_image=rgb_image
+    cv2.imwrite(filename, bgr_image)
     if (i < 1000): #copy first 1000 images into CALIB_DIR too
         filename2= os.path.join(CALIB_DIR, class_name+"/"+class_name+"_"+str(i)+".png")
         local_filename = class_name+"/"+class_name+"_"+str(i)+".png"
-        cv2.imwrite(filename2, rgb_img)
+        cv2.imwrite(filename2, bgr_image)
         imgList.append(local_filename)
     counter1[ int(y_train[int(i)]) ] = counter1[ int(y_train[int(i)]) ] +1
-    x_train3[i] = rgb_img
     num_train = num_train+1
 
 
@@ -108,23 +105,22 @@ for i in range(0, len(imgList)):
     f.write(imgList[i]+"\n")
 f.close()
 
-x_test3 = np.zeros((x_test.shape[0],cfg.IMAGE_WIDTH,cfg.IMAGE_HEIGHT,3), dtype="uint8")
+
 for i in range (0, x_test.shape[0]):
-    t_rgb_img = cv2.cvtColor(x_test[i], cv2.COLOR_GRAY2BGR)
-    rgb_img = cv2.resize(t_rgb_img, (cfg.IMAGE_WIDTH,cfg.IMAGE_HEIGHT), interpolation=cv2.INTER_AREA)    
     class_name = cfg.labelNames_list[int(y_test[i])]
     # store images in TEST_DIR
-    filename3=os.path.join(TEST_DIR, class_name+"/"+class_name+'_'+str(i)+'.png')
-    cv2.imwrite(filename3, rgb_img)
+    filename3=os.path.join(TEST_DIR, class_name+"/"+class_name+'_'+str(i)+'.png')    
+    rgb_image = x_test[i].astype("uint8")
+    R,G,B = cv2.split(rgb_image)
+    bgr_image = cv2.merge([B,G,R])
+    #bgr_image = rgb_image
+    cv2.imwrite(filename3, bgr_image)
     counter1[ int(y_test[int(i)]) ] = counter1[ int(y_test[int(i)]) ] +1
-    x_test3[i] = rgb_img
 
-#print("classes histogram in train and test dataset: ", counter1)   #DeBuG
+print("classes histogram in train and test dataset: ", counter1)   #DeBuG
 
 #collect garbage to save memory
-del x_train3
-del x_test3
-del rgb_img
+del rgb_image
 gc.collect()
 
 ##############################################################################################
@@ -153,11 +149,6 @@ for img in imagesList:
 
     # read image with OpenCV
     img_orig = cv2.imread(img)
-
-    ## resize to 28x28
-    #img_resize = cv2.resize(img_orig, (cfg.IMAGE_WIDTH,cfg.IMAGE_HEIGHT), interpolation=cv2.INTER_CUBIC)
-    ## write back resized image - overwrites original
-    #cv2.imwrite(img, img_resize)
     label = cfg.labelNames_dict[classname]
 
     if (counter[ label ] < NTEST): #test images

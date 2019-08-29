@@ -1,0 +1,24 @@
+now running ./prof1_miniVggNet 1
+total image : 10
+[TimeTest]dpuRunTask                    466       us
+[TimeTest]dpuGetOutputTensorInHWCFP32   35        us
+[TimeTest]dpuRunTask                    419       us
+[TimeTest]dpuGetOutputTensorInHWCFP32   6         us
+[TimeTest]dpuRunTask                    419       us
+[TimeTest]dpuGetOutputTensorInHWCFP32   6         us
+[TimeTest]dpuRunTask                    418       us
+[TimeTest]dpuGetOutputTensorInHWCFP32   6         us
+[TimeTest]dpuRunTask                    418       us
+[TimeTest]dpuGetOutputTensorInHWCFP32   6         us
+[TimeTest]dpuRunTask                    417       us
+[TimeTest]dpuGetOutputTensorInHWCFP32   6         us
+[TimeTest]dpuRunTask                    418       us
+[TimeTest]dpuGetOutputTensorInHWCFP32   6         us
+[TimeTest]dpuRunTask                    417       us
+[TimeTest]dpuGetOutputTensorInHWCFP32   6         us
+[TimeTest]dpuRunTask                    418       us
+[TimeTest]dpuGetOutputTensorInHWCFP32   6         us
+[TimeTest]dpuRunTask                    419       us
+[TimeTest]dpuGetOutputTensorInHWCFP32   6         us
+[Time]9367us
+[FPS]1067.58

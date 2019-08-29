@@ -9,7 +9,7 @@ Author: Mark Harvey (mark.harvey@xilinx.com)
 Date:   28 May 2019
 
 Modified by Daniele Bagni (daniele.bagni@xilinx.com)
-Date:   12 June 2019
+Date:   27 Aug 2019
 '''
 
 import os
@@ -22,6 +22,7 @@ import numpy as np
 import cv2
 import gc # memory garbage collector #DB
 
+import tensorflow.contrib.decent_q
 from tensorflow.python.platform import gfile
 
 from config import fashion_mnist_config as cfg #DB
@@ -111,7 +112,7 @@ def graph_eval(input_graph_def, input_node, output_node):
 def main(unused_argv):
     os.environ["CUDA_VISIBLE_DEVICES"] = FLAGS.gpu
     input_graph_def = tf.Graph().as_graph_def()
-    input_graph_def.ParseFromString(tf.gfile.FastGFile(FLAGS.graph, "rb").read())
+    input_graph_def.ParseFromString(tf.gfile.GFile(FLAGS.graph, "rb").read())
     graph_eval(input_graph_def, FLAGS.input_node, FLAGS.output_node)
 
 

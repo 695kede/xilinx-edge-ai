@@ -1,22 +1,32 @@
 
-DNNC Kernel Information
+DNNC Kernel topology "miniResNet_kernel_graph.jpg" for network "miniResNet"
+DNNC kernel list info for network "miniResNet"
+                               Kernel ID : Name
+                                       0 : miniResNet_0
+                                       1 : miniResNet_1
 
-1. Overview
-kernel numbers  : 2
-kernel topology : miniResNet_kernel_graph.jpg
+                             Kernel Name : miniResNet_0
+--------------------------------------------------------------------------------
+                             Kernel Type : DPUKernel
+                               Code Size : 0.21MB
+                              Param Size : 0.84MB
+                           Workload MACs : 267.23MOPS
+                         IO Memory Space : 0.23MB
+                              Mean Value : 0, 0, 0, 
+                              Node Count : 115
+                            Tensor Count : 116
+                    Input Node(s)(H*W*C)
+batch_normalization_1_FusedBatchNorm_1_add(0) : 32*32*3
+                   Output Node(s)(H*W*C)
+                       dense_1_MatMul(0) : 1*1*10
 
-2. Kernel Description in Detail
-kernel id       : 0
-kernel name     : miniResNet_0
-type            : DPUKernel
-nodes           : NA
-input node(s)   : batch_normalization_1_FusedBatchNorm_1_add(0) 
-output node(s)  : dense_1_MatMul(0) 
 
-kernel id       : 1
-kernel name     : miniResNet_1
-type            : CPUKernel
-nodes           : NA
-input node(s)   : activation_83_Softmax 
-output node(s)  : activation_83_Softmax 
+                             Kernel Name : miniResNet_1
+--------------------------------------------------------------------------------
+                             Kernel Type : CPUKernel
+                    Input Node(s)(H*W*C)
+                   activation_83_Softmax : 1*1*10
+                   Output Node(s)(H*W*C)
+                   activation_83_Softmax : 1*1*10
+
 

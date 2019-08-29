@@ -1,6 +1,6 @@
 # USAGE
-# python train_cifar10.py --network LeNet      --weights keras_model/cifar10/LeNet      --epochs   5 --init_lr 0.01 --batch_size 32
-# python train_cifar10.py --network miniVggNet --weights keras_model/cifar10/miniVggNet --epochs  25 --init_lr 0.01 --batch_size 64
+# python train_cifar10.py --network LeNet      --weights keras_model/cifar10/LeNet      --epochs  20 --init_lr 0.01 --batch_size 32
+# python train_cifar10.py --network miniVggNet --weights keras_model/cifar10/miniVggNet --epochs  40 --init_lr 0.01 --batch_size 64
 # python train_cifar10.py --network miniResNet --weights keras_model/cifar10/miniResNet --epochs 100 --init_lr 0.1  --batch_size 128
 
 '''
@@ -54,7 +54,7 @@ ap.add_argument("-w",  "--weights", default="keras_model/cifar10/LeNet", help="p
 ap.add_argument("-n",  "--network", default="LeNet",             help="input CNN")
 ap.add_argument("-d",  "--dropout", type=int, default=-1,    help="whether or not Dropout should be used")
 ap.add_argument("-bn", "--BN",      type=int, default=-1,    help="whether or not BN should be used")
-ap.add_argument("-e",  "--epochs", type=int, default=5,     help="# of epochs")
+ap.add_argument("-e",  "--epochs", type=int, default=20,     help="# of epochs")
 ap.add_argument("-bs", "--batch_size", type=int, default=32, help="size of mini-batches passed to network")
 ap.add_argument("-l",  "--init_lr", type=float, default=0.01,  help="initial Learning Rate")
 args = vars(ap.parse_args())
@@ -78,14 +78,16 @@ seed(42)
 shuffle(imagesList)
 x_train, y_train = list(), list()
 for img in imagesList:
-	filename = os.path.basename(img)
-	classname = filename.split("_")[0]
-
-	# read image with OpenCV
-	img_orig = cv2.imread(img)
-	img_array = img_to_array(img_orig, data_format=None)
-	x_train.append(img_array)
-	y_train.append(cfg.labelNames_dict[classname])
+        filename = os.path.basename(img)
+        classname = filename.split("_")[0]
+        # read image with OpenCV
+        img_orig = cv2.imread(img)
+        #rs_img = cv2.resize(img_orig, (256,256))
+        #cv2.imshow(classname, rs_img)
+        #cv2.waitKey(0)
+        img_array = img_to_array(img_orig, data_format=None)
+        x_train.append(img_array)
+        y_train.append(cfg.labelNames_dict[classname])
 
 
 # make a list of all files currently in the VALID folder
@@ -93,13 +95,13 @@ imagesList = [img for img in glob.glob(cfg.VALID_DIR + "/*/*.png")]
 shuffle(imagesList)
 x_valid, y_valid = list(), list()
 for img in imagesList:
-	filename = os.path.basename(img)
-	classname = filename.split("_")[0]
-	# read image with OpenCV
-	img_orig = cv2.imread(img)
-	img_array = img_to_array(img_orig, data_format=None)
-	x_valid.append(img_array)
-	y_valid.append(cfg.labelNames_dict[classname])
+        filename = os.path.basename(img)
+        classname = filename.split("_")[0]
+        # read image with OpenCV
+        img_orig = cv2.imread(img)
+        img_array = img_to_array(img_orig, data_format=None)
+        x_valid.append(img_array)
+        y_valid.append(cfg.labelNames_dict[classname])
 
 
 # make a list of all files currently in the VALID folder
@@ -144,28 +146,7 @@ x_test  = np.asarray(x_test)
 x_train = np.asarray(x_train)  
 x_valid = np.asarray(x_valid)  
 
-'''
-# apply mean subtraction to the data #DB
-mean = np.mean(x_train, axis=0)
-x_train = x_train - mean
-x_test  = x_test  - mean
-x_valid = x_valid - mean
-print("MEAN VALUES: ", mean)
-
-# scale data to the range of [0, 1]
-x_train = x_train.astype("float32") / cfg.NORM_FACTOR
-x_test  = x_test.astype("float32") / cfg.NORM_FACTOR
-x_valid = x_valid.astype("float32") / cfg.NORM_FACTOR
-
-# normalize as Xilinx DNNDK TF 3.0 likes to see #DB
-x_train = x_train -0.5
-x_train = x_train *2
-x_test  = x_test  -0.5
-x_test  = x_test  *2
-x_valid = x_valid  -0.5
-x_valid = x_valid  *2
-'''
-
+#Normalize and convert from BGR to RGB
 x_train = cfg.Normalize(x_train)
 x_test  = cfg.Normalize(x_test)
 x_valid = cfg.Normalize(x_valid)
@@ -251,7 +232,7 @@ print("[INFO] training model...")
 startTime1 = datetime.now() #DB
 # run training
 
-if network == "miniResNet" :
+if ( (network == "miniResNet") or  (network == "miniGoogleNet") ) :
         H = model.fit_generator(aug_generator,
                                 steps_per_epoch=len(x_train)//NUM_EPOCHS, epochs=NUM_EPOCHS,
                                 validation_data=validation_generator,

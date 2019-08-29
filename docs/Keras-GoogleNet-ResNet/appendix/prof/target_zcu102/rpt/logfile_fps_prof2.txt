@@ -1,0 +1,134 @@
+now running ./prof2_miniVggNet 1
+total image : 10
+[DNNDK] Performance profile - DPU Kernel "miniVggNet_0" DPU Task "miniVggNet_0-5"
+=====================================================================================================
+  ID                       NodeName Workload(MOP) Mem(MB) RunTime(ms) Perf(GOPS) Utilization    MB/S
+   1           conv2d_1_convolution          1.77    0.04        0.02      110.6         8.3%  2292.9
+   2           conv2d_2_convolution         18.87    0.05        0.02      943.7        70.9%  2468.7
+   3           conv2d_3_convolution          9.44    0.04        0.02      589.8        44.3%  2670.5
+   4           conv2d_4_convolution         18.87    0.06        0.02      943.7        70.9%  2816.2
+   5                 dense_1_MatMul          4.19    2.01        0.33       12.6         0.9%  6046.8
+   6                 dense_2_MatMul          0.01    0.01        0.00        3.4         0.3%  1875.6
+
+                Total Nodes In Avg:
+                                All         53.16    2.31        0.41      129.3         9.7%  5623.8
+=====================================================================================================
+[DNNDK] Performance profile - DPU Kernel "miniVggNet_0" DPU Task "miniVggNet_0-5"
+=====================================================================================================
+  ID                       NodeName Workload(MOP) Mem(MB) RunTime(ms) Perf(GOPS) Utilization    MB/S
+   1           conv2d_1_convolution          1.77    0.04        0.01      126.4         9.5%  2620.4
+   2           conv2d_2_convolution         18.87    0.05        0.02      943.7        70.9%  2468.7
+   3           conv2d_3_convolution          9.44    0.04        0.02      555.1        41.7%  2513.4
+   4           conv2d_4_convolution         18.87    0.06        0.02      943.7        70.9%  2816.2
+   5                 dense_1_MatMul          4.19    2.01        0.33       12.6         0.9%  6046.8
+   6                 dense_2_MatMul          0.01    0.01        0.00        3.4         0.3%  1875.6
+
+                Total Nodes In Avg:
+                                All         53.16    2.31        0.41      130.0         9.8%  5651.3
+=====================================================================================================
+[DNNDK] Performance profile - DPU Kernel "miniVggNet_0" DPU Task "miniVggNet_0-5"
+=====================================================================================================
+  ID                       NodeName Workload(MOP) Mem(MB) RunTime(ms) Perf(GOPS) Utilization    MB/S
+   1           conv2d_1_convolution          1.77    0.04        0.01      126.4         9.5%  2620.4
+   2           conv2d_2_convolution         18.87    0.05        0.02      943.7        70.9%  2468.7
+   3           conv2d_3_convolution          9.44    0.04        0.02      589.8        44.3%  2670.5
+   4           conv2d_4_convolution         18.87    0.06        0.02      943.7        70.9%  2816.2
+   5                 dense_1_MatMul          4.19    2.01        0.33       12.6         0.9%  6046.8
+   6                 dense_2_MatMul          0.01    0.01        0.00        3.4         0.3%  1875.6
+
+                Total Nodes In Avg:
+                                All         53.16    2.31        0.41      130.0         9.8%  5651.3
+=====================================================================================================
+[DNNDK] Performance profile - DPU Kernel "miniVggNet_0" DPU Task "miniVggNet_0-5"
+=====================================================================================================
+  ID                       NodeName Workload(MOP) Mem(MB) RunTime(ms) Perf(GOPS) Utilization    MB/S
+   1           conv2d_1_convolution          1.77    0.04        0.01      126.4         9.5%  2620.4
+   2           conv2d_2_convolution         18.87    0.05        0.02      943.7        70.9%  2468.7
+   3           conv2d_3_convolution          9.44    0.04        0.02      589.8        44.3%  2670.5
+   4           conv2d_4_convolution         18.87    0.06        0.02      943.7        70.9%  2816.2
+   5                 dense_1_MatMul          4.19    2.01        0.33       12.6         0.9%  6046.8
+   6                 dense_2_MatMul          0.01    0.01        0.00        3.4         0.3%  1875.6
+
+                Total Nodes In Avg:
+                                All         53.16    2.31        0.41      130.0         9.8%  5651.3
+=====================================================================================================
+[DNNDK] Performance profile - DPU Kernel "miniVggNet_0" DPU Task "miniVggNet_0-5"
+=====================================================================================================
+  ID                       NodeName Workload(MOP) Mem(MB) RunTime(ms) Perf(GOPS) Utilization    MB/S
+   1           conv2d_1_convolution          1.77    0.04        0.01      126.4         9.5%  2620.4
+   2           conv2d_2_convolution         18.87    0.05        0.02      993.4        74.6%  2598.6
+   3           conv2d_3_convolution          9.44    0.04        0.02      589.8        44.3%  2670.5
+   4           conv2d_4_convolution         18.87    0.06        0.02      943.7        70.9%  2816.2
+   5                 dense_1_MatMul          4.19    2.01        0.33       12.6         0.9%  6028.6
+   6                 dense_2_MatMul          0.01    0.01        0.00        3.4         0.3%  1875.6
+
+                Total Nodes In Avg:
+                                All         53.16    2.31        0.41      130.0         9.8%  5651.3
+=====================================================================================================
+[DNNDK] Performance profile - DPU Kernel "miniVggNet_0" DPU Task "miniVggNet_0-5"
+=====================================================================================================
+  ID                       NodeName Workload(MOP) Mem(MB) RunTime(ms) Perf(GOPS) Utilization    MB/S
+   1           conv2d_1_convolution          1.77    0.04        0.01      126.4         9.5%  2620.4
+   2           conv2d_2_convolution         18.87    0.05        0.02      943.7        70.9%  2468.7
+   3           conv2d_3_convolution          9.44    0.04        0.02      589.8        44.3%  2670.5
+   4           conv2d_4_convolution         18.87    0.06        0.02      943.7        70.9%  2816.2
+   5                 dense_1_MatMul          4.19    2.01        0.33       12.6         0.9%  6065.0
+   6                 dense_2_MatMul          0.01    0.01        0.00        3.4         0.3%  1875.6
+
+                Total Nodes In Avg:
+                                All         53.16    2.31        0.41      130.3         9.8%  5665.2
+=====================================================================================================
+[DNNDK] Performance profile - DPU Kernel "miniVggNet_0" DPU Task "miniVggNet_0-5"
+=====================================================================================================
+  ID                       NodeName Workload(MOP) Mem(MB) RunTime(ms) Perf(GOPS) Utilization    MB/S
+   1           conv2d_1_convolution          1.77    0.04        0.01      126.4         9.5%  2620.4
+   2           conv2d_2_convolution         18.87    0.05        0.02      943.7        70.9%  2468.7
+   3           conv2d_3_convolution          9.44    0.04        0.02      589.8        44.3%  2670.5
+   4           conv2d_4_convolution         18.87    0.06        0.02      943.7        70.9%  2816.2
+   5                 dense_1_MatMul          4.19    2.01        0.33       12.6         0.9%  6046.8
+   6                 dense_2_MatMul          0.01    0.01        0.00        3.4         0.3%  1875.6
+
+                Total Nodes In Avg:
+                                All         53.16    2.31        0.41      130.0         9.8%  5651.3
+=====================================================================================================
+[DNNDK] Performance profile - DPU Kernel "miniVggNet_0" DPU Task "miniVggNet_0-5"
+=====================================================================================================
+  ID                       NodeName Workload(MOP) Mem(MB) RunTime(ms) Perf(GOPS) Utilization    MB/S
+   1           conv2d_1_convolution          1.77    0.04        0.01      126.4         9.5%  2620.4
+   2           conv2d_2_convolution         18.87    0.05        0.02      943.7        70.9%  2468.7
+   3           conv2d_3_convolution          9.44    0.04        0.02      589.8        44.3%  2670.5
+   4           conv2d_4_convolution         18.87    0.06        0.02      898.8        67.5%  2682.1
+   5                 dense_1_MatMul          4.19    2.01        0.33       12.6         0.9%  6065.0
+   6                 dense_2_MatMul          0.01    0.01        0.00        3.4         0.3%  1875.6
+
+                Total Nodes In Avg:
+                                All         53.16    2.31        0.41      130.6         9.8%  5679.1
+=====================================================================================================
+[DNNDK] Performance profile - DPU Kernel "miniVggNet_0" DPU Task "miniVggNet_0-5"
+=====================================================================================================
+  ID                       NodeName Workload(MOP) Mem(MB) RunTime(ms) Perf(GOPS) Utilization    MB/S
+   1           conv2d_1_convolution          1.77    0.04        0.01      126.4         9.5%  2620.4
+   2           conv2d_2_convolution         18.87    0.05        0.02      943.7        70.9%  2468.7
+   3           conv2d_3_convolution          9.44    0.04        0.02      589.8        44.3%  2670.5
+   4           conv2d_4_convolution         18.87    0.06        0.02      943.7        70.9%  2816.2
+   5                 dense_1_MatMul          4.19    2.01        0.33       12.6         0.9%  6028.6
+   6                 dense_2_MatMul          0.01    0.01        0.00        3.4         0.3%  1875.6
+
+                Total Nodes In Avg:
+                                All         53.16    2.31        0.41      129.7         9.7%  5637.5
+=====================================================================================================
+[DNNDK] Performance profile - DPU Kernel "miniVggNet_0" DPU Task "miniVggNet_0-5"
+=====================================================================================================
+  ID                       NodeName Workload(MOP) Mem(MB) RunTime(ms) Perf(GOPS) Utilization    MB/S
+   1           conv2d_1_convolution          1.77    0.04        0.01      126.4         9.5%  2620.4
+   2           conv2d_2_convolution         18.87    0.05        0.02      943.7        70.9%  2468.7
+   3           conv2d_3_convolution          9.44    0.04        0.02      589.8        44.3%  2670.5
+   4           conv2d_4_convolution         18.87    0.06        0.02      943.7        70.9%  2816.2
+   5                 dense_1_MatMul          4.19    2.01        0.33       12.6         0.9%  6046.8
+   6                 dense_2_MatMul          0.01    0.01        0.00        3.4         0.3%  1875.6
+
+                Total Nodes In Avg:
+                                All         53.16    2.31        0.41      130.3         9.8%  5665.2
+=====================================================================================================
+[Time]11429us
+[FPS]874.967

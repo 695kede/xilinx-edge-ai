@@ -1,14 +1,15 @@
-2019-07-10 20:49:28.148599: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
-2019-07-10 20:49:28.232015: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1392] Found device 0 with properties: 
+2019-08-28 01:00:40.446261: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
+2019-08-28 01:00:40.535833: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 0 with properties: 
 name: Quadro P6000 major: 6 minor: 1 memoryClockRate(GHz): 1.645
 pciBusID: 0000:65:00.0
-totalMemory: 23.86GiB freeMemory: 23.18GiB
-2019-07-10 20:49:28.232036: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
-2019-07-10 20:49:28.514534: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
-2019-07-10 20:49:28.514563: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
-2019-07-10 20:49:28.514568: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
-2019-07-10 20:49:28.515103: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22493 MB memory) -> physical GPU (device: 0, name: Quadro P6000, pci bus id: 0000:65:00.0, compute capability: 6.1)
+totalMemory: 23.86GiB freeMemory: 23.01GiB
+2019-08-28 01:00:40.535856: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
+2019-08-28 01:00:40.846521: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-08-28 01:00:40.846550: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 
+2019-08-28 01:00:40.846554: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N 
+2019-08-28 01:00:40.847107: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22318 MB memory) -> physical GPU (device: 0, name: Quadro P6000, pci bus id: 0000:65:00.0, compute capability: 6.1)
 Using TensorFlow backend.
+Model: "LeNet"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
