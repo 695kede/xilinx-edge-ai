@@ -1,418 +1,418 @@
-2019-07-10 22:06:57.695246: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
-2019-07-10 22:06:57.781368: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1392] Found device 0 with properties: 
+2019-08-28 02:16:46.743908: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
+2019-08-28 02:16:46.845144: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 0 with properties: 
 name: Quadro P6000 major: 6 minor: 1 memoryClockRate(GHz): 1.645
 pciBusID: 0000:65:00.0
-totalMemory: 23.86GiB freeMemory: 23.18GiB
-2019-07-10 22:06:57.781390: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
-2019-07-10 22:06:58.006366: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
-2019-07-10 22:06:58.006396: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
-2019-07-10 22:06:58.006400: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
-2019-07-10 22:06:58.006931: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22493 MB memory) -> physical GPU (device: 0, name: Quadro P6000, pci bus id: 0000:65:00.0, compute capability: 6.1)
+totalMemory: 23.86GiB freeMemory: 23.01GiB
+2019-08-28 02:16:46.845166: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
+2019-08-28 02:16:47.089399: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-08-28 02:16:47.089427: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 
+2019-08-28 02:16:47.089431: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N 
+2019-08-28 02:16:47.089974: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22318 MB memory) -> physical GPU (device: 0, name: Quadro P6000, pci bus id: 0000:65:00.0, compute capability: 6.1)
 [INFO] compiling model...
 [INFO] training model...
 Epoch 1/100
- - 89s - loss: 1.4032 - acc: 0.7687 - val_loss: 1.0479 - val_acc: 0.8318
+ - 88s - loss: 1.2846 - acc: 0.7664 - val_loss: 0.9363 - val_acc: 0.8570
 
-Epoch 00001: val_loss improved from inf to 1.04793, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00001: val_loss improved from inf to 0.93633, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 2/100
- - 79s - loss: 0.8790 - acc: 0.8613 - val_loss: 0.7366 - val_acc: 0.8850
+ - 77s - loss: 0.8413 - acc: 0.8622 - val_loss: 0.7809 - val_acc: 0.8535
 
-Epoch 00002: val_loss improved from 1.04793 to 0.73661, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00002: val_loss improved from 0.93633 to 0.78088, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 3/100
- - 78s - loss: 0.7054 - acc: 0.8790 - val_loss: 0.6461 - val_acc: 0.8901
+ - 77s - loss: 0.6976 - acc: 0.8779 - val_loss: 0.6715 - val_acc: 0.8713
 
-Epoch 00003: val_loss improved from 0.73661 to 0.64611, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00003: val_loss improved from 0.78088 to 0.67154, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 4/100
- - 79s - loss: 0.6195 - acc: 0.8866 - val_loss: 0.6675 - val_acc: 0.8562
+ - 78s - loss: 0.6115 - acc: 0.8868 - val_loss: 0.5808 - val_acc: 0.8878
 
-Epoch 00004: val_loss did not improve from 0.64611
+Epoch 00004: val_loss improved from 0.67154 to 0.58085, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 5/100
- - 78s - loss: 0.5597 - acc: 0.8916 - val_loss: 0.5605 - val_acc: 0.8868
+ - 78s - loss: 0.5594 - acc: 0.8913 - val_loss: 0.5329 - val_acc: 0.8979
 
-Epoch 00005: val_loss improved from 0.64611 to 0.56052, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00005: val_loss improved from 0.58085 to 0.53289, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 6/100
- - 78s - loss: 0.5164 - acc: 0.8967 - val_loss: 1.0655 - val_acc: 0.7064
+ - 77s - loss: 0.5239 - acc: 0.8939 - val_loss: 0.5944 - val_acc: 0.8616
 
-Epoch 00006: val_loss did not improve from 0.56052
+Epoch 00006: val_loss did not improve from 0.53289
 Epoch 7/100
- - 78s - loss: 0.4826 - acc: 0.8994 - val_loss: 0.4947 - val_acc: 0.8850
+ - 77s - loss: 0.4893 - acc: 0.8977 - val_loss: 0.5033 - val_acc: 0.8895
 
-Epoch 00007: val_loss improved from 0.56052 to 0.49470, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00007: val_loss improved from 0.53289 to 0.50334, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 8/100
- - 79s - loss: 0.4589 - acc: 0.9005 - val_loss: 0.4937 - val_acc: 0.8826
+ - 77s - loss: 0.4614 - acc: 0.9004 - val_loss: 0.4864 - val_acc: 0.8898
 
-Epoch 00008: val_loss improved from 0.49470 to 0.49366, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00008: val_loss improved from 0.50334 to 0.48635, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 9/100
- - 78s - loss: 0.4352 - acc: 0.9028 - val_loss: 0.4971 - val_acc: 0.8739
+ - 77s - loss: 0.4413 - acc: 0.9030 - val_loss: 0.4554 - val_acc: 0.8930
 
-Epoch 00009: val_loss did not improve from 0.49366
+Epoch 00009: val_loss improved from 0.48635 to 0.45539, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 10/100
- - 78s - loss: 0.4210 - acc: 0.9049 - val_loss: 0.5624 - val_acc: 0.8626
+ - 77s - loss: 0.4254 - acc: 0.9029 - val_loss: 0.4695 - val_acc: 0.8846
 
-Epoch 00010: val_loss did not improve from 0.49366
+Epoch 00010: val_loss did not improve from 0.45539
 Epoch 11/100
- - 78s - loss: 0.4086 - acc: 0.9060 - val_loss: 0.4469 - val_acc: 0.8987
+ - 78s - loss: 0.4069 - acc: 0.9063 - val_loss: 0.5810 - val_acc: 0.8546
 
-Epoch 00011: val_loss improved from 0.49366 to 0.44694, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00011: val_loss did not improve from 0.45539
 Epoch 12/100
- - 79s - loss: 0.3901 - acc: 0.9098 - val_loss: 0.4775 - val_acc: 0.8756
+ - 78s - loss: 0.4001 - acc: 0.9077 - val_loss: 0.4104 - val_acc: 0.9021
 
-Epoch 00012: val_loss did not improve from 0.44694
+Epoch 00012: val_loss improved from 0.45539 to 0.41038, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 13/100
- - 79s - loss: 0.3892 - acc: 0.9092 - val_loss: 0.3923 - val_acc: 0.9029
+ - 77s - loss: 0.3903 - acc: 0.9082 - val_loss: 0.4016 - val_acc: 0.9021
 
-Epoch 00013: val_loss improved from 0.44694 to 0.39226, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00013: val_loss improved from 0.41038 to 0.40157, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 14/100
- - 78s - loss: 0.3732 - acc: 0.9127 - val_loss: 0.4242 - val_acc: 0.8932
+ - 77s - loss: 0.3804 - acc: 0.9102 - val_loss: 0.3711 - val_acc: 0.9118
 
-Epoch 00014: val_loss did not improve from 0.39226
+Epoch 00014: val_loss improved from 0.40157 to 0.37107, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 15/100
- - 79s - loss: 0.3668 - acc: 0.9126 - val_loss: 0.3988 - val_acc: 0.9035
+ - 78s - loss: 0.3716 - acc: 0.9125 - val_loss: 0.3930 - val_acc: 0.9048
 
-Epoch 00015: val_loss did not improve from 0.39226
+Epoch 00015: val_loss did not improve from 0.37107
 Epoch 16/100
- - 78s - loss: 0.3648 - acc: 0.9128 - val_loss: 0.3699 - val_acc: 0.9123
+ - 78s - loss: 0.3641 - acc: 0.9131 - val_loss: 0.4173 - val_acc: 0.8906
 
-Epoch 00016: val_loss improved from 0.39226 to 0.36989, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00016: val_loss did not improve from 0.37107
 Epoch 17/100
- - 78s - loss: 0.3562 - acc: 0.9156 - val_loss: 0.3527 - val_acc: 0.9162
+ - 78s - loss: 0.3650 - acc: 0.9124 - val_loss: 0.3697 - val_acc: 0.9062
 
-Epoch 00017: val_loss improved from 0.36989 to 0.35275, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00017: val_loss improved from 0.37107 to 0.36972, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 18/100
- - 78s - loss: 0.3480 - acc: 0.9181 - val_loss: 0.4892 - val_acc: 0.8745
+ - 77s - loss: 0.3567 - acc: 0.9137 - val_loss: 0.4310 - val_acc: 0.8834
 
-Epoch 00018: val_loss did not improve from 0.35275
+Epoch 00018: val_loss did not improve from 0.36972
 Epoch 19/100
- - 78s - loss: 0.3486 - acc: 0.9167 - val_loss: 0.4187 - val_acc: 0.8979
+ - 77s - loss: 0.3512 - acc: 0.9161 - val_loss: 0.3851 - val_acc: 0.9075
 
-Epoch 00019: val_loss did not improve from 0.35275
+Epoch 00019: val_loss did not improve from 0.36972
 Epoch 20/100
- - 79s - loss: 0.3474 - acc: 0.9164 - val_loss: 0.4352 - val_acc: 0.8894
+ - 77s - loss: 0.3462 - acc: 0.9172 - val_loss: 0.3518 - val_acc: 0.9161
 
-Epoch 00020: val_loss did not improve from 0.35275
+Epoch 00020: val_loss improved from 0.36972 to 0.35182, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 21/100
- - 79s - loss: 0.3417 - acc: 0.9186 - val_loss: 0.4194 - val_acc: 0.8895
+ - 77s - loss: 0.3431 - acc: 0.9175 - val_loss: 0.4319 - val_acc: 0.8869
 
-Epoch 00021: val_loss did not improve from 0.35275
+Epoch 00021: val_loss did not improve from 0.35182
 Epoch 22/100
- - 78s - loss: 0.3352 - acc: 0.9206 - val_loss: 0.4282 - val_acc: 0.8860
+ - 78s - loss: 0.3403 - acc: 0.9193 - val_loss: 0.3985 - val_acc: 0.8998
 
-Epoch 00022: val_loss did not improve from 0.35275
+Epoch 00022: val_loss did not improve from 0.35182
 Epoch 23/100
- - 79s - loss: 0.3338 - acc: 0.9196 - val_loss: 0.3676 - val_acc: 0.9089
+ - 77s - loss: 0.3393 - acc: 0.9178 - val_loss: 0.8160 - val_acc: 0.7796
 
-Epoch 00023: val_loss did not improve from 0.35275
+Epoch 00023: val_loss did not improve from 0.35182
 Epoch 24/100
- - 79s - loss: 0.3346 - acc: 0.9197 - val_loss: 0.3566 - val_acc: 0.9130
+ - 77s - loss: 0.3390 - acc: 0.9186 - val_loss: 0.3811 - val_acc: 0.9024
 
-Epoch 00024: val_loss did not improve from 0.35275
+Epoch 00024: val_loss did not improve from 0.35182
 Epoch 25/100
- - 78s - loss: 0.3280 - acc: 0.9216 - val_loss: 0.3494 - val_acc: 0.9111
+ - 77s - loss: 0.3314 - acc: 0.9204 - val_loss: 0.4263 - val_acc: 0.8836
 
-Epoch 00025: val_loss improved from 0.35275 to 0.34936, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00025: val_loss did not improve from 0.35182
 Epoch 26/100
- - 79s - loss: 0.3286 - acc: 0.9215 - val_loss: 0.3365 - val_acc: 0.9205
+ - 78s - loss: 0.3301 - acc: 0.9218 - val_loss: 0.3507 - val_acc: 0.9188
 
-Epoch 00026: val_loss improved from 0.34936 to 0.33651, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00026: val_loss improved from 0.35182 to 0.35067, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 27/100
- - 78s - loss: 0.3240 - acc: 0.9227 - val_loss: 0.3645 - val_acc: 0.9051
+ - 78s - loss: 0.3278 - acc: 0.9218 - val_loss: 0.4178 - val_acc: 0.8949
 
-Epoch 00027: val_loss did not improve from 0.33651
+Epoch 00027: val_loss did not improve from 0.35067
 Epoch 28/100
- - 79s - loss: 0.3210 - acc: 0.9234 - val_loss: 0.3851 - val_acc: 0.8994
+ - 78s - loss: 0.3240 - acc: 0.9223 - val_loss: 0.3299 - val_acc: 0.9216
 
-Epoch 00028: val_loss did not improve from 0.33651
+Epoch 00028: val_loss improved from 0.35067 to 0.32987, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 29/100
- - 78s - loss: 0.3171 - acc: 0.9257 - val_loss: 0.4647 - val_acc: 0.8811
+ - 77s - loss: 0.3228 - acc: 0.9234 - val_loss: 0.3407 - val_acc: 0.9131
 
-Epoch 00029: val_loss did not improve from 0.33651
+Epoch 00029: val_loss did not improve from 0.32987
 Epoch 30/100
- - 78s - loss: 0.3131 - acc: 0.9260 - val_loss: 0.4014 - val_acc: 0.8970
+ - 78s - loss: 0.3203 - acc: 0.9239 - val_loss: 0.4775 - val_acc: 0.8742
 
-Epoch 00030: val_loss did not improve from 0.33651
+Epoch 00030: val_loss did not improve from 0.32987
 Epoch 31/100
- - 79s - loss: 0.3155 - acc: 0.9247 - val_loss: 0.3711 - val_acc: 0.9010
+ - 77s - loss: 0.3151 - acc: 0.9259 - val_loss: 0.3242 - val_acc: 0.9183
 
-Epoch 00031: val_loss did not improve from 0.33651
+Epoch 00031: val_loss improved from 0.32987 to 0.32417, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 32/100
- - 79s - loss: 0.3127 - acc: 0.9252 - val_loss: 0.3704 - val_acc: 0.9065
+ - 78s - loss: 0.3190 - acc: 0.9234 - val_loss: 0.3219 - val_acc: 0.9276
 
-Epoch 00032: val_loss did not improve from 0.33651
+Epoch 00032: val_loss improved from 0.32417 to 0.32193, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 33/100
- - 78s - loss: 0.3084 - acc: 0.9268 - val_loss: 0.3708 - val_acc: 0.9075
+ - 78s - loss: 0.3147 - acc: 0.9252 - val_loss: 0.4162 - val_acc: 0.8987
 
-Epoch 00033: val_loss did not improve from 0.33651
+Epoch 00033: val_loss did not improve from 0.32193
 Epoch 34/100
- - 78s - loss: 0.3077 - acc: 0.9277 - val_loss: 0.3585 - val_acc: 0.9097
+ - 77s - loss: 0.3071 - acc: 0.9282 - val_loss: 0.3688 - val_acc: 0.9100
 
-Epoch 00034: val_loss did not improve from 0.33651
+Epoch 00034: val_loss did not improve from 0.32193
 Epoch 35/100
- - 79s - loss: 0.3063 - acc: 0.9279 - val_loss: 0.3688 - val_acc: 0.9100
+ - 78s - loss: 0.3109 - acc: 0.9259 - val_loss: 0.3251 - val_acc: 0.9231
 
-Epoch 00035: val_loss did not improve from 0.33651
+Epoch 00035: val_loss did not improve from 0.32193
 Epoch 36/100
- - 79s - loss: 0.3023 - acc: 0.9286 - val_loss: 0.3351 - val_acc: 0.9167
+ - 77s - loss: 0.3086 - acc: 0.9273 - val_loss: 0.3400 - val_acc: 0.9187
 
-Epoch 00036: val_loss improved from 0.33651 to 0.33507, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00036: val_loss did not improve from 0.32193
 Epoch 37/100
- - 78s - loss: 0.3006 - acc: 0.9296 - val_loss: 0.3134 - val_acc: 0.9272
+ - 78s - loss: 0.3017 - acc: 0.9292 - val_loss: 0.3257 - val_acc: 0.9204
 
-Epoch 00037: val_loss improved from 0.33507 to 0.31342, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00037: val_loss did not improve from 0.32193
 Epoch 38/100
- - 78s - loss: 0.2985 - acc: 0.9302 - val_loss: 0.3436 - val_acc: 0.9129
+ - 77s - loss: 0.3021 - acc: 0.9288 - val_loss: 0.3425 - val_acc: 0.9107
 
-Epoch 00038: val_loss did not improve from 0.31342
+Epoch 00038: val_loss did not improve from 0.32193
 Epoch 39/100
- - 78s - loss: 0.2931 - acc: 0.9311 - val_loss: 0.3502 - val_acc: 0.9096
+ - 77s - loss: 0.3032 - acc: 0.9288 - val_loss: 0.3517 - val_acc: 0.9070
 
-Epoch 00039: val_loss did not improve from 0.31342
+Epoch 00039: val_loss did not improve from 0.32193
 Epoch 40/100
- - 79s - loss: 0.2975 - acc: 0.9301 - val_loss: 0.3908 - val_acc: 0.9045
+ - 78s - loss: 0.2953 - acc: 0.9313 - val_loss: 0.3560 - val_acc: 0.9133
 
-Epoch 00040: val_loss did not improve from 0.31342
+Epoch 00040: val_loss did not improve from 0.32193
 Epoch 41/100
- - 79s - loss: 0.2888 - acc: 0.9324 - val_loss: 0.3241 - val_acc: 0.9167
+ - 77s - loss: 0.2937 - acc: 0.9312 - val_loss: 0.3742 - val_acc: 0.9053
 
-Epoch 00041: val_loss did not improve from 0.31342
+Epoch 00041: val_loss did not improve from 0.32193
 Epoch 42/100
- - 78s - loss: 0.2915 - acc: 0.9317 - val_loss: 0.3356 - val_acc: 0.9180
+ - 78s - loss: 0.2920 - acc: 0.9314 - val_loss: 0.3688 - val_acc: 0.9123
 
-Epoch 00042: val_loss did not improve from 0.31342
+Epoch 00042: val_loss did not improve from 0.32193
 Epoch 43/100
- - 79s - loss: 0.2912 - acc: 0.9320 - val_loss: 0.3072 - val_acc: 0.9277
+ - 78s - loss: 0.2922 - acc: 0.9317 - val_loss: 0.3086 - val_acc: 0.9255
 
-Epoch 00043: val_loss improved from 0.31342 to 0.30716, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00043: val_loss improved from 0.32193 to 0.30861, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 44/100
- - 79s - loss: 0.2874 - acc: 0.9325 - val_loss: 0.3298 - val_acc: 0.9170
+ - 77s - loss: 0.2901 - acc: 0.9325 - val_loss: 0.3370 - val_acc: 0.9170
 
-Epoch 00044: val_loss did not improve from 0.30716
+Epoch 00044: val_loss did not improve from 0.30861
 Epoch 45/100
- - 78s - loss: 0.2830 - acc: 0.9342 - val_loss: 0.3119 - val_acc: 0.9288
+ - 77s - loss: 0.2872 - acc: 0.9338 - val_loss: 0.3195 - val_acc: 0.9272
 
-Epoch 00045: val_loss did not improve from 0.30716
+Epoch 00045: val_loss did not improve from 0.30861
 Epoch 46/100
- - 78s - loss: 0.2831 - acc: 0.9344 - val_loss: 0.3088 - val_acc: 0.9263
+ - 77s - loss: 0.2856 - acc: 0.9334 - val_loss: 0.3245 - val_acc: 0.9185
 
-Epoch 00046: val_loss did not improve from 0.30716
+Epoch 00046: val_loss did not improve from 0.30861
 Epoch 47/100
- - 79s - loss: 0.2799 - acc: 0.9363 - val_loss: 0.3136 - val_acc: 0.9209
+ - 78s - loss: 0.2886 - acc: 0.9326 - val_loss: 0.3242 - val_acc: 0.9236
 
-Epoch 00047: val_loss did not improve from 0.30716
+Epoch 00047: val_loss did not improve from 0.30861
 Epoch 48/100
- - 79s - loss: 0.2761 - acc: 0.9364 - val_loss: 0.3305 - val_acc: 0.9188
+ - 78s - loss: 0.2833 - acc: 0.9341 - val_loss: 0.3573 - val_acc: 0.9114
 
-Epoch 00048: val_loss did not improve from 0.30716
+Epoch 00048: val_loss did not improve from 0.30861
 Epoch 49/100
- - 79s - loss: 0.2763 - acc: 0.9362 - val_loss: 0.3151 - val_acc: 0.9245
+ - 77s - loss: 0.2816 - acc: 0.9352 - val_loss: 0.3051 - val_acc: 0.9277
 
-Epoch 00049: val_loss did not improve from 0.30716
+Epoch 00049: val_loss improved from 0.30861 to 0.30510, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 50/100
- - 79s - loss: 0.2751 - acc: 0.9363 - val_loss: 0.3699 - val_acc: 0.9005
+ - 77s - loss: 0.2779 - acc: 0.9359 - val_loss: 0.3384 - val_acc: 0.9202
 
-Epoch 00050: val_loss did not improve from 0.30716
+Epoch 00050: val_loss did not improve from 0.30510
 Epoch 51/100
- - 79s - loss: 0.2716 - acc: 0.9371 - val_loss: 0.3271 - val_acc: 0.9182
+ - 78s - loss: 0.2764 - acc: 0.9359 - val_loss: 0.3165 - val_acc: 0.9209
 
-Epoch 00051: val_loss did not improve from 0.30716
+Epoch 00051: val_loss did not improve from 0.30510
 Epoch 52/100
- - 79s - loss: 0.2679 - acc: 0.9392 - val_loss: 0.3031 - val_acc: 0.9255
+ - 78s - loss: 0.2770 - acc: 0.9369 - val_loss: 0.3213 - val_acc: 0.9219
 
-Epoch 00052: val_loss improved from 0.30716 to 0.30307, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00052: val_loss did not improve from 0.30510
 Epoch 53/100
- - 78s - loss: 0.2703 - acc: 0.9378 - val_loss: 0.3255 - val_acc: 0.9234
+ - 77s - loss: 0.2713 - acc: 0.9384 - val_loss: 0.3053 - val_acc: 0.9234
 
-Epoch 00053: val_loss did not improve from 0.30307
+Epoch 00053: val_loss did not improve from 0.30510
 Epoch 54/100
- - 79s - loss: 0.2678 - acc: 0.9381 - val_loss: 0.3315 - val_acc: 0.9196
+ - 77s - loss: 0.2709 - acc: 0.9383 - val_loss: 0.3007 - val_acc: 0.9275
 
-Epoch 00054: val_loss did not improve from 0.30307
+Epoch 00054: val_loss improved from 0.30510 to 0.30074, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 55/100
- - 78s - loss: 0.2647 - acc: 0.9392 - val_loss: 0.2953 - val_acc: 0.9258
+ - 77s - loss: 0.2664 - acc: 0.9396 - val_loss: 0.3053 - val_acc: 0.9253
 
-Epoch 00055: val_loss improved from 0.30307 to 0.29530, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00055: val_loss did not improve from 0.30074
 Epoch 56/100
- - 78s - loss: 0.2602 - acc: 0.9406 - val_loss: 0.4188 - val_acc: 0.8833
+ - 78s - loss: 0.2671 - acc: 0.9383 - val_loss: 0.3537 - val_acc: 0.9133
 
-Epoch 00056: val_loss did not improve from 0.29530
+Epoch 00056: val_loss did not improve from 0.30074
 Epoch 57/100
- - 78s - loss: 0.2610 - acc: 0.9401 - val_loss: 0.3319 - val_acc: 0.9127
+ - 78s - loss: 0.2646 - acc: 0.9394 - val_loss: 0.3090 - val_acc: 0.9247
 
-Epoch 00057: val_loss did not improve from 0.29530
+Epoch 00057: val_loss did not improve from 0.30074
 Epoch 58/100
- - 78s - loss: 0.2605 - acc: 0.9399 - val_loss: 0.2802 - val_acc: 0.9368
+ - 77s - loss: 0.2588 - acc: 0.9420 - val_loss: 0.3043 - val_acc: 0.9266
 
-Epoch 00058: val_loss improved from 0.29530 to 0.28020, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00058: val_loss did not improve from 0.30074
 Epoch 59/100
- - 78s - loss: 0.2538 - acc: 0.9434 - val_loss: 0.3169 - val_acc: 0.9196
+ - 77s - loss: 0.2590 - acc: 0.9410 - val_loss: 0.3740 - val_acc: 0.9076
 
-Epoch 00059: val_loss did not improve from 0.28020
+Epoch 00059: val_loss did not improve from 0.30074
 Epoch 60/100
- - 78s - loss: 0.2560 - acc: 0.9419 - val_loss: 0.3232 - val_acc: 0.9209
+ - 78s - loss: 0.2578 - acc: 0.9416 - val_loss: 0.2955 - val_acc: 0.9281
 
-Epoch 00060: val_loss did not improve from 0.28020
+Epoch 00060: val_loss improved from 0.30074 to 0.29549, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 61/100
- - 79s - loss: 0.2531 - acc: 0.9420 - val_loss: 0.3986 - val_acc: 0.8949
+ - 77s - loss: 0.2546 - acc: 0.9416 - val_loss: 0.3105 - val_acc: 0.9201
 
-Epoch 00061: val_loss did not improve from 0.28020
+Epoch 00061: val_loss did not improve from 0.29549
 Epoch 62/100
- - 79s - loss: 0.2512 - acc: 0.9429 - val_loss: 0.3102 - val_acc: 0.9240
+ - 78s - loss: 0.2489 - acc: 0.9446 - val_loss: 0.3166 - val_acc: 0.9255
 
-Epoch 00062: val_loss did not improve from 0.28020
+Epoch 00062: val_loss did not improve from 0.29549
 Epoch 63/100
- - 79s - loss: 0.2492 - acc: 0.9438 - val_loss: 0.3154 - val_acc: 0.9244
+ - 78s - loss: 0.2523 - acc: 0.9421 - val_loss: 0.3531 - val_acc: 0.9140
 
-Epoch 00063: val_loss did not improve from 0.28020
+Epoch 00063: val_loss did not improve from 0.29549
 Epoch 64/100
- - 78s - loss: 0.2444 - acc: 0.9451 - val_loss: 0.3346 - val_acc: 0.9175
+ - 78s - loss: 0.2472 - acc: 0.9441 - val_loss: 0.2968 - val_acc: 0.9281
 
-Epoch 00064: val_loss did not improve from 0.28020
+Epoch 00064: val_loss did not improve from 0.29549
 Epoch 65/100
- - 79s - loss: 0.2414 - acc: 0.9457 - val_loss: 0.3045 - val_acc: 0.9239
+ - 77s - loss: 0.2451 - acc: 0.9451 - val_loss: 0.3794 - val_acc: 0.8992
 
-Epoch 00065: val_loss did not improve from 0.28020
+Epoch 00065: val_loss did not improve from 0.29549
 Epoch 66/100
- - 79s - loss: 0.2446 - acc: 0.9448 - val_loss: 0.3180 - val_acc: 0.9175
+ - 78s - loss: 0.2419 - acc: 0.9464 - val_loss: 0.2855 - val_acc: 0.9304
 
-Epoch 00066: val_loss did not improve from 0.28020
+Epoch 00066: val_loss improved from 0.29549 to 0.28546, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 67/100
- - 78s - loss: 0.2394 - acc: 0.9463 - val_loss: 0.2806 - val_acc: 0.9390
+ - 77s - loss: 0.2427 - acc: 0.9451 - val_loss: 0.3001 - val_acc: 0.9253
 
-Epoch 00067: val_loss did not improve from 0.28020
+Epoch 00067: val_loss did not improve from 0.28546
 Epoch 68/100
- - 79s - loss: 0.2350 - acc: 0.9474 - val_loss: 0.3282 - val_acc: 0.9166
+ - 78s - loss: 0.2393 - acc: 0.9462 - val_loss: 0.2800 - val_acc: 0.9328
 
-Epoch 00068: val_loss did not improve from 0.28020
+Epoch 00068: val_loss improved from 0.28546 to 0.28002, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 69/100
- - 78s - loss: 0.2328 - acc: 0.9485 - val_loss: 0.3116 - val_acc: 0.9201
+ - 78s - loss: 0.2362 - acc: 0.9474 - val_loss: 0.3043 - val_acc: 0.9244
 
-Epoch 00069: val_loss did not improve from 0.28020
+Epoch 00069: val_loss did not improve from 0.28002
 Epoch 70/100
- - 79s - loss: 0.2301 - acc: 0.9489 - val_loss: 0.3540 - val_acc: 0.9099
+ - 78s - loss: 0.2343 - acc: 0.9484 - val_loss: 0.3022 - val_acc: 0.9269
 
-Epoch 00070: val_loss did not improve from 0.28020
+Epoch 00070: val_loss did not improve from 0.28002
 Epoch 71/100
- - 78s - loss: 0.2294 - acc: 0.9497 - val_loss: 0.2932 - val_acc: 0.9312
+ - 78s - loss: 0.2315 - acc: 0.9486 - val_loss: 0.3072 - val_acc: 0.9215
 
-Epoch 00071: val_loss did not improve from 0.28020
+Epoch 00071: val_loss did not improve from 0.28002
 Epoch 72/100
- - 79s - loss: 0.2243 - acc: 0.9500 - val_loss: 0.3371 - val_acc: 0.9133
+ - 78s - loss: 0.2294 - acc: 0.9485 - val_loss: 0.2738 - val_acc: 0.9330
 
-Epoch 00072: val_loss did not improve from 0.28020
+Epoch 00072: val_loss improved from 0.28002 to 0.27377, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 73/100
- - 79s - loss: 0.2224 - acc: 0.9507 - val_loss: 0.2942 - val_acc: 0.9307
+ - 77s - loss: 0.2236 - acc: 0.9513 - val_loss: 0.2825 - val_acc: 0.9349
 
-Epoch 00073: val_loss did not improve from 0.28020
+Epoch 00073: val_loss did not improve from 0.27377
 Epoch 74/100
- - 79s - loss: 0.2238 - acc: 0.9503 - val_loss: 0.2986 - val_acc: 0.9295
+ - 77s - loss: 0.2247 - acc: 0.9508 - val_loss: 0.2989 - val_acc: 0.9274
 
-Epoch 00074: val_loss did not improve from 0.28020
+Epoch 00074: val_loss did not improve from 0.27377
 Epoch 75/100
- - 79s - loss: 0.2186 - acc: 0.9524 - val_loss: 0.2879 - val_acc: 0.9304
+ - 78s - loss: 0.2201 - acc: 0.9519 - val_loss: 0.3168 - val_acc: 0.9229
 
-Epoch 00075: val_loss did not improve from 0.28020
+Epoch 00075: val_loss did not improve from 0.27377
 Epoch 76/100
- - 79s - loss: 0.2115 - acc: 0.9545 - val_loss: 0.2712 - val_acc: 0.9333
+ - 77s - loss: 0.2189 - acc: 0.9519 - val_loss: 0.3046 - val_acc: 0.9231
 
-Epoch 00076: val_loss improved from 0.28020 to 0.27118, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00076: val_loss did not improve from 0.27377
 Epoch 77/100
- - 78s - loss: 0.2127 - acc: 0.9538 - val_loss: 0.2779 - val_acc: 0.9331
+ - 77s - loss: 0.2149 - acc: 0.9533 - val_loss: 0.3196 - val_acc: 0.9237
 
-Epoch 00077: val_loss did not improve from 0.27118
+Epoch 00077: val_loss did not improve from 0.27377
 Epoch 78/100
- - 78s - loss: 0.2104 - acc: 0.9545 - val_loss: 0.2679 - val_acc: 0.9334
+ - 78s - loss: 0.2115 - acc: 0.9550 - val_loss: 0.3135 - val_acc: 0.9226
 
-Epoch 00078: val_loss improved from 0.27118 to 0.26794, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00078: val_loss did not improve from 0.27377
 Epoch 79/100
- - 79s - loss: 0.2074 - acc: 0.9548 - val_loss: 0.3079 - val_acc: 0.9253
+ - 77s - loss: 0.2074 - acc: 0.9559 - val_loss: 0.2860 - val_acc: 0.9311
 
-Epoch 00079: val_loss did not improve from 0.26794
+Epoch 00079: val_loss did not improve from 0.27377
 Epoch 80/100
- - 78s - loss: 0.2000 - acc: 0.9580 - val_loss: 0.2748 - val_acc: 0.9349
+ - 78s - loss: 0.2037 - acc: 0.9565 - val_loss: 0.2793 - val_acc: 0.9326
 
-Epoch 00080: val_loss did not improve from 0.26794
+Epoch 00080: val_loss did not improve from 0.27377
 Epoch 81/100
- - 78s - loss: 0.2003 - acc: 0.9570 - val_loss: 0.2680 - val_acc: 0.9352
+ - 77s - loss: 0.2010 - acc: 0.9571 - val_loss: 0.3036 - val_acc: 0.9232
 
-Epoch 00081: val_loss did not improve from 0.26794
+Epoch 00081: val_loss did not improve from 0.27377
 Epoch 82/100
- - 78s - loss: 0.1966 - acc: 0.9584 - val_loss: 0.2727 - val_acc: 0.9326
+ - 78s - loss: 0.2016 - acc: 0.9570 - val_loss: 0.2965 - val_acc: 0.9263
 
-Epoch 00082: val_loss did not improve from 0.26794
+Epoch 00082: val_loss did not improve from 0.27377
 Epoch 83/100
- - 78s - loss: 0.1914 - acc: 0.9607 - val_loss: 0.2888 - val_acc: 0.9323
+ - 77s - loss: 0.1946 - acc: 0.9592 - val_loss: 0.2715 - val_acc: 0.9398
 
-Epoch 00083: val_loss did not improve from 0.26794
+Epoch 00083: val_loss improved from 0.27377 to 0.27146, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 84/100
- - 78s - loss: 0.1884 - acc: 0.9611 - val_loss: 0.2900 - val_acc: 0.9308
+ - 78s - loss: 0.1904 - acc: 0.9602 - val_loss: 0.2754 - val_acc: 0.9381
 
-Epoch 00084: val_loss did not improve from 0.26794
+Epoch 00084: val_loss did not improve from 0.27146
 Epoch 85/100
- - 78s - loss: 0.1861 - acc: 0.9610 - val_loss: 0.2459 - val_acc: 0.9457
+ - 77s - loss: 0.1882 - acc: 0.9614 - val_loss: 0.2802 - val_acc: 0.9330
 
-Epoch 00085: val_loss improved from 0.26794 to 0.24594, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
+Epoch 00085: val_loss did not improve from 0.27146
 Epoch 86/100
- - 79s - loss: 0.1814 - acc: 0.9632 - val_loss: 0.2860 - val_acc: 0.9290
+ - 77s - loss: 0.1859 - acc: 0.9627 - val_loss: 0.2981 - val_acc: 0.9333
 
-Epoch 00086: val_loss did not improve from 0.24594
+Epoch 00086: val_loss did not improve from 0.27146
 Epoch 87/100
- - 78s - loss: 0.1779 - acc: 0.9637 - val_loss: 0.2798 - val_acc: 0.9347
+ - 77s - loss: 0.1785 - acc: 0.9638 - val_loss: 0.2792 - val_acc: 0.9347
 
-Epoch 00087: val_loss did not improve from 0.24594
+Epoch 00087: val_loss did not improve from 0.27146
 Epoch 88/100
- - 79s - loss: 0.1721 - acc: 0.9660 - val_loss: 0.2906 - val_acc: 0.9321
+ - 78s - loss: 0.1771 - acc: 0.9649 - val_loss: 0.2838 - val_acc: 0.9331
 
-Epoch 00088: val_loss did not improve from 0.24594
+Epoch 00088: val_loss did not improve from 0.27146
 Epoch 89/100
- - 79s - loss: 0.1693 - acc: 0.9661 - val_loss: 0.2553 - val_acc: 0.9408
+ - 77s - loss: 0.1749 - acc: 0.9644 - val_loss: 0.2740 - val_acc: 0.9342
 
-Epoch 00089: val_loss did not improve from 0.24594
+Epoch 00089: val_loss did not improve from 0.27146
 Epoch 90/100
- - 78s - loss: 0.1653 - acc: 0.9671 - val_loss: 0.2733 - val_acc: 0.9360
+ - 77s - loss: 0.1684 - acc: 0.9677 - val_loss: 0.2981 - val_acc: 0.9311
 
-Epoch 00090: val_loss did not improve from 0.24594
+Epoch 00090: val_loss did not improve from 0.27146
 Epoch 91/100
- - 78s - loss: 0.1624 - acc: 0.9682 - val_loss: 0.2648 - val_acc: 0.9406
+ - 78s - loss: 0.1630 - acc: 0.9684 - val_loss: 0.3183 - val_acc: 0.9290
 
-Epoch 00091: val_loss did not improve from 0.24594
+Epoch 00091: val_loss did not improve from 0.27146
 Epoch 92/100
- - 79s - loss: 0.1559 - acc: 0.9715 - val_loss: 0.2633 - val_acc: 0.9391
+ - 77s - loss: 0.1620 - acc: 0.9686 - val_loss: 0.2781 - val_acc: 0.9375
 
-Epoch 00092: val_loss did not improve from 0.24594
+Epoch 00092: val_loss did not improve from 0.27146
 Epoch 93/100
- - 78s - loss: 0.1504 - acc: 0.9723 - val_loss: 0.2648 - val_acc: 0.9425
+ - 78s - loss: 0.1559 - acc: 0.9713 - val_loss: 0.2677 - val_acc: 0.9382
 
-Epoch 00093: val_loss did not improve from 0.24594
+Epoch 00093: val_loss improved from 0.27146 to 0.26768, saving model to keras_model/fmnist/miniResNet/best_chkpt.hdf5
 Epoch 94/100
- - 78s - loss: 0.1465 - acc: 0.9742 - val_loss: 0.2697 - val_acc: 0.9379
+ - 78s - loss: 0.1479 - acc: 0.9742 - val_loss: 0.2807 - val_acc: 0.9371
 
-Epoch 00094: val_loss did not improve from 0.24594
+Epoch 00094: val_loss did not improve from 0.26768
 Epoch 95/100
- - 79s - loss: 0.1427 - acc: 0.9752 - val_loss: 0.2787 - val_acc: 0.9414
+ - 77s - loss: 0.1434 - acc: 0.9756 - val_loss: 0.2792 - val_acc: 0.9344
 
-Epoch 00095: val_loss did not improve from 0.24594
+Epoch 00095: val_loss did not improve from 0.26768
 Epoch 96/100
- - 79s - loss: 0.1385 - acc: 0.9765 - val_loss: 0.2619 - val_acc: 0.9407
+ - 78s - loss: 0.1383 - acc: 0.9777 - val_loss: 0.2815 - val_acc: 0.9359
 
-Epoch 00096: val_loss did not improve from 0.24594
+Epoch 00096: val_loss did not improve from 0.26768
 Epoch 97/100
- - 78s - loss: 0.1317 - acc: 0.9788 - val_loss: 0.2642 - val_acc: 0.9404
+ - 78s - loss: 0.1343 - acc: 0.9781 - val_loss: 0.2928 - val_acc: 0.9365
 
-Epoch 00097: val_loss did not improve from 0.24594
+Epoch 00097: val_loss did not improve from 0.26768
 Epoch 98/100
- - 78s - loss: 0.1260 - acc: 0.9808 - val_loss: 0.2821 - val_acc: 0.9420
+ - 78s - loss: 0.1282 - acc: 0.9805 - val_loss: 0.2784 - val_acc: 0.9357
 
-Epoch 00098: val_loss did not improve from 0.24594
+Epoch 00098: val_loss did not improve from 0.26768
 Epoch 99/100
- - 79s - loss: 0.1232 - acc: 0.9825 - val_loss: 0.2623 - val_acc: 0.9432
+ - 78s - loss: 0.1259 - acc: 0.9814 - val_loss: 0.2772 - val_acc: 0.9404
 
-Epoch 00099: val_loss did not improve from 0.24594
+Epoch 00099: val_loss did not improve from 0.26768
 Epoch 100/100
- - 78s - loss: 0.1185 - acc: 0.9837 - val_loss: 0.2647 - val_acc: 0.9446
+ - 78s - loss: 0.1210 - acc: 0.9834 - val_loss: 0.2921 - val_acc: 0.9369
 
-Epoch 00100: val_loss did not improve from 0.24594
+Epoch 00100: val_loss did not improve from 0.26768
 
 
-Elapsed time for Keras training (s):  7888.185643
+Elapsed time for Keras training (s):  7791.846023
 
 
 [INFO] evaluating network on Test and Validation datasets...
@@ -437,9 +437,9 @@ Elapsed time for Keras training (s):  7888.185643
 4480/5000 [=========================>....] - ETA: 0s
 4736/5000 [===========================>..] - ETA: 0s
 4992/5000 [============================>.] - ETA: 0s
-5000/5000 [==============================] - 2s 323us/step
-Validation Loss: 0.263
-validation Accuracy: 0.944
+5000/5000 [==============================] - 2s 319us/step
+Validation Loss: 0.279
+validation Accuracy: 0.938
 
  128/5000 [..............................] - ETA: 1s
  384/5000 [=>............................] - ETA: 1s
@@ -461,21 +461,21 @@ validation Accuracy: 0.944
 4480/5000 [=========================>....] - ETA: 0s
 4736/5000 [===========================>..] - ETA: 0s
 4992/5000 [============================>.] - ETA: 0s
-5000/5000 [==============================] - 2s 323us/step
+5000/5000 [==============================] - 2s 320us/step
 Using TensorFlow backend.
-Test Loss: 0.260
+Test Loss: 0.254
 Test Accuracy: 0.949
               precision    recall  f1-score   support
 
-         top       0.92      0.89      0.90       500
-     trouser       1.00      0.99      0.99       500
-    pullover       0.96      0.89      0.93       500
-       dress       0.97      0.92      0.95       500
-        coat       0.92      0.97      0.95       500
-      sandal       0.99      0.99      0.99       500
-       shirt       0.81      0.89      0.85       500
-     sneaker       0.97      0.97      0.97       500
-         bag       0.99      1.00      0.99       500
+         top       0.91      0.89      0.90       500
+     trouser       0.99      0.99      0.99       500
+    pullover       0.95      0.91      0.93       500
+       dress       0.97      0.91      0.94       500
+        coat       0.94      0.96      0.95       500
+      sandal       0.98      0.99      0.99       500
+       shirt       0.81      0.88      0.85       500
+     sneaker       0.98      0.97      0.97       500
+         bag       0.99      1.00      1.00       500
    ankleBoot       0.97      0.97      0.97       500
 
    micro avg       0.95      0.95      0.95      5000

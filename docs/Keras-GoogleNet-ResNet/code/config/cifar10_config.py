@@ -5,6 +5,7 @@ Author: daniele.bagni@xilinx.com
 
 import os
 import numpy as np
+import cv2
 
 ###############################################################################
 # project folders
@@ -65,6 +66,21 @@ labelNames_list = ["airplane", "automobile", "bird", "cat", "deer", "dog", "frog
 ###############################################################################
 # global functions
 ###############################################################################
+
+_R_MEAN = 0
+_G_MEAN = 0
+_B_MEAN = 0
+
+MEANS = np.array([_B_MEAN,_G_MEAN,_R_MEAN],np.dtype(np.int32))
+
+def mean_image_subtraction(image, means):
+  B, G, R = cv2.split(image)
+  B = B - means[0]
+  G = G - means[1]
+  R = R - means[2]
+  image = cv2.merge([R, G, B])
+  return image
+
 
 def Normalize(x_test):
     x_test  = np.asarray(x_test)

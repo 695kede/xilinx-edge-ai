@@ -66,8 +66,6 @@ echo "#####################################"
 echo "QUANTIZE miniResNet  on Fashion MNIST"
 echo "#####################################"
 
-source ~/scripts/activate_py36_decent190708.sh #patch for decent (190624 DNNDK)
-
 #miniResNet
 decent_q quantize \
 	 --input_frozen_graph ../freeze/fmnist/miniResNet/frozen_graph.pb \
@@ -80,7 +78,6 @@ decent_q quantize \
 	 --calib_iter 20 \
 	 --gpu 0  2>&1 | tee ../rpt/fmnist/4a_quant_miniResNet.log
 
-source ~/scripts/activate_py36_decentTF.sh
 
 echo "#####################################"
 echo "QUANTIZATION COMPLETED  on Fashion MNIST"

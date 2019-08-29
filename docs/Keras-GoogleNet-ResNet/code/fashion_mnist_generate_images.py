@@ -84,8 +84,6 @@ print("{n} images in original test  dataset".format(n=x_test.shape[0]))
 counter1 = np.array([0,0,0,0,0,0,0,0,0,0], dtype="uint32")
 
 
-
-x_train3 = np.zeros((x_train.shape[0],cfg.IMAGE_WIDTH,cfg.IMAGE_HEIGHT,3), dtype="uint8")
 num_train = 0
 for i in range (0, x_train.shape[0]):
     t_rgb_img = cv2.cvtColor(x_train[i], cv2.COLOR_GRAY2BGR)
@@ -100,7 +98,6 @@ for i in range (0, x_train.shape[0]):
         cv2.imwrite(filename2, rgb_img)
         imgList.append(local_filename)
     counter1[ int(y_train[int(i)]) ] = counter1[ int(y_train[int(i)]) ] +1
-    x_train3[i] = rgb_img
     num_train = num_train+1
 
 
@@ -108,7 +105,6 @@ for i in range(0, len(imgList)):
     f.write(imgList[i]+"\n")
 f.close()
 
-x_test3 = np.zeros((x_test.shape[0],cfg.IMAGE_WIDTH,cfg.IMAGE_HEIGHT,3), dtype="uint8")
 for i in range (0, x_test.shape[0]):
     t_rgb_img = cv2.cvtColor(x_test[i], cv2.COLOR_GRAY2BGR)
     rgb_img = cv2.resize(t_rgb_img, (cfg.IMAGE_WIDTH,cfg.IMAGE_HEIGHT), interpolation=cv2.INTER_AREA)    
@@ -117,13 +113,10 @@ for i in range (0, x_test.shape[0]):
     filename3=os.path.join(TEST_DIR, class_name+"/"+class_name+'_'+str(i)+'.png')
     cv2.imwrite(filename3, rgb_img)
     counter1[ int(y_test[int(i)]) ] = counter1[ int(y_test[int(i)]) ] +1
-    x_test3[i] = rgb_img
 
 #print("classes histogram in train and test dataset: ", counter1)   #DeBuG
 
 #collect garbage to save memory
-del x_train3
-del x_test3
 del rgb_img
 gc.collect()
 

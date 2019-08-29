@@ -18,7 +18,7 @@ python2 ./check_runtime_top5_fashionmnist.py -i ./rpt/logfile_top5_miniGoogleNet
 
 ## launch script to check fps
 
-source run_fps_miniGoogleNet.sh 2>&1 | tee ./rpt/fps_fmnist_miniGoogleNet.txt
+source ./run_fps_miniGoogleNet.sh 2>&1 | tee ./rpt/fps_fmnist_miniGoogleNet.txt
 
 : '
 # archive everything and copy back to your host PC with ssh/scp

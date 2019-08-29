@@ -1,22 +1,32 @@
 
-DNNC Kernel Information
+DNNC Kernel topology "miniVggNet_kernel_graph.jpg" for network "miniVggNet"
+DNNC kernel list info for network "miniVggNet"
+                               Kernel ID : Name
+                                       0 : miniVggNet_0
+                                       1 : miniVggNet_1
 
-1. Overview
-kernel numbers  : 2
-kernel topology : miniVggNet_kernel_graph.jpg
+                             Kernel Name : miniVggNet_0
+--------------------------------------------------------------------------------
+                             Kernel Type : DPUKernel
+                               Code Size : 0.02MB
+                              Param Size : 2.07MB
+                           Workload MACs : 53.16MOPS
+                         IO Memory Space : 0.04MB
+                              Mean Value : 0, 0, 0, 
+                              Node Count : 6
+                            Tensor Count : 7
+                    Input Node(s)(H*W*C)
+                 conv2d_1_convolution(0) : 32*32*3
+                   Output Node(s)(H*W*C)
+                       dense_2_MatMul(0) : 1*1*10
 
-2. Kernel Description in Detail
-kernel id       : 0
-kernel name     : miniVggNet_0
-type            : DPUKernel
-nodes           : NA
-input node(s)   : conv2d_1_convolution(0) 
-output node(s)  : dense_2_MatMul(0) 
 
-kernel id       : 1
-kernel name     : miniVggNet_1
-type            : CPUKernel
-nodes           : NA
-input node(s)   : activation_6_Softmax 
-output node(s)  : activation_6_Softmax 
+                             Kernel Name : miniVggNet_1
+--------------------------------------------------------------------------------
+                             Kernel Type : CPUKernel
+                    Input Node(s)(H*W*C)
+                    activation_6_Softmax : 1*1*10
+                   Output Node(s)(H*W*C)
+                    activation_6_Softmax : 1*1*10
+
 

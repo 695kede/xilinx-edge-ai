@@ -2,6 +2,7 @@ import cv2
 import os
 import numpy as np
 
+from keras.preprocessing.image import img_to_array
 from config import cifar10_config as cfg
 
 
@@ -12,38 +13,6 @@ print("CALIB DIR ", calib_image_dir)
 
 calib_batch_size = 50
 
-_R_MEAN = 0
-_G_MEAN = 0
-_B_MEAN = 0
-
-MEANS = np.array([_B_MEAN,_G_MEAN,_R_MEAN],np.dtype(np.int32))
-
-def mean_image_subtraction(image, means):
-  B, G, R = cv2.split(image)
-  B = B - means[0]
-  G = G - means[1]
-  R = R - means[2]
-  image = cv2.merge([R, G, B])
-  return image
-
-def central_crop(image, crop_height, crop_width):
-  image_height = image.shape[0]
-  image_width = image.shape[1]
-
-  offset_height = (image_height - crop_height) // 2
-  offset_width = (image_width - crop_width) // 2
-
-  return image[offset_height:offset_height + crop_height, offset_width:
-               offset_width + crop_width]
-
-'''
-def normalize(image):
-  image=image/cfg.NORM_FACTOR
-  image=image-0.5
-  image=image*2
-  return image
-'''
-
 def calib_input(iter):
   images = []
   line = open(calib_image_list).readlines()
@@ -53,20 +22,18 @@ def calib_input(iter):
       #print(curline)
       calib_image_name = curline.strip()
 
-      # read image as grayscale, returns numpy array (28,28)
-      #image = cv2.imread(calib_image_dir + calib_image_name, cv2.IMREAD_GRAYSCALE)
-
-      # read image as rgb, returns numpy array (28,28, 3)
+      # read image as rgb, returns numpy array (32,32, 3)
       image = cv2.imread(calib_image_dir + calib_image_name)
+      ##swap channels: from BGR to RGB
+      #B, G, R = cv2.split(image)
+      #image = cv2.merge([R, G, B])
+      
+      img_array = img_to_array(image, data_format=None)
 
       # scale the pixel values to range 0 to 1.0
-      #image = image/255.0
-      image2 = cfg.Normalize(image)
-      #image = central_crop(image, 28, 28) #DB
-      #image = mean_image_subtraction(image, MEANS) #DB
-      #image = cfg.ScaleTo1(image) #DB
+      image2 = cfg.Normalize(img_array)
 
-      # reshape numpy array to be (28,28,3)
+      # reshape numpy array to be (32,32,3)
       image2 = image2.reshape((image2.shape[0], image2.shape[1], 3))
       images.append(image2)
 

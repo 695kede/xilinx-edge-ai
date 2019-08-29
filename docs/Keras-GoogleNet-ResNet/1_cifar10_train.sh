@@ -5,14 +5,14 @@ echo "#####################################"
 echo "TRAIN & EVAL LeNet on CIFAR10"
 echo "#####################################"
 
-python code/train_cifar10.py --network LeNet --weights keras_model/cifar10/LeNet --epochs 5 --init_lr 0.01 --batch_size 32 2>&1 | tee rpt/cifar10/1_train_cifar10_LeNet.log
+python code/train_cifar10.py --network LeNet --weights keras_model/cifar10/LeNet --epochs 20 --init_lr 0.01 --batch_size 32 2>&1 | tee rpt/cifar10/1_train_cifar10_LeNet.log
 
 
 echo "#####################################"
 echo "TRAIN & EVAL miniVggNet  on CIFAR10"
 echo "#####################################"
 
-python code/train_cifar10.py --network miniVggNet --weights keras_model/cifar10/miniVggNet --epochs 25 --init_lr 0.01 --batch_size 64 2>&1 | tee rpt/cifar10/1_train_cifar10_miniVggNet.log
+python code/train_cifar10.py --network miniVggNet --weights keras_model/cifar10/miniVggNet --epochs 40 --init_lr 0.01 --batch_size 64 2>&1 | tee rpt/cifar10/1_train_cifar10_miniVggNet.log
 
 
 echo "#####################################"

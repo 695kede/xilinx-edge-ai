@@ -9,7 +9,7 @@ Author: Mark Harvey (mark.harvey@xilinx.com)
 Date:   28 May 2019
 
 Modified by Daniele Bagni (daniele.bagni@xilinx.com)
-Date:   12 June 2019
+Date:   27 Aug 2019
 '''
 
 import os
@@ -22,9 +22,13 @@ import numpy as np
 import cv2
 import gc # memory garbage collector #DB
 
+import tensorflow.contrib.decent_q
+
 from tensorflow.python.platform import gfile
+from keras.preprocessing.image import img_to_array
 
 from config import cifar10_config as cfg #DB
+
 
 #DB
 DATAS_DIR = cfg.DATASET_DIR
@@ -45,6 +49,11 @@ def graph_eval(input_graph_def, input_node, output_node):
     i = 0
     for img_path in test_img_paths:
         img = cv2.imread(img_path, cv2.IMREAD_COLOR)
+        ##swap channels: from BGR to RGB
+        #B, G, R = cv2.split(img)
+        #img = cv2.merge([R, G, B])
+        
+        img_array = img_to_array(img, data_format=None)        
 
         filename = os.path.basename(img_path)
         class_name = filename.split("_")[0]
@@ -53,17 +62,10 @@ def graph_eval(input_graph_def, input_node, output_node):
         #print("filename: ", img_path)
         #print("classname: ", class_name)
 
-        x_test[i] = img
+        x_test[i] = img_array
         y_test[i] = int(label)
         i = i + 1
 
-    '''
-    #normalize
-    x_test = x_test.astype(np.float32)
-    x_test = x_test/cfg.NORM_FACTOR
-    x_test = x_test -0.5
-    x_test = x_test *2
-    '''
     x_test = cfg.Normalize(x_test)
     #print(x_test[0])
 
@@ -111,7 +113,7 @@ def graph_eval(input_graph_def, input_node, output_node):
 def main(unused_argv):
     os.environ["CUDA_VISIBLE_DEVICES"] = FLAGS.gpu
     input_graph_def = tf.Graph().as_graph_def()
-    input_graph_def.ParseFromString(tf.gfile.FastGFile(FLAGS.graph, "rb").read())
+    input_graph_def.ParseFromString(tf.gfile.GFile(FLAGS.graph, "rb").read())
     graph_eval(input_graph_def, FLAGS.input_node, FLAGS.output_node)
 
 

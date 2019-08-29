@@ -1,15 +1,16 @@
-2019-07-10 20:52:00.276668: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
-2019-07-10 20:52:00.348888: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1392] Found device 0 with properties: 
+2019-08-28 01:03:15.568670: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
+2019-08-28 01:03:15.648292: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 0 with properties: 
 name: Quadro P6000 major: 6 minor: 1 memoryClockRate(GHz): 1.645
 pciBusID: 0000:65:00.0
-totalMemory: 23.86GiB freeMemory: 23.18GiB
-2019-07-10 20:52:00.348909: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
-2019-07-10 20:52:00.617640: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
-2019-07-10 20:52:00.617669: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
-2019-07-10 20:52:00.617673: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
-2019-07-10 20:52:00.618194: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22493 MB memory) -> physical GPU (device: 0, name: Quadro P6000, pci bus id: 0000:65:00.0, compute capability: 6.1)
+totalMemory: 23.86GiB freeMemory: 23.01GiB
+2019-08-28 01:03:15.648314: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
+2019-08-28 01:03:15.934325: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-08-28 01:03:15.934356: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 
+2019-08-28 01:03:15.934361: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N 
+2019-08-28 01:03:15.934920: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22318 MB memory) -> physical GPU (device: 0, name: Quadro P6000, pci bus id: 0000:65:00.0, compute capability: 6.1)
+Using TensorFlow backend.
 
- eval_graph.py runs from  /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/fashion-mnist
- Top 1 accuracy with test dataset: 0.9174
- Top 5 accuracy with test dataset: 0.9984
+ eval_graph.py runs from  /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/cifar10
+ Top 1 accuracy with validation set: 0.6684
+ Top 5 accuracy with validation set: 0.9720
 FINISHED!

@@ -1,72 +1,68 @@
-make: Warning: File 'Makefile' has modification time 5113372 s in the future
-rm -f -rf /root/target_zcu102/fmnist/miniGoogleNet/build/*.o /root/target_zcu102/fmnist/miniGoogleNet/build
+rm -f -rf /home/root/target_zcu102/fmnist/miniGoogleNet/build/*.o /home/root/target_zcu102/fmnist/miniGoogleNet/build
 rm -f miniGoogleNet
-make: warning:  Clock skew detected.  Your build may be incomplete.
-make: Warning: File 'Makefile' has modification time 5113372 s in the future
-mkdir -p /root/target_zcu102/fmnist/miniGoogleNet/build
-g++ -c -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/target_zcu102/fmnist/miniGoogleNet/src/tf_main.cc -o /root/target_zcu102/fmnist/miniGoogleNet/build/tf_main.o
-/root/target_zcu102/fmnist/miniGoogleNet/src/tf_main.cc: In function ‘void TopK(const float*, int, int, std::vector<std::__cxx11::basic_string<char> >&)’:
-/root/target_zcu102/fmnist/miniGoogleNet/src/tf_main.cc:151:11: warning: unused variable ‘real_ki’ [-Wunused-variable]
+mkdir -p /home/root/target_zcu102/fmnist/miniGoogleNet/build
+g++ -c -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /home/root/target_zcu102/fmnist/miniGoogleNet/src/tf_main.cc -o /home/root/target_zcu102/fmnist/miniGoogleNet/build/tf_main.o
+/home/root/target_zcu102/fmnist/miniGoogleNet/src/tf_main.cc: In function 'void TopK(const float*, int, int, std::vector<std::__cxx11::basic_string<char> >&)':
+/home/root/target_zcu102/fmnist/miniGoogleNet/src/tf_main.cc:151:11: warning: unused variable 'real_ki' [-Wunused-variable]
        int real_ki = ki.second;
            ^~~~~~~
-/root/target_zcu102/fmnist/miniGoogleNet/src/tf_main.cc: In function ‘void set_input_image(DPUTask*, const string&, const cv::Mat&, float*)’:
-/root/target_zcu102/fmnist/miniGoogleNet/src/tf_main.cc:190:7: warning: unused variable ‘width’ [-Wunused-variable]
+/home/root/target_zcu102/fmnist/miniGoogleNet/src/tf_main.cc: In function 'void set_input_image(DPUTask*, const string&, const cv::Mat&, float*)':
+/home/root/target_zcu102/fmnist/miniGoogleNet/src/tf_main.cc:190:7: warning: unused variable 'width' [-Wunused-variable]
    int width = dpuGetTensorWidth(dpu_in);
        ^~~~~
-/root/target_zcu102/fmnist/miniGoogleNet/src/tf_main.cc:191:7: warning: unused variable ‘height’ [-Wunused-variable]
+/home/root/target_zcu102/fmnist/miniGoogleNet/src/tf_main.cc:191:7: warning: unused variable 'height' [-Wunused-variable]
    int height = dpuGetTensorHeight(dpu_in);
        ^~~~~~
-/root/target_zcu102/fmnist/miniGoogleNet/src/tf_main.cc:192:7: warning: unused variable ‘size’ [-Wunused-variable]
+/home/root/target_zcu102/fmnist/miniGoogleNet/src/tf_main.cc:192:7: warning: unused variable 'size' [-Wunused-variable]
    int size = dpuGetTensorSize(dpu_in);
        ^~~~
-g++ -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/target_zcu102/fmnist/miniGoogleNet/build/tf_main.o /root/target_zcu102/fmnist/miniGoogleNet/model/dpu_miniGoogleNet_0.elf -o miniGoogleNet -lopencv_dnn -lopencv_highgui -lopencv_shape -lopencv_video -lopencv_videoio -lopencv_imgcodecs -lopencv_imgproc -lopencv_core -lhineon -ln2cube -ldputils  -lpthread
-make: warning:  Clock skew detected.  Your build may be incomplete.
+g++ -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /home/root/target_zcu102/fmnist/miniGoogleNet/build/tf_main.o /home/root/target_zcu102/fmnist/miniGoogleNet/model/dpu_miniGoogleNet_0.elf -o miniGoogleNet -L/usr/share/OpenCV/3rdparty/lib -lopencv_stitching -lopencv_superres -lopencv_videostab -lopencv_aruco -lopencv_bgsegm -lopencv_bioinspired -lopencv_ccalib -lopencv_dpm -lopencv_face -lopencv_photo -lopencv_fuzzy -lopencv_hfs -lopencv_img_hash -lopencv_line_descriptor -lopencv_optflow -lopencv_reg -lopencv_rgbd -lopencv_saliency -lopencv_stereo -lopencv_structured_light -lopencv_phase_unwrapping -lopencv_surface_matching -lopencv_tracking -lopencv_datasets -lopencv_plot -lopencv_xfeatures2d -lopencv_shape -lopencv_video -lopencv_ml -lopencv_ximgproc -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_flann -lopencv_xobjdetect -lopencv_imgcodecs -lopencv_objdetect -lopencv_xphoto -lopencv_imgproc -lopencv_core -lhineon -ln2cube -ldputils  -lpthread
  
 ./miniGoogleNet 1
 now running ./fps_miniGoogleNet 1
 total image : 5000
-[Time]5896283us
-[FPS]847.992
+[Time]5285557us
+[FPS]945.974
  
 ./miniGoogleNet 2
 now running ./fps_miniGoogleNet 2
 total image : 5000
-[Time]3136422us
-[FPS]1594.17
+[Time]3055223us
+[FPS]1636.54
  
 ./miniGoogleNet 3
 now running ./fps_miniGoogleNet 3
 total image : 5000
-[Time]2364130us
-[FPS]2114.94
+[Time]2297703us
+[FPS]2176.09
  
 ./miniGoogleNet 4
 now running ./fps_miniGoogleNet 4
 total image : 5000
-[Time]2000707us
-[FPS]2499.12
+[Time]2092788us
+[FPS]2389.16
  
 ./miniGoogleNet 5
 now running ./fps_miniGoogleNet 5
 total image : 5000
-[Time]2001704us
-[FPS]2497.87
+[Time]2012072us
+[FPS]2485
  
 ./miniGoogleNet 6
 now running ./fps_miniGoogleNet 6
 total image : 5000
-[Time]1954158us
-[FPS]2558.65
+[Time]1989672us
+[FPS]2512.98
  
 ./miniGoogleNet 7
 now running ./fps_miniGoogleNet 7
 total image : 5000
-[Time]1976399us
-[FPS]2529.85
+[Time]2018062us
+[FPS]2477.62
  
 ./miniGoogleNet 8
 now running ./fps_miniGoogleNet 8
 total image : 5000
-[Time]2071590us
-[FPS]2413.61
+[Time]2043372us
+[FPS]2446.94
  

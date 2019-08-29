@@ -2,7 +2,7 @@
 
 ## unpack the test images archive
 #tar -xvf ../../cifar10_test.tar.gz
-#mv fmnist_test ../../
+#mv cifar10_test ../../
 ln -nsf ../../cifar10_test ./test
 
 ## compile the executable for target board
@@ -17,7 +17,7 @@ python2 ./check_runtime_top5_cifar10.py -i ./rpt/logfile_top5_miniResNet.txt  2>
 
 
 ## launch script to check fps
-source run_fps_miniResNet.sh 2>&1 | tee ./rpt/fps_cifar10_miniResNet.txt
+source ./run_fps_miniResNet.sh 2>&1 | tee ./rpt/fps_cifar10_miniResNet.txt
 
 : '
 # archive everything and copy back to your host PC with ssh/scp

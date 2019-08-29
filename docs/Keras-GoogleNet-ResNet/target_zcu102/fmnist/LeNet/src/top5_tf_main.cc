@@ -174,8 +174,8 @@ void normalize_image(const Mat& image, int8_t* data, float scale, float* mean) {
   for(int i = 0; i < 3; ++i) {
     for(int j = 0; j < image.rows; ++j) {
       for(int k = 0; k < image.cols; ++k) {
-	data[j*image.rows*3+k*3+2-i] = (float(image.at<Vec3b>(j,k)[i])/255.0 - 0.5)*2 * scale;
-	//data[j*image.rows*3+k*3+2-i] = (float(image.at<Vec3b>(j,k)[i])/255.0 ) * scale;
+	//data[j*image.rows*3+k*3+2-i] = (float(image.at<Vec3b>(j,k)[i])/255.0 - 0.5)*2 * scale;
+	data[j*image.rows*3+k*3+i] = (float(image.at<Vec3b>(j,k)[i])/255.0f - 0.5f)*2 * scale;
       }
      }
    }

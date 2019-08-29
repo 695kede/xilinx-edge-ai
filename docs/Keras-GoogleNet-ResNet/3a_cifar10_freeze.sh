@@ -34,12 +34,12 @@ freeze_graph --input_graph=./tf_chkpts/cifar10/miniVggNet/infer_graph.pb \
              --output_node_names=activation_6/Softmax \
              2>&1 | tee rpt/cifar10/3a_freeze_graph_miniVggNet.log
 
+
 # check possible input/output node names
 echo "#####################################"
 echo "INSPECT FROZEN GRAPH of miniVggNet on CIFAR10"
 echo "#####################################"
 decent_q inspect --input_frozen_graph=./freeze/cifar10/miniVggNet/frozen_graph.pb
-
 
 # freeze trained graph
 echo "#####################################"
@@ -80,7 +80,6 @@ echo "#####################################"
 echo "INSPECT FROZEN GRAPH of miniResNet"
 echo "#####################################"
 decent_q inspect --input_frozen_graph=./freeze/cifar10/miniResNet/frozen_graph.pb
-
 
 
 echo "#####################################"

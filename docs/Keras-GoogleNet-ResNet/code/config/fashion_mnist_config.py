@@ -46,7 +46,7 @@ TB_LOG_DIR = os.path.join(SCRIPT_DIR, "tb_logs/fmnist")
 NUM_CLASSES      =    10
 NUM_VAL_IMAGES   =  5000
 NUM_TEST_IMAGES  =  5000
-NUM_TRAIN_IMAGES = 50000
+NUM_TRAIN_IMAGES = 60000
 
 #Size of images
 IMAGE_WIDTH  = 32

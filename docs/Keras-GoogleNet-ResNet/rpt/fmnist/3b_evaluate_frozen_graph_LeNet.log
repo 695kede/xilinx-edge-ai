@@ -1,48 +1,15 @@
-2019-07-11 00:19:49.915762: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
-2019-07-11 00:19:50.000412: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1392] Found device 0 with properties: 
+2019-08-28 04:27:58.235244: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
+2019-08-28 04:27:58.318363: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 0 with properties: 
 name: Quadro P6000 major: 6 minor: 1 memoryClockRate(GHz): 1.645
 pciBusID: 0000:65:00.0
-totalMemory: 23.86GiB freeMemory: 23.18GiB
-2019-07-11 00:19:50.000434: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
-2019-07-11 00:19:50.256085: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
-2019-07-11 00:19:50.256114: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
-2019-07-11 00:19:50.256119: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
-2019-07-11 00:19:50.256648: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22493 MB memory) -> physical GPU (device: 0, name: Quadro P6000, pci bus id: 0000:65:00.0, compute capability: 6.1)
-Optimizing fused batch norm node name: "batch_normalization_2/FusedBatchNorm_1"
-op: "FusedBatchNorm"
-input: "conv2d_2/BiasAdd"
-input: "batch_normalization_2/gamma"
-input: "batch_normalization_2/beta"
-input: "batch_normalization_2/moving_mean"
-input: "batch_normalization_2/moving_variance"
-device: "/job:localhost/replica:0/task:0/device:GPU:0"
-attr {
-  key: "T"
-  value {
-    type: DT_FLOAT
-  }
-}
-attr {
-  key: "data_format"
-  value {
-    s: "NHWC"
-  }
-}
-attr {
-  key: "epsilon"
-  value {
-    f: 2e-05
-  }
-}
-attr {
-  key: "is_training"
-  value {
-    b: false
-  }
-}
-
+totalMemory: 23.86GiB freeMemory: 23.01GiB
+2019-08-28 04:27:58.318385: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
+2019-08-28 04:27:58.606473: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-08-28 04:27:58.606505: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 
+2019-08-28 04:27:58.606509: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N 
+2019-08-28 04:27:58.607026: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22318 MB memory) -> physical GPU (device: 0, name: Quadro P6000, pci bus id: 0000:65:00.0, compute capability: 6.1)
 
  eval_graph.py runs from  /home/danieleb/ML/TF/KERAS-CUSTOM-CNN/dataset/fashion-mnist
- Top 1 accuracy with test dataset: 0.9194
- Top 5 accuracy with test dataset: 0.9986
+ Top 1 accuracy with test dataset: 0.9202
+ Top 5 accuracy with test dataset: 0.9976
 FINISHED!

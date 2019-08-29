@@ -5,11 +5,17 @@
 
 cd ./code
 
+echo "##########################################################################"
+echo "QUANTIZATION WITH DECENT_Q"
+echo "##########################################################################"
+decent_q --version
+
 
 # run quantization
 echo "##########################################################################"
 echo "QUANTIZE LeNet on CIFAR10"
 echo "##########################################################################"
+
 
 # LeNet
 decent_q quantize \
@@ -40,7 +46,6 @@ decent_q quantize \
 	 --gpu 0  2>&1 | tee ../rpt/cifar10/4a_quant_miniVggNet.log
 
 
-
 echo "##########################################################################"
 echo "QUANTIZE miniGoogleNet  on CIFAR10"
 echo "##########################################################################"
@@ -62,7 +67,6 @@ echo "##########################################################################
 echo "QUANTIZE miniResNet  on CIFAR10"
 echo "##########################################################################"
 
-source ~/scripts/activate_py36_decent190708.sh #patch for decent (190624 DNNDK)
 
 #miniResNet
 decent_q quantize \
@@ -76,8 +80,6 @@ decent_q quantize \
 	 --calib_iter 20 \
 	 --gpu 0  2>&1 | tee ../rpt/cifar10/4a_quant_miniResNet.log
 
-
-source ~/scripts/activate_py36_decentTF.sh
 
 
 echo "##########################################################################"

@@ -1,23 +1,33 @@
-[0;33m[DNNC][Warning] layer [activation_4_Softmax] is not supported in DPU, deploy it in CPU instead.
+[0;33m[DNNC][Warning] layer [activation_4_Softmax] (type: Softmax) is not supported in DPU, deploy it in CPU instead.
 [m
-DNNC Kernel Information
+DNNC Kernel topology "LeNet_kernel_graph.jpg" for network "LeNet"
+DNNC kernel list info for network "LeNet"
+                               Kernel ID : Name
+                                       0 : LeNet_0
+                                       1 : LeNet_1
 
-1. Overview
-kernel numbers  : 2
-kernel topology : LeNet_kernel_graph.jpg
+                             Kernel Name : LeNet_0
+--------------------------------------------------------------------------------
+                             Kernel Type : DPUKernel
+                               Code Size : 0.01MB
+                              Param Size : 6.11MB
+                           Workload MACs : 20.49MOPS
+                         IO Memory Space : 0.02MB
+                              Mean Value : 0, 0, 0, 
+                              Node Count : 3
+                            Tensor Count : 4
+                    Input Node(s)(H*W*C)
+                 conv2d_2_convolution(0) : 32*32*3
+                   Output Node(s)(H*W*C)
+                       dense_2_MatMul(0) : 1*1*10
 
-2. Kernel Description in Detail
-kernel id       : 0
-kernel name     : LeNet_0
-type            : DPUKernel
-nodes           : NA
-input node(s)   : conv2d_2_convolution(0) 
-output node(s)  : dense_2_MatMul(0) 
 
-kernel id       : 1
-kernel name     : LeNet_1
-type            : CPUKernel
-nodes           : NA
-input node(s)   : activation_4_Softmax 
-output node(s)  : activation_4_Softmax 
+                             Kernel Name : LeNet_1
+--------------------------------------------------------------------------------
+                             Kernel Type : CPUKernel
+                    Input Node(s)(H*W*C)
+                    activation_4_Softmax : 1*1*10
+                   Output Node(s)(H*W*C)
+                    activation_4_Softmax : 1*1*10
+
 

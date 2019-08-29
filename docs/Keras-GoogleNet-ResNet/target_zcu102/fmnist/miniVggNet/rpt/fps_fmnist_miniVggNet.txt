@@ -1,68 +1,68 @@
-rm -f -rf /root/target_zcu102/fmnist/miniVggNet/build/*.o /root/target_zcu102/fmnist/miniVggNet/build
+rm -f -rf /home/root/target_zcu102/fmnist/miniVggNet/build/*.o /home/root/target_zcu102/fmnist/miniVggNet/build
 rm -f miniVggNet
-mkdir -p /root/target_zcu102/fmnist/miniVggNet/build
-g++ -c -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/target_zcu102/fmnist/miniVggNet/src/tf_main.cc -o /root/target_zcu102/fmnist/miniVggNet/build/tf_main.o
-/root/target_zcu102/fmnist/miniVggNet/src/tf_main.cc: In function ‘void TopK(const float*, int, int, std::vector<std::__cxx11::basic_string<char> >&)’:
-/root/target_zcu102/fmnist/miniVggNet/src/tf_main.cc:151:11: warning: unused variable ‘real_ki’ [-Wunused-variable]
+mkdir -p /home/root/target_zcu102/fmnist/miniVggNet/build
+g++ -c -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /home/root/target_zcu102/fmnist/miniVggNet/src/tf_main.cc -o /home/root/target_zcu102/fmnist/miniVggNet/build/tf_main.o
+/home/root/target_zcu102/fmnist/miniVggNet/src/tf_main.cc: In function 'void TopK(const float*, int, int, std::vector<std::__cxx11::basic_string<char> >&)':
+/home/root/target_zcu102/fmnist/miniVggNet/src/tf_main.cc:151:11: warning: unused variable 'real_ki' [-Wunused-variable]
        int real_ki = ki.second;
            ^~~~~~~
-/root/target_zcu102/fmnist/miniVggNet/src/tf_main.cc: In function ‘void set_input_image(DPUTask*, const string&, const cv::Mat&, float*)’:
-/root/target_zcu102/fmnist/miniVggNet/src/tf_main.cc:190:7: warning: unused variable ‘width’ [-Wunused-variable]
+/home/root/target_zcu102/fmnist/miniVggNet/src/tf_main.cc: In function 'void set_input_image(DPUTask*, const string&, const cv::Mat&, float*)':
+/home/root/target_zcu102/fmnist/miniVggNet/src/tf_main.cc:190:7: warning: unused variable 'width' [-Wunused-variable]
    int width = dpuGetTensorWidth(dpu_in);
        ^~~~~
-/root/target_zcu102/fmnist/miniVggNet/src/tf_main.cc:191:7: warning: unused variable ‘height’ [-Wunused-variable]
+/home/root/target_zcu102/fmnist/miniVggNet/src/tf_main.cc:191:7: warning: unused variable 'height' [-Wunused-variable]
    int height = dpuGetTensorHeight(dpu_in);
        ^~~~~~
-/root/target_zcu102/fmnist/miniVggNet/src/tf_main.cc:192:7: warning: unused variable ‘size’ [-Wunused-variable]
+/home/root/target_zcu102/fmnist/miniVggNet/src/tf_main.cc:192:7: warning: unused variable 'size' [-Wunused-variable]
    int size = dpuGetTensorSize(dpu_in);
        ^~~~
-g++ -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/target_zcu102/fmnist/miniVggNet/build/tf_main.o /root/target_zcu102/fmnist/miniVggNet/model/dpu_miniVggNet_0.elf -o miniVggNet -lopencv_dnn -lopencv_highgui -lopencv_shape -lopencv_video -lopencv_videoio -lopencv_imgcodecs -lopencv_imgproc -lopencv_core -lhineon -ln2cube -ldputils  -lpthread
+g++ -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /home/root/target_zcu102/fmnist/miniVggNet/build/tf_main.o /home/root/target_zcu102/fmnist/miniVggNet/model/dpu_miniVggNet_0.elf -o miniVggNet -L/usr/share/OpenCV/3rdparty/lib -lopencv_stitching -lopencv_superres -lopencv_videostab -lopencv_aruco -lopencv_bgsegm -lopencv_bioinspired -lopencv_ccalib -lopencv_dpm -lopencv_face -lopencv_photo -lopencv_fuzzy -lopencv_hfs -lopencv_img_hash -lopencv_line_descriptor -lopencv_optflow -lopencv_reg -lopencv_rgbd -lopencv_saliency -lopencv_stereo -lopencv_structured_light -lopencv_phase_unwrapping -lopencv_surface_matching -lopencv_tracking -lopencv_datasets -lopencv_plot -lopencv_xfeatures2d -lopencv_shape -lopencv_video -lopencv_ml -lopencv_ximgproc -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_flann -lopencv_xobjdetect -lopencv_imgcodecs -lopencv_objdetect -lopencv_xphoto -lopencv_imgproc -lopencv_core -lhineon -ln2cube -ldputils  -lpthread
  
 ./miniVggNet 1
 now running ./fps_miniVggNet 1
 total image : 5000
-[Time]3901793us
-[FPS]1281.46
+[Time]3808688us
+[FPS]1312.79
  
 ./miniVggNet 2
 now running ./fps_miniVggNet 2
 total image : 5000
-[Time]1938380us
-[FPS]2579.47
+[Time]2324707us
+[FPS]2150.81
  
 ./miniVggNet 3
 now running ./fps_miniVggNet 3
 total image : 5000
-[Time]1423827us
-[FPS]3511.66
+[Time]1567651us
+[FPS]3189.49
  
 ./miniVggNet 4
 now running ./fps_miniVggNet 4
 total image : 5000
-[Time]1297627us
-[FPS]3853.19
+[Time]1443606us
+[FPS]3463.55
  
 ./miniVggNet 5
 now running ./fps_miniVggNet 5
 total image : 5000
-[Time]1245293us
-[FPS]4015.12
+[Time]1409986us
+[FPS]3546.13
  
 ./miniVggNet 6
 now running ./fps_miniVggNet 6
 total image : 5000
-[Time]1201654us
-[FPS]4160.93
+[Time]1379977us
+[FPS]3623.25
  
 ./miniVggNet 7
 now running ./fps_miniVggNet 7
 total image : 5000
-[Time]1285312us
-[FPS]3890.11
+[Time]1403551us
+[FPS]3562.39
  
 ./miniVggNet 8
 now running ./fps_miniVggNet 8
 total image : 5000
-[Time]1265549us
-[FPS]3950.85
+[Time]1433000us
+[FPS]3489.18
  

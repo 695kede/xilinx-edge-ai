@@ -1,10 +1,13 @@
-2019-07-11 00:19:32.875043: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
-2019-07-11 00:19:32.956452: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1392] Found device 0 with properties: 
+WARNING:tensorflow:From /home/danieleb/.virtualenvs/py36_dnndk3v1/lib/python3.6/site-packages/tensorflow/python/tools/freeze_graph.py:249: FastGFile.__init__ (from tensorflow.python.platform.gfile) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.gfile.GFile.
+2019-08-28 04:27:39.929522: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
+2019-08-28 04:27:40.028635: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 0 with properties: 
 name: Quadro P6000 major: 6 minor: 1 memoryClockRate(GHz): 1.645
 pciBusID: 0000:65:00.0
-totalMemory: 23.86GiB freeMemory: 23.18GiB
-2019-07-11 00:19:32.956473: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
-2019-07-11 00:19:33.235778: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
-2019-07-11 00:19:33.235806: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
-2019-07-11 00:19:33.235811: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
-2019-07-11 00:19:33.236337: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22493 MB memory) -> physical GPU (device: 0, name: Quadro P6000, pci bus id: 0000:65:00.0, compute capability: 6.1)
+totalMemory: 23.86GiB freeMemory: 23.01GiB
+2019-08-28 04:27:40.028658: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
+2019-08-28 04:27:40.336996: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-08-28 04:27:40.337028: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 
+2019-08-28 04:27:40.337033: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N 
+2019-08-28 04:27:40.337580: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22318 MB memory) -> physical GPU (device: 0, name: Quadro P6000, pci bus id: 0000:65:00.0, compute capability: 6.1)

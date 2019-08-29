@@ -1,72 +1,68 @@
-make: Warning: File 'Makefile' has modification time 5125702 s in the future
-rm -f -rf /root/target_zcu102/fmnist/LeNet/build/*.o /root/target_zcu102/fmnist/LeNet/build
+rm -f -rf /home/root/target_zcu102/fmnist/LeNet/build/*.o /home/root/target_zcu102/fmnist/LeNet/build
 rm -f LeNet
-make: warning:  Clock skew detected.  Your build may be incomplete.
-make: Warning: File 'Makefile' has modification time 5125702 s in the future
-mkdir -p /root/target_zcu102/fmnist/LeNet/build
-g++ -c -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/target_zcu102/fmnist/LeNet/src/tf_main.cc -o /root/target_zcu102/fmnist/LeNet/build/tf_main.o
-/root/target_zcu102/fmnist/LeNet/src/tf_main.cc: In function ‘void TopK(const float*, int, int, std::vector<std::__cxx11::basic_string<char> >&)’:
-/root/target_zcu102/fmnist/LeNet/src/tf_main.cc:151:11: warning: unused variable ‘real_ki’ [-Wunused-variable]
+mkdir -p /home/root/target_zcu102/fmnist/LeNet/build
+g++ -c -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /home/root/target_zcu102/fmnist/LeNet/src/tf_main.cc -o /home/root/target_zcu102/fmnist/LeNet/build/tf_main.o
+/home/root/target_zcu102/fmnist/LeNet/src/tf_main.cc: In function 'void TopK(const float*, int, int, std::vector<std::__cxx11::basic_string<char> >&)':
+/home/root/target_zcu102/fmnist/LeNet/src/tf_main.cc:151:11: warning: unused variable 'real_ki' [-Wunused-variable]
        int real_ki = ki.second;
            ^~~~~~~
-/root/target_zcu102/fmnist/LeNet/src/tf_main.cc: In function ‘void set_input_image(DPUTask*, const string&, const cv::Mat&, float*)’:
-/root/target_zcu102/fmnist/LeNet/src/tf_main.cc:190:7: warning: unused variable ‘width’ [-Wunused-variable]
+/home/root/target_zcu102/fmnist/LeNet/src/tf_main.cc: In function 'void set_input_image(DPUTask*, const string&, const cv::Mat&, float*)':
+/home/root/target_zcu102/fmnist/LeNet/src/tf_main.cc:190:7: warning: unused variable 'width' [-Wunused-variable]
    int width = dpuGetTensorWidth(dpu_in);
        ^~~~~
-/root/target_zcu102/fmnist/LeNet/src/tf_main.cc:191:7: warning: unused variable ‘height’ [-Wunused-variable]
+/home/root/target_zcu102/fmnist/LeNet/src/tf_main.cc:191:7: warning: unused variable 'height' [-Wunused-variable]
    int height = dpuGetTensorHeight(dpu_in);
        ^~~~~~
-/root/target_zcu102/fmnist/LeNet/src/tf_main.cc:192:7: warning: unused variable ‘size’ [-Wunused-variable]
+/home/root/target_zcu102/fmnist/LeNet/src/tf_main.cc:192:7: warning: unused variable 'size' [-Wunused-variable]
    int size = dpuGetTensorSize(dpu_in);
        ^~~~
-g++ -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /root/target_zcu102/fmnist/LeNet/build/tf_main.o /root/target_zcu102/fmnist/LeNet/model/dpu_LeNet_0.elf -o LeNet -lopencv_dnn -lopencv_highgui -lopencv_shape -lopencv_video -lopencv_videoio -lopencv_imgcodecs -lopencv_imgproc -lopencv_core -lhineon -ln2cube -ldputils  -lpthread
-make: warning:  Clock skew detected.  Your build may be incomplete.
+g++ -O2 -Wall -Wpointer-arith -std=c++11 -ffast-math -mcpu=cortex-a53 /home/root/target_zcu102/fmnist/LeNet/build/tf_main.o /home/root/target_zcu102/fmnist/LeNet/model/dpu_LeNet_0.elf -o LeNet -L/usr/share/OpenCV/3rdparty/lib -lopencv_stitching -lopencv_superres -lopencv_videostab -lopencv_aruco -lopencv_bgsegm -lopencv_bioinspired -lopencv_ccalib -lopencv_dpm -lopencv_face -lopencv_photo -lopencv_fuzzy -lopencv_hfs -lopencv_img_hash -lopencv_line_descriptor -lopencv_optflow -lopencv_reg -lopencv_rgbd -lopencv_saliency -lopencv_stereo -lopencv_structured_light -lopencv_phase_unwrapping -lopencv_surface_matching -lopencv_tracking -lopencv_datasets -lopencv_plot -lopencv_xfeatures2d -lopencv_shape -lopencv_video -lopencv_ml -lopencv_ximgproc -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_flann -lopencv_xobjdetect -lopencv_imgcodecs -lopencv_objdetect -lopencv_xphoto -lopencv_imgproc -lopencv_core -lhineon -ln2cube -ldputils  -lpthread
  
 ./LeNet 1
 now running ./fps_LeNet 1
 total image : 5000
-[Time]7365174us
-[FPS]678.871
+[Time]6910755us
+[FPS]723.51
  
 ./LeNet 2
 now running ./fps_LeNet 2
 total image : 5000
-[Time]3895964us
-[FPS]1283.38
+[Time]4153861us
+[FPS]1203.7
  
 ./LeNet 3
 now running ./fps_LeNet 3
 total image : 5000
-[Time]3103369us
-[FPS]1611.15
+[Time]3525532us
+[FPS]1418.23
  
 ./LeNet 4
 now running ./fps_LeNet 4
 total image : 5000
-[Time]2986901us
-[FPS]1673.98
+[Time]3295203us
+[FPS]1517.36
  
 ./LeNet 5
 now running ./fps_LeNet 5
 total image : 5000
-[Time]2975630us
-[FPS]1680.32
+[Time]3245650us
+[FPS]1540.52
  
 ./LeNet 6
 now running ./fps_LeNet 6
 total image : 5000
-[Time]2926386us
-[FPS]1708.59
+[Time]3238256us
+[FPS]1544.04
  
 ./LeNet 7
 now running ./fps_LeNet 7
 total image : 5000
-[Time]2982593us
-[FPS]1676.39
+[Time]3272172us
+[FPS]1528.04
  
 ./LeNet 8
 now running ./fps_LeNet 8
 total image : 5000
-[Time]2997646us
-[FPS]1667.98
+[Time]3271180us
+[FPS]1528.5
  

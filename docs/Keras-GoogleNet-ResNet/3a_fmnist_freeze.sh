@@ -18,7 +18,7 @@ freeze_graph --input_graph=./tf_chkpts/fmnist/LeNet/infer_graph.pb \
 echo "#####################################"
 echo "INSPECT FROZEN GRAPH of LeNet  on Fashion MNIST"
 echo "#####################################"
-decent_q inspect --input_frozen_graph=./freeze/LeNet/frozen_graph.pb
+decent_q inspect --input_frozen_graph=./freeze/fmnist/LeNet/frozen_graph.pb
 
 
 
