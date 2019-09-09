@@ -35,7 +35,7 @@ This section lists the software and hardware tools required to use the Xilinx&re
 * Xilinx SDK 2018.2
 * PetaLinux 2018.2
 
- **Note:** This tutorial is known to work with Vivado/Petalinux/SDK v2018.3, but 2018.2 will provided the best experience at this time. To use it with 2018.3, you will need to make the following changes:
+ **Note:** This tutorial is known to work with Vivado/Petalinux/SDK v2018.3, but 2018.2 will provide a better experience at this time. To use it with 2018.3, you will need to make the following changes:
 
  1. Edit the `u96_dpuv2.0_2018.2.tcl` script to specify 2018.3.
 
