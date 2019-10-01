@@ -1,0 +1,45 @@
+workspace: "examples/deephi_compress/"
+gpu: "0,1,2,3"
+test_iter: 100
+acc_name: "type-recall"
+
+model: "/home/chengming/me_size_4t/new/caffe/VPGNet_model_weight/VGG.prototxt"
+
+#model: "/home/chengming/me_size_4t/new/caffe/VPGNet_model_weight/train_merge.prototxt"
+
+#model: "/home/chengming/me_size_4t/new/caffe/transformed.prototxt"
+
+#weights: "/home/chengming/me_size_4t/new/caffe/snapshots_caltech_4096_100G_No_LRN/split_iter_10000.caffemodel"
+
+#weights: "/home/chengming/me_size_4t/new/caffe/examples/deephi_compress/regular_rate_0.4/snapshots/_iter_10000.caffemodel"
+
+#weights: "/home/chengming/me_size_4t/new/caffe/snapshots_caltech_4096_100G_merge_BN_scale/split_iter_10000.caffemodel"
+
+#weights: "/home/chengming/me_size_4t/new/caffe/VPGNet_model_weight/60.caffemodel"
+
+#weights: "/home/chengming/me_size_4t/new/caffe/transformed.caffemodel"
+
+#weights: "/home/chengming/me_size_4t/new/caffe/examples/deephi_compress/regular_rate_0.9/snapshots/_iter_10000.caffemodel"
+
+weights: "/home/chengming/me_size_4t/new/caffe/snapshot_fix_result/split_iter_4700.caffemodel"
+
+#weights: "/home/chengming/me_size_4t/new/caffe/example/deephi_compress/regular_rate_0.6/snapshots/_iter_5000.caffemodel"
+
+#weights: "/home/chengming/me_size_4t/new/caffe/examples/deephi_compress/regular_rate_0.98/snapshots/_iter_4700.caffemodel"
+
+solver: "/home/chengming/me_size_4t/new/caffe/VPGNet_model_weight/solver_caltech.prototxt"
+
+rate: 0.99
+
+pruner {
+  method: REGULAR
+  exclude{
+    layer_top: "pixel-conv"
+    layer_top: "type-conv"
+    layer_top: "bb-output"
+#layer_top: "pixel-tile"
+#layer_top: "bb-tile"
+#layer_top: "type-tile"
+  }
+}
+
