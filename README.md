@@ -48,7 +48,10 @@ Learn the DNNDK v3.0 TensorFlow design process for creating a compiled ELF file 
 Quantize in fixed point some custom CNNs and deploy them on the Xilinx ZCU102 board, using Keras and the Xilinx DNNDK 3.0 tool chain based on TensorFlow (TF).</tr>
  <tr> <td align="center"><a href="docs/AI-Model-Zoo">Xilinx AI Model Zoo (UG1389)</a></td>
   <td>
-Learn how to speed up the deployment of deep learning inference on Xilinx platforms by using free pre-trained deep learning models that cover different applications (such as ADAS/AD, video surveillance, robotics, data center, and so forth).</tr>
+Learn how to speed up the deployment of deep learning inference on Xilinx platforms by using free pre-trained deep learning models that cover different applications (such as ADAS/AD, video surveillance, robotics, data center, and so forth).</td></tr>
+<tr> <td align="center"><a href="docs/Caffe-Segmentation">Caffe Segmentation (UG1394)</a></td>
+<td>
+Learn how to train, quantize, compile, and deploy various segmentation networks, including ENet, ESPNet, FPN, UNet, and a reduced compute version of UNet.</td></tr>
 
  </table>
 
