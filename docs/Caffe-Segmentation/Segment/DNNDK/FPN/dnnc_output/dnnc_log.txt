@@ -1,0 +1,99 @@
+[0;33m[DNNC][Warning] layer [score] is not supported in DPU, deploy it in CPU instead.
+[m[DNNC][DEBUG] Generate dpu instruction for node [conv1_7x7_s2].
+[DNNC][DEBUG] Generate dpu instruction for node [conv2_3x3_reduce].
+[DNNC][DEBUG] Generate dpu instruction for node [conv2_3x3].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_3a_1x1].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_3a_3x3_reduce].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_3a_5x5_reduce].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_3a_pool].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_3a_3x3].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_3a_5x5].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_3a_pool_proj].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_3b_1x1].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_3b_3x3_reduce].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_3b_5x5_reduce].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_3b_pool_proj].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4a_pool_13].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_3b_3x3].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_3b_5x5].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4a_pool_16].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4a_pool_14].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4a_pool_15].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4a_1x1].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4a_3x3_reduce].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4a_5x5_reduce].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4a_3x3].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4a_5x5].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4a_pool_proj].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4b_1x1].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4b_3x3_reduce].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4b_5x5_reduce].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4b_pool_proj].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4b_3x3].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4b_5x5].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4c_1x1].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4c_3x3_reduce].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4c_5x5_reduce].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4c_pool_proj].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4c_3x3].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4c_5x5].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4d_1x1].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4d_3x3_reduce].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4d_5x5_reduce].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4d_pool_proj].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4d_3x3].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4d_5x5].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4e_1x1].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4e_3x3_reduce].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4e_5x5_reduce].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4e_pool_proj].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_5a_pool_43].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4e_3x3].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_4e_5x5].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_5a_pool_46].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_5a_pool_44].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_5a_pool_45].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_5a_1x1].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_5a_3x3_reduce].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_5a_5x5_reduce].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_5a_3x3].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_5a_5x5].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_5a_pool_proj].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_5b_1x1].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_5b_3x3_reduce].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_5b_5x5_reduce].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_5b_pool_proj].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_5b_3x3].
+[DNNC][DEBUG] Generate dpu instruction for node [inception_5b_5x5].
+[DNNC][DEBUG] Generate dpu instruction for node [p5].
+[DNNC][DEBUG] Generate dpu instruction for node [upsample_p5].
+[DNNC][DEBUG] Generate dpu instruction for node [latlayer_4f].
+[DNNC][DEBUG] Generate dpu instruction for node [toplayer_p4].
+[DNNC][DEBUG] Generate dpu instruction for node [upsample_p4].
+[DNNC][DEBUG] Generate dpu instruction for node [latlayer_3d].
+[DNNC][DEBUG] Generate dpu instruction for node [toplayer_p3].
+[DNNC][DEBUG] Generate dpu instruction for node [upsample_p3].
+[DNNC][DEBUG] Generate dpu instruction for node [latlayer_2c].
+[DNNC][DEBUG] Generate dpu instruction for node [toplayer_p2].
+
+DNNC Kernel Information
+
+1. Overview
+kernel numbers  : 2
+kernel topology : segmentation_kernel_graph.jpg
+
+2. Kernel Description in Detail
+kernel id       : 0
+kernel name     : segmentation_0
+type            : DPUKernel
+nodes           : NA
+input node(s)   : conv1_7x7_s2(0) 
+output node(s)  : toplayer_p2(0) 
+
+kernel id       : 1
+kernel name     : segmentation_1
+type            : CPUKernel
+nodes           : NA
+input node(s)   : score 
+output node(s)  : score 
+
