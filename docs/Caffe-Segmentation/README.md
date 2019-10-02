@@ -465,7 +465,7 @@ The pre-trained full models exist at the following paths:
 
 **For UNet-Full:**
 
-[Segment/workspace/model/unet-full/final_models/pretrained.caffemodel](Segment/workspace/model/unet-full/final_models/)
+The UNet-Full model must be downloaded separately from [https://www.xilinx.com/cgi-bin/docs/ctdoc?cid=f629d7f4-278e-4342-b1eb-7cbfa7ab464d;d=ug1394-ml-caffe-segmentation-design-files.zip](this link). 
 
 **For UNet-Lite:**
 
