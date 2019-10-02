@@ -11,9 +11,9 @@ The tutorial is organized as follows:
 
 #### 3) Training the Models
 
-#### 4) Quantizing and Compiling the Segmentation networks for DPU implementation
+#### 4) Evaluating the Floating Point Models on the Host PC
 
-#### 5) Evaluating the Floating Point Models on the Host PC
+#### 5) Quantizing and Compiling the Segmentation networks for DPU implementation
 
 #### 6) Running the Models on the ZCU102
 
@@ -188,16 +188,6 @@ g. Now install and activate the latest drivers (for this tutorial, version 390):
   make –j8
   make py
 ```
-If you wish to run in a Python 2.7 virtual environment, you can do so by running the following before running the above commands:
-```
-  mkvirtualenv semseg_caffe_py27 -p python2 # "semseg_caffe_py27" is the name of the virtual env
-
-  cd ~/.virtualenvs/semseg_caffe_py27/local/lib/python2.7/site-packages/
-  ln -s /usr/lib/python2.7/dist-packages/cv2.x86_64-linux-gnu.so cv2.so
-
-  cd $CAFFE_ROOT
-  for req in $(cat ./python/requirements.txt); do pip2 install $req; done
-```
 
 6) Next run the following command to export the PYTHONPATH variable (note that if you change terminal windows, you will need to re-export this variable):
 
@@ -228,7 +218,7 @@ Course Annotations (20000 images)
 Fine Annotations (5000 images)
 
 
-There are 8 groups contained within the Cityscapes dataset with 19 classes.  In the following figure, it can be seen that there are 30 classes listed, but all classes with a ‘+’ next to them are treated as a single void class and preparation steps will change their values to ‘255’ which will subsequently be ignored in the training process.  Classes marked with an * have single instance based annotations available, though this tutorial does not cover instance based segmentation.
+There are 8 groups contained within the Cityscapes dataset with 19 classes.  In the following figure, it can be seen that there are 30 classes listed, but all classes with a ‘+’ next to them are treated as a single void class and preparation steps will change their values to ‘255’ which will subsequently be ignored in the training process:
 
 ![picture](ref_files/pictures/Picture2.png)
 **Citation: https://www.cityscapes-dataset.com/dataset-overview/**
@@ -543,9 +533,174 @@ Note that ESPNet continued to increase in mIOU at 12K iterations, so an addition
 
 The results as seen in the table are a bit confusing for Unet-lite, but essentially, an issue was encountered when using the 1024x512 images size for evaluating the 13K iteration model against the cityscapes validation dataset on the ZCU102 which caused an issue with the DPU timing out.  The 10K model had lower accuracy in terms of mIOU, but did not exhibit this issue, so the 10K model was used for the evalution with a size of 1024x512, and the 13K iteration model is used with an input size of 512x256 when playing back the video as it produces better accuracy and works ok with the smaller input size.  This issue is currently being investigated and the tutorial will be updated when a solution when one is found.
 
-# 4.0 Quantizing and Compiling the Segmentation networks for DPU implementation
+# 4.0 Evaluating the Floating Point Models on the Host PC
 
-## 4.0 PART 1: Installing the DNNDK tools
+## 4.1 Evaluating the Models with Still Images and Displaying the Results
+After training the models, it is useful to evaluate the model on the host PC before attempting to deploy it in the DPU.  In order to evaluate the models, scripts have been provided under the [Segment/workspace/scripts/test_scripts](Segment/workspace/scripts/test_scripts) directory.  Credit for these helpful scripts is given to [Timo Saemann](https://github.com/TimoSaemann) which he provided in his ENet [tutorial](https://github.com/TimoSaemann/ENet/tree/master/Tutorial).  The scripts have been modified for the various tasks, but the base scripts from Timo Saemann have been used as a starting point for the evaluation code.
+
+You can test both the encoder only models as well as the full models for all of the networks.  To do so, execute the following steps.
+
+1) Change directory to the `Segment/workspace/scripts/test_scripts` directory
+
+2) The following scripts can be used to evaluate the various models on a single image:
+
+- test_enet_encoder.sh
+- test_enet.sh
+- test_espnet_encoder.sh
+- test_epsnet.sh
+- test_fpn.sh
+- test_unet-full.sh
+- test_unet-lite.sh
+
+The evaluation scripts contain paths to the caffemodel which will be evaluated.  If you want to evaluate the pre-trained models that have been provided, you can simply execute them as is, otherwise, you will need to modify the path to the caffemodel and prototxt file.  An example is shown below for enet which uses relative paths to point up to the model directory where the prototxt and trained snapshot exist.
+
+```
+export PYTHONPATH=../../../caffe-master/python
+python test_enet.py \
+--model ../../model/enet/deploy.prototxt \
+--weights ../../model/enet/final_models/pretrained.caffemodel \
+--colours ../cityscapes19.png \
+--input ../munich_000000_000019_leftImg8bit.png \
+--out_dir ./ --gpu 0
+```
+
+As can be seen from the screenshot above, these scripts will call the underlying python script which will run one forward inference on the trained model using the "munich_000000_000019_leftImg8bit.png" image as the input.  The output will then color code the classes and display the output image.  You could modify the python program to work on a recorded video or a webcam if desired, though the scope of this tutorial only provides an evaluation of a single images.
+
+The input image and example outputs for the pre-trained networks can be seen below.  Note the differences between the two networks as well the smoothing effect that including the full decoder stage has on the output.
+
+INPUT IMAGE FROM CITYSCAPES DATA:
+![picture](Segment/workspace/scripts/munich_000000_000019_leftImg8bit.png)
+
+ENet Encoder Only Output:
+![picture](Segment/workspace/scripts/test_scripts/munich_000000_000019_leftImg8bit_enet_encoder.png)
+
+ENet Full Model Output:
+![picture](Segment/workspace/scripts/test_scripts/munich_000000_000019_leftImg8bit_enet.png)
+
+ESPNet Encoder Only Output:
+![picture](Segment/workspace/scripts/test_scripts/munich_000000_000019_leftImg8bitESPNet_encoder.png)
+
+ESPNet Full Model Output:
+![picture](Segment/workspace/scripts/test_scripts/munich_000000_000019_leftImg8bitESPNet.png)
+
+FPN Model Output:
+![picture](Segment/workspace/scripts/test_scripts/munich_000000_000019_leftImg8bit_fpn.png)
+
+Unet-Full Model Output:
+![picture](Segment/workspace/scripts/test_scripts/munich_000000_000019_leftImg8bitUnet-full.png)
+
+Unet-Lite Model Output:
+![picture](Segment/workspace/scripts/test_scripts/munich_000000_000019_leftImg8bitUnet-lite.png)
+
+**If the output of your model looks reasonable, you can now proceed to step 5, however, there are other tests that may be performed at this point which are outlined in the remainder of this section.**
+
+It is also possible to test the inference time of the models on the host machine by running the following command from $CAFFE_ROOT:
+
+**For ENet Encoder Only:**
+```
+./build/tools/caffe time \
+-model ../workspace/model/enet/deploy_encoder.prototxt -gpu 0 -iterations 100
+```
+**For ENet Full Model:**
+```
+./build/tools/caffe time \
+-model ../workspace/model/enet/deploy.prototxt -gpu 0 -iterations 100
+```
+**For ESPNet Encoder Only:**
+```
+./build/tools/caffe time \
+-model ../workspace/model/espnet/deploy_encoder.prototxt -gpu 0 -iterations 100
+```
+**For ESPNet Full Model:**
+```
+./build/tools/caffe time \
+-model ../workspace/model/espnet/deploy.prototxt -gpu 0 -iterations 100
+```
+
+My results for these various tests with a Xeon CPU and GTX 1080ti graphics card and a 512x256 input size for the models are as follows (note that the GPU power was estimated using the nvidia-smi command while running forward inference):
+
+**For ENet Encoder Only: Average Forward Pass 17 ms, 94W**
+
+**For ENet Full Model: Average Forward Pass 27 ms, 93W**
+
+**For ESPNet Encoder Only: Average Forward Pass 9.1 ms, 108W**
+
+**For ESPNet Full Model: Average Forward Pass 10.3 ms, 108W**
+
+**For FPN Model: Average Forward Pass 15.5 ms, 114W**
+
+**For UNet-Full Model: Average Forward Pass 33 ms, 220W**
+
+**For UNet-Lite Model: Average Forward Pass 14 ms, 176W**
+
+
+## 4.2 Measuring the Floating Point Model mIOU on the Cityscapes Validation dataset
+In order to test the floating point and quantized model mIOU, the primary method is to use the decent_q test command.  A local copy of decent_q is provided rather than the publicly distributed decent_q, as this local copy provides the capability to test both the floating point and quantized models.
+
+In each of the model subdirectories under the [Segment/DNNDK](Segment/DNNDK) filepath, a script has been provided that will perform the following actions:
+
+- Test the floating point model against the cityscapes validation dataset (run inference and calculate mIOU)
+
+- Quantize the model using the calibration images from the [Segment/DNNDK/data/cityscapes/calibration_images](Segment/DNNDK/data/cityscapes/calibration_images) directory (Need to first check step 5.0 on Quantization as directions are provided there for populating this directory).
+
+**To use this primary method, please proceed to the section 5.0 on quantization as some of the steps covered in that section will be needed to complete this step.**
+
+In addition to using the decent_q capabilities to test the floating point model, a couple secondary methods are included in this section.  These methods employ the use of Caffe along with some python scripts to run forward inference on the floating point model and check the mIOU.  There are two ways additional methods captured below to do this that I'm providing in this tutorial.
+
+Both option 1 and option 2 use different python scripts to run forward inference and compare the mIOUs.  The key differences between option 1 and option 2 python scripts are that option 2 uses 2048x1024 as the default input size (this is the native size of the cityscapes dataset samples) for the forward inference process whereas option 1 and decent_q uses 1024x512.  If you modify the files to use 1024x512 for the input size for option 2, your results should be similar to option 1, but some differences may exist between all three approaches due to other variables such as methods used to resize the images.
+
+#### Floating Point Model Test Using Python on Host Machine - Option 1  
+- Change directory to [Segment/workspace/scripts/eval_option_1](Segment/workspace/scripts/eval_option_1)
+
+- Make sure your CITYSCAPES_DATASET variable is exported properly to the location of dataset.  If you have not done this, a default location will be used which will cause the script to fail.
+
+- Next you need to prepare the validation images that will be used as a ground truth for comparison against the model output.  This can be done by running the cls34_to_cls19.py script by entering `python -cls34_to_cls19.py`.  This step only needs to be performed once for the ground truth images.  Note that these will be stored in a folder called `test_gtFine_cls19` where your CITYSCAPES_DATASET is located.
+
+- Next you need to run forward inference using the validation images.  This can be done using the `forward_inference_model_name.sh` scripts provided (e.g. `./forward_inference_enet.sh`).  These scripts will create a soft link to the pretrained caffe models in the working directory where the snapshots of the training process are stored.  Then the script will run segmentation_miou_test.py to perform forward inference using that model and store the results under the "results" directory.
+
+- Finally, with the results captured and ground truth images prepared, run `./eval_segmentation.sh` script to compare the ground truth images and report the mIOU.  The mIOU for all classes will be the first number reported and the other numbers reported will be the per class mIOU numbers.
+
+#### Floating Point Model Test Using Python on Host Machine - Option 2
+The [cityscapesScripts](https://github.com/mcordts/cityscapesScripts) that were downloaded in step 2.0 can also be used to perform mIOU measurements on the Cityscapes validation dataset.  The process for this involves the following steps:
+
+- Replace the `cityscapesScripts/cityscapesscripts/helpers/labels.py` with the modified [labels.py](Segment/workspace/scripts/eval_option_2/cityscapes_modified_scripts/labels.py) which exits at `Segment/workspace/scripts/eval_option_2/cityscapes_modified_scripts/labels.py`. The key changes to this file involve modifying the classes to have only encodings 0-18 and 255 for ignored labels.
+
+- Modify line 133 of cityscapesscripts/evaluation/evalPixelLevelSemanticLabeling.py
+
+from:
+```
+args.groundTruthSearch  = os.path.join( args.cityscapesPath , "gtFine" , "val" , "*", "*_gtFine_labelIds.png" )`
+```
+to
+```
+args.groundTruthSearch  = os.path.join( args.cityscapesPath , "gtFine" , "val" , "*", "*_gtFine_labelTrainIds.png" )
+```
+
+- Reinstall the cityscapesScripts by changing directory into the cityscapesScripts folder then using pip:
+
+  ```
+  sudo pip install .
+  ```
+- make sure you have exported your CITYSCAPES_DATASET environment variable to point to the location of the cityscapes dataset.  If you have not done this, a default location will be used which will cause the script to fail.
+
+- Next change directory to where the provided scripts exist for the desired model (e.g. Segment/workspace/scripts/eval_option_2/enet)
+
+- Open the script validate_*.sh (e.g. validate_enet.sh).  
+
+ - In this script you can see that the python script validate_enet.py is called 3x, once for each subfolder of the validation images provided by cityscapes.  Credit for these helpful scripts is given to [Timo Saemann](https://github.com/TimoSaemann) which he provided in his ENet [tutorial](https://github.com/TimoSaemann/ENet/tree/master/Tutorial).  The scripts have been modified for the various tasks, but the base scripts from Timo Saemann have been used as a starting point for the forward inference code.
+
+ - If there are any paths that need to change in this script, you can make modifications to point to the correct caffemodel and prototxt file.  Local prototxt files have been stored in each of these directories such that you can make changes to the input size as this will affect accuracy.
+
+  - The default input size should be 2048x1024 as this matches the cityscapes dataset annotations.  If you want to try testing with other input sizes, you can use the validate_enet_resize.sh which will use the deploy_enet_resize.prototxt.
+
+  - Note also that the Unet-full model does not have a resize script because its input size is 1024x512.  This is because the model is too large to run inference on with the provided version of Caffe, so a reduced input size is used to test the model.
+
+  - After the forward inference is run, results are stored under the "results" directory, after which the csEvalPixelLevelSemanticLabeling python method is called to compare these results to the cityscapes validation data ground truths.  
+
+
+# 5.0 Quantizing and Compiling the Segmentation networks for DPU implementation
+
+## 5.0 PART 1: Installing the DNNDK tools
 
 In section 1, we downloaded the [DNNDK tools](https://www.xilinx.com/products/design-tools/ai-inference/ai-developer-hub.html) and copied them over to the ZCU102 board.  A portion of these tools also needs to be installed on the host x86 machine for quantizing and compiling the model.
 
@@ -563,9 +718,9 @@ NOTE: The target for this tutorial is the ZCU102, but it should be possible to t
 
 Please refer to the [DNNDK User Guide](https://www.xilinx.com/products/design-tools/ai-inference/ai-developer-hub.html) for more details on the DNNDK tools.
 
-If you would like to quantize and deploy the model, continue onto 4.0 part 2, otherwise if you would like to first test the quantized and floating point models and compare the mIOU between the two, then jump down to 4.0 part 3.
+If you would like to quantize and deploy the model, continue onto 5.0 part 2, otherwise if you would like to first test the quantized and floating point models and compare the mIOU between the two, then jump down to 5.0 part 3.
 
-## 4.0 PART 2: Configuring the Files for Quantization, Compilation, and mIOU Testing:
+## 5.0 PART 2: Configuring the Files for Quantization, Compilation, and mIOU Testing:
 
 1) I have included an example workspace in [Segment/DNNDK](Segment/DNNDK) to show how the DNNDK tools may be invoked as well as the necessary modifications to the prototxt files for both quantization/compilation and testing the float and quantized model mIOUs. Change directory to the DNNDK directory before proceeding to the next step.
 
@@ -666,9 +821,9 @@ dnnc    --prototxt=${model_dir}/deploy.prototxt \
 ```      
 
 
-At this point, an elf file should have been created in the **dnnc_output** directory which can be used in the final step which is to run the models on the ZCU102.  If desired, you can also proceed to the Part 3 of 4.0 which is testing the floating point and quantized models.
+At this point, an elf file should have been created in the **dnnc_output** directory which can be used in the final step which is to run the models on the ZCU102.  If desired, you can also proceed to the Part 3 of 5.0 which is testing the floating point and quantized models.
 
-## 4.0 PART 3: Testing the Floating Point and Quantized Models
+## 5.0 PART 3: Testing the Floating Point and Quantized Models
 As mentioned in the previous section, files have been provided under the `Segment/DNNDK/model_subdirectory_name` filepath which can enable you to rapidly test the mIOU of both the floating point model as well as the quantized model on the cityscapes validation dataset.  In order to perform this testing, perform the following steps:
 
 1)  Open the `Segment/DNNDK/data/val_img_seg_nomap.txt` file with a text editor.
@@ -721,171 +876,6 @@ output_dir=${work_dir}/decent_output
 ```
 
 At this point, the quantized and floating point models have been fully verified on the host and you are ready to proceed to deploying the models to the target hardware, however, if you skipped the section on pre-trained models you may be wondering how they scored.  Jump back up 3.1.0 About the Pre-Trained Models to see the results.
-
-# 5.0 Evaluating the Floating Point Models on the Host PC
-
-## 5.1 Evaluating the Models with Still Images and Displaying the Results
-After training the models, it is useful to evaluate the model on the host PC before attempting to deploy it in the DPU.  In order to evaluate the models, scripts have been provided under the [Segment/workspace/scripts/test_scripts](Segment/workspace/scripts/test_scripts) directory.  Credit for these helpful scripts is given to [Timo Saemann](https://github.com/TimoSaemann) which he provided in his ENet [tutorial](https://github.com/TimoSaemann/ENet/tree/master/Tutorial).  The scripts have been modified for the various tasks, but the base scripts from Timo Saemann have been used as a starting point for the evaluation code.
-
-You can test both the encoder only models as well as the full models for all of the networks.  To do so, execute the following steps.
-
-1) Change directory to the `Segment/workspace/scripts/test_scripts` directory
-
-2) The following scripts can be used to evaluate the various models on a single image:
-
-- test_enet_encoder.sh
-- test_enet.sh
-- test_espnet_encoder.sh
-- test_epsnet.sh
-- test_fpn.sh
-- test_unet-full.sh
-- test_unet-lite.sh
-
-The evaluation scripts contain paths to the caffemodel which will be evaluated.  If you want to evaluate the pre-trained models that have been provided, you can simply execute them as is, otherwise, you will need to modify the path to the caffemodel and prototxt file.  An example is shown below for enet which uses relative paths to point up to the model directory where the prototxt and trained snapshot exist.
-
-```
-export PYTHONPATH=../../../caffe-master/python
-python test_enet.py \
---model ../../model/enet/deploy.prototxt \
---weights ../../model/enet/final_models/pretrained.caffemodel \
---colours ../cityscapes19.png \
---input ../munich_000000_000019_leftImg8bit.png \
---out_dir ./ --gpu 0
-```
-If issues are encountered with running this script, it could be that the PYTHONPATH variable is incorrect for your configuration.  For instance, if you are running a Python virtual environment configuration, you may set this variable using something like "export PYTHONPATH=$CAFFE_ROOT/distribute/python".
-
-As can be seen from the screenshot above, these scripts will call the underlying python script which will run one forward inference on the trained model using the "munich_000000_000019_leftImg8bit.png" image as the input.  The output will then color code the classes and display the output image.  You could modify the python program to work on a recorded video or a webcam if desired, though the scope of this tutorial only provides an evaluation of a single images.
-
-The input image and example outputs for the pre-trained networks can be seen below.  Note the differences between the two networks as well the smoothing effect that including the full decoder stage has on the output.
-
-INPUT IMAGE FROM CITYSCAPES DATA:
-![picture](Segment/workspace/scripts/munich_000000_000019_leftImg8bit.png)
-
-ENet Encoder Only Output:
-![picture](Segment/workspace/scripts/test_scripts/munich_000000_000019_leftImg8bit_enet_encoder.png)
-
-ENet Full Model Output:
-![picture](Segment/workspace/scripts/test_scripts/munich_000000_000019_leftImg8bit_enet.png)
-
-ESPNet Encoder Only Output:
-![picture](Segment/workspace/scripts/test_scripts/munich_000000_000019_leftImg8bitESPNet_encoder.png)
-
-ESPNet Full Model Output:
-![picture](Segment/workspace/scripts/test_scripts/munich_000000_000019_leftImg8bitESPNet.png)
-
-FPN Model Output:
-![picture](Segment/workspace/scripts/test_scripts/munich_000000_000019_leftImg8bit_fpn.png)
-
-Unet-Full Model Output:
-![picture](Segment/workspace/scripts/test_scripts/munich_000000_000019_leftImg8bitUnet-full.png)
-
-Unet-Lite Model Output:
-![picture](Segment/workspace/scripts/test_scripts/munich_000000_000019_leftImg8bitUnet-lite.png)
-
-**If the output of your model looks reasonable, you can now proceed to step 5, however, there are other tests that may be performed at this point which are outlined in the remainder of this section.**
-
-It is also possible to test the inference time of the models on the host machine by running the following command from $CAFFE_ROOT:
-
-**For ENet Encoder Only:**
-```
-./build/tools/caffe time \
--model ../workspace/model/enet/deploy_encoder.prototxt -gpu 0 -iterations 100
-```
-**For ENet Full Model:**
-```
-./build/tools/caffe time \
--model ../workspace/model/enet/deploy.prototxt -gpu 0 -iterations 100
-```
-**For ESPNet Encoder Only:**
-```
-./build/tools/caffe time \
--model ../workspace/model/espnet/deploy_encoder.prototxt -gpu 0 -iterations 100
-```
-**For ESPNet Full Model:**
-```
-./build/tools/caffe time \
--model ../workspace/model/espnet/deploy.prototxt -gpu 0 -iterations 100
-```
-
-My results for these various tests with a Xeon CPU and GTX 1080ti graphics card and a 512x256 input size for the models are as follows (note that the GPU power was estimated using the nvidia-smi command while running forward inference):
-
-**For ENet Encoder Only: Average Forward Pass 17 ms, 94W**
-
-**For ENet Full Model: Average Forward Pass 27 ms, 93W**
-
-**For ESPNet Encoder Only: Average Forward Pass 9.1 ms, 108W**
-
-**For ESPNet Full Model: Average Forward Pass 10.3 ms, 108W**
-
-**For FPN Model: Average Forward Pass 15.5 ms, 114W**
-
-**For UNet-Full Model: Average Forward Pass 33 ms, 220W**
-
-**For UNet-Lite Model: Average Forward Pass 14 ms, 176W**
-
-
-## 5.2 Measuring the Floating Point Model mIOU on the Cityscapes Validation dataset
-In order to test the floating point and quantized model mIOU, the primary method is to use the decent_q test command.  A local copy of decent_q is provided rather than the publicly distributed decent_q, as this local copy provides the capability to test both the floating point and quantized models.
-
-In each of the model subdirectories under the [Segment/DNNDK](Segment/DNNDK) filepath, a script has been provided that will perform the following actions:
-
-- Test the floating point model against the cityscapes validation dataset (run inference and calculate mIOU)
-
-- Quantize the model using the calibration images from the [Segment/DNNDK/data/cityscapes/calibration_images](Segment/DNNDK/data/cityscapes/calibration_images) directory (Need to first check step 4.0 on Quantization as directions are provided there for populating this directory).
-
-**To use this primary method, please make sure you have covered section 4.0 on quantization as some of the steps covered in that section will be needed to complete this step.**
-
-In addition to using the decent_q capabilities to test the floating point model, a couple secondary methods are included in this section.  These methods employ the use of Caffe along with some python scripts to run forward inference on the floating point model and check the mIOU.  There are two ways additional methods captured below to do this that I'm providing in this tutorial.
-
-Both option 1 and option 2 use different python scripts to run forward inference and compare the mIOUs.  The key differences between option 1 and option 2 python scripts are that option 2 uses 2048x1024 as the default input size (this is the native size of the cityscapes dataset samples) for the forward inference process whereas option 1 and decent_q uses 1024x512.  If you modify the files to use 1024x512 for the input size for option 2, your results should be similar to option 1, but some differences may exist between all three approaches due to other variables such as methods used to resize the images.
-
-#### Floating Point Model Test Using Python on Host Machine - Option 1  
-- Change directory to [Segment/workspace/scripts/eval_option_1](Segment/workspace/scripts/eval_option_1)
-
-- Make sure your CITYSCAPES_DATASET variable is exported properly to the location of dataset.  If you have not done this, a default location will be used which will cause the script to fail.
-
-- Next you need to prepare the validation images that will be used as a ground truth for comparison against the model output.  This can be done by running the cls34_to_cls19.py script by entering `python -cls34_to_cls19.py`.  This step only needs to be performed once for the ground truth images.  Note that these will be stored in a folder called `test_gtFine_cls19` where your CITYSCAPES_DATASET is located.
-
-- Next you need to run forward inference using the validation images.  This can be done using the `forward_inference_model_name.sh` scripts provided (e.g. `./forward_inference_enet.sh`).  These scripts will create a soft link to the pretrained caffe models in the working directory where the snapshots of the training process are stored.  Then the script will run segmentation_miou_test.py to perform forward inference using that model and store the results under the "results" directory.
-
-- Finally, with the results captured and ground truth images prepared, run `./eval_segmentation.sh` script to compare the ground truth images and report the mIOU.  The mIOU for all classes will be the first number reported and the other numbers reported will be the per class mIOU numbers.
-
-#### Floating Point Model Test Using Python on Host Machine - Option 2
-The [cityscapesScripts](https://github.com/mcordts/cityscapesScripts) that were downloaded in step 2.0 can also be used to perform mIOU measurements on the Cityscapes validation dataset.  The process for this involves the following steps:
-
-- Replace the `cityscapesScripts/cityscapesscripts/helpers/labels.py` with the modified [labels.py](Segment/workspace/scripts/eval_option_2/cityscapes_modified_scripts/labels.py) which exits at `Segment/workspace/scripts/eval_option_2/cityscapes_modified_scripts/labels.py`. The key changes to this file involve modifying the classes to have only encodings 0-18 and 255 for ignored labels.
-
-- Modify line 133 of cityscapesscripts/evaluation/evalPixelLevelSemanticLabeling.py
-
-from:
-```
-args.groundTruthSearch  = os.path.join( args.cityscapesPath , "gtFine" , "val" , "*", "*_gtFine_labelIds.png" )`
-```
-to
-```
-args.groundTruthSearch  = os.path.join( args.cityscapesPath , "gtFine" , "val" , "*", "*_gtFine_labelTrainIds.png" )
-```
-
-- Reinstall the cityscapesScripts by changing directory into the cityscapesScripts folder then using pip:
-
-  ```
-  sudo pip install .
-  ```
-- make sure you have exported your CITYSCAPES_DATASET environment variable to point to the location of the cityscapes dataset.  If you have not done this, a default location will be used which will cause the script to fail.
-
-- Next change directory to where the provided scripts exist for the desired model (e.g. Segment/workspace/scripts/eval_option_2/enet)
-
-- Open the script validate_*.sh (e.g. validate_enet.sh).  
-
- - In this script you can see that the python script validate_enet.py is called 3x, once for each subfolder of the validation images provided by cityscapes.  Credit for these helpful scripts is given to [Timo Saemann](https://github.com/TimoSaemann) which he provided in his ENet [tutorial](https://github.com/TimoSaemann/ENet/tree/master/Tutorial).  The scripts have been modified for the various tasks, but the base scripts from Timo Saemann have been used as a starting point for the forward inference code.
-
- - If there are any paths that need to change in this script, you can make modifications to point to the correct caffemodel and prototxt file.  Local prototxt files have been stored in each of these directories such that you can make changes to the input size as this will affect accuracy.
-
-  - The default input size should be 2048x1024 as this matches the cityscapes dataset annotations.  If you want to try testing with other input sizes, you can use the validate_enet_resize.sh which will use the deploy_enet_resize.prototxt.
-
-  - Note also that the Unet-full model does not have a resize script because its input size is 1024x512.  This is because the model is too large to run inference on with the provided version of Caffe, so a reduced input size is used to test the model.
-
-  - After the forward inference is run, results are stored under the "results" directory, after which the csEvalPixelLevelSemanticLabeling python method is called to compare these results to the cityscapes validation data ground truths.  
 
 
 # 6.0 Running the Models on the ZCU102
@@ -974,9 +964,7 @@ The following steps can be performed to complete this process:
 
 - Now run the eval_segmentation.sh script by entering `./eval_segmentation.sh`.
 
-  The output of this step should have a final line in parenthesis which are a list of IOUs.  The first value in this list is the mIOU for all the classes (this is the number to compare to the decent_q quantized model mIOU).  The other numbers are per class IOU numbers for the validation dataset.  I already completed this step for the pre-trained models and you can refer back to section "3.1.0 About the Pre-Trained Models" to see the results.
-
-
+  The output of this step should be a list of IOUs starting with the mIOU for all the classes (this is the number to compare to the decent_q quantized model mIOU).  The other numbers are per clas IOU numbers for the validation dataset.  I already completed this step for the pre-trained models and you can refer back to section "3.1.0 About the Pre-Trained Models" to see the results.
 
 # Summary
 Looking back, we've covered a lot of ground, including walking through the process of preparing, training, testing, and deploying 5 different segmentation models.  The goal of this tutorial was not to show a perfectly optimized solution, but rather to blaze a trail so you experts and explorers can streamline your own segmentation model development and rapidly deploy those models on a Xilinx SoC/MPSoC.  
